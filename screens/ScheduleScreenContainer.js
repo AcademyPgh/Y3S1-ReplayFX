@@ -11,17 +11,17 @@ import {
 import ScheduleScreen from './ScheduleScreen';
 
 const tabs = [
-  { key: 'thur', text: `THUR\n26` },
-  { key: 'fri', text: `FRI\n27` },
-  { key: 'sat', text: `SAT\n28` },
-  { key: 'sun', text: `SUN\n28` },
-  { key: 'my-schedule', text: `MY\nSCHEDULE` },
-  { key: 'featured', text: `FEATURED` },
-  { key: 'open-play', text: `OPEN\nPLAY` },
-  { key: 'compete', text: `COMPETE` },
-  { key: 'live-music', text: `LIVE\nMUSIC` },
-  { key: 'seminars', text: `SEMINARS` },
-  { key: 'vendors', text: `VENDORS` },
+  { filter: 'thur', text: `THUR\n26` },
+  { filter: 'fri', text: `FRI\n27` },
+  { filter: 'sat', text: `SAT\n28` },
+  { filter: 'sun', text: `SUN\n28` },
+  { filter: 'my-schedule', text: `MY\nSCHEDULE` },
+  { filter: 'featured', text: `FEATURED` },
+  { filter: 'open-play', text: `OPEN\nPLAY` },
+  { filter: 'compete', text: `COMPETE` },
+  { filter: 'live-music', text: `LIVE\nMUSIC` },
+  { filter: 'seminars', text: `SEMINARS` },
+  { filter: 'vendors', text: `VENDORS` },
 ];
 
 export default class ScheduleScreenContainer extends React.Component {
@@ -90,10 +90,11 @@ export default class ScheduleScreenContainer extends React.Component {
               <ScrollView horizontal={true} contentContainerStyle={{alignItems: 'center'}}>
                 {tabs.map((tab) => (
                   <TouchableHighlight 
+                  key={tab.filter}
                   style={styles.tab}
                   onPress={() => {
                     /* 1. Navigate to the Schedule route with params */
-                    this.updateFilter(tab.key);
+                    this.updateFilter(tab.filter);
                   }}>
                   <Text style={{color:'white', textAlign:'center'}}>{tab.text}</Text>
                 </TouchableHighlight>
