@@ -20,19 +20,6 @@ import GameListScreen from './screens/GameListScreen';
 import ScheduleScreenContainer from './screens/ScheduleScreenContainer';
 import SponsorsScreen from './screens/SponsorsScreen';
 
-// import MyScheduleScreen from './screens/schedule_screens/MyScheduleScreen';
-// import CompeteScreen from './screens/schedule_screens/CompeteScreen';
-// import ThursdayScreen from './screens/schedule_screens/ThursdayScreen';
-// import FridayScreen from './screens/schedule_screens/FridayScreen';
-// import SaturdayScreen from './screens/schedule_screens/SaturdayScreen';
-// import SundayScreen from './screens/schedule_screens/SundayScreen';
-// import FeaturedScreen from './screens/schedule_screens/FeaturedScreen';
-// import LiveMusicScreen from './screens/schedule_screens/LiveMusicScreen';
-// import OpenPlayScreen from './screens/schedule_screens/OpenPlayScreen';
-// import SeminarsScreen from './screens/schedule_screens/SeminarsScreen';
-// import VendorsScreen from './screens/schedule_screens/VendorsScreen';
-
-
 export default class App extends React.Component {
   render() {
     return (
