@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 import { createNavigator, TabRouter, StackNavigator, TabNavigator, TabBarTop } from 'react-navigation';
 
+import LandingScreen from './screens/LandingScreen';
 import HomeScreen from './screens/HomeScreen';
 import GameListScreen from './screens/GameListScreen';
 import ScheduleScreenContainer from './screens/ScheduleScreenContainer';
@@ -30,6 +31,12 @@ export default class App extends React.Component {
 
 const RootStack = StackNavigator(
   {
+    Landing: {
+      screen: LandingScreen,
+      navigationOptions: {
+        title: 'Landing Page',
+      }
+    },
     Home: {
       screen: HomeScreen,
       navigationOptions: {
@@ -69,7 +76,7 @@ const RootStack = StackNavigator(
     
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Landing',
     navigationOptions: {
       //title: 'Home',
       headerStyle: {
