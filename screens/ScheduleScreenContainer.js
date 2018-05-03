@@ -5,9 +5,24 @@ import {
   Text,
   Button,
   View,
-  ScrollView
+  ScrollView,
+  TouchableHighlight,
 } from 'react-native';
 import ScheduleScreen from './ScheduleScreen';
+
+const tabs = [
+  { key: 'thur', text: `THUR\n26` },
+  { key: 'fri', text: `FRI\n27` },
+  { key: 'sat', text: `SAT\n28` },
+  { key: 'sun', text: `SUN\n28` },
+  { key: 'my-schedule', text: `MY\nSCHEDULE` },
+  { key: 'featured', text: `FEATURED` },
+  { key: 'open-play', text: `OPEN\nPLAY` },
+  { key: 'compete', text: `COMPETE` },
+  { key: 'live-music', text: `LIVE\nMUSIC` },
+  { key: 'seminars', text: `SEMINARS` },
+  { key: 'vendors', text: `VENDORS` },
+];
 
 export default class ScheduleScreenContainer extends React.Component {
     static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -29,6 +44,7 @@ export default class ScheduleScreenContainer extends React.Component {
       };
     }
 
+    
     constructor(props) {
       super(props);
   
@@ -40,7 +56,7 @@ export default class ScheduleScreenContainer extends React.Component {
       }
 
       filter = this._getFilter(filter);
-  
+      
       this.state = {
         filter: filter,
       };
@@ -64,100 +80,37 @@ export default class ScheduleScreenContainer extends React.Component {
     render() {
       return (
         <View style={{flex:1}}>
-          <View style={{flex:1, flexDirection:'row', backgroundColor: 'pink', height:'10%'}}>
+          <View style={{flex:1, flexDirection:'row', height:'10%', borderStyle: 'solid', borderColor: 'white', borderTopWidth: (StyleSheet.hairlineWidth*1), borderBottomWidth: (StyleSheet.hairlineWidth * 2)}}>
             
-            <View style={{flex:1, alignItems:'center', justifyContent:'center'}}>
-              <Text>JULY</Text>
+            <View style={{flex:1, alignItems:'center', justifyContent:'center', backgroundColor: '#272727'}}>
+              <Text style={{fontSize: 24, color:'white'}}>JULY</Text>
             </View>
 
-            <View style={{flex:4}}>
-              <ScrollView horizontal={true}>
-                <Button
-                  title='THUR'
+            <View style={{flex:4, backgroundColor:'#272727'}}>
+              <ScrollView horizontal={true} contentContainerStyle={{alignItems: 'center'}}>
+                {tabs.map((tab) => (
+                  <TouchableHighlight 
+                  style={styles.tab}
                   onPress={() => {
                     /* 1. Navigate to the Schedule route with params */
-                    this.updateFilter('thur');
-                  }}
-                />
-                <Button
-                  title='FRI'
-                  onPress={() => {
-                    /* 1. Navigate to the Schedule route with params */
-                    this.updateFilter('fri');
-                  }}
-                />
-                <Button
-                  title='SAT'
-                  onPress={() => {
-                    /* 1. Navigate to the Schedule route with params */
-                    this.updateFilter('sat');
-                  }}
-                />
-                <Button
-                  title='SUN'
-                  onPress={() => {
-                    /* 1. Navigate to the Schedule route with params */
-                    this.updateFilter('sun');
-                  }}
-                />
-                <Button
-                  title='MY SCHEDULE'
-                  onPress={() => {
-                    /* 1. Navigate to the Schedule route with params */
-                    this.updateFilter('my-schedule');
-                  }}
-                />
-                <Button
-                  title='FEATURED'
-                  onPress={() => {
-                    /* 1. Navigate to the Schedule route with params */
-                    this.updateFilter('featured');
-                  }}
-                />
-                <Button
-                  title='OPEN PLAY'
-                  onPress={() => {
-                    /* 1. Navigate to the Schedule route with params */
-                    this.updateFilter('open-play');
-                  }}
-                />
-                <Button
-                  title='COMPETE'
-                  onPress={() => {
-                    /* 1. Navigate to the Schedule route with params */
-                    this.updateFilter('compete');
-                  }}
-                />
-                <Button
-                  title='LIVE MUSIC'
-                  onPress={() => {
-                    /* 1. Navigate to the Schedule route with params */
-                    this.updateFilter('live-music');
-                  }}
-                />
-                <Button
-                  title='SEMINARS'
-                  onPress={() => {
-                    /* 1. Navigate to the Schedule route with params */
-                    this.updateFilter('seminars');
-                  }}
-                />
-                <Button
-                  title='VENDORS'
-                  onPress={() => {
-                    /* 1. Navigate to the Schedule route with params */
-                    this.updateFilter('vendors');
-                  }}
-                />
-
-          
+                    this.updateFilter(tab.key);
+                  }}>
+                  <Text style={{color:'white', textAlign:'center'}}>{tab.text}</Text>
+                </TouchableHighlight>
+                ))}
               </ScrollView>
             </View>
           </View>
-          <View style={{flex:8}}>
+          <View style={{flex:10}}>
             <ScheduleScreen filter={this.state.filter} updateFilter={this.updateFilter} navigation={this.props.navigation} />
           </View>
         </View>
       );
     }
   }
+
+  const styles = StyleSheet.create({
+    tab: {
+      flex: 1, padding: 4, paddingHorizontal: 15
+    },
+  });

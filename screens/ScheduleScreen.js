@@ -16,7 +16,7 @@ export default class ScheduleScreen extends React.Component {
     const filter = this.props.filter;
 
     return (
-      <View style={{ backgroundColor: 'powderblue', flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={{ backgroundColor: 'darkgray', flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Schedule Screen</Text>
         <Text>This.Props: {JSON.stringify(this.props)}</Text>
         <Text>props.filter: {filter}</Text>

@@ -73,11 +73,13 @@ const RootStack = StackNavigator(
     navigationOptions: {
       //title: 'Home',
       headerStyle: {
-        backgroundColor: '#f4511e',
+        backgroundColor: '#000000',
       },
-      headerTintColor: '#fff',
+      headerTintColor: '#ffffff',
       headerTitleStyle: {
         fontWeight: 'bold',
+        fontSize: 32,
+
         textAlign: 'center',
         flex: 1
       },
