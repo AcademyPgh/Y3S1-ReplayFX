@@ -18,9 +18,9 @@ export default class ScheduleScreen extends React.Component {
     return (
       <View style={{ backgroundColor: 'darkgray', flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Schedule Screen</Text>
-        <Text>This.Props: {JSON.stringify(this.props)}</Text>
-        <Text>props.filter: {filter}</Text>
-        <Text>params: {JSON.stringify({params})}</Text>
+        {/* <Text>This.Props: {JSON.stringify(this.props)}</Text> */}
+        {/* <Text>props.filter: {filter}</Text>
+        <Text>params: {JSON.stringify({params})}</Text> */}
         <Button
           title="Home"
           onPress={() => {
