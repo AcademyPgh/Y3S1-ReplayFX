@@ -4,7 +4,9 @@ import {
   StyleSheet,
   Text,
   Button,
-  View
+  View,
+  ScrollView,
+  Image,
 } from 'react-native';
 
 export default class SponsorsScreen extends React.Component {
@@ -20,26 +22,64 @@ export default class SponsorsScreen extends React.Component {
   
     render() {
       return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <Text>Props: {JSON.stringify(this.props)}</Text>
-          <Text>Sponsors Screen</Text>
-          <Button
-            title="Home"
-            onPress={() => {
-              /* 1. Navigate to the Details route with params */
-              this.props.navigation.popToTop();
-            }}
-          />
-          <Button
-            title="Schedule"
-            onPress={() => {
-              /* 1. Navigate to the Details route with params */
-              this.props.navigation.navigate('Schedule', {
-                filter: 'none',
-              });
-            }}
-          />
-        </View>
+        // Try removing the `flex: 1` on the parent View.
+        // The parent will not have dimensions, so the children can't expand.
+        // What if you add `height: 300` instead of `flex: 1`?      
+        <ScrollView style={styles.background}> 
+          
+            <View style={styles.container}>
+                <View style={styles.imgcontainer}>
+                <Image source={require('../Images/PairLogo.jpg')}/>
+                </View>
+            </View>
+  
+           <View style={styles.container}>
+                <View style={styles.imgcontainer}>
+                <Image source={require('../Images/LFGLogo.jpg')}/>
+                </View>
+            </View>
+  
+             <View style={styles.container}>
+                <View style={styles.imgcontainer}>
+                <Image source={require('../Images/AcademyLogo.jpg')}/>
+                </View>
+            </View>
+           
+         
+          </ScrollView> 
+        
+        
       );
     }
   }
+  
+   
+  
+  const styles = StyleSheet.create({
+    
+   
+   
+    container: {
+      flex: 3,
+      paddingVertical: 10,
+      borderWidth: .4,
+      borderColor: '#9ca4ab',
+      justifyContent: 'center',
+      
+    },
+    
+      imgcontainer: {
+      justifyContent: 'center',
+      flexDirection: 'row',
+  
+    },
+    background:{
+      flex: 1,
+      backgroundColor: 'whitesmoke',
+      borderColor: '#9ca4ab',
+     
+  
+    },
+  
+      
+  });
