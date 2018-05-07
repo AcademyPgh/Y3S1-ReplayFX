@@ -20,6 +20,7 @@ import HomeScreen from './screens/HomeScreen';
 import GameListScreen from './screens/GameListScreen';
 import ScheduleScreenContainer from './screens/ScheduleScreenContainer';
 import SponsorsScreen from './screens/SponsorsScreen';
+import GamesMain from './screens/GamesMain';
 
 export default class App extends React.Component {
   render() {
@@ -63,6 +64,13 @@ const RootStack = StackNavigator(
       initialRouteParams: { },
       navigationOptions: {
         title: 'Sponsors',
+      }
+    },
+    GamesMain: {
+      screen: GamesMain,
+      initialRouteParams: { },
+      navigationOptions: {
+        title: 'Choose Your Platform',
       }
     },
     
