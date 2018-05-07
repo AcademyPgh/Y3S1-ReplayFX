@@ -37,11 +37,11 @@ export default class ScheduleScreen extends React.Component {
         <View style={{flex: 9}}>
       <ScrollView> 
         <View style={styles.promoContainer}>
-          <Image source={require('/Users/ohadcadji/Documents/Academy Pgh Notes/React_Native/Y3S1-ReplayFX/Images/PromoSpot.jpg')} style={{flex:9}}/>
+          <Image source={require('../Images/PromoSpot.jpg')} style={{flex:9}}/>
         </View>
          <View style={[styles.container, {backgroundColor: 'white', }]}>
           <View style={styles.imgContainer}>
-          <Image source={require('/Users/ohadcadji/Documents/Academy Pgh Notes/React_Native/Y3S1-ReplayFX/Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
+          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
            {/*{star}*/}
            </View>
          
@@ -54,7 +54,7 @@ export default class ScheduleScreen extends React.Component {
         
           <View style={[styles.container, {backgroundColor: 'white', }]}>
           <View style={styles.imgContainer}>
-          <Image source={require('/Users/ohadcadji/Documents/Academy Pgh Notes/React_Native/Y3S1-ReplayFX/Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
+          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
           </View>
           <View style={styles.text}>   
           <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
@@ -65,7 +65,7 @@ export default class ScheduleScreen extends React.Component {
         
         <View style={[styles.container, {backgroundColor: 'white', }]}>
           <View style={styles.imgContainer}>
-          <Image source={require('/Users/ohadcadji/Documents/Academy Pgh Notes/React_Native/Y3S1-ReplayFX/Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
+          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
           </View>
           <View style={styles.text}>   
           <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
@@ -76,7 +76,7 @@ export default class ScheduleScreen extends React.Component {
         
         <View style={[styles.container, {backgroundColor: 'white', }]}>
           <View style={styles.imgContainer}>
-          <Image source={require('/Users/ohadcadji/Documents/Academy Pgh Notes/React_Native/Y3S1-ReplayFX/Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
+          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
           </View>
           <View style={styles.text}>   
           <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
@@ -86,7 +86,7 @@ export default class ScheduleScreen extends React.Component {
         </View>
         <View style={[styles.container, {backgroundColor: 'white', }]}>
           <View style={styles.imgContainer}>
-          <Image source={require('/Users/ohadcadji/Documents/Academy Pgh Notes/React_Native/Y3S1-ReplayFX/Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
+          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
           </View>
           <View style={styles.text}>   
           <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
@@ -96,7 +96,7 @@ export default class ScheduleScreen extends React.Component {
         </View>
         <View style={[styles.container, {backgroundColor: 'white', }]}>
           <View style={styles.imgContainer}>
-          <Image source={require('/Users/ohadcadji/Documents/Academy Pgh Notes/React_Native/Y3S1-ReplayFX/Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
+          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
           </View>
           <View style={styles.text}>   
           <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
@@ -106,7 +106,7 @@ export default class ScheduleScreen extends React.Component {
         </View>
         <View style={[styles.container, {backgroundColor: 'white', }]}>
           <View style={styles.imgContainer}>
-          <Image source={require('/Users/ohadcadji/Documents/Academy Pgh Notes/React_Native/Y3S1-ReplayFX/Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
+          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
           </View>
           <View style={styles.text}>   
           <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
@@ -116,7 +116,7 @@ export default class ScheduleScreen extends React.Component {
         </View>
         <View style={[styles.container, {backgroundColor: 'white', }]}>
           <View style={styles.imgContainer}>
-          <Image source={require('/Users/ohadcadji/Documents/Academy Pgh Notes/React_Native/Y3S1-ReplayFX/Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
+          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
           </View>
           <View style={styles.text}>   
           <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
@@ -126,7 +126,7 @@ export default class ScheduleScreen extends React.Component {
         </View>
         <View style={[styles.container, {backgroundColor: 'white', }]}>
           <View style={styles.imgContainer}>
-          <Image source={require('/Users/ohadcadji/Documents/Academy Pgh Notes/React_Native/Y3S1-ReplayFX/Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
+          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
           </View>
           <View style={styles.text}>   
           <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
@@ -136,7 +136,7 @@ export default class ScheduleScreen extends React.Component {
         </View>
         <View style={[styles.container, {backgroundColor: 'white', }]}>
           <View style={styles.imgContainer}>
-          <Image source={require('/Users/ohadcadji/Documents/Academy Pgh Notes/React_Native/Y3S1-ReplayFX/Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
+          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
           </View>
           <View style={styles.text}>   
           <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
@@ -146,7 +146,7 @@ export default class ScheduleScreen extends React.Component {
         </View>
         <View style={[styles.container, {backgroundColor: 'white', }]}>
           <View style={styles.imgContainer}>
-          <Image source={require('/Users/ohadcadji/Documents/Academy Pgh Notes/React_Native/Y3S1-ReplayFX/Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
+          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
           </View>
           <View style={styles.text}>   
           <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
@@ -156,7 +156,7 @@ export default class ScheduleScreen extends React.Component {
         </View>
        <View style={[styles.container, {backgroundColor: 'white', }]}>
           <View style={styles.imgContainer}>
-          <Image source={require('/Users/ohadcadji/Documents/Academy Pgh Notes/React_Native/Y3S1-ReplayFX/Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
+          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
           </View>
           <View style={styles.text}>   
           <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
