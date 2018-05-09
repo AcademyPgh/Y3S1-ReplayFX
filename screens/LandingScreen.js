@@ -10,17 +10,16 @@ import {
 export default class LandingScreen extends React.Component {
   
     render() {
-      props = this.props;
       return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <Text>Landing Screen</Text>
-          <Text>Props: {JSON.stringify(props)}</Text>
+          <Text>Props: {JSON.stringify(this.props)}</Text>
           <View style={{ flex: 1, flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}>
             <Button
-              title="Home"
+              title="Go Home"
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
-                this.props.navigation.navigate('Home');
+                this.props.navigation.navigate('TheHomeRoute');
               }}
             />
             <Button

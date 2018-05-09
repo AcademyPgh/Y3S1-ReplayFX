@@ -48,7 +48,7 @@ const RootStack = StackNavigator(
         title: 'Landing Page',
       }
     },
-    Home: {
+    TheHomeRoute: {
       screen: HomeScreen,
       navigationOptions: {
         title: 'Home',
