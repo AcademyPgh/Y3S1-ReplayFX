@@ -17,11 +17,11 @@ import {
 export default class ScheduleScreen extends React.Component {
 
   PressStar() {
-    Alert.alert('You tapped the button!')
+    Alert.alert('You tapped the button!');
   }
 
   PressText() {
-
+    Alert.alert('You tapped the text!');
   }
 
   render() {
@@ -49,8 +49,7 @@ export default class ScheduleScreen extends React.Component {
         </TouchableHighlight>            
         <View style={styles.text}>
           <View style={styles.textContainer}>
-            <TouchableHighlight onPress={this.PressText}  onPress={() => {                  
-                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
+            <TouchableHighlight onPress={this.PressText}>
               <View>                            
                 <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
                 <Text style={styles.eventTitle}>Hello World</Text>
