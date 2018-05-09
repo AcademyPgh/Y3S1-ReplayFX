@@ -32,9 +32,9 @@ export default class HomeScreen extends Component {
                   <ScrollView> 
        <View style={styles.promoContainer}>
        </View>
-        <View style={[styles.container,]}>
-         <View style={styles.imgContainer}>
-         </View>
+          <View style={[styles.container,]}>
+          <View style={styles.imgContainer}>
+          </View>
          {/*<Text style={styles.text}>props: {JSON.stringify(props)}</Text>*/}
           <Text style={styles.text}
                 onPress={() => {
@@ -46,14 +46,28 @@ export default class HomeScreen extends Component {
         <View style={[styles.container,]}>
          <View style={styles.imgContainer}>
          </View>
-         <Text style={styles.text}>VIEW GAMES</Text>
-        </View>
+         {/*<Text style={styles.text}>props: {JSON.stringify(props)}</Text>*/}
+          <Text style={styles.text}
+                onPress={() => {
+                  /* 1. Navigate to the Schedule route with params */
+                  this.props.navigation.navigate('GamesMain');
+                }}>VIEW GAMES</Text>
+          </View>
        
        <View style={[styles.container,]}>
          <View style={styles.imgContainer}>
          </View>
-         <Text style={styles.text}>FEATURED</Text>
-       </View>
+         {/*<Text style={styles.text}>props: {JSON.stringify(props)}</Text>*/}
+          <Text style={styles.text}
+                  onPress={() => {
+                    /* 1. Navigate to the Schedule route with params */
+                    this.props.navigation.navigate('Schedule', {
+                      scheduleFilter: 'Featured',
+                      appData: 'appDataFromHome'
+                    });
+                  }}
+                >FEATURED</Text>
+          </View>
        
        <View style={[styles.container,]}>
          <View style={styles.imgContainer}>

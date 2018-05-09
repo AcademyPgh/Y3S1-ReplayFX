@@ -20,8 +20,19 @@ import HomeScreen from './screens/HomeScreen';
 import GameListScreen from './screens/GameListScreen';
 import ScheduleScreenContainer from './screens/ScheduleScreenContainer';
 import SponsorsScreen from './screens/SponsorsScreen';
+import PinballDetailsScreen from './screens/PinballDetailsScreen';
+import GamesMain from './screens/GamesMain';
+import EventDetailsScreen from './screens/EventDetailsScreen';
+import ArcadeListScreen from'./screens/ArcadeListScreen';
+import PinballListScreen from'./screens/PinballListScreen';
+import APIScreen from './screens/APIScreen';
 
 export default class App extends React.Component {
+
+  loadEvents() {
+    
+  }
+
   render() {
     return (
       <RootStack />
@@ -65,13 +76,47 @@ const RootStack = StackNavigator(
         title: 'Sponsors',
       }
     },
-    /*GamesMain: {
+    PinballDetails: {
+      screen: PinballDetailsScreen,
+      initialRouteParams: { },
+      navigationOptions: {
+        title: 'Pinball Detail',
+      }
+    },
+    GamesMain: {
       screen: GamesMain,
       initialRouteParams: { },
       navigationOptions: {
         title: 'Choose Your Platform',
       }
-    },*/
+    },
+    EventDetails: {
+      screen: EventDetailsScreen,
+      initialRouteParams: { },
+      navigationOptions: {
+        title: 'Event Detail',
+      }
+    },
+    ArcadeList: {
+      screen: ArcadeListScreen,
+      initialRouteParams: { },
+      navigationOptions: {
+        title: 'Arcade List',
+      }
+    },
+    PinballList: {
+      screen: PinballListScreen,
+      initialRouteParams: { },
+      navigationOptions: {
+        title: 'Pinball List',
+      }
+    },
+    APITest: {
+      screen: APIScreen,
+      navigationOptions: {
+        title: 'API Test',
+      }
+    },
     
     // Featured: {
     //   screen: ScheduleScreenContainer,
