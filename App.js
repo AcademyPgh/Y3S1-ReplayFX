@@ -22,8 +22,14 @@ import ScheduleScreenContainer from './screens/ScheduleScreenContainer';
 import SponsorsScreen from './screens/SponsorsScreen';
 import PinballDetailsScreen from './screens/PinballDetailsScreen';
 import GamesMain from './screens/GamesMain';
+import APIScreen from './screens/APIScreen';
 
 export default class App extends React.Component {
+
+  loadEvents() {
+    
+  }
+
   render() {
     return (
       <RootStack />
@@ -80,6 +86,12 @@ const RootStack = StackNavigator(
       initialRouteParams: { },
       navigationOptions: {
         title: 'Choose Your Platform',
+      }
+    },
+    APITest: {
+      screen: APIScreen,
+      navigationOptions: {
+        title: 'API Test',
       }
     },
     
