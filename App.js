@@ -22,6 +22,7 @@ import ScheduleScreenContainer from './screens/ScheduleScreenContainer';
 import SponsorsScreen from './screens/SponsorsScreen';
 import PinballDetailsScreen from './screens/PinballDetailsScreen';
 import GamesMain from './screens/GamesMain';
+import ArcadeDetailsScreen from './screens/ArcadeDetailsScreen';
 
 export default class App extends React.Component {
   render() {
@@ -80,6 +81,14 @@ const RootStack = StackNavigator(
       initialRouteParams: { },
       navigationOptions: {
         title: 'Choose Your Platform',
+      }
+    },
+
+    ArcadeDetails: {
+      screen: ArcadeDetailsScreen,
+      initialRouteParams: { },
+      navigationOptions: {
+        title: 'Arcade Detail',
       }
     },
     
