@@ -135,6 +135,15 @@ export default class LandingScreen extends React.Component {
               }}
             />
             <Button
+              title="Event Details"
+              onPress={() => {
+                /* 1. Navigate to the Schedule route with params */
+                this.props.navigation.navigate('EventDetails', {
+                  appData: 'appDataFromHome'
+                });
+              }}
+            />
+            <Button
               title="API Test"
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
