@@ -7,6 +7,7 @@ import {
   View,
   ScrollView,
   Image,
+  ImageBackground,
   
 } from 'react-native';
 
@@ -30,15 +31,11 @@ export default class ScheduleScreen extends React.Component {
 
     return(
       
-      <View style={{flex: 1, flexDirection: 'column'}}>
-        
-        
-      
-        <View style={{flex: 9}}>
+      <View style={{flex: 1,}}>
       <ScrollView> 
-        <View style={styles.promoContainer}>
-          <Image source={require('../Images/PromoSpot.jpg')} style={{flex:9}}/>
-        </View>
+
+        <ImageBackground source={require('../Images/PromoSpot.jpg')} style={{height: undefined, width: undefined,}}/>
+  
          <View style={[styles.container, {backgroundColor: 'white', }]}>
           <View style={styles.imgContainer}>
           <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
@@ -166,7 +163,6 @@ export default class ScheduleScreen extends React.Component {
         </View>
         </ScrollView> 
         </View>
-      </View>
       
     );
   }
@@ -203,7 +199,7 @@ const styles = StyleSheet.create({
   },
 
   container: {
-    flex: 1,
+    //flex: 1,
     paddingVertical: 10,
     borderWidth: .5,
     borderColor: '#9ca4ab',
@@ -224,28 +220,19 @@ const styles = StyleSheet.create({
   },
   
   topContainer: {
-    flex: 1,
+    //flex: 1,
     borderBottomWidth: 1,
     borderColor: '#e2e2e2',
     flexDirection: 'row',
   },
 
   dateContainer: {
-    flex: 1,
+    //flex: 1,
     borderBottomWidth: 2,
     borderColor: '#e2e2e2',
     flexDirection: 'row',
   },
 
-  promoContainer: {
-    flex: 1,
-    //width: null,
-    //maxWidth: 100,
-    //justifyContent: 'center',
-    //flexDirection: 'row',
-    //alignItems: 'center',   
-    //resizeMode: 'contain',
-  },
 
 
 });
