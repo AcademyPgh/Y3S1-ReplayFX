@@ -44,7 +44,7 @@ export default class LandingScreen extends React.Component {
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
                 this.props.navigation.navigate('Schedule', {
-                  scheduleFilter: 'Featured',
+                  scheduleFilter: 'featured',
                   appData: 'appDataFromHome'
                 });
               }}
