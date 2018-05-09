@@ -83,7 +83,6 @@ const RootStack = StackNavigator(
         title: 'Pinball Detail',
       }
     },
-
     GamesMain: {
       screen: GamesMain,
       initialRouteParams: { },
