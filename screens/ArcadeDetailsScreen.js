@@ -12,7 +12,7 @@ import {
   AppRegistry,
 } from 'react-native';
 
-export default class PinballDetailsScreen extends React.Component {
+export default class ArcadeDetailsScreen extends React.Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
@@ -29,9 +29,9 @@ export default class PinballDetailsScreen extends React.Component {
          
             <ImageBackground
                 style={styles.headerImage}
-                source={require('../Images/PinballGamePageImage.jpg')}>         
+                source={require('../Images/ArcadeGamePageImage.jpg')}>         
             <Text style={styles.headerText1}>AC/DC PREMIUM</Text>
-            <Text style={styles.headerText2}>PINBALL</Text>
+            <Text style={styles.headerText2}>ARCADE</Text>
             </ImageBackground>          
           
             <ScrollView style={styles.detailsContainer}>

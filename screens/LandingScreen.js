@@ -59,11 +59,10 @@ export default class LandingScreen extends React.Component {
             }}
           />
           <Button
-            title="Compete"
+            title="Arcade Details"
             onPress={() => {
               /* 1. Navigate to the Schedule route with params */
-              this.props.navigation.navigate('Schedule', {
-                scheduleFilter: 'compete',
+              this.props.navigation.navigate('ArcadeDetails', {
                 appData: 'appDataFromHome'
               });
             }}
