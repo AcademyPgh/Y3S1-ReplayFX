@@ -22,6 +22,8 @@ import ScheduleScreenContainer from './screens/ScheduleScreenContainer';
 import SponsorsScreen from './screens/SponsorsScreen';
 import PinballDetailsScreen from './screens/PinballDetailsScreen';
 import GamesMain from './screens/GamesMain';
+import ArcadeListScreen from'./screens/ArcadeListScreen';
+import PinballListScreen from'./screens/PinballListScreen';
 
 export default class App extends React.Component {
   render() {
@@ -80,6 +82,22 @@ const RootStack = StackNavigator(
       initialRouteParams: { },
       navigationOptions: {
         title: 'Choose Your Platform',
+      }
+    },
+
+    ArcadeList: {
+      screen: ArcadeListScreen,
+      initialRouteParams: { },
+      navigationOptions: {
+        title: 'Arcade List',
+      }
+    },
+
+    PinballList: {
+      screen: PinballListScreen,
+      initialRouteParams: { },
+      navigationOptions: {
+        title: 'Pinball List',
       }
     },
     
