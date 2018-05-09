@@ -7,173 +7,319 @@ import {
   View,
   ScrollView,
   Image,
+  ImageBackground,
+  TouchableHighlight,
+  Alert,
+
   
 } from 'react-native';
 
 export default class ScheduleScreen extends React.Component {
 
-  render() {
-    {/*const star = (<
-      Icon name="star-outlined"
-      size={30}
-      color="yellow"
-      on
-    />);
+  PressStar() {
+    Alert.alert('You tapped the button!')
+  }
 
-    const starFilled = (<
-      Icon name="star"
-      size={30}
-      color="yellow"
-      border="grey"
-      on
-    />);*/}
+  PressText() {
+
+  }
+
+  render() {
 
     return(
       
-      <View style={{flex: 1, flexDirection: 'column'}}>
+      <View style={{flex: 1, flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: 'pink'}}>
         
         
-      
-        <View style={{flex: 9}}>
       <ScrollView> 
-        <View style={styles.promoContainer}>
-          <Image source={require('../Images/PromoSpot.jpg')} style={{flex:9}}/>
-        </View>
-         <View style={[styles.container, {backgroundColor: 'white', }]}>
-          <View style={styles.imgContainer}>
-          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
-           {/*{star}*/}
-           </View>
-         
-          <View style={styles.text}>   
-          <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
-          <Text style={styles.eventTitle}>Hello World</Text>
-          <Text style={styles.Location}>4th Floor</Text>
+       
+          <View style={{flex: 1}}>
+          <Image
+          style={styles.promoContainer}
+          source={require('../Images/PromoSpot.jpg')}/>
           </View>
-         </View>
+          
         
-          <View style={[styles.container, {backgroundColor: 'white', }]}>
-          <View style={styles.imgContainer}>
-          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
+      <View style={[styles.container, {backgroundColor: 'white', }]}>
+        <TouchableHighlight onPress={this.PressStar} >
+          <View style={styles.starContainer}>            
+              <Image style={styles.starbutton}
+              source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'},]}/>                            
           </View>
-          <View style={styles.text}>   
-          <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
-          <Text style={styles.eventTitle}>Hola Mundo</Text>
-          <Text style={styles.Location}>4th Floor</Text>
-          </View>
-         </View>
-        
-        <View style={[styles.container, {backgroundColor: 'white', }]}>
-          <View style={styles.imgContainer}>
-          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
-          </View>
-          <View style={styles.text}>   
-          <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
-          <Text style={styles.eventTitle}>שלום עולם</Text>
-          <Text style={styles.Location}>4th Floor</Text>
+        </TouchableHighlight>            
+        <View style={styles.text}>
+          <View style={styles.textContainer}>
+            <TouchableHighlight onPress={this.PressText}  onPress={() => {                  
+                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
+              <View>                            
+                <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
+                <Text style={styles.eventTitle}>Hello World</Text>
+                <Text style={styles.Location}>4th Floor</Text>            
+              </View>                    
+            </TouchableHighlight>
           </View>
         </View>
-        
-        <View style={[styles.container, {backgroundColor: 'white', }]}>
-          <View style={styles.imgContainer}>
-          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
-          </View>
-          <View style={styles.text}>   
-          <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
-          <Text style={styles.eventTitle}>Selam Dünya</Text>
-          <Text style={styles.Location}>4th Floor</Text>
-          </View>
-        </View>
-        <View style={[styles.container, {backgroundColor: 'white', }]}>
-          <View style={styles.imgContainer}>
-          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
-          </View>
-          <View style={styles.text}>   
-          <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
-          <Text style={styles.eventTitle}>Привет мир</Text>
-          <Text style={styles.Location}>4th Floor</Text>
-          </View>
-        </View>
-        <View style={[styles.container, {backgroundColor: 'white', }]}>
-          <View style={styles.imgContainer}>
-          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
-          </View>
-          <View style={styles.text}>   
-          <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
-          <Text style={styles.eventTitle}>你好，世界</Text>
-          <Text style={styles.Location}>4th Floor</Text>
-          </View>
-        </View>
-        <View style={[styles.container, {backgroundColor: 'white', }]}>
-          <View style={styles.imgContainer}>
-          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
-          </View>
-          <View style={styles.text}>   
-          <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
-          <Text style={styles.eventTitle}>Bonjour le Monde</Text>
-          <Text style={styles.Location}>4th Floor</Text>
-          </View>
-        </View>
-        <View style={[styles.container, {backgroundColor: 'white', }]}>
-          <View style={styles.imgContainer}>
-          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
-          </View>
-          <View style={styles.text}>   
-          <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
-          <Text style={styles.eventTitle}>Bonjour le Monde</Text>
-          <Text style={styles.Location}>4th Floor</Text>
-          </View>
-        </View>
-        <View style={[styles.container, {backgroundColor: 'white', }]}>
-          <View style={styles.imgContainer}>
-          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
-          </View>
-          <View style={styles.text}>   
-          <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
-          <Text style={styles.eventTitle}>Saluton Mondo</Text>
-          <Text style={styles.Location}>4th Floor</Text>
-          </View>
-        </View>
-        <View style={[styles.container, {backgroundColor: 'white', }]}>
-          <View style={styles.imgContainer}>
-          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
-          </View>
-          <View style={styles.text}>   
-          <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
-          <Text style={styles.eventTitle}>Hello Mond</Text>
-          <Text style={styles.Location}>4th Floor</Text>
-          </View>
-        </View>
-        <View style={[styles.container, {backgroundColor: 'white', }]}>
-          <View style={styles.imgContainer}>
-          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
-          </View>
-          <View style={styles.text}>   
-          <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
-          <Text style={styles.eventTitle}>Hello Mond</Text>
-          <Text style={styles.Location}>4th Floor</Text>
-          </View>
-        </View>
-       <View style={[styles.container, {backgroundColor: 'white', }]}>
-          <View style={styles.imgContainer}>
-          <Image source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
-          </View>
-          <View style={styles.text}>   
-          <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
-          <Text style={styles.eventTitle}>Chào thế Giới</Text>
-          <Text style={styles.Location}>4th Floor</Text>
-          </View>
-        </View>
-        </ScrollView> 
-        </View>
+
       </View>
-      
+        
+      <View style={[styles.container, {backgroundColor: 'white', }]}>
+        <TouchableHighlight onPress={this.PressStar} >
+          <View style={styles.starContainer}>            
+              <Image style={styles.starbutton}
+              source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'},]}/>                            
+          </View>
+        </TouchableHighlight>
+
+        <View style={styles.text}>
+          <View style={styles.textContainer}>
+            <TouchableHighlight onPress={this.PressText} onPress={() => {                  
+                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
+              <View>     
+                <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
+                <Text style={styles.eventTitle}>Hola Mundo</Text>
+                <Text style={styles.Location}>4th Floor</Text>
+              </View>         
+            </TouchableHighlight>
+          </View>
+        </View>
+
+      </View>
+        
+      <View style={[styles.container, {backgroundColor: 'white', }]}>
+        <TouchableHighlight onPress={this.PressStar} >
+          <View style={styles.starContainer}>            
+            <Image style={styles.starbutton}
+            source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'},]}/>                            
+          </View>
+        </TouchableHighlight>
+
+        <View style={styles.text}>
+          <View style={styles.textContainer}> 
+            <TouchableHighlight onPress={this.PressText} onPress={() => {                  
+                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
+              <View>    
+                <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
+                <Text style={styles.eventTitle}>שלום עולם</Text>
+                <Text style={styles.Location}>4th Floor</Text>
+              </View>         
+            </TouchableHighlight>
+          </View>
+        </View>
+
+      </View>
+        
+      <View style={[styles.container, {backgroundColor: 'white', }]}>
+        <TouchableHighlight onPress={this.PressStar} >
+          <View style={styles.starContainer}>            
+            <Image style={styles.starbutton}
+            source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'},]}/>                            
+          </View>
+        </TouchableHighlight>
+
+        <View style={styles.text}>
+          <View style={styles.textContainer}>   
+            <TouchableHighlight onPress={this.PressText} onPress={() => {                  
+                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
+              <View>  
+                <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
+                <Text style={styles.eventTitle}>Selam Dünya</Text>
+                <Text style={styles.Location}>4th Floor</Text>
+              </View>         
+            </TouchableHighlight>
+          </View>
+        </View>
+
+      </View>
+
+      <View style={[styles.container, {backgroundColor: 'white', }]}>
+        <TouchableHighlight onPress={this.PressStar} >
+          <View style={styles.starContainer}>            
+            <Image style={styles.starbutton}
+            source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'},]}/>                            
+          </View>
+        </TouchableHighlight>
+
+        <View style={styles.text}>  
+          <View style={styles.textContainer}> 
+            <TouchableHighlight onPress={this.PressText} onPress={() => {                  
+                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
+              <View>  
+                <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
+                <Text style={styles.eventTitle}>Привет мир</Text>
+                <Text style={styles.Location}>4th Floor</Text>
+              </View>         
+            </TouchableHighlight>
+          </View>
+        </View>
+
+      </View>
+
+      <View style={[styles.container, {backgroundColor: 'white', }]}>
+        <TouchableHighlight onPress={this.PressStar} >
+          <View style={styles.starContainer}>            
+            <Image style={styles.starbutton}
+            source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'},]}/>                            
+          </View>
+        </TouchableHighlight>
+
+        <View style={styles.text}>
+          <View style={styles.textContainer}> 
+            <TouchableHighlight onPress={this.PressText} onPress={() => {                  
+                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
+              <View>    
+                <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
+                <Text style={styles.eventTitle}>你好，世界</Text>
+                <Text style={styles.Location}>4th Floor</Text>
+              </View>         
+            </TouchableHighlight>
+          </View>
+        </View>
+
+      </View>
+
+      <View style={[styles.container, {backgroundColor: 'white', }]}>
+        <TouchableHighlight onPress={this.PressStar} >
+          <View style={styles.starContainer}>            
+              <Image style={styles.starbutton}
+              source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'},]}/>                            
+          </View>
+        </TouchableHighlight>
+
+        <View style={styles.text}>
+          <View style={styles.textContainer}>
+            <TouchableHighlight onPress={this.PressText} onPress={() => {                  
+                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
+              <View>     
+                <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
+                <Text style={styles.eventTitle}>Bonjour le Monde</Text>
+                <Text style={styles.Location}>4th Floor</Text>
+              </View>         
+            </TouchableHighlight>
+          </View>
+        </View>
+
+      </View>
+
+      <View style={[styles.container, {backgroundColor: 'white', }]}>
+        <TouchableHighlight onPress={this.PressStar} >
+          <View style={styles.starContainer}>            
+            <Image style={styles.starbutton}
+            source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'},]}/>                            
+          </View>
+        </TouchableHighlight>
+
+        <View style={styles.text}>
+          <View style={styles.textContainer}>   
+            <TouchableHighlight onPress={this.PressText} onPress={() => {                  
+                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
+              <View>  
+                <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
+                <Text style={styles.eventTitle}>Bonjour le Monde</Text>
+                <Text style={styles.Location}>4th Floor</Text>
+              </View>         
+            </TouchableHighlight>          
+          </View>
+        </View>
+
+      </View>
+
+      <View style={[styles.container, {backgroundColor: 'white', }]}>
+        <TouchableHighlight onPress={this.PressStar} >
+          <View style={styles.starContainer}>            
+            <Image style={styles.starbutton}
+            source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'},]}/>                            
+          </View>
+        </TouchableHighlight>
+
+        <View style={styles.text}>
+          <View style={styles.textContainer}>  
+           <TouchableHighlight onPress={this.PressText} onPress={() => {                  
+                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
+             <View>   
+                <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
+                <Text style={styles.eventTitle}>Saluton Mondo</Text>
+                <Text style={styles.Location}>4th Floor</Text>
+              </View>         
+            </TouchableHighlight>
+          </View>
+        </View>
+
+      </View>
+
+      <View style={[styles.container, {backgroundColor: 'white', }]}>
+        <TouchableHighlight onPress={this.PressStar} >
+          <View style={styles.starContainer}>            
+            <Image style={styles.starbutton}
+            source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'},]}/>                            
+          </View>
+        </TouchableHighlight>
+          
+        <View style={styles.text}>
+          <View style={styles.textContainer}>
+            <TouchableHighlight onPress={this.PressText} onPress={() => {                  
+                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
+              <View>     
+                <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
+                <Text style={styles.eventTitle}>Hello Mond</Text>
+                <Text style={styles.Location}>4th Floor</Text>
+              </View>         
+            </TouchableHighlight>
+          </View>
+        </View>
+
+      </View>
+
+        <View style={[styles.container, {backgroundColor: 'white', }]}>
+          <TouchableHighlight onPress={this.PressStar} >
+            <View style={styles.starContainer}>            
+              <Image style={styles.starbutton}
+              source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'},]}/>                            
+            </View>
+          </TouchableHighlight>
+
+          <View style={styles.text}>
+            <View style={styles.textContainer}>  
+              <TouchableHighlight onPress={this.PressText} onPress={() => {                  
+                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
+                <View>   
+                  <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
+                  <Text style={styles.eventTitle}>Hello Mond</Text>
+                  <Text style={styles.Location}>4th Floor</Text>
+                </View>         
+              </TouchableHighlight>
+            </View>
+          </View>
+
+        </View>
+
+        <View style={[styles.container, {backgroundColor: 'white', }]}>
+          <TouchableHighlight onPress={this.PressStar} >
+            <View style={styles.starContainer}>            
+              <Image style={styles.starbutton}
+              source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'},]}/>                            
+            </View>
+          </TouchableHighlight>
+
+          <View style={styles.text}>
+            <View style={styles.textContainer}>
+              <TouchableHighlight onPress={this.PressText} onPress={() => {                  
+                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
+                <View>     
+                  <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
+                  <Text style={styles.eventTitle}>Chào thế Giới</Text>
+                  <Text style={styles.Location}>4th Floor</Text>
+                </View>         
+              </TouchableHighlight>
+            </View>
+          </View>
+
+        </View>
+        
+      </ScrollView> 
+    </View>      
     );
   }
 }
-
-
-
 
 const styles = StyleSheet.create({
   
@@ -210,7 +356,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row',    
   },
 
-  imgContainer: {
+  starContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    flexDirection: 'row',
+    width: 20,
+    paddingLeft: 40,
+    alignItems: 'center',   
+  },
+
+  starbutton: {
+    backgroundColor: '#859a9b',
     justifyContent: 'center',
     flexDirection: 'row',
     width: 20,
@@ -219,33 +375,20 @@ const styles = StyleSheet.create({
   },
 
   text: {
+    flex: 5,
     justifyContent: 'center',
     paddingLeft: 40,
   },
-  
-  topContainer: {
-    flex: 1,
-    borderBottomWidth: 1,
-    borderColor: '#e2e2e2',
-    flexDirection: 'row',
+
+  textContainer: {
+    width: '50%',
+    borderRadius: 20,
+    padding: 0,
   },
 
-  dateContainer: {
-    flex: 1,
-    borderBottomWidth: 2,
-    borderColor: '#e2e2e2',
-    flexDirection: 'row',
+  promoContainer: {  
+    width: '100%',
+    resizeMode: 'contain',
   },
-
-  promoContainer: {
-    flex: 1,
-    //width: null,
-    //maxWidth: 100,
-    //justifyContent: 'center',
-    //flexDirection: 'row',
-    //alignItems: 'center',   
-    //resizeMode: 'contain',
-  },
-
 
 });

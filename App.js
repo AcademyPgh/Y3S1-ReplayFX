@@ -65,6 +65,13 @@ const RootStack = StackNavigator(
         title: 'Sponsors',
       }
     },
+    /*GamesMain: {
+      screen: GamesMain,
+      initialRouteParams: { },
+      navigationOptions: {
+        title: 'Choose Your Platform',
+      }
+    },*/
     
     // Featured: {
     //   screen: ScheduleScreenContainer,
