@@ -16,12 +16,17 @@ import {
 
 export default class ScheduleScreen extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.PressText=this.PressText.bind(this);
+  }
+
   PressStar() {
     Alert.alert('You tapped the button!');
   }
 
   PressText() {
-    Alert.alert('You tapped the text!');
+    this.props.navigation.navigate('Schedule');  
   }
 
   render() {
@@ -71,8 +76,7 @@ export default class ScheduleScreen extends React.Component {
 
         <View style={styles.text}>
           <View style={styles.textContainer}>
-            <TouchableHighlight onPress={this.PressText} onPress={() => {                  
-                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
+            <TouchableHighlight onPress={this.PressText}>
               <View>     
                 <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
                 <Text style={styles.eventTitle}>Hola Mundo</Text>
@@ -94,8 +98,7 @@ export default class ScheduleScreen extends React.Component {
 
         <View style={styles.text}>
           <View style={styles.textContainer}> 
-            <TouchableHighlight onPress={this.PressText} onPress={() => {                  
-                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
+            <TouchableHighlight onPress={this.PressText}>
               <View>    
                 <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
                 <Text style={styles.eventTitle}>שלום עולם</Text>
@@ -117,8 +120,7 @@ export default class ScheduleScreen extends React.Component {
 
         <View style={styles.text}>
           <View style={styles.textContainer}>   
-            <TouchableHighlight onPress={this.PressText} onPress={() => {                  
-                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
+            <TouchableHighlight onPress={this.PressText}>
               <View>  
                 <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
                 <Text style={styles.eventTitle}>Selam Dünya</Text>
@@ -140,8 +142,7 @@ export default class ScheduleScreen extends React.Component {
 
         <View style={styles.text}>  
           <View style={styles.textContainer}> 
-            <TouchableHighlight onPress={this.PressText} onPress={() => {                  
-                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
+            <TouchableHighlight onPress={this.PressText}>
               <View>  
                 <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
                 <Text style={styles.eventTitle}>Привет мир</Text>
@@ -163,9 +164,8 @@ export default class ScheduleScreen extends React.Component {
 
         <View style={styles.text}>
           <View style={styles.textContainer}> 
-            <TouchableHighlight onPress={this.PressText} onPress={() => {                  
-                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
-              <View>    
+            <TouchableHighlight onPress={this.PressText}>
+              <View>
                 <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
                 <Text style={styles.eventTitle}>你好，世界</Text>
                 <Text style={styles.Location}>4th Floor</Text>
@@ -186,8 +186,7 @@ export default class ScheduleScreen extends React.Component {
 
         <View style={styles.text}>
           <View style={styles.textContainer}>
-            <TouchableHighlight onPress={this.PressText} onPress={() => {                  
-                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
+            <TouchableHighlight onPress={this.PressText}>
               <View>     
                 <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
                 <Text style={styles.eventTitle}>Bonjour le Monde</Text>
@@ -209,8 +208,7 @@ export default class ScheduleScreen extends React.Component {
 
         <View style={styles.text}>
           <View style={styles.textContainer}>   
-            <TouchableHighlight onPress={this.PressText} onPress={() => {                  
-                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
+            <TouchableHighlight onPress={this.PressText}>
               <View>  
                 <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
                 <Text style={styles.eventTitle}>Bonjour le Monde</Text>
@@ -232,8 +230,7 @@ export default class ScheduleScreen extends React.Component {
 
         <View style={styles.text}>
           <View style={styles.textContainer}>  
-           <TouchableHighlight onPress={this.PressText} onPress={() => {                  
-                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
+            <TouchableHighlight onPress={this.PressText}>
              <View>   
                 <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
                 <Text style={styles.eventTitle}>Saluton Mondo</Text>
@@ -255,8 +252,7 @@ export default class ScheduleScreen extends React.Component {
           
         <View style={styles.text}>
           <View style={styles.textContainer}>
-            <TouchableHighlight onPress={this.PressText} onPress={() => {                  
-                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
+            <TouchableHighlight onPress={this.PressText}>
               <View>     
                 <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
                 <Text style={styles.eventTitle}>Hello Mond</Text>
@@ -278,8 +274,7 @@ export default class ScheduleScreen extends React.Component {
 
           <View style={styles.text}>
             <View style={styles.textContainer}>  
-              <TouchableHighlight onPress={this.PressText} onPress={() => {                  
-                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
+             <TouchableHighlight onPress={this.PressText}>
                 <View>   
                   <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
                   <Text style={styles.eventTitle}>Hello Mond</Text>
@@ -301,8 +296,7 @@ export default class ScheduleScreen extends React.Component {
 
           <View style={styles.text}>
             <View style={styles.textContainer}>
-              <TouchableHighlight onPress={this.PressText} onPress={() => {                  
-                  this.props.navigation.navigate('Schedule'); underlayColor="yellow"}}>
+              <TouchableHighlight onPress={this.PressText}>
                 <View>     
                   <Text style={styles.Time}>7:00 PM-9:00 PM</Text>
                   <Text style={styles.eventTitle}>Chào thế Giới</Text>
