@@ -53,7 +53,7 @@ export default class LandingScreen extends React.Component {
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
                 this.props.navigation.navigate('Schedule', {
-                  scheduleFilter: 'open-play',
+                  scheduleFilter: 'games',
                   appData: 'appDataFromHome'
                 });
               }}
@@ -63,7 +63,7 @@ export default class LandingScreen extends React.Component {
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
                 this.props.navigation.navigate('Schedule', {
-                  scheduleFilter: 'compete',
+                  scheduleFilter: 'competitions',
                   appData: 'appDataFromHome'
                 });
               }}
@@ -73,7 +73,7 @@ export default class LandingScreen extends React.Component {
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
                 this.props.navigation.navigate('Schedule', {
-                  scheduleFilter: 'live-music',
+                  scheduleFilter: 'music',
                   appData: 'appDataFromHome'
                 });
               }}
@@ -83,7 +83,7 @@ export default class LandingScreen extends React.Component {
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
                 this.props.navigation.navigate('Schedule', {
-                  scheduleFilter: 'seminars',
+                  scheduleFilter: 'seminar',
                   appData: 'appDataFromHome'
                 });
               }}
@@ -102,6 +102,16 @@ export default class LandingScreen extends React.Component {
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
                 this.props.navigation.navigate('Sponsors', {
+                  appData: 'appDataFromHome'
+                });
+              }}
+            />
+            <Button
+              title="Vendors"
+              onPress={() => {
+                /* 1. Navigate to the Schedule route with params */
+                this.props.navigation.navigate('Schedule', {
+                  scheduleFilter: 'vendors',
                   appData: 'appDataFromHome'
                 });
               }}

@@ -18,11 +18,20 @@ export default class ScheduleScreen extends React.Component {
 
   constructor(props) {
     super(props);
+
+    //this.eventList = this.props.screenProps.apiData.events;
+
     this.PressText=this.PressText.bind(this);
+    this.PressStar=this.PressStar.bind(this);
   }
 
   PressStar() {
-    Alert.alert('You tapped the button!');
+    //Alert.alert('You tapped the button!');
+    // if (this.state.filter == 'vendors') {
+    //   this.setState({filter: 'featured'});
+    // } else {
+    //   this.setState({filter: 'vendors'});
+    // }
   }
 
   PressText() {
@@ -35,8 +44,6 @@ export default class ScheduleScreen extends React.Component {
     return(
       
       <View style={{flex: 1, flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: 'black'}}>
-        
-        
       <ScrollView> 
         <View style={{flex: 1}}>
           <Image
@@ -45,30 +52,26 @@ export default class ScheduleScreen extends React.Component {
         </View>
 
         {
-          eventList.map( (event) => {
+          eventList
+            .filter( (event) => {
+              //return event.title.includes('Pinburgh');
 
-            return (
-              <View style={[styles.container, {backgroundColor: 'white', }]}>
-                <TouchableHighlight onPress={this.PressStar} >
-                  <View style={styles.starContainer}>            
-                      <Image style={styles.starbutton}
-                      source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'},]}/>                            
-                  </View>
-                </TouchableHighlight>            
-                <View style={styles.text}>
-                  <View style={styles.textContainer}>
-                    <TouchableHighlight onPress={this.PressText}>
-                      <View>                            
-                        <Text style={styles.Time}>{event.startTime12 + '-' + event.endTime12}</Text>
-                        <Text style={styles.eventTitle}>{event.title}</Text>
-                        <Text style={styles.Location}>{event.location}</Text>            
-                      </View>                    
-                    </TouchableHighlight>
-                  </View>
-                </View>
-              </View>
-            );
+              //go into the replayEventTypes array
+              //check the name of each eventType in the array
+              //if the name == 'featured', return true.
+              //otherwise, return false
+              
+              return event.replayEventTypes.some( (eventType) => {
+                return eventType.name == this.props.filter;
+              });
+            })
+            .slice(0, 10)
+            .map( (event) => {
+              return (
+                <EventItem key={event.id} event={event} />
+              );
           })
+
         }
         
       
@@ -79,18 +82,47 @@ export default class ScheduleScreen extends React.Component {
   }
 }
 
+class EventItem extends React.Component {
+
+  render() {
+    const event = this.props.event;
+
+    return (
+      <View key={event.id} style={[styles.container, {backgroundColor: 'white', }]}>
+        <View style={{flex: 1, justifyContent: 'center'}}>
+          <TouchableHighlight onPress={this.PressStar} >
+            <View style={styles.starContainer}>            
+                <Image style={styles.starbutton}
+                source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'},]}/>                            
+            </View>
+          </TouchableHighlight>   
+        </View>       
+        <View style={{flex: 4}}>  
+          <TouchableHighlight >{/*onPress={this.PressText}>*/}
+            <View style={{flex: 1}}>                            
+              <Text style={styles.Time}>{event.startTime12 + '-' + event.endTime12}</Text>
+              <Text style={styles.eventTitle}>{event.title}</Text>
+              <Text style={styles.Location}>{event.location}</Text>            
+            </View>                    
+          </TouchableHighlight>
+        </View>
+      </View>
+    );
+  }
+}
+
 const styles = StyleSheet.create({
   
 
   eventTitle: {
-    paddingBottom: 5,
+    paddingVertical: 2,
     color: 'black',
     fontWeight: 'bold',
     fontSize: 16,
-   
+
   },
   Time: {
-    paddingBottom: 5,
+    paddingVertical: 2,
     color: '#9ca4ab',
     fontSize: 16,
     
@@ -108,10 +140,10 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    paddingVertical: 10,
-    borderWidth: .5,
+    borderWidth: StyleSheet.hairlineWidth * 2,
     borderColor: '#9ca4ab',
-    flexDirection: 'row',    
+    flexDirection: 'row',   
+    paddingVertical: 5, 
   },
 
   starContainer: {
@@ -133,15 +165,13 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    flex: 5,
-    justifyContent: 'center',
-    paddingLeft: 40,
+
   },
 
   textContainer: {
-    width: '50%',
-    borderRadius: 20,
-    padding: 0,
+    // width: '50%',
+    // borderRadius: 20,
+    // padding: 0,
   },
 
   promoContainer: {  
