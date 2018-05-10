@@ -23,11 +23,49 @@ import SponsorsScreen from './screens/SponsorsScreen';
 import PinballDetailsScreen from './screens/PinballDetailsScreen';
 import GamesMain from './screens/GamesMain';
 import ArcadeDetailsScreen from './screens/ArcadeDetailsScreen';
+import EventDetailsScreen from './screens/EventDetailsScreen';
+import ArcadeListScreen from'./screens/ArcadeListScreen';
+import PinballListScreen from'./screens/PinballListScreen';
+import APIScreen from './screens/APIScreen';
 
 export default class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    
+    
+
+    const skipAPILoad = true;
+
+    let apiData = {};
+
+    if (skipAPILoad) {
+      //load sample api data
+      //apiData = {}
+    }
+
+    this.state = {
+      apiLoaded: skipAPILoad,
+      apiData: apiData
+    }
+  }
+
+  handleAPILoaded (apiData) {
+    this.setState({
+      apiLoaded: true, 
+      apiData: apiData
+    });
+  }
+
   render() {
+    let content = <APIScreen dataLoaded={(apiData) => {this.handleAPILoaded(apiData)}}/>;
+
+    if (this.state.apiLoaded) {
+      content = <RootStack screenProps={{apiData: this.state.apiData}}/>;
+    }
+
     return (
-      <RootStack />
+      content
     );
   }
 }
@@ -55,7 +93,7 @@ const RootStack = StackNavigator(
       }
     },
     Games: {
-      screen: GameListScreen,
+    screen: GameListScreen,
       initialRouteParams: { },
       navigationOptions: {
         title: 'Games',
@@ -75,7 +113,6 @@ const RootStack = StackNavigator(
         title: 'Pinball Detail',
       }
     },
-
     GamesMain: {
       screen: GamesMain,
       initialRouteParams: { },
@@ -83,12 +120,38 @@ const RootStack = StackNavigator(
         title: 'Choose Your Platform',
       }
     },
-
     ArcadeDetails: {
       screen: ArcadeDetailsScreen,
       initialRouteParams: { },
       navigationOptions: {
         title: 'Arcade Detail',
+      }
+    }
+    EventDetails: {
+      screen: EventDetailsScreen,
+      initialRouteParams: { },
+      navigationOptions: {
+        title: 'Event Detail',
+      }
+    },
+    ArcadeList: {
+      screen: ArcadeListScreen,
+      initialRouteParams: { },
+      navigationOptions: {
+        title: 'Arcade List',
+      }
+    },
+    PinballList: {
+      screen: PinballListScreen,
+      initialRouteParams: { },
+      navigationOptions: {
+        title: 'Pinball List',
+      }
+    },
+    APITest: {
+      screen: APIScreen,
+      navigationOptions: {
+        title: 'API Test',
       }
     },
     
@@ -120,7 +183,6 @@ const RootStack = StackNavigator(
   }
 );
 
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -139,4 +201,3 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
-

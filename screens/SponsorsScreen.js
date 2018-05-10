@@ -27,21 +27,21 @@ export default class SponsorsScreen extends React.Component {
         // What if you add `height: 300` instead of `flex: 1`?      
         <ScrollView style={styles.background}> 
           
-            <View style={styles.container}>
+            <View style={styles.container1}>
                 <View style={styles.imgcontainer}>
-                <Image source={require('../Images/PairLogo.jpg')}/>
+                <Image source={require('../Images/pair-logo-red.png')}/>
                 </View>
             </View>
   
-           <View style={styles.container}>
+           <View style={styles.container1}>
                 <View style={styles.imgcontainer}>
-                <Image source={require('../Images/LFGLogo.jpg')}/>
+                <Image source={require('../Images/lfgtranspred.png')}/>
                 </View>
             </View>
   
-             <View style={styles.container}>
+             <View style={styles.container2}>
                 <View style={styles.imgcontainer}>
-                <Image source={require('../Images/AcademyLogo.jpg')}/>
+                <Image source={require('../Images/AcademyTranspRed.png')}/>
                 </View>
             </View>
            
@@ -59,9 +59,18 @@ export default class SponsorsScreen extends React.Component {
     
    
    
-    container: {
-      flex: 3,
+     
+    container1: {
+      height: '33.3333%',
       paddingVertical: 10,
+      borderWidth: .4,
+      borderColor: '#9ca4ab',
+      justifyContent: 'center',
+      
+    },
+      container2: {
+      height: '33.3333%',
+      paddingVertical: 50,
       borderWidth: .4,
       borderColor: '#9ca4ab',
       justifyContent: 'center',
@@ -74,7 +83,7 @@ export default class SponsorsScreen extends React.Component {
   
     },
     background:{
-      flex: 1,
+      height: 300,
       backgroundColor: 'whitesmoke',
       borderColor: '#9ca4ab',
      
