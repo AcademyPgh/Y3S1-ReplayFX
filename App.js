@@ -126,7 +126,7 @@ const RootStack = StackNavigator(
       navigationOptions: {
         title: 'Arcade Detail',
       }
-    }
+    },
     EventDetails: {
       screen: EventDetailsScreen,
       initialRouteParams: { },
