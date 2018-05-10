@@ -1,5 +1,6 @@
 // /public - gives an array of the events
 
+export default events =
 [
     {
         "replayEventTypes": [
@@ -6123,4 +6124,4 @@
         "endTime12": "11:00 PM",
         "imageUrl": null
     }
-]
+];

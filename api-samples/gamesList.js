@@ -1,4 +1,4 @@
-const gamesList =
+export default games =
 [
     {
         "replayGameLocations": [
@@ -13335,4 +13335,3 @@ const gamesList =
         "imageUrl": null
     }
 ];
-export default gamesList;

@@ -33,12 +33,17 @@ export default class PinballListSceen extends React.Component {
       };
     }
 
+  constructor(props) {
+    super(props);
+
+    this.games = this.props.screenProps.apiData.games;
+  }
+
   render() {
     let ScreenHeight = Dimensions.get("window").height;
     let ScreenWidth = Dimensions.get("window").width;
 
   
-    
     return (
       <View style={{
         flex: 1,

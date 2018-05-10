@@ -14,6 +14,7 @@ import {
   View
 } from 'react-native';
 import { createNavigator, TabRouter, StackNavigator, TabNavigator, TabBarTop } from 'react-navigation';
+import {events, games, eventCategories, gameTypes} from './api-samples/sampleData';
 
 import LandingScreen from './screens/LandingScreen';
 import HomeScreen from './screens/HomeScreen';
@@ -32,8 +33,6 @@ export default class App extends React.Component {
 
   constructor(props) {
     super(props);
-    
-    
 
     const skipAPILoad = true;
 
@@ -41,7 +40,12 @@ export default class App extends React.Component {
 
     if (skipAPILoad) {
       //load sample api data
-      //apiData = {}
+      apiData = {
+        events: events,
+        games: games,
+        eventCategories: eventCategories,
+        gameTypes: gameTypes
+      }
     }
 
     this.state = {

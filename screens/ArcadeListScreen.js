@@ -14,7 +14,6 @@ import {
   TouchableHighlight,
   Alert,
 } from 'react-native';
-import gamesList from '../api-samples/gamesList.js';
 
 export default class ArcadeListScreen extends React.Component {
 
@@ -30,6 +29,8 @@ export default class ArcadeListScreen extends React.Component {
 
   constructor(props) {
     super(props);
+
+    this.games = this.props.screenProps.apiData.games;
 
     this.state = {
       searchFilter: '2001',
@@ -80,14 +81,14 @@ export default class ArcadeListScreen extends React.Component {
          }}>
           <ScrollView>
         
-            { gamesList.filter(game =>{
+            { this.games.filter(game =>{
                 const gameType = game.replayGameType;
                 const isArcade = gameType.name == 'Arcade';
 
                 return isArcade;
-            })       
+            })
             
-            .splice(0,10).map((game, index) => {
+            .splice(0,100).map((game, index) => {
              let style = [styles.item1];
              if (index % 2 != 0){
                  style.push(styles.item2);
