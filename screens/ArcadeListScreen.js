@@ -41,7 +41,7 @@ export default class ArcadeListScreen extends React.Component {
   showGameDetails(game) {
     //Alert.alert("You booped game id " + game.id + ":" + game.gameTitle + "!");
     
-    this.props.navigation.navigate("PinballDetails", {gameInfo: game});
+    this.props.navigation.navigate("ArcadeDetails", {gameInfo: game});
   }
 
   render() {

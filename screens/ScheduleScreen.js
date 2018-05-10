@@ -10,9 +10,13 @@ import {
   ImageBackground,
   TouchableHighlight,
   Alert,
+  Dimensions
 
   
 } from 'react-native';
+import ScalableImage from 'react-native-scalable-image';
+
+const fullWidth = Dimensions.get('window').width;
 
 export default class ScheduleScreen extends React.Component {
 
@@ -45,12 +49,11 @@ export default class ScheduleScreen extends React.Component {
       
       <View style={{flex: 1, flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: 'black'}}>
       <ScrollView> 
-        <View style={{flex: 1}}>
-          <Image
+          <ScalableImage width={fullWidth}
           style={styles.promoContainer}
           source={require('../Images/PromoSpot.jpg')}/>
-        </View>
 
+        
         {
           this.eventList
             .filter( (event) => {
@@ -65,7 +68,7 @@ export default class ScheduleScreen extends React.Component {
                 return eventType.name == this.props.filter;
               });
             })
-            .slice(0, 10)
+            .slice(0, 100)
             .map( (event) => {
               return (
                 <EventItem key={event.id} event={event} />
@@ -176,7 +179,7 @@ const styles = StyleSheet.create({
 
   promoContainer: {  
     width: '100%',
-    resizeMode: 'contain',
+    //resizeMode: 'contain',
   },
 
 });

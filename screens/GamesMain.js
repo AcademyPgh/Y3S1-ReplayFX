@@ -4,7 +4,7 @@
  * @flow
  */
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import { ScrollView, StyleSheet, Text, View, Image, TouchableHighlight} from 'react-native';
 
 export default class GamesMain extends Component {
   
@@ -21,30 +21,34 @@ export default class GamesMain extends Component {
       // The parent will not have dimensions, so the children can't expand.
       // What if you add `height: 300` instead of `flex: 1`?      
       <ScrollView style={styles.background}> 
+        <TouchableHighlight onPress={this.PressChevronPinball} onPress={this.PressChevronPinball} onPress={() => {                  
+          this.props.navigation.navigate('PinballList')}}>
           <View style={[styles.container, {backgroundColor: 'whitesmoke', }]}>
             <View style={styles.text}>   
                <Text style={styles.Font}>PINBALL</Text>
             </View>
-            <TouchableOpacity onPress={this.PressChevronPinball} onPress={this.PressChevronPinball} onPress={() => {                  
-              this.props.navigation.navigate('PinballList')}}>
+
               <View style={styles.imgcontainer}>
               <Image source={require('../Images/chevron.png')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
               </View>
-            </TouchableOpacity>
+            
          </View>
+        </TouchableHighlight>
 
-         <View style={[styles.container, {backgroundColor: 'whitesmoke', }]}>
+        <TouchableHighlight onPress={this.PressChevronArcade} onPress={this.PressChevronArcade} onPress={() => {   
+          this.props.navigation.navigate('ArcadeList')}}>
+
+          <View style={[styles.container, {backgroundColor: 'whitesmoke', }]}>
             <View style={styles.text}>   
               <Text style={styles.Font}>ARCADE</Text>
             </View>
-            <TouchableOpacity onPress={this.PressChevronArcade} onPress={this.PressChevronArcade} onPress={() => {                  
-                this.props.navigation.navigate('ArcadeList')}}>
+
                 <View style={styles.imgcontainer}>
                 <Image source={require('../Images//chevron.png')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
                 </View>
-            </TouchableOpacity>
-         
-         </View>
+          
+          </View>
+        </TouchableHighlight>
         
        
         </ScrollView> 
@@ -62,7 +66,7 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
     color: '#969696',
     fontSize: 28,
-    fontFamily: 'Nunito Light',
+    //fontFamily: 'Nunito Light',
     
     
   },
