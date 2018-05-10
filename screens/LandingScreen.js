@@ -4,7 +4,8 @@ import {
   StyleSheet,
   Text,
   Button,
-  View
+  View,
+  ScrollView,
 } from 'react-native';
 
 export default class LandingScreen extends React.Component {
@@ -13,13 +14,17 @@ export default class LandingScreen extends React.Component {
       return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <Text>Landing Screen</Text>
-          <Text>Props: {JSON.stringify(this.props)}</Text>
+          <View style={{flex: 1}}>
+            <ScrollView>
+              <Text>Props: {JSON.stringify(this.props).substr(0, 1000)}</Text>
+            </ScrollView>
+          </View>
           <View style={{ flex: 1, flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}>
             <Button
               title="Go Home"
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
-                this.props.navigation.navigate('TheHomeRoute');
+                this.props.navigation.navigate('Home');
               }}
             />
             <Button
@@ -34,7 +39,7 @@ export default class LandingScreen extends React.Component {
               onPress={() => {
                 /* 1. Navigate to the Games route with no params */
                 this.props.navigation.navigate('Games', {
-                  appData: 'appDataFromHome'
+                  gameList: this.props.screenProps.apiData.games
                 });
               }}
             />
