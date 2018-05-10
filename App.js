@@ -22,6 +22,7 @@ import ScheduleScreenContainer from './screens/ScheduleScreenContainer';
 import SponsorsScreen from './screens/SponsorsScreen';
 import PinballDetailsScreen from './screens/PinballDetailsScreen';
 import GamesMain from './screens/GamesMain';
+import ArcadeDetailsScreen from './screens/ArcadeDetailsScreen';
 import EventDetailsScreen from './screens/EventDetailsScreen';
 import ArcadeListScreen from'./screens/ArcadeListScreen';
 import PinballListScreen from'./screens/PinballListScreen';
@@ -119,6 +120,13 @@ const RootStack = StackNavigator(
         title: 'Choose Your Platform',
       }
     },
+    ArcadeDetails: {
+      screen: ArcadeDetailsScreen,
+      initialRouteParams: { },
+      navigationOptions: {
+        title: 'Arcade Detail',
+      }
+    }
     EventDetails: {
       screen: EventDetailsScreen,
       initialRouteParams: { },
