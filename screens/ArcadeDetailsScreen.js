@@ -10,10 +10,9 @@ import {
   Dimensions,
   ScrollView,
   AppRegistry,
-  Alert
 } from 'react-native';
 
-export default class PinballDetailsScreen extends React.Component {
+export default class ArcadeDetailsScreen extends React.Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
@@ -24,16 +23,15 @@ export default class PinballDetailsScreen extends React.Component {
     };
   }
   render() {
-    
     return (
         <View style={styles.container}>
           
          
             <ImageBackground
                 style={styles.headerImage}
-                source={require('../Images/PinballGamePageImage.jpg')}>         
+                source={require('../Images/ArcadeGamePageImage.jpg')}>         
             <Text style={styles.headerText1}>AC/DC PREMIUM</Text>
-            <Text style={styles.headerText2}>PINBALL</Text>
+            <Text style={styles.headerText2}>ARCADE</Text>
             </ImageBackground>          
           
             <ScrollView style={styles.detailsContainer}>
@@ -134,25 +132,3 @@ export default class PinballDetailsScreen extends React.Component {
     },
 
 });
-
-const game = {
-      "replayGameLocations": [
-          {
-              "id": 55,
-              "location": "H2"
-          }
-      ],
-      "replayGameType": {
-          "id": 1,
-          "name": "Arcade"
-      },
-      "id": 8,
-      "gameTitle": "18 Wheeler: American Pro Trucker",
-      "overview": "The main purpose of the game is to make it to the finish line with the truck's cargo. Players are given a set amount of time, but can ram into special vans that will add three seconds to the timer. There are several characters to choose from, each with a unique truck and attributes.The game starts out in Key West and players travel across the United States, ending in San Francisco. After Stage 1, the game gives the player a choice of trailer. One trailer is harder to haul, but provides a bigger payoff while the other choice is easier to haul but provides a smaller payoff. Money is deducted from the total when the trailer is hit. Players can sound the truck's horn to make other cars on the road yield and slipstream behind large vehicles to gain a momentary speed boost.In addition to the time limit, players also compete with the \"Lizard Tail\", a rival trucker. Crossing the finish line before the Lizard Tail yields additional money. In between levels, players can park the truck in a mini game to earn more cash.",
-      "releaseDate": "2001",
-      "developer": "Sega-AM2",
-      "genre": "Action Racing",
-      "players": "1",
-      "image": "0fdb3cbd-2561-4605-8db3-9388fa26fa4c.jpg",
-      "imageUrl": "https://replayfxpictures.blob.core.windows.net/images/0fdb3cbd-2561-4605-8db3-9388fa26fa4c.jpg"
-  };

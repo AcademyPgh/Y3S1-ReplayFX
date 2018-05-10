@@ -22,6 +22,7 @@ import ScheduleScreenContainer from './screens/ScheduleScreenContainer';
 import SponsorsScreen from './screens/SponsorsScreen';
 import PinballDetailsScreen from './screens/PinballDetailsScreen';
 import GamesMain from './screens/GamesMain';
+import ArcadeDetailsScreen from './screens/ArcadeDetailsScreen';
 import EventDetailsScreen from './screens/EventDetailsScreen';
 import ArcadeListScreen from'./screens/ArcadeListScreen';
 import PinballListScreen from'./screens/PinballListScreen';
@@ -29,13 +30,42 @@ import APIScreen from './screens/APIScreen';
 
 export default class App extends React.Component {
 
-  loadEvents() {
+  constructor(props) {
+    super(props);
     
+    
+
+    const skipAPILoad = true;
+
+    let apiData = {};
+
+    if (skipAPILoad) {
+      //load sample api data
+      //apiData = {}
+    }
+
+    this.state = {
+      apiLoaded: skipAPILoad,
+      apiData: apiData
+    }
+  }
+
+  handleAPILoaded (apiData) {
+    this.setState({
+      apiLoaded: true, 
+      apiData: apiData
+    });
   }
 
   render() {
+    let content = <APIScreen dataLoaded={(apiData) => {this.handleAPILoaded(apiData)}}/>;
+
+    if (this.state.apiLoaded) {
+      content = <RootStack screenProps={{apiData: this.state.apiData}}/>;
+    }
+
     return (
-      <RootStack />
+      content
     );
   }
 }
@@ -48,7 +78,7 @@ const RootStack = StackNavigator(
         title: 'Landing Page',
       }
     },
-    TheHomeRoute: {
+    Home: {
       screen: HomeScreen,
       navigationOptions: {
         title: 'Home',
@@ -63,7 +93,7 @@ const RootStack = StackNavigator(
       }
     },
     Games: {
-      screen: GameListScreen,
+    screen: GameListScreen,
       initialRouteParams: { },
       navigationOptions: {
         title: 'Games',
@@ -88,6 +118,13 @@ const RootStack = StackNavigator(
       initialRouteParams: { },
       navigationOptions: {
         title: 'Choose Your Platform',
+      }
+    },
+    ArcadeDetails: {
+      screen: ArcadeDetailsScreen,
+      initialRouteParams: { },
+      navigationOptions: {
+        title: 'Arcade Detail',
       }
     },
     EventDetails: {
@@ -146,7 +183,6 @@ const RootStack = StackNavigator(
   }
 );
 
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -165,4 +201,3 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
-

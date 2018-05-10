@@ -6,81 +6,113 @@ import {
   Button,
   View,
   ScrollView,
+  Alert,
 } from 'react-native';
 import axios from 'axios';
+
+// const apiCalls = {
+//   eventCategories: 'http://replayfxcalendar.azurewebsites.net/public/categories',
+//   events: 'http://replayfxcalendar.azurewebsites.net/public',
+//   gameTypes: 'http://replayfxcalendar.azurewebsites.net/public/gametypes',
+//   games: 'http://replayfxcalendar.azurewebsites.net/public/games',
+// }
+
+const apiCalls = [
+  {key: 'eventCategories', url: 'http://replayfxcalendar.azurewebsites.net/public/categories'},
+  {key: 'events', url: 'http://replayfxcalendar.azurewebsites.net/public'},
+  {key: 'gameTypes', url: 'http://replayfxcalendar.azurewebsites.net/public/gametypes'},
+  {key: 'games', url: 'http://replayfxcalendar.azurewebsites.net/public/games'},
+]
 
 export default class APIScreen extends React.Component {
   constructor(props){
     super(props);
     
     this.state = {
-      eventCategories: [],
-      replayEvents:[],
-      games: [],
-      gameTypes: [],
+      err: null,
+    }
+
+    this.apiData = {
+      eventCategories: null,
+      events: null,
+      gameTypes: null,
+      games: null,
     };
+    this.loadAPIData = this.loadAPIData.bind(this);
+    this.handleDataLoaded = this.handleDataLoaded.bind(this);
   }
+
+  handleDataLoaded(apiData) {
+    this.props.dataLoaded(apiData);
+  }
+
   componentDidMount()
   {
-    this.loadEventCategories();
-    this.loadEvents();
-    this.loadGames();
-    this.loadGameTypes();
+    this.loadAPIData();
   }
-  loadEventCategories() {
-    axios
-      .get("http://replayfxcalendar.azurewebsites.net/public/categories")
-      .then((res) => {
-        let temp = res.data;
-        this.setState({ eventCategories: temp });
+
+  loadAPIData() {
+    //axios.all([this.getData('<eventurl>'), this.getData('<categoriesurl>')])
+    //axios.all([this.getEventCategories(), this.getEvents(), this.getGameTypes(), this.getGames()])
+
+    //filter array beforehand
+    filteredCalls = apiCalls.filter((obj) => this.apiData[obj.key] == null);
+
+    axios.all(filteredCalls.map((obj) => this.getData(obj.url)))
+      .then((results) => {
+        results.map((resp, index) => {
+          let key = filteredCalls[index].key;
+          this.apiData[key] = resp ? resp.data.length : null;
+        });
+        // let apiData = {
+        //   eventCategories: eventCategories ? eventCategories.data.length : null,
+        //   events: events ? events.data.length : null,
+        //   gameTypes: gameTypes ? gameTypes.data.length : null,
+        //   games: games ? games.data.length : null,
+        // };
+        this.handleDataLoaded(this.apiData);
       });
   }
 
-  loadEvents()
-  {
-    axios
-    .get ("http://replayfxcalendar.azurewebsites.net/public")
-    .then((res) => {
-      let temp = res.data;
-      this.setState({ replayEvents: temp});
-    });
+  getData(url) {
+    return axios.get(url).catch(() => null);
   }
 
-  loadGames()
-  {
-    axios
-      .get("http://replayfxcalendar.azurewebsites.net/public/games")
-      .then((res) => {
-        let temp = res.data;
-        this.setState({ games: temp});
-      });
-  }
-  loadGameTypes()
-  {
-    axios
-    .get("http://replayfxcalendar.azurewebsites.net/public/gametypes")
-    .then((res) => {
-      let temp = res.data;
-      this.setState({ gameTypes: temp});
-    });
-  }
+  // getEventCategories() {
+  //   return axios.get("http://replayfxcalendar.azurewebsites.net/public/categories").catch(() => null);
+  // }
+  // getEvents()
+  // {
+  //   return axios.get ("http://replayfxcalendar.azurewebsites.net/public").catch(() => null);
+  // }
+  // getGameTypes()
+  // {
+  //   return axios.get("http://replayfxcalendar.azurewebsites.net/public/gametypes").catch(() => null);
+  // }
+  // getGames()
+  // {
+  //   return axios.get("http://replayfxcalendar.azurewebsites.net/public/games").catch(() => null);
+  // }
+  
+
   //http://replayfxcalendar.azurewebsites.net/public
     render() {
-      const { params } = this.props.navigation.state;
-      //const filter = params.scheduleFilter ? params.scheduleFilter : null;
-      const filter = this.props.filter;
-      
+      const err = this.state.err;
       return (
         <View>
-        <Text>This is some text</Text>
-        <ScrollView>
-        <Text style={styles.text}>{JSON.stringify(this.state.games)}</Text>
-        </ScrollView>
-         </View>
+          <Text style={styles.text}>Loading...</Text>
+          {err}
+        </View>
      )
-    }}
+    }
+  
+  }
+
   const styles = StyleSheet.create({
     text: {
-      fontSize: 24,
+      fontSize: 32,
+    },
+    error: {
+      fontSize: 32,
     },
   });
