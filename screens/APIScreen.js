@@ -18,32 +18,34 @@ import axios from 'axios';
 // }
 
 const apiCalls = [
-  {key: 'eventCategories', url: 'http://replayfxcalendar.azurewebsites.net/public/categories'},
   {key: 'events', url: 'http://replayfxcalendar.azurewebsites.net/public'},
-  {key: 'gameTypes', url: 'http://replayfxcalendar.azurewebsites.net/public/gametypes'},
   {key: 'games', url: 'http://replayfxcalendar.azurewebsites.net/public/games'},
+  {key: 'eventCategories', url: 'http://replayfxcalendar.azurewebsites.net/public/categories'},
+  {key: 'gameTypes', url: 'http://replayfxcalendar.azurewebsites.net/public/gametypes'},
+
 ]
 
 export default class APIScreen extends React.Component {
   constructor(props){
     super(props);
-    
-    this.state = {
-      err: null,
-    }
 
-    this.apiData = {
-      eventCategories: null,
-      events: null,
-      gameTypes: null,
-      games: null,
-    };
+    this.apiData = {};
+
+    //load the apiData object with the apiCalls keys and a null value
+    apiCalls.forEach((obj) => { this.apiData[obj.key] = null; });
+
     this.loadAPIData = this.loadAPIData.bind(this);
     this.handleDataLoaded = this.handleDataLoaded.bind(this);
   }
 
   handleDataLoaded(apiData) {
-    this.props.dataLoaded(apiData);
+    if (apiCalls.every((obj) => this.apiData[obj.key] != null)) {
+      this.props.dataLoaded(this.apiData);
+    } else {
+      //TODO: handle failed requests - try again? when do we decide to go to local storage?
+      //for now, send an empty array back - will have to load sample data
+      this.props.dataLoaded({});
+    }
   }
 
   componentDidMount()
@@ -62,7 +64,7 @@ export default class APIScreen extends React.Component {
       .then((results) => {
         results.map((resp, index) => {
           let key = filteredCalls[index].key;
-          this.apiData[key] = resp ? resp.data.length : null;
+          this.apiData[key] = resp ? resp.data : null;
         });
         // let apiData = {
         //   eventCategories: eventCategories ? eventCategories.data.length : null,
@@ -77,31 +79,13 @@ export default class APIScreen extends React.Component {
   getData(url) {
     return axios.get(url).catch(() => null);
   }
-
-  // getEventCategories() {
-  //   return axios.get("http://replayfxcalendar.azurewebsites.net/public/categories").catch(() => null);
-  // }
-  // getEvents()
-  // {
-  //   return axios.get ("http://replayfxcalendar.azurewebsites.net/public").catch(() => null);
-  // }
-  // getGameTypes()
-  // {
-  //   return axios.get("http://replayfxcalendar.azurewebsites.net/public/gametypes").catch(() => null);
-  // }
-  // getGames()
-  // {
-  //   return axios.get("http://replayfxcalendar.azurewebsites.net/public/games").catch(() => null);
-  // }
   
 
   //http://replayfxcalendar.azurewebsites.net/public
     render() {
-      const err = this.state.err;
       return (
-        <View>
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'black'}}>
           <Text style={styles.text}>Loading...</Text>
-          {err}
         </View>
      )
     }
@@ -111,6 +95,7 @@ export default class APIScreen extends React.Component {
   const styles = StyleSheet.create({
     text: {
       fontSize: 32,
+      color: 'white',
     },
     error: {
       fontSize: 32,

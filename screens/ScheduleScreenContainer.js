@@ -103,7 +103,7 @@ export default class ScheduleScreenContainer extends React.Component {
             </View>
           </View>
           <View style={{flex:10}}>
-            <ScheduleScreen filter={this.state.filter} updateFilter={this.updateFilter} navigation={this.props.navigation} />
+            <ScheduleScreen screenProps={this.props.screenProps} filter={this.state.filter} updateFilter={this.updateFilter} navigation={this.props.navigation} />
           </View>
         </View>
       );
