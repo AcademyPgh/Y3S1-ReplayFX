@@ -4,9 +4,17 @@
  * @flow
  */
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet, Text, View, Image } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 
 export default class GamesMain extends Component {
+  
+  PressChevronArcade() {
+    
+  }
+  PressChevronPinball() {
+    
+  }
+
   render() {
     return (
       // Try removing the `flex: 1` on the parent View.
@@ -15,20 +23,27 @@ export default class GamesMain extends Component {
       <ScrollView style={styles.background}> 
           <View style={[styles.container, {backgroundColor: 'whitesmoke', }]}>
             <View style={styles.text}>   
-            <Text style={styles.Font}>PINBALL</Text>
+               <Text style={styles.Font}>PINBALL</Text>
             </View>
-            <View style={styles.imgcontainer}>
-            <Image source={require('../Images/chevron.png')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
-            </View>
+            <TouchableOpacity onPress={this.PressChevronPinball} onPress={this.PressChevronPinball} onPress={() => {                  
+              this.props.navigation.navigate('PinballList')}}>
+              <View style={styles.imgcontainer}>
+              <Image source={require('../Images/chevron.png')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
+              </View>
+            </TouchableOpacity>
          </View>
 
          <View style={[styles.container, {backgroundColor: 'whitesmoke', }]}>
             <View style={styles.text}>   
-            <Text style={styles.Font}>ARCADE</Text>
+              <Text style={styles.Font}>ARCADE</Text>
             </View>
-            <View style={styles.imgcontainer}>
-            <Image source={require('../Images//chevron.png')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
-            </View>
+            <TouchableOpacity onPress={this.PressChevronArcade} onPress={this.PressChevronArcade} onPress={() => {                  
+                this.props.navigation.navigate('ArcadeList')}}>
+                <View style={styles.imgcontainer}>
+                <Image source={require('../Images//chevron.png')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
+                </View>
+            </TouchableOpacity>
+         
          </View>
         
        
@@ -66,12 +81,9 @@ const styles = StyleSheet.create({
   },
   imgcontainer: {
     justifyContent: 'center',
-    flexDirection: 'row',
-    width: 70,
-    paddingLeft: 235,
-   
+    width: 240,
+    alignItems: 'flex-end'
 
-   
   },
   text:{
     justifyContent: 'center',
@@ -79,7 +91,7 @@ const styles = StyleSheet.create({
 
   },
   background:{
-    flex: 1,
+    height: 300,
     borderWidth: .5,
     backgroundColor: '#f3f3f3',
     borderColor: '#9ca4ab',
