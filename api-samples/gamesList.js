@@ -1,5 +1,4 @@
-// public/games gives game list
-
+const gamesList =
 [
     {
         "replayGameLocations": [
@@ -13335,4 +13334,5 @@
         "image": null,
         "imageUrl": null
     }
-]
+];
+export default gamesList;
