@@ -1,6 +1,6 @@
 // /public - gives an array of the events
 
-[
+[    
     {
         "replayEventTypes": [
             {
