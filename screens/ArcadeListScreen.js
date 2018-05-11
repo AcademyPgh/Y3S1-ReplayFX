@@ -14,6 +14,7 @@ import {
   TouchableHighlight,
   Alert,
 } from 'react-native';
+import ScalableImage from 'react-native-scalable-image';
 
 export default class ArcadeListScreen extends React.Component {
 
@@ -53,14 +54,8 @@ export default class ArcadeListScreen extends React.Component {
         flex: 1,
       }}>
         
-        <View style={{
-          flex: 1,
-          backgroundColor: 'powderblue',
-        }}>
-          <Image 
-          style={styles.stretch}
+          <ScalableImage width={Dimensions.get('window').width}
           source={require('../Images/ArcadeMainPageImage.jpg')}/>
-        </View>
 
         <View style={{}}>
           <TextInput
