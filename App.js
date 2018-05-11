@@ -29,6 +29,8 @@ import ArcadeListScreen from'./screens/ArcadeListScreen';
 import PinballListScreen from'./screens/PinballListScreen';
 import APIScreen from './screens/APIScreen';
 
+const showLandingPage = true;
+
 export default class App extends React.Component {
 
   constructor(props) {
@@ -169,7 +171,7 @@ const RootStack = StackNavigator(
     
   },
   {
-    initialRouteName: 'Landing',
+    initialRouteName: (showLandingPage ? 'Landing' : 'Home'),
     navigationOptions: {
       //title: 'Home',
       headerStyle: {

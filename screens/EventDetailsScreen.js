@@ -11,6 +11,7 @@ import {
   ScrollView,
   AppRegistry,
 } from 'react-native';
+import ScalableImage from 'react-native-scalable-image';
 
 export default class EventDetailsScreen extends React.Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -27,7 +28,8 @@ export default class EventDetailsScreen extends React.Component {
     return (
         <View style={styles.container}>
           
-            <ImageBackground
+            <ScalableImage width={Dimensions.get('window').width}
+                background
                 style={styles.headerImage}
                 source={require('../Images/PinballGamePageImage.jpg')}>         
             <Text style={styles.headerText1}>LEARN</Text>
@@ -36,7 +38,7 @@ export default class EventDetailsScreen extends React.Component {
               numberOfLines={1}
               style={styles.headerText2}>SEMINAR - TOONTOWN
             </Text>
-            </ImageBackground>          
+            </ScalableImage>          
           
           <ScrollView style={styles.detailsContainer}>
               <Text>

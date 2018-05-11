@@ -12,6 +12,7 @@ import {
   AppRegistry,
   Alert
 } from 'react-native';
+import ScalableImage from 'react-native-scalable-image';
 
 export default class PinballDetailsScreen extends React.Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -29,12 +30,12 @@ export default class PinballDetailsScreen extends React.Component {
         <View style={styles.container}>
           
          
-            <ImageBackground
-                style={styles.headerImage}
-                source={require('../Images/PinballGamePageImage.jpg')}>         
+            <ScalableImage width={Dimensions.get('window').width}
+              background
+              source={require('../Images/PinballGamePageImage.jpg')}>         
             <Text style={styles.headerText1}>AC/DC PREMIUM</Text>
             <Text style={styles.headerText2}>PINBALL</Text>
-            </ImageBackground>          
+            </ScalableImage>          
           
             <ScrollView style={styles.detailsContainer}>
               <Text>

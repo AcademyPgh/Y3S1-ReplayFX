@@ -11,6 +11,7 @@ import {
   ScrollView,
   AppRegistry,
 } from 'react-native';
+import ScalableImage from 'react-native-scalable-image';
 
 export default class ArcadeDetailsScreen extends React.Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -27,12 +28,12 @@ export default class ArcadeDetailsScreen extends React.Component {
         <View style={styles.container}>
           
          
-            <ImageBackground
-                style={styles.headerImage}
-                source={require('../Images/ArcadeGamePageImage.jpg')}>         
+            <ScalableImage width={Dimensions.get('window').width}
+              background
+              source={require('../Images/ArcadeGamePageImage.jpg')}>         
             <Text style={styles.headerText1}>AC/DC PREMIUM</Text>
             <Text style={styles.headerText2}>ARCADE</Text>
-            </ImageBackground>          
+            </ScalableImage>          
           
             <ScrollView style={styles.detailsContainer}>
               <Text>
