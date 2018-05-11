@@ -29,7 +29,7 @@ import ArcadeListScreen from'./screens/ArcadeListScreen';
 import PinballListScreen from'./screens/PinballListScreen';
 import APIScreen from './screens/APIScreen';
 
-const showLandingPage = true;
+var showLandingPage = true;
 
 export default class App extends React.Component {
 
@@ -180,7 +180,7 @@ const RootStack = StackNavigator(
       headerTintColor: '#ffffff',
       headerTitleStyle: {
         fontWeight: 'bold',
-        fontSize: 32,
+        fontSize: 24,
 
         textAlign: 'center',
         flex: 1

@@ -4,10 +4,19 @@
  * @flow
  */
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet, Text, View, Image, TouchableHighlight} from 'react-native';
+import { Button, ScrollView, StyleSheet, Text, View, Image, TouchableHighlight} from 'react-native';
 
 export default class GamesMain extends Component {
-  
+  static navigationOptions = ({ navigation, navigationOptions }) => {
+    const { params } = navigation.state;
+
+    return {
+      headerRight: (
+        <Button onPress={() => {navigation.popToTop()}} title="Home" color="#000" />
+      ),
+    };
+  }
+
   PressChevronArcade() {
     
   }
