@@ -29,6 +29,11 @@ export default class APIScreen extends React.Component {
   constructor(props){
     super(props);
 
+    this.state = {
+      err: null
+    }
+
+    this.debug = false;
     this.apiData = {};
 
     //load the apiData object with the apiCalls keys and a null value
@@ -73,19 +78,36 @@ export default class APIScreen extends React.Component {
         //   games: games ? games.data.length : null,
         // };
         this.handleDataLoaded(this.apiData);
-      });
+      }, (errors) => {
+        this.setState({err: errors});
+      }
+    );
+      
+    //this.handleDataLoaded(this.apiData);
   }
 
   getData(url) {
-    return axios.get(url).catch(() => null);
+    return axios.get(url, {url: url, timeout: 10000}).catch(() => { Alert.alert(url + " failed!"); return null; });
+    //return axios.get(url, {url: url, timeout: 10000});
   }
   
 
   //http://replayfxcalendar.azurewebsites.net/public
     render() {
+      let debugData = null;
+      if (this.debug) {
+        debugData = 
+          <View style={{flex: 1}}>
+            <Text style={{color: 'white'}}>State={JSON.stringify(this.state)}</Text>
+            <Text style={{color: 'white'}}>Props={JSON.stringify(this.props)}</Text>
+            <Text style={{color: 'white'}}>apiData={JSON.stringify(this.apiData)}</Text>
+          </View>;
+      }
+
       return (
-        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'black'}}>
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'black'}}>          
           <Text style={styles.text}>Loading...</Text>
+          {debugData}
         </View>
      )
     }

@@ -58,8 +58,7 @@ export default class HomeScreen extends Component {
           <Text style={styles.text}
                   onPress={() => {
                     /* 1. Navigate to the Featured route with params */
-                    this.props.navigation.navigate('Schedule', {                     
-                    });
+                    this.props.navigation.navigate('Schedule', {scheduleFilter: 'featured'});
                   }}
                 >FEATURED</Text>
           </View>
@@ -70,8 +69,7 @@ export default class HomeScreen extends Component {
          <Text style={styles.text}
             onPress={() => {
               /* 1. Navigate to the OPENPLAYroute with params */
-              this.props.navigation.navigate('Schedule', {              
-              });
+              this.props.navigation.navigate('Schedule', {scheduleFilter: 'games'});
             }}
                
          >OPEN PLAY</Text>
@@ -83,8 +81,7 @@ export default class HomeScreen extends Component {
          <Text style={styles.text}
               onPress={() => {
                 /* 1. Navigate to the Compete route with params */
-                this.props.navigation.navigate('Schedule', {
-                });
+                this.props.navigation.navigate('Schedule', {scheduleFilter: 'competitions'});
               }}>COMPETE</Text>
        </View>
 
@@ -94,7 +91,7 @@ export default class HomeScreen extends Component {
          <Text style={styles.text}
             onPress={() => {
               /* 1. Navigate to the LIVE MUSIC route with params */
-              this.props.navigation.navigate('Schedule', {});
+              this.props.navigation.navigate('Schedule', {scheduleFilter: 'music'});
             }}>LIVE MUSIC</Text>
        </View>
 
@@ -104,7 +101,7 @@ export default class HomeScreen extends Component {
          <Text style={styles.text}
           onPress={() => {
             /* 1. Navigate to the Seminars route with params */
-            this.props.navigation.navigate('Schedule', {});
+            this.props.navigation.navigate('Schedule', {scheduleFilter: 'seminar'});
           }}>SEMINARS</Text>
        </View>
 
@@ -114,7 +111,7 @@ export default class HomeScreen extends Component {
           <Text style={styles.text}
               onPress={() => {
                 /* 1. Navigate to the Vendors route with params */
-                this.props.navigation.navigate('Schedule', {});
+                this.props.navigation.navigate('Schedule', {scheduleFilter: 'vendors'});
           }}>VENDORS</Text>
        </View>
 
