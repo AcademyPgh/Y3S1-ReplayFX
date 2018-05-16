@@ -1,5 +1,6 @@
 // public/categories gives event categories
 
+export default eventCategories =
 [
     {
         "Id": 1,
@@ -31,4 +32,4 @@
         "Name": "vendors",
         "DisplayName": "Shop"
     }
-]
+];

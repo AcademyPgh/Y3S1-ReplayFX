@@ -4,11 +4,20 @@
  * @flow
  */
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import { Button, ScrollView, StyleSheet, Text, View, Image, TouchableHighlight} from 'react-native';
 import { NunitoLight } from '../src/utils/Fonts';
 
 export default class GamesMain extends Component {
-  
+  static navigationOptions = ({ navigation, navigationOptions }) => {
+    const { params } = navigation.state;
+
+    return {
+      headerRight: (
+        <Button onPress={() => {navigation.popToTop()}} title="Home" color="#000" />
+      ),
+    };
+  }
+
   PressChevronArcade() {
     
   }
@@ -22,30 +31,34 @@ export default class GamesMain extends Component {
       // The parent will not have dimensions, so the children can't expand.
       // What if you add `height: 300` instead of `flex: 1`?      
       <ScrollView style={styles.background}> 
+        <TouchableHighlight onPress={this.PressChevronPinball} onPress={this.PressChevronPinball} onPress={() => {                  
+          this.props.navigation.navigate('PinballList')}}>
           <View style={[styles.container, {backgroundColor: 'whitesmoke', }]}>
             <View style={styles.text}>   
                <Text style={styles.Font}>PINBALL</Text>
             </View>
-            <TouchableOpacity onPress={this.PressChevronPinball} onPress={this.PressChevronPinball} onPress={() => {                  
-              this.props.navigation.navigate('PinballList')}}>
+
               <View style={styles.imgcontainer}>
               <Image source={require('../Images/chevron.png')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
               </View>
-            </TouchableOpacity>
+            
          </View>
+        </TouchableHighlight>
 
-         <View style={[styles.container, {backgroundColor: 'whitesmoke', }]}>
+        <TouchableHighlight onPress={this.PressChevronArcade} onPress={this.PressChevronArcade} onPress={() => {   
+          this.props.navigation.navigate('ArcadeList')}}>
+
+          <View style={[styles.container, {backgroundColor: 'whitesmoke', }]}>
             <View style={styles.text}>   
               <Text style={styles.Font}>ARCADE</Text>
             </View>
-            <TouchableOpacity onPress={this.PressChevronArcade} onPress={this.PressChevronArcade} onPress={() => {                  
-                this.props.navigation.navigate('ArcadeList')}}>
+
                 <View style={styles.imgcontainer}>
                 <Image source={require('../Images//chevron.png')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
                 </View>
-            </TouchableOpacity>
-         
-         </View>
+          
+          </View>
+        </TouchableHighlight>
         
        
         </ScrollView> 

@@ -17,10 +17,10 @@ const tabs = [
   { filter: 'sun', text: `SUN\n28` },
   { filter: 'my-schedule', text: `MY\nSCHEDULE` },
   { filter: 'featured', text: `FEATURED` },
-  { filter: 'open-play', text: `OPEN\nPLAY` },
-  { filter: 'compete', text: `COMPETE` },
-  { filter: 'live-music', text: `LIVE\nMUSIC` },
-  { filter: 'seminars', text: `SEMINARS` },
+  { filter: 'games', text: `OPEN\nPLAY` },
+  { filter: 'competitions', text: `COMPETE` },
+  { filter: 'music', text: `LIVE\nMUSIC` },
+  { filter: 'seminar', text: `SEMINARS` },
   { filter: 'vendors', text: `VENDORS` },
 ];
 
@@ -103,7 +103,7 @@ export default class ScheduleScreenContainer extends React.Component {
             </View>
           </View>
           <View style={{flex:10}}>
-            <ScheduleScreen filter={this.state.filter} updateFilter={this.updateFilter} navigation={this.props.navigation} />
+            <ScheduleScreen screenProps={this.props.screenProps} filter={this.state.filter} updateFilter={this.updateFilter} navigation={this.props.navigation} />
           </View>
         </View>
       );
