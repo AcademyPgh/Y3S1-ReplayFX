@@ -6,7 +6,7 @@ import {
   Button,
   View,
   ScrollView,
-  TouchableHighlight,
+  TouchableOpacity,
 } from 'react-native';
 import ScheduleScreen from './ScheduleScreen';
 
@@ -143,15 +143,19 @@ export default class ScheduleScreenContainer extends React.Component {
             <View style={{flex:4, backgroundColor:'#272727'}}>
               <ScrollView ref={this._setTabScroll} onLayout={this._layoutScroll} onContentSizeChange={this._handleContentSizeChange} horizontal={true} contentContainerStyle={{alignItems: 'center'}}>
                 {tabs.map((tab) => (
-                  <TouchableHighlight 
+                  <TouchableOpacity 
                   key={tab.name}
                   style={styles.tab}
                   onLayout={(e) => {this._layoutTab(e, tab)}}
                   onPress={() => {
                     this.selectTab(tab.name);
                   }}>
-                  <Text style={{color:'white', textAlign:'center'}}>{tab.text}</Text>
-                </TouchableHighlight>
+                  <Text 
+                    style={[styles.tabLabel, 
+                      (tab.name == this.state.filter ? styles.tabLabelFocused : styles.tabLabelUnfocused)]}>
+                    {tab.text}
+                  </Text>
+                </TouchableOpacity>
                 ))}
               </ScrollView>
             </View>
@@ -169,4 +173,13 @@ export default class ScheduleScreenContainer extends React.Component {
     tab: {
       flex: 1, padding: 4, paddingHorizontal: 15
     },
+    tabLabel: {
+      textAlign: 'center',
+    },
+    tabLabelFocused: {
+      color: 'white',
+    },
+    tabLabelUnfocused: {
+      color: 'grey',
+    }
   });
