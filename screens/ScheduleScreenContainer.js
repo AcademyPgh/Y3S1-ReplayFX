@@ -6,23 +6,25 @@ import {
   Button,
   View,
   ScrollView,
-  TouchableHighlight,
+  TouchableOpacity,
 } from 'react-native';
 import ScheduleScreen from './ScheduleScreen';
 
 const tabs = [
-  { filter: 'thur', text: `THUR\n26` },
-  { filter: 'fri', text: `FRI\n27` },
-  { filter: 'sat', text: `SAT\n28` },
-  { filter: 'sun', text: `SUN\n28` },
-  { filter: 'my-schedule', text: `MY\nSCHEDULE` },
-  { filter: 'featured', text: `FEATURED` },
-  { filter: 'games', text: `OPEN\nPLAY` },
-  { filter: 'competitions', text: `COMPETE` },
-  { filter: 'music', text: `LIVE\nMUSIC` },
-  { filter: 'seminar', text: `SEMINARS` },
-  { filter: 'vendors', text: `VENDORS` },
+  { name: 'thur', text: `THUR\n26` },
+  { name: 'fri', text: `FRI\n27` },
+  { name: 'sat', text: `SAT\n28` },
+  { name: 'sun', text: `SUN\n28` },
+  { name: 'my-schedule', text: `MY\nSCHEDULE` },
+  { name: 'featured', text: `FEATURED` },
+  { name: 'games', text: `OPEN\nPLAY` },
+  { name: 'competitions', text: `COMPETE` },
+  { name: 'music', text: `LIVE\nMUSIC` },
+  { name: 'seminar', text: `SEMINARS` },
+  { name: 'vendors', text: `VENDORS` },
 ];
+
+const debug = [];
 
 export default class ScheduleScreenContainer extends React.Component {
     static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -44,7 +46,9 @@ export default class ScheduleScreenContainer extends React.Component {
       };
     }
 
+    _tabScroll: ?ScrollView;
     
+
     constructor(props) {
       super(props);
   
@@ -61,7 +65,16 @@ export default class ScheduleScreenContainer extends React.Component {
         filter: filter,
       };
 
+      this._tabLayout = {};
+
       this.updateFilter = this.updateFilter.bind(this);
+      this.selectTab = this.selectTab.bind(this);
+      this._scrollToTab = this._scrollToTab.bind(this);
+    }
+
+    componentDidMount() {
+      //this.selectTab("music");
+      debug.push("componentDidMount");
     }
 
     _getFilter(newFilter) {
@@ -76,6 +89,47 @@ export default class ScheduleScreenContainer extends React.Component {
       const filter = this._getFilter(newFilter);
       this.setState({filter: filter});
     }
+
+    selectTab(tabName, animate = true) {
+      this.setState({debug: debug});
+      this._scrollToTab(tabName, animate);
+      this.updateFilter(tabName);
+      //TODO: focus tab so that its text is white, unfocused tabs should be grey
+    }
+
+    _setTabScroll = (el) => {
+      this._tabScroll = el;
+    };
+
+    _layoutTab(e, tab) {
+      if (!this._tabLayout[tab.name]) {
+        this._tabLayout[tab.name] = {text: tab.text, width: e.nativeEvent.layout.width, x: e.nativeEvent.layout.x};
+        //debug.push("_layoutTab:" + tab.name);
+      }
+    }
+
+    _layoutScroll = (e) => {
+      this._scrollWidth = e.nativeEvent.layout.width;
+      //debug.push("_layoutScroll");
+      this.selectTab(this.state.filter, true);
+    }
+
+    _scrollToTab(tabName, animate = true) {
+      const scrollHalfWidth = this._scrollWidth * 0.5;
+      const tab = this._tabLayout[tabName];
+      const tabCenter = tab.x + (tab.width * 0.5);
+
+      let scrollPos = tabCenter - scrollHalfWidth;
+
+      scrollPos = scrollPos < 0 ? 0 : scrollPos;
+
+      this._tabScroll.scrollTo({x: scrollPos, animated: animate});
+    }
+
+    _handleContentSizeChange = (contentHeight, contentWidth) => {
+      this._scrollContentWidth = contentWidth;
+      //debug.push("_handleContentSizeChange");
+    };
   
     render() {
       return (
@@ -87,22 +141,27 @@ export default class ScheduleScreenContainer extends React.Component {
             </View>
 
             <View style={{flex:4, backgroundColor:'#272727'}}>
-              <ScrollView horizontal={true} contentContainerStyle={{alignItems: 'center'}}>
+              <ScrollView ref={this._setTabScroll} onLayout={this._layoutScroll} onContentSizeChange={this._handleContentSizeChange} horizontal={true} contentContainerStyle={{alignItems: 'center'}}>
                 {tabs.map((tab) => (
-                  <TouchableHighlight 
-                  key={tab.filter}
+                  <TouchableOpacity 
+                  key={tab.name}
                   style={styles.tab}
+                  onLayout={(e) => {this._layoutTab(e, tab)}}
                   onPress={() => {
-                    /* 1. Navigate to the Schedule route with params */
-                    this.updateFilter(tab.filter);
+                    this.selectTab(tab.name);
                   }}>
-                  <Text style={{color:'white', textAlign:'center'}}>{tab.text}</Text>
-                </TouchableHighlight>
+                  <Text 
+                    style={[styles.tabLabel, 
+                      (tab.name == this.state.filter ? styles.tabLabelFocused : styles.tabLabelUnfocused)]}>
+                    {tab.text}
+                  </Text>
+                </TouchableOpacity>
                 ))}
               </ScrollView>
             </View>
           </View>
           <View style={{flex:10}}>
+            {/*<View style={{flex:1}}><Text>{JSON.stringify(this.state)}</Text></View>*/}
             <ScheduleScreen screenProps={this.props.screenProps} filter={this.state.filter} updateFilter={this.updateFilter} navigation={this.props.navigation} />
           </View>
         </View>
@@ -114,4 +173,13 @@ export default class ScheduleScreenContainer extends React.Component {
     tab: {
       flex: 1, padding: 4, paddingHorizontal: 15
     },
+    tabLabel: {
+      textAlign: 'center',
+    },
+    tabLabelFocused: {
+      color: 'white',
+    },
+    tabLabelUnfocused: {
+      color: 'grey',
+    }
   });
