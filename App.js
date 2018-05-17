@@ -38,11 +38,12 @@ export default class App extends React.Component {
 
     const skipAPILoad = true;
 
-    let apiData = {};
+    let apiData = null;
 
     if (skipAPILoad) {
       //load sample api data
       apiData = {
+        source: 'sample',
         events: events,
         games: games,
         eventCategories: eventCategories,
@@ -57,10 +58,12 @@ export default class App extends React.Component {
   }
 
   handleAPILoaded (apiData) {
-    this.setState({
-      apiLoaded: true, 
-      apiData: apiData
-    });
+    if (this.state.apiData == null || apiData != null) {
+      this.setState({
+        apiLoaded: true, 
+        apiData: apiData,
+      });
+    }
   }
 
   render() {

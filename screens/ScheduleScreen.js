@@ -29,6 +29,10 @@ export default class ScheduleScreen extends React.Component {
     this.PressStar=this.PressStar.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.eventList = nextProps.screenProps.apiData.events;
+  }
+
   PressStar() {
     //Alert.alert('You tapped the button!');
     // if (this.state.filter == 'vendors') {
@@ -76,7 +80,6 @@ export default class ScheduleScreen extends React.Component {
           })
 
         }
-        
       
         
       </ScrollView> 
