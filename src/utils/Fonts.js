@@ -1,3 +1,5 @@
 export const Fonts = {
-    NunitoLight: 'Nunito-Light'
+    NunitoLight: 'Nunito-Light',
+    AvenirBlack: 'Avenir-Black',
+    AvenirMedium: 'Avenir-Medium'
 }
