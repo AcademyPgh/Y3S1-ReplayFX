@@ -54,6 +54,11 @@ export default class GameListScreen extends React.Component {
       <View style={{
         flex: 1,
       }}>
+        <View style={{flex: 1}}>
+            <ScrollView>
+              <Text>Props: {JSON.stringify(this.props).substr(0, 1000)}</Text>
+            </ScrollView>
+          </View>
         
         <View style={{
           flex: 1,

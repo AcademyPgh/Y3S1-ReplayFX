@@ -1,5 +1,4 @@
-// public/games gives game list
-
+export default games =
 [
     {
         "replayGameLocations": [
@@ -13335,4 +13334,4 @@
         "image": null,
         "imageUrl": null
     }
-]
+];

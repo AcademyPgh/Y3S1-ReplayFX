@@ -31,7 +31,9 @@ export default class LandingScreen extends React.Component {
               title="Schedule"
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
-                this.props.navigation.navigate('Schedule');
+                this.props.navigation.navigate('Schedule', {
+                  scheduleFilter: 'featured',
+                });
               }}
             />
             <Button
@@ -49,7 +51,6 @@ export default class LandingScreen extends React.Component {
                 /* 1. Navigate to the Schedule route with params */
                 this.props.navigation.navigate('Schedule', {
                   scheduleFilter: 'featured',
-                  appData: 'appDataFromHome'
                 });
               }}
             />
@@ -58,8 +59,7 @@ export default class LandingScreen extends React.Component {
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
                 this.props.navigation.navigate('Schedule', {
-                  scheduleFilter: 'open-play',
-                  appData: 'appDataFromHome'
+                  scheduleFilter: 'games',
                 });
               }}
             />
@@ -68,8 +68,7 @@ export default class LandingScreen extends React.Component {
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
                 this.props.navigation.navigate('Schedule', {
-                  scheduleFilter: 'compete',
-                  appData: 'appDataFromHome'
+                  scheduleFilter: 'competitions',
                 });
               }}
             />
@@ -78,8 +77,7 @@ export default class LandingScreen extends React.Component {
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
                 this.props.navigation.navigate('Schedule', {
-                  scheduleFilter: 'live-music',
-                  appData: 'appDataFromHome'
+                  scheduleFilter: 'music',
                 });
               }}
             />
@@ -88,8 +86,7 @@ export default class LandingScreen extends React.Component {
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
                 this.props.navigation.navigate('Schedule', {
-                  scheduleFilter: 'seminars',
-                  appData: 'appDataFromHome'
+                  scheduleFilter: 'seminar',
                 });
               }}
             />
@@ -97,17 +94,22 @@ export default class LandingScreen extends React.Component {
               title="Games Main"
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
-                this.props.navigation.navigate('GamesMain', {
-                  appData: 'appDataFromHome'
-                });
+                this.props.navigation.navigate('GamesMain');
               }}
             />
             <Button
               title="Sponsors"
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
-                this.props.navigation.navigate('Sponsors', {
-                  appData: 'appDataFromHome'
+                this.props.navigation.navigate('Sponsors');
+              }}
+            />
+            <Button
+              title="Vendors"
+              onPress={() => {
+                /* 1. Navigate to the Schedule route with params */
+                this.props.navigation.navigate('Schedule', {
+                  scheduleFilter: 'vendors',
                 });
               }}
             />
@@ -115,54 +117,42 @@ export default class LandingScreen extends React.Component {
               title="Arcade Details"
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
-                this.props.navigation.navigate('ArcadeDetails', {
-                  appData: 'appDataFromHome'
-                });
+                this.props.navigation.navigate('ArcadeDetails');
               }}
             />
             <Button
               title="Pinball Details"
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
-                this.props.navigation.navigate('PinballDetails', {
-                  appData: 'appDataFromHome'
-                });
+                this.props.navigation.navigate('PinballDetails');
               }}
             />
             <Button
               title="Arcade List"
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
-                this.props.navigation.navigate('ArcadeList', {
-                  appData: 'appDataFromHome'
-                });
+                this.props.navigation.navigate('ArcadeList');
               }}
             />
             <Button
               title="Pinball List"
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
-                this.props.navigation.navigate('PinballList', {
-                  appData: 'appDataFromHome'
-                });
+                this.props.navigation.navigate('PinballList');
               }}
             />
             <Button
               title="Event Details"
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
-                this.props.navigation.navigate('EventDetails', {
-                  appData: 'appDataFromHome'
-                });
+                this.props.navigation.navigate('EventDetails');
               }}
             />
             <Button
               title="API Test"
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
-                this.props.navigation.navigate('APITest', {
-                  appData: 'appDataFromHome'
-                });
+                this.props.navigation.navigate('APITest');
               }}
             />
           </View>
