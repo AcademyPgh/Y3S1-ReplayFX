@@ -12,6 +12,7 @@ import {
   AppRegistry,
   Alert
 } from 'react-native';
+import { Fonts } from '../src/utils/Fonts';
 import ScalableImage from 'react-native-scalable-image';
 
 export default class PinballDetailsScreen extends React.Component {
@@ -66,8 +67,8 @@ export default class PinballDetailsScreen extends React.Component {
 
           <View>
             <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: 10,}}/>
-            <Text style={{fontSize: 44, fontFamily: 'Avenir-Black', textAlign: 'center',}}>Location</Text>
-            <Text style={{fontSize: 95, fontFamily: 'Avenir-Black', textAlign: 'center', lineHeight: 105,}}>D1</Text>
+            <Text style={{fontSize: 44, fontFamily: Fonts.AvenirBlack, textAlign: 'center',}}>Location</Text>
+            <Text style={{fontSize: 95, fontFamily: Fonts.AvenirBlack, textAlign: 'center', lineHeight: 105,}}>D1</Text>
             <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: 10,}}/>
           </View>
 
@@ -87,7 +88,7 @@ export default class PinballDetailsScreen extends React.Component {
     
     headerText1: {
       fontSize: 25,
-      fontFamily: 'Avenir-Black',
+      fontFamily: Fonts.AvenirBlack,
       color: '#ffffff',
       textAlign: 'center',
       letterSpacing: 2,
@@ -96,7 +97,7 @@ export default class PinballDetailsScreen extends React.Component {
 
     headerText2: {
       fontSize: 25,
-      fontFamily: 'Avenir-Black',
+      fontFamily: Fonts.AvenirBlack,
       color: '#ffffff',
       textAlign: 'center',
       letterSpacing: 2,
@@ -108,27 +109,27 @@ export default class PinballDetailsScreen extends React.Component {
     },  
           
     bolded: {
-      fontFamily: 'Avenir-Black',
+      fontFamily: Fonts.AvenirBlack,
       fontSize: 16,
       letterSpacing: 1,
       lineHeight: 28,
     },
       
     descriptions: {
-      fontFamily: 'Avenir-Medium',
+      fontFamily: Fonts.AvenirMedium,
       fontSize: 16,
       lineHeight: 28,
     }, 
 
     gameBio: {
-      fontFamily: 'Avenir-Black', 
+      fontFamily: Fonts.AvenirBlack, 
       fontSize: 16, 
       letterSpacing: 1, 
       lineHeight: 18,
     },
 
     gameBioText: {
-      fontFamily: 'Avenir-Medium', 
+      fontFamily: Fonts.AvenirMedium, 
       fontSize: 16, 
       letterSpacing: .5, 
       lineHeight: 18,

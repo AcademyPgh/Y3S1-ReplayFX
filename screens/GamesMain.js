@@ -4,8 +4,8 @@
  * @flow
  */
 import React, { Component } from 'react';
-import { Button, ScrollView, StyleSheet, Text, View, Image, TouchableHighlight} from 'react-native';
-import { NunitoLight } from '../src/utils/Fonts';
+import { Button, ScrollView, StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import { Fonts } from '../src/utils/Fonts';
 
 export default class GamesMain extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
     color: '#969696',
     fontSize: 28,
-    fontFamily: NunitoLight,
+    fontFamily: Fonts.NunitoLight,
   },
 
   
