@@ -24,6 +24,7 @@ export default class ArcadeDetailsScreen extends React.Component {
     };
   }
   render() {
+    const gameInfo = this.props.navigation.getParam("gameInfo");
     return (
         <View style={styles.container}>
           
@@ -31,41 +32,41 @@ export default class ArcadeDetailsScreen extends React.Component {
             <ScalableImage width={Dimensions.get('window').width}
               background
               source={require('../Images/ArcadeGamePageImage.jpg')}>         
-            <Text style={styles.headerText1}>AC/DC PREMIUM</Text>
+            <Text numberOfLines={1} adjustsFontSizeToFit style={styles.headerText1}>{gameInfo.gameTitle.toUpperCase()}</Text>
             <Text style={styles.headerText2}>ARCADE</Text>
             </ScalableImage>          
           
             <ScrollView style={styles.detailsContainer}>
               <Text>
                 <Text style={styles.bolded}>Release Date: </Text>
-                <Text style={styles.descriptions}>2012</Text>
+                <Text style={styles.descriptions}>{gameInfo.releaseDate}</Text>
               </Text>
 
               <Text>
                 <Text style={styles.bolded}>Developer: </Text>
-                <Text style={styles.descriptions}>Stern</Text>
+                <Text style={styles.descriptions}>{gameInfo.developer}</Text>
               </Text>
 
               <Text>
                 <Text style={styles.bolded}>Genre: </Text>
-                <Text style={styles.descriptions}>Music</Text>
+                <Text style={styles.descriptions}>{gameInfo.genre}</Text>
                 </Text>
 
               <Text>
                 <Text style={styles.bolded}>Number of Players: </Text>
-                <Text style={styles.descriptions}>4</Text>
+                <Text style={styles.descriptions}>{gameInfo.players}</Text>
               </Text>
 
               <Text style={{marginTop: 5.5}}>
                 <Text style={styles.gameBio}>Game Bio: </Text>
-                <Text style={styles.gameBioText}> g elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. read more. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. read more. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. read more.</Text>
+                <Text style={styles.gameBioText}>{gameInfo.overview}</Text>
               </Text>      
           </ScrollView>
 
           <View>
             <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: 10,}}/>
-            <Text style={{fontSize: 44, fontFamily: 'Avenir-Black', textAlign: 'center',}}>Location</Text>
-            <Text style={{fontSize: 95, fontFamily: 'Avenir-Black', textAlign: 'center', lineHeight: 105,}}>D1</Text>
+            <Text style={styles.location1}>Location</Text>
+            <Text numberOfLines={1} adjustsFontSizeToFit style={styles.location2}>{gameInfo.replayGameLocations.location}</Text>
             <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: 10,}}/>
           </View>
 
@@ -89,7 +90,9 @@ export default class ArcadeDetailsScreen extends React.Component {
       color: '#ffffff',
       textAlign: 'center',
       letterSpacing: 2,
-      paddingTop: 20
+      paddingTop: 20,
+      paddingLeft: 10,
+      paddingRight: 10,
     },
 
     headerText2: {
@@ -130,6 +133,20 @@ export default class ArcadeDetailsScreen extends React.Component {
       fontSize: 16, 
       letterSpacing: .5, 
       lineHeight: 18,
+    },
+
+    location1: {
+      fontSize: 44, 
+      fontFamily: 'Avenir-Black', 
+      textAlign: 'center',
+    },
+
+    location2: {
+      fontSize: 95, 
+      fontFamily: 'Avenir-Black',
+      textAlign: 'center',
+      paddingLeft: 10,
+      paddingRight: 10,
     },
 
 });
