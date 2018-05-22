@@ -66,7 +66,7 @@ export default class ArcadeDetailsScreen extends React.Component {
           <View>
             <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: 10,}}/>
             <Text style={styles.location1}>Location</Text>
-            <Text numberOfLines={1} adjustsFontSizeToFit style={styles.location2}>{gameInfo.replayGameLocations.location}</Text>
+            <Text numberOfLines={1} adjustsFontSizeToFit style={styles.location2}>{gameInfo.replayGameLocations.map((loc) => { return loc.location; }).join(', ')}</Text>
             <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: 10,}}/>
           </View>
 
