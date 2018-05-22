@@ -6,6 +6,7 @@ import {
   Button,
   View,
   ScrollView,
+  FlatList,
   Image,
   ImageBackground,
   TouchableHighlight,
@@ -23,13 +24,13 @@ export default class ScheduleScreen extends React.Component {
   constructor(props) {
     super(props);
 
-    this.filterEvents(this.props.screenProps.apiData.events, this.props.filter);
-
     this.PressText=this.PressText.bind(this);
     this.PressStar=this.PressStar.bind(this);
 
     this.filterEvents = this.filterEvents.bind(this);
     this.getEventDays = this.getEventDays.bind(this);
+
+    this.filterEvents(this.props.screenProps.apiData.events, this.props.filter);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -95,7 +96,8 @@ export default class ScheduleScreen extends React.Component {
       <View style={{flex: 1, flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: 'black'}}>
 
 
-
+        <View style={{flex: 1}}><Text style={{color: 'white'}}>{JSON.stringify(this.eventList)}</Text></View>
+        <FlatList data={this.eventList} renderItem={(event) => <EventItem key={event.id} event={event} />} />
 
         {/* <ScrollView> 
           <ScalableImage width={fullWidth}
@@ -140,6 +142,7 @@ class EventItem extends React.Component {
 
     return (
       <View key={event.id} style={[styles.container, {backgroundColor: 'white', }]}>
+        <Text>{JSON.stringify(event)}</Text>
         <View style={{flex: 1, justifyContent: 'center'}}>
           <TouchableHighlight onPress={this.PressStar} >
             <View style={styles.starContainer}>            
