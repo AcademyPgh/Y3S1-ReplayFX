@@ -25,6 +25,7 @@ export default class EventDetailsScreen extends React.Component {
   }
   render() {
     const width = Dimensions.get('window').width;
+    const eventInfo = this.props.navigation.getParam("eventInfo");
     return (
         <View style={styles.container}>
           
@@ -38,32 +39,26 @@ export default class EventDetailsScreen extends React.Component {
               numberOfLines={1}
               style={styles.headerText2}>SEMINAR - TOONTOWN
             </Text>
-            </ScalableImage>          
+            </ScalableImage>
           
           <ScrollView style={styles.detailsContainer}>
               <Text>
+                <Text style={styles.descriptions}>{eventInfo.description}</Text>
+                </Text>
+              
+              <Text>
                 <Text style={styles.bolded}>Date: </Text>
-                <Text style={styles.descriptions}>July 28</Text>
+                <Text style={styles.descriptions}>{new Date(eventInfo.date).toLocaleDateString('en-US', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'} )}</Text>
               </Text>
 
               <Text>
                 <Text style={styles.bolded}>Time: </Text>
-                <Text style={styles.descriptions}>3:30 PM - 4:30 PM</Text>
-              </Text>
-
-              <Text>
-                <Text style={styles.bolded}>Genre: </Text>
-                <Text style={styles.descriptions}>Music</Text>
-                </Text>
-
-              <Text>
-                <Text style={styles.bolded}>Number of Players: </Text>
-                <Text style={styles.descriptions}>4</Text>
+                <Text style={styles.descriptions}>{eventInfo.startTime12 + " - " + eventInfo.endTime12}</Text>
               </Text>
 
               <Text style={{marginTop: 5.5}}>
                 <Text style={styles.gameBio}>Description: </Text>
-                <Text style={styles.gameBioText}>The annual celebration of all things Toontown is right here at ReplayFX! Get an exclusive look at upcoming content from the Toontown Rewritten Team, and hear from gaming industry experts Jesse Schell and Shawn Patton from the Pittsburgh-based entertainment studio, Schell Games. Stop by our booth to find out if you have what it takes to be “Toon Enough”!</Text>
+                <Text style={styles.gameBioText}>{eventInfo.extendedDescription}</Text>
               </Text>          
           </ScrollView>
 
