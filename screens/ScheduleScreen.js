@@ -6,6 +6,7 @@ import {
   Button,
   View,
   ScrollView,
+  FlatList,
   Image,
   ImageBackground,
   TouchableHighlight,
@@ -23,14 +24,29 @@ export default class ScheduleScreen extends React.Component {
   constructor(props) {
     super(props);
 
-    this.eventList = this.props.screenProps.apiData.events;
-
     this.PressText=this.PressText.bind(this);
     this.PressStar=this.PressStar.bind(this);
+
+    this.filterEvents = this.filterEvents.bind(this);
+    this.getEventDays = this.getEventDays.bind(this);
+
+    this.filterEvents(this.props.screenProps.apiData.events, this.props.filter);
   }
 
   componentWillReceiveProps(nextProps) {
-    this.eventList = nextProps.screenProps.apiData.events;
+    const eventDataChanged = nextProps.screenProps.dataLoadedTimestamp > this.props.screenProps.dataLoadedTimeStamp;
+    const filterChanged = nextProps.filter != this.props.filter;
+
+    const events = nextProps.screenProps.apiData.events;
+
+    //TODO: Move the filtering to the screen container so it only happens once and passes the correct events based on filter
+    if (eventDataChanged) {
+      this.getEventDays(events);
+    }
+
+    if (filterChanged || eventDataChanged) {
+      this.filterEvents(events, nextProps.filter);
+    }
   }
 
   PressStar() {
@@ -43,47 +59,54 @@ export default class ScheduleScreen extends React.Component {
   }
 
   PressText() {
-    this.props.navigation.navigate('Schedule');  
+    this.props.navigation.navigate('Schedule');
   }
 
+  getEventDays(events) {
+
+    //TODO: I don't think Javascript handles timezones well - UTC? Local?
+    const dates = events.map(event => { return new Date(new Date(event.date).setHours(0,0,0,0)) })
+                    .filter((date, index, self) => { return self.indexOf(date) == index; }).sort();
+    
+    this.eventDays = dates.map((date, index) => { 
+
+      const day = date.toLocaleDateString('en-US', {day: 'short'});
+      const dateNum = date.getDate();
+
+      return {key: index, date: date, dayOfWeek: day, dayOfMonth: dateNum};
+    });
+  }
+
+  filterEvents(events, filter) {
+
+    let filteredEvents = events
+      .filter( (event) => {        
+        return event.replayEventTypes.some( (eventType) => {
+          return eventType.name == filter;
+        });
+      });
+
+    this.eventList = filteredEvents;
+  }
 
   render() {
 
     return(
       
-      <View style={{flex: 1, flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: 'black'}}>
-      <ScrollView> 
-          <ScalableImage width={fullWidth}
-          style={styles.promoContainer}
-          source={require('../Images/PromoSpot.jpg')}/>
+      <View style={{flex: 1, flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: 'white'}}>
 
-        
-        {
-          this.eventList
-            .filter( (event) => {
-              //return event.title.includes('Pinburgh');
-
-              //go into the replayEventTypes array
-              //check the name of each eventType in the array
-              //if the name == 'featured', return true.
-              //otherwise, return false
-              
-              return event.replayEventTypes.some( (eventType) => {
-                return eventType.name == this.props.filter;
-              });
-            })
-            .slice(0, 100)
-            .map( (event) => {
-              return (
-                <EventItem key={event.id} event={event} />
-              );
-          })
-
-        }
-      
-        
-      </ScrollView> 
-    </View>      
+        <FlatList 
+          data={this.eventList} 
+          renderItem={({item}) => <EventItem event={item} />} 
+          keyExtractor={(item, index) => item.id.toString()}
+          ListHeaderComponent={
+            <ScalableImage width={fullWidth}
+              style={styles.promoContainer}
+              source={require('../Images/PromoSpot.jpg')}
+            />
+          }
+        />
+    </View>
     );
   }
 }
@@ -94,7 +117,7 @@ class EventItem extends React.Component {
     const event = this.props.event;
 
     return (
-      <View key={event.id} style={[styles.container, {backgroundColor: 'white', }]}>
+      <View style={[styles.container, {backgroundColor: 'white', }]}>
         <View style={{flex: 1, justifyContent: 'center'}}>
           <TouchableHighlight onPress={this.PressStar} >
             <View style={styles.starContainer}>            
@@ -118,8 +141,6 @@ class EventItem extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  
-
   eventTitle: {
     paddingVertical: 2,
     color: 'black',
@@ -143,7 +164,6 @@ const styles = StyleSheet.create({
     color: 'blue',
     fontSize: 18,
   },
-
   container: {
     flex: 1,
     borderWidth: StyleSheet.hairlineWidth * 2,
@@ -151,7 +171,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',   
     paddingVertical: 5, 
   },
-
   starContainer: {
     flex: 1,
     justifyContent: 'center',
@@ -160,7 +179,6 @@ const styles = StyleSheet.create({
     paddingLeft: 40,
     alignItems: 'center',   
   },
-
   starbutton: {
     backgroundColor: '#859a9b',
     justifyContent: 'center',
@@ -169,20 +187,16 @@ const styles = StyleSheet.create({
     paddingLeft: 40,
     alignItems: 'center',   
   },
-
   text: {
 
   },
-
   textContainer: {
     // width: '50%',
     // borderRadius: 20,
     // padding: 0,
   },
-
   promoContainer: {  
     width: '100%',
     //resizeMode: 'contain',
   },
-
 });

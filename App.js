@@ -53,7 +53,8 @@ export default class App extends React.Component {
 
     this.state = {
       apiLoaded: skipAPILoad,
-      apiData: apiData
+      apiData: apiData,
+      dataLoadedTimestamp: new Date()
     }
   }
 
@@ -62,6 +63,7 @@ export default class App extends React.Component {
       this.setState({
         apiLoaded: true, 
         apiData: apiData,
+        dataLoadedTimestamp: new Date()
       });
     }
   }
@@ -70,7 +72,7 @@ export default class App extends React.Component {
     let content = <APIScreen dataLoaded={(apiData) => {this.handleAPILoaded(apiData)}}/>;
 
     if (this.state.apiLoaded) {
-      content = <RootStack screenProps={{apiData: this.state.apiData}}/>;
+      content = <RootStack screenProps={{apiData: this.state.apiData, dataLoadedTimestamp: this.state.dataLoadedTimestamp}}/>;
     }
 
     return (
