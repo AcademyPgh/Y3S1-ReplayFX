@@ -93,44 +93,20 @@ export default class ScheduleScreen extends React.Component {
 
     return(
       
-      <View style={{flex: 1, flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: 'black'}}>
+      <View style={{flex: 1, flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: 'white'}}>
 
-
-        <View style={{flex: 1}}><Text style={{color: 'white'}}>{JSON.stringify(this.eventList)}</Text></View>
-        <FlatList data={this.eventList} renderItem={(event) => <EventItem key={event.id} event={event} />} />
-
-        {/* <ScrollView> 
-          <ScalableImage width={fullWidth}
-          style={styles.promoContainer}
-          source={require('../Images/PromoSpot.jpg')}/>
-
-        
-        {
-          this.eventList
-            .filter( (event) => {
-              //return event.title.includes('Pinburgh');
-
-              //go into the replayEventTypes array
-              //check the name of each eventType in the array
-              //if the name == 'featured', return true.
-              //otherwise, return false
-              
-              return event.replayEventTypes.some( (eventType) => {
-                return eventType.name == this.props.filter;
-              });
-            })
-            .slice(0, 100)
-            .map( (event) => {
-              return (
-                <EventItem key={event.id} event={event} />
-              );
-          })
-
-        }
-      
-        
-      </ScrollView>  */}
-    </View>      
+        <FlatList 
+          data={this.eventList} 
+          renderItem={({item}) => <EventItem event={item} />} 
+          keyExtractor={(item, index) => item.id.toString()}
+          ListHeaderComponent={
+            <ScalableImage width={fullWidth}
+              style={styles.promoContainer}
+              source={require('../Images/PromoSpot.jpg')}
+            />
+          }
+        />
+    </View>
     );
   }
 }
@@ -141,8 +117,7 @@ class EventItem extends React.Component {
     const event = this.props.event;
 
     return (
-      <View key={event.id} style={[styles.container, {backgroundColor: 'white', }]}>
-        <Text>{JSON.stringify(event)}</Text>
+      <View style={[styles.container, {backgroundColor: 'white', }]}>
         <View style={{flex: 1, justifyContent: 'center'}}>
           <TouchableHighlight onPress={this.PressStar} >
             <View style={styles.starContainer}>            
