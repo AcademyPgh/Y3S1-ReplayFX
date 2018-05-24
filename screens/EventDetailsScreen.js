@@ -12,6 +12,7 @@ import {
   AppRegistry,
 } from 'react-native';
 import ScalableImage from 'react-native-scalable-image';
+import { Fonts } from '../src/utils/Fonts';
 
 export default class EventDetailsScreen extends React.Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -25,6 +26,7 @@ export default class EventDetailsScreen extends React.Component {
   }
   render() {
     const width = Dimensions.get('window').width;
+    const eventInfo = this.props.navigation.getParam("eventInfo");
     return (
         <View style={styles.container}>
           
@@ -36,34 +38,26 @@ export default class EventDetailsScreen extends React.Component {
             <Text 
               adjustsFontSizeToFit
               numberOfLines={1}
-              style={styles.headerText2}>SEMINAR - TOONTOWN
+              style={styles.headerText2}>{eventInfo.title.toUpperCase()}
             </Text>
-            </ScalableImage>          
-          
+            </ScalableImage>
+
           <ScrollView style={styles.detailsContainer}>
-              <Text>
+
+            <Text>
                 <Text style={styles.bolded}>Date: </Text>
-                <Text style={styles.descriptions}>July 28</Text>
-              </Text>
+                <Text style={styles.descriptions}>{new Date(eventInfo.date).toLocaleDateString('en-US', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'} )}</Text>
+            </Text>
 
-              <Text>
+            <Text>
                 <Text style={styles.bolded}>Time: </Text>
-                <Text style={styles.descriptions}>3:30 PM - 4:30 PM</Text>
-              </Text>
-
-              <Text>
-                <Text style={styles.bolded}>Genre: </Text>
-                <Text style={styles.descriptions}>Music</Text>
-                </Text>
-
-              <Text>
-                <Text style={styles.bolded}>Number of Players: </Text>
-                <Text style={styles.descriptions}>4</Text>
-              </Text>
+                <Text style={styles.descriptions}>{eventInfo.startTime12 + " - " + eventInfo.endTime12}</Text>
+            </Text>
 
               <Text style={{marginTop: 5.5}}>
                 <Text style={styles.gameBio}>Description: </Text>
-                <Text style={styles.gameBioText}>The annual celebration of all things Toontown is right here at ReplayFX! Get an exclusive look at upcoming content from the Toontown Rewritten Team, and hear from gaming industry experts Jesse Schell and Shawn Patton from the Pittsburgh-based entertainment studio, Schell Games. Stop by our booth to find out if you have what it takes to be “Toon Enough”!</Text>
+                <Text style={styles.gameBioText}>{eventInfo.description}{"\n"}{"\n"}</Text>
+                <Text style={styles.gameBioText}>{eventInfo.extendedDescription}</Text>
               </Text>          
           </ScrollView>
 
@@ -73,7 +67,7 @@ export default class EventDetailsScreen extends React.Component {
             <Text 
               adjustsFontSizeToFit
               numberOfLines={1}
-              style={styles.locationDetails}>4th Floor Auditorium</Text>
+              style={styles.locationDetails}>{eventInfo.location}</Text>
             <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: 10,}}/>
           </View>
 
@@ -93,7 +87,7 @@ export default class EventDetailsScreen extends React.Component {
     
     headerText1: {
       fontSize: 25,
-      fontFamily: 'Avenir-Black',
+      fontFamily: Fonts.AvenirBlack,
       color: '#ffffff',
       textAlign: 'center',
       letterSpacing: 2,
@@ -102,7 +96,7 @@ export default class EventDetailsScreen extends React.Component {
 
     headerText2: {
       fontSize: 25,
-      fontFamily: 'Avenir-Black',
+      fontFamily: Fonts.AvenirBlack,
       color: '#ffffff',
       textAlign: 'center',
       letterSpacing: 2,
@@ -116,27 +110,27 @@ export default class EventDetailsScreen extends React.Component {
     },  
           
     bolded: {
-      fontFamily: 'Avenir-Black',
+      fontFamily: Fonts.AvenirBlack,
       fontSize: 16,
       letterSpacing: 1,
       lineHeight: 28,
     },
       
     descriptions: {
-      fontFamily: 'Avenir-Medium',
+      fontFamily: Fonts.AvenirMedium,
       fontSize: 16,
       lineHeight: 28,
     }, 
 
     gameBio: {
-      fontFamily: 'Avenir-Black', 
+      fontFamily: Fonts.AvenirBlack, 
       fontSize: 16, 
       letterSpacing: 1, 
       lineHeight: 18,
     },
 
     gameBioText: {
-      fontFamily: 'Avenir-Medium', 
+      fontFamily: Fonts.AvenirMedium, 
       fontSize: 16, 
       letterSpacing: .5, 
       lineHeight: 18,
@@ -146,7 +140,8 @@ export default class EventDetailsScreen extends React.Component {
       marginLeft: 20, 
       marginRight: 20, 
       fontSize: 95, 
-      fontFamily: 'Avenir-Black', 
+      lineHeight: 110, 
+      fontFamily: Fonts.AvenirBlack, 
       textAlign: 'center', 
       textAlignVertical: "center",
     },
