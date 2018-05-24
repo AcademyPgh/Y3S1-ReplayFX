@@ -28,7 +28,7 @@ export default class EventDetailsScreen extends React.Component {
     const width = Dimensions.get('window').width;
     const eventInfo = this.props.navigation.getParam("eventInfo");
     return (
-        <View style={styles.container}>
+        <View style={{flex: 1}}>
           
             <ScalableImage width={Dimensions.get('window').width}
                 background
@@ -46,7 +46,7 @@ export default class EventDetailsScreen extends React.Component {
 
             <Text>
                 <Text style={styles.bolded}>Date: </Text>
-                <Text style={styles.descriptions}>{new Date(eventInfo.date).toLocaleDateString('en-US', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'} )}</Text>
+                <Text style={styles.descriptions}>{new Date(eventInfo.date).toLocaleDateString('en-US', {weekday: 'long', month: 'long', day: 'numeric'} )}</Text>
             </Text>
 
             <Text>
@@ -57,13 +57,14 @@ export default class EventDetailsScreen extends React.Component {
               <Text style={{marginTop: 5.5}}>
                 <Text style={styles.gameBio}>Description: </Text>
                 <Text style={styles.gameBioText}>{eventInfo.description}{"\n"}{"\n"}</Text>
-                <Text style={styles.gameBioText}>{eventInfo.extendedDescription}</Text>
+                <Text style={styles.gameBioText}>{eventInfo.extendedDescription}{"\n"}
+                </Text>
               </Text>          
           </ScrollView>
 
           <View>
             <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: 10,}}/>
-            <Text style={{fontSize: 44, fontFamily: 'Avenir-Black', textAlign: 'center',}}>Location</Text>
+            <Text style={{fontSize: 44, fontFamily: Fonts.AvenirBlack, textAlign: 'center', color: 'black',}}>Location</Text>
             <Text 
               adjustsFontSizeToFit
               numberOfLines={1}
@@ -75,10 +76,6 @@ export default class EventDetailsScreen extends React.Component {
   );}}
   
   const styles=StyleSheet.create({
-    
-    container: {
-      flex: 1,
-    },
    
     headerImage: {
       width: undefined,
@@ -114,12 +111,14 @@ export default class EventDetailsScreen extends React.Component {
       fontSize: 16,
       letterSpacing: 1,
       lineHeight: 28,
+      color: '#000000',
     },
       
     descriptions: {
       fontFamily: Fonts.AvenirMedium,
       fontSize: 16,
       lineHeight: 28,
+      color: '#000000',
     }, 
 
     gameBio: {
@@ -127,6 +126,7 @@ export default class EventDetailsScreen extends React.Component {
       fontSize: 16, 
       letterSpacing: 1, 
       lineHeight: 18,
+      color: '#000000',
     },
 
     gameBioText: {
@@ -134,16 +134,18 @@ export default class EventDetailsScreen extends React.Component {
       fontSize: 16, 
       letterSpacing: .5, 
       lineHeight: 18,
+      color: '#000000',
     },
 
     locationDetails: {
       marginLeft: 20, 
       marginRight: 20, 
       fontSize: 95, 
-      lineHeight: 110, 
+      //lineHeight: 110, 
       fontFamily: Fonts.AvenirBlack, 
       textAlign: 'center', 
       textAlignVertical: "center",
+      color: '#000000',
     },
 
 });
