@@ -75,6 +75,7 @@
 		59D013DF7DB44CF4BECD2EA2 /* Avenir-MediumOblique-10.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 760AB776A8DA43CF85CA33EB /* Avenir-MediumOblique-10.ttf */; };
 		8C0DBE9DC19F4F309EBA6F2A /* Avenir-Oblique-11.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD0562C7403F4F4097FFACDE /* Avenir-Oblique-11.ttf */; };
 		0705EC9D1DBB41EDB8020D9B /* Avenir-Roman-12.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 69713E2BFADF4EFF88B713CB /* Avenir-Roman-12.ttf */; };
+		D0C9ABAE1A90434AA217220C /* Avenir-Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 737184A6108347F48107BACD /* Avenir-Roman.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -419,6 +420,7 @@
 		760AB776A8DA43CF85CA33EB /* Avenir-MediumOblique-10.ttf */ = {isa = PBXFileReference; name = "Avenir-MediumOblique-10.ttf"; path = "../assets/fonts/Avenir-MediumOblique-10.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		AD0562C7403F4F4097FFACDE /* Avenir-Oblique-11.ttf */ = {isa = PBXFileReference; name = "Avenir-Oblique-11.ttf"; path = "../assets/fonts/Avenir-Oblique-11.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		69713E2BFADF4EFF88B713CB /* Avenir-Roman-12.ttf */ = {isa = PBXFileReference; name = "Avenir-Roman-12.ttf"; path = "../assets/fonts/Avenir-Roman-12.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		737184A6108347F48107BACD /* Avenir-Roman.ttf */ = {isa = PBXFileReference; name = "Avenir-Roman.ttf"; path = "../assets/fonts/Avenir-Roman.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -723,6 +725,7 @@
 				760AB776A8DA43CF85CA33EB /* Avenir-MediumOblique-10.ttf */,
 				AD0562C7403F4F4097FFACDE /* Avenir-Oblique-11.ttf */,
 				69713E2BFADF4EFF88B713CB /* Avenir-Roman-12.ttf */,
+				737184A6108347F48107BACD /* Avenir-Roman.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1211,6 +1214,7 @@
 				59D013DF7DB44CF4BECD2EA2 /* Avenir-MediumOblique-10.ttf in Resources */,
 				8C0DBE9DC19F4F309EBA6F2A /* Avenir-Oblique-11.ttf in Resources */,
 				0705EC9D1DBB41EDB8020D9B /* Avenir-Roman-12.ttf in Resources */,
+				D0C9ABAE1A90434AA217220C /* Avenir-Roman.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
