@@ -12,6 +12,7 @@ import {
   AppRegistry,
 } from 'react-native';
 import ScalableImage from 'react-native-scalable-image';
+import { Fonts } from '../src/utils/Fonts';
 
 export default class ArcadeDetailsScreen extends React.Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -32,42 +33,42 @@ export default class ArcadeDetailsScreen extends React.Component {
             <ScalableImage width={Dimensions.get('window').width}
               background
               source={require('../Images/ArcadeGamePageImage.jpg')}>         
-            <Text numberOfLines={1} adjustsFontSizeToFit style={styles.headerText1}>{gameInfo.gameTitle.toUpperCase()}</Text>
-            <Text style={styles.headerText2}>ARCADE</Text>
+            <Text numberOfLines={1} adjustsFontSizeToFit style={styles.headerTextInput}>{gameInfo.gameTitle.toUpperCase()}</Text>
+            <Text style={styles.headerText}>ARCADE</Text>
             </ScalableImage>          
           
             <ScrollView style={styles.detailsContainer}>
               <Text>
-                <Text style={styles.bolded}>Release Date: </Text>
+                <Text style={styles.titles}>Release Date: </Text>
                 <Text style={styles.descriptions}>{gameInfo.releaseDate}</Text>
               </Text>
 
               <Text>
-                <Text style={styles.bolded}>Developer: </Text>
+                <Text style={styles.titles}>Developer: </Text>
                 <Text style={styles.descriptions}>{gameInfo.developer}</Text>
               </Text>
 
               <Text>
-                <Text style={styles.bolded}>Genre: </Text>
+                <Text style={styles.titles}>Genre: </Text>
                 <Text style={styles.descriptions}>{gameInfo.genre}</Text>
                 </Text>
 
               <Text>
-                <Text style={styles.bolded}>Number of Players: </Text>
+                <Text style={styles.titles}>Number of Players: </Text>
                 <Text style={styles.descriptions}>{gameInfo.players}</Text>
               </Text>
 
               <Text style={{marginTop: 5.5}}>
-                <Text style={styles.gameBio}>Game Bio: </Text>
-                <Text style={styles.gameBioText}>{gameInfo.overview}</Text>
-              </Text>      
+                <Text style={styles.gameBioTitle}>Game Bio: </Text>
+                <Text style={styles.gameBioInput}>{gameInfo.overview}{"\n"}</Text>
+              </Text>                   
           </ScrollView>
 
           <View>
-            <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: 10,}}/>
-            <Text style={styles.location1}>Location</Text>
-            <Text numberOfLines={1} adjustsFontSizeToFit style={styles.location2}>{gameInfo.replayGameLocations.map((loc) => { return loc.location; }).join(', ')}</Text>
-            <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: 10,}}/>
+            <View style={styles.locationBorder}/>
+            <Text style={styles.location}>Location</Text>
+            <Text numberOfLines={1} adjustsFontSizeToFit style={styles.locationInput}>{gameInfo.replayGameLocations.map((loc) => { return loc.location; }).join(', ')}</Text>
+            <View style={styles.locationBorder}/>
           </View>
 
         </View>
@@ -84,9 +85,9 @@ export default class ArcadeDetailsScreen extends React.Component {
       height: undefined,
     },
     
-    headerText1: {
+    headerTextInput: {
       fontSize: 25,
-      fontFamily: 'Avenir-Black',
+      fontFamily: Fonts.AvenirBlack,
       color: '#ffffff',
       textAlign: 'center',
       letterSpacing: 2,
@@ -95,9 +96,9 @@ export default class ArcadeDetailsScreen extends React.Component {
       paddingRight: 10,
     },
 
-    headerText2: {
+    headerText: {
       fontSize: 25,
-      fontFamily: 'Avenir-Black',
+      fontFamily: Fonts.AvenirBlack,
       color: '#ffffff',
       textAlign: 'center',
       letterSpacing: 2,
@@ -108,42 +109,55 @@ export default class ArcadeDetailsScreen extends React.Component {
         padding: 20,
     },  
           
-    bolded: {
-      fontFamily: 'Avenir-Black',
+    titles: {
+      fontFamily: Fonts.AvenirBlack,
+      color: '#000000',
       fontSize: 16,
       letterSpacing: 1,
       lineHeight: 28,
     },
       
     descriptions: {
-      fontFamily: 'Avenir-Medium',
+      fontFamily: Fonts.AvenirMedium,
+      color: '#000000',
       fontSize: 16,
       lineHeight: 28,
     }, 
 
-    gameBio: {
-      fontFamily: 'Avenir-Black', 
+    gameBioTitle: {
+      fontFamily: Fonts.AvenirBlack, 
+      color: '#000000',
       fontSize: 16, 
       letterSpacing: 1, 
       lineHeight: 18,
     },
 
-    gameBioText: {
-      fontFamily: 'Avenir-Medium', 
+    gameBioInput: {
+      fontFamily: Fonts.AvenirMedium,
+      color: '#000000', 
       fontSize: 16, 
       letterSpacing: .5, 
       lineHeight: 18,
+
     },
 
-    location1: {
+    locationBorder: {
+      borderBottomColor: 'black', 
+      borderBottomWidth: 1, 
+      margin: 10
+    },
+
+    location: {
       fontSize: 44, 
-      fontFamily: 'Avenir-Black', 
+      fontFamily: Fonts.AvenirBlack, 
+      color: '#000000',
       textAlign: 'center',
     },
 
-    location2: {
+    locationInput: {
       fontSize: 95, 
-      fontFamily: 'Avenir-Black',
+      fontFamily: Fonts.AvenirBlack,
+      color: '#000000',
       textAlign: 'center',
       paddingLeft: 10,
       paddingRight: 10,
