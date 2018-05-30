@@ -145,7 +145,7 @@ export default class LandingScreen extends React.Component {
               title="Event Details"
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
-                this.props.navigation.navigate('EventDetails');
+                this.props.navigation.navigate('EventDetails', {eventInfo: this.props.screenProps.apiData.events[0]});
               }}
             />
             <Button
