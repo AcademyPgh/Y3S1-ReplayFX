@@ -7,11 +7,14 @@ import {
   View,
   ScrollView,
   TouchableOpacity,
+  AsyncStorage,
 } from 'react-native';
 import ScheduleScreen from './ScheduleScreen';
 import moment from 'moment';
 
 const debug = [];
+
+const favoritesKey = '@ReplayFX:favoriteEvents';
 
 export default class ScheduleScreenContainer extends React.Component {
     static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -35,6 +38,12 @@ export default class ScheduleScreenContainer extends React.Component {
       this.getEventDays = this.getEventDays.bind(this);
       this.setupTabs = this.setupTabs.bind(this);
       this.setupEventFilters = this.setupEventFilters.bind(this);
+      this.setupFAvoriteFilter = this.setupFavoriteFilter.bind(this);
+
+      this.loadFavorites = this.loadFavorites.bind(this);
+      this.addFavorite = this.addFavorite.bind(this);
+      this.removeFavorite = this.removeFavorite.bind(this);
+      this.setFavorite = this.setFavorite.bind(this);
 
       this.getEventDays(this.props.screenProps.apiData.events);
       this.setupTabs(this.eventDays, this.props.screenProps.apiData.eventCategories);
@@ -45,7 +54,10 @@ export default class ScheduleScreenContainer extends React.Component {
       
       this.state = {
         filter: filter,
+        favorites: [],
       };
+
+      this.loadFavorites();
 
       this.tabLayout = {};
     }
@@ -64,8 +76,61 @@ export default class ScheduleScreenContainer extends React.Component {
       }
   
       if (filterChanged || eventDataChanged) {
-        const filter = this.getFilter(nextProps.navigation.getParam('scheduleFilter'));
-        this.setState({filter: filter});
+        this.updateFilter(nextProps.navigation.getParam('scheduleFilter'));
+      }
+    }
+
+    componentWillUpdate(nextProps, nextState) {
+      if (nextState.filter == 'my-schedule' && this.state.filter != 'my-schedule') {
+        this.setupFavoriteFilter(nextState.favorites, nextProps.screenProps.apiData.events);
+      }
+    }
+
+    //handle favorites
+    loadFavorites() {
+      AsyncStorage.getItem(favoritesKey)
+      .then((favorites) => {
+        if (favorites) {
+          favorites = JSON.parse(favorites);
+          this.setState({favorites: favorites});
+        }
+      }).catch((err) => {
+        //Alert.alert(err);
+      });
+    }
+
+    persistFavorites(favorites) {
+      AsyncStorage.setItem(favoritesKey, JSON.stringify(favorites));
+    }
+
+    setFavorite(event, shouldBeFavorite) {
+      if (shouldBeFavorite) {
+        this.addFavorite(event);
+      } else {
+        this.removeFavorite(event);
+      }
+    }
+
+    addFavorite(event) {
+      const eventId = event.id;
+      favorites = this.state.favorites;
+
+      if (!favorites.includes(eventId)) {
+        favorites.push(event.id);
+        this.persistFavorites(favorites);
+        this.setState({favorites: favorites});
+      }
+    }
+
+    removeFavorite(event) {
+      const eventId = event.id;
+      favorites = this.state.favorites;
+
+      if (favorites.includes(eventId)) {
+        eventIndex = favorites.indexOf(eventId);
+        favorites.splice(eventIndex, 1);
+        this.persistFavorites(favorites);
+        this.setState({favorites: favorites});
       }
     }
 
@@ -113,6 +178,17 @@ export default class ScheduleScreenContainer extends React.Component {
 
     }
 
+    setupFavoriteFilter(favorites, events) {
+      const favoriteEvents = [];
+
+      favorites.forEach((eventId) => {
+        const event = events.find((event) => { return event.id == eventId; });
+        favoriteEvents.push(event);
+      });
+
+      this.filters['my-schedule'] = favoriteEvents;
+    }
+
     setupEventFilters(events) {
       this.filters = {};
 
@@ -126,8 +202,6 @@ export default class ScheduleScreenContainer extends React.Component {
         //put event in correct day filter
         const key = this.eventDays.find((day) => {return this.getDateString(day.date) == this.getDateString(event.date);}).key;
         this.filters[key].push(event);
-
-        //TODO: if event is starred, add to my-schedule filter
 
         //put event in each category it belongs to
         event.replayEventTypes.forEach((eventType) => {
@@ -217,8 +291,8 @@ export default class ScheduleScreenContainer extends React.Component {
             </View>
           </View>
           <View style={{flex:10}}>
-            {/*<ScrollView style={{flex:1}}><Text>{JSON.stringify(this.state.filter)}</Text></ScrollView>*/}
-            <ScheduleScreen screenProps={this.props.screenProps} eventList={this.filters[this.state.filter]} updateFilter={this.updateFilter} navigation={this.props.navigation} />
+            {/* <ScrollView style={{flex:.25}}><Text>{JSON.stringify(this.filters['my-schedule'].map(event => event.id))}</Text></ScrollView> */}
+            <ScheduleScreen screenProps={this.props.screenProps} eventList={this.filters[this.state.filter]} favorites={this.state.favorites} onSetFavorite={this.setFavorite} navigation={this.props.navigation} />
           </View>
         </View>
       );
