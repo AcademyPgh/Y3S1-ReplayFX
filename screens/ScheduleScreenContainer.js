@@ -11,34 +11,11 @@ import {
 import ScheduleScreen from './ScheduleScreen';
 import moment from 'moment';
 
-// const tabs = [
-//   { name: 'thur', text: `THUR\n26` },
-//   { name: 'fri', text: `FRI\n27` },
-//   { name: 'sat', text: `SAT\n28` },
-//   { name: 'sun', text: `SUN\n28` },
-//   { name: 'my-schedule', text: `MY\nSCHEDULE` },
-//   { name: 'featured', text: `FEATURED` },
-//   { name: 'games', text: `OPEN\nPLAY` },
-//   { name: 'competitions', text: `COMPETE` },
-//   { name: 'music', text: `LIVE\nMUSIC` },
-//   { name: 'seminar', text: `SEMINARS` },
-//   { name: 'vendors', text: `VENDORS` },
-// ];
-
 const debug = [];
 
 export default class ScheduleScreenContainer extends React.Component {
     static navigationOptions = ({ navigation, navigationOptions }) => {
       const { params, routeName } = navigation.state;
-  
-      //TODO: default filter to current/first day (thur/fri/sat)?
-      // let filter = 'my-schedule';
-
-      // if (params) {
-      //   filter = params.scheduleFilter;
-      // } 
-
-      // navigation.setParams({scheduleFilter: filter});
 
       return {
         headerRight: (
@@ -80,7 +57,6 @@ export default class ScheduleScreenContainer extends React.Component {
       const events = nextProps.screenProps.apiData.events;
       const eventCategories = nextProps.screenProps.apiData.eventCategories;
   
-      //TODO: Move the filtering to the screen container so it only happens once and passes the correct events based on filter
       if (eventDataChanged) {
         this.getEventDays(events);
         this.setupTabs(this.eventDays, eventCategories);

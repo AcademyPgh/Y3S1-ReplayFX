@@ -55,7 +55,7 @@ export default class ScheduleScreen extends React.Component {
       <View style={{flex: 1, flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: 'white'}}>
 
         <FlatList 
-          data={this.props.eventList.slice(0, 100)} 
+          data={this.props.eventList} 
           renderItem={this.renderListItem} 
           keyExtractor={this.keyExtractor}
           ListHeaderComponent={
@@ -64,19 +64,8 @@ export default class ScheduleScreen extends React.Component {
               source={require('../Images/PromoSpot.jpg')}
             />
           }
-          initialNumToRender={10}
-          windowSize={11}
-          maxToRenderPerBatch={10}
         />
     </View>
-    );
-  }
-}
-
-class SimpleEventItem extends React.PureComponent {
-  render() {
-    return (
-      <Text>{this.props.event.title}</Text>
     );
   }
 }
