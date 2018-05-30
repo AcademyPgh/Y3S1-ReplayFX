@@ -14,6 +14,9 @@ import {
   Dimensions
 } from 'react-native';
 import ScalableImage from 'react-native-scalable-image';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
+const myIcon = (<Icon name="star" size={30} color='black' />)
 
 const fullWidth = Dimensions.get('window').width;
 
@@ -22,18 +25,13 @@ export default class ScheduleScreen extends React.Component {
   constructor(props) {
     super(props);
 
-    this.displayEvent=this.displayEvent.bind(this);
-    this.PressStar=this.PressStar.bind(this);
+    this.displayEvent = this.displayEvent.bind(this);
+    this.setFavorite = this.setFavorite.bind(this);
+
   }
 
-
-  PressStar() {
-    //Alert.alert('You tapped the button!');
-    // if (this.state.filter == 'vendors') {
-    //   this.setState({filter: 'featured'});
-    // } else {
-    //   this.setState({filter: 'vendors'});
-    // }
+  setFavorite(event, shouldBeFavorite) {
+    this.props.onSetFavorite(event, shouldBeFavorite);
   }
 
   displayEvent(event) {
@@ -43,7 +41,12 @@ export default class ScheduleScreen extends React.Component {
   keyExtractor = (item, index) => item.id.toString();
 
   renderListItem = ({item}) => (
-    <EventItem event={item} displayEvent={this.displayEvent}/>
+    <EventItem 
+      event={item} 
+      displayEvent={this.displayEvent} 
+      isFavorite={this.props.favorites.includes(item.id)} 
+      onSetFavorite={this.setFavorite}
+    />
   );
 
   render() {
@@ -51,7 +54,6 @@ export default class ScheduleScreen extends React.Component {
     return(
       
       <View style={{flex: 1, flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: 'white'}}>
-
         <FlatList 
           data={this.props.eventList} 
           renderItem={this.renderListItem} 
@@ -73,10 +75,11 @@ class EventItem extends React.PureComponent {
     super(props);
 
     this.pressText = this.pressText.bind(this);
+    this.pressStar = this.pressStar.bind(this);
   }
 
   pressStar() {
-    Alert.alert('Clicked star in function!');
+    this.props.onSetFavorite(this.props.event, !this.props.isFavorite);
   }
 
   pressText() {
@@ -86,11 +89,12 @@ class EventItem extends React.PureComponent {
   render() {
     const event = this.props.event;
 
+    const iconName = this.props.isFavorite ? 'star' : 'star-o';
+
     return (
       <View style={[styles.container, {backgroundColor: 'white', }]}>
         <TouchableOpacity style={styles.starContainer} onPress={this.pressStar} >
-          <Image style={styles.starbutton}
-            source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'},]}/>                            
+          <Icon name={iconName} size={40} color='black' />
         </TouchableOpacity>
         <TouchableOpacity style={styles.eventTextContainer} onPress={this.pressText}>
           <Text style={styles.Time}>{event.startTime12 + '-' + event.endTime12}</Text>
