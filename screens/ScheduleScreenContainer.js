@@ -52,7 +52,7 @@ export default class ScheduleScreenContainer extends React.Component {
 
     componentWillReceiveProps(nextProps) {
       const eventDataChanged = nextProps.screenProps.dataLoadedTimestamp > this.props.screenProps.dataLoadedTimeStamp;
-      const filterChanged = nextProps.navigation.state.getParam('filter') != this.state.filter;
+      const filterChanged = nextProps.navigation.getParam('scheduleFilter') != this.state.filter;
   
       const events = nextProps.screenProps.apiData.events;
       const eventCategories = nextProps.screenProps.apiData.eventCategories;
@@ -64,7 +64,8 @@ export default class ScheduleScreenContainer extends React.Component {
       }
   
       if (filterChanged || eventDataChanged) {
-        this.filterEvents(events, nextProps.filter);
+        const filter = this.getFilter(nextProps.navigation.getParam('scheduleFilter'));
+        this.setState({filter: filter});
       }
     }
 
