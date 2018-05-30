@@ -26,28 +26,8 @@ export default class ScheduleScreen extends React.Component {
 
     this.PressText=this.PressText.bind(this);
     this.PressStar=this.PressStar.bind(this);
-
-    this.filterEvents = this.filterEvents.bind(this);
-    this.getEventDays = this.getEventDays.bind(this);
-
-    this.filterEvents(this.props.screenProps.apiData.events, this.props.filter);
   }
 
-  componentWillReceiveProps(nextProps) {
-    const eventDataChanged = nextProps.screenProps.dataLoadedTimestamp > this.props.screenProps.dataLoadedTimeStamp;
-    const filterChanged = nextProps.filter != this.props.filter;
-
-    const events = nextProps.screenProps.apiData.events;
-
-    //TODO: Move the filtering to the screen container so it only happens once and passes the correct events based on filter
-    if (eventDataChanged) {
-      this.getEventDays(events);
-    }
-
-    if (filterChanged || eventDataChanged) {
-      this.filterEvents(events, nextProps.filter);
-    }
-  }
 
   PressStar() {
     //Alert.alert('You tapped the button!');
@@ -62,32 +42,11 @@ export default class ScheduleScreen extends React.Component {
     this.props.navigation.navigate('Schedule');
   }
 
-  getEventDays(events) {
+  keyExtractor = (item, index) => item.id.toString();
 
-    //TODO: I don't think Javascript handles timezones well - UTC? Local?
-    const dates = events.map(event => { return new Date(new Date(event.date).setHours(0,0,0,0)) })
-                    .filter((date, index, self) => { return self.indexOf(date) == index; }).sort();
-    
-    this.eventDays = dates.map((date, index) => { 
-
-      const day = date.toLocaleDateString('en-US', {day: 'short'});
-      const dateNum = date.getDate();
-
-      return {key: index, date: date, dayOfWeek: day, dayOfMonth: dateNum};
-    });
-  }
-
-  filterEvents(events, filter) {
-
-    let filteredEvents = events
-      .filter( (event) => {        
-        return event.replayEventTypes.some( (eventType) => {
-          return eventType.name == filter;
-        });
-      });
-
-    this.eventList = filteredEvents;
-  }
+  renderListItem = ({item}) => (
+    <EventItem event={item} />
+  );
 
   render() {
 
@@ -96,9 +55,9 @@ export default class ScheduleScreen extends React.Component {
       <View style={{flex: 1, flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: 'white'}}>
 
         <FlatList 
-          data={this.eventList} 
-          renderItem={({item}) => <EventItem event={item} />} 
-          keyExtractor={(item, index) => item.id.toString()}
+          data={this.props.eventList} 
+          renderItem={this.renderListItem} 
+          keyExtractor={this.keyExtractor}
           ListHeaderComponent={
             <ScalableImage width={fullWidth}
               style={styles.promoContainer}
@@ -111,7 +70,7 @@ export default class ScheduleScreen extends React.Component {
   }
 }
 
-class EventItem extends React.Component {
+class EventItem extends React.PureComponent {
 
   render() {
     const event = this.props.event;
@@ -119,7 +78,7 @@ class EventItem extends React.Component {
     return (
       <View style={[styles.container, {backgroundColor: 'white', }]}>
         <View style={{flex: 1, justifyContent: 'center'}}>
-          <TouchableHighlight onPress={this.PressStar} >
+          <TouchableHighlight>{/*onPress={this.PressStar} >*/}
             <View style={styles.starContainer}>            
                 <Image style={styles.starbutton}
                 source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'},]}/>                            
@@ -127,7 +86,7 @@ class EventItem extends React.Component {
           </TouchableHighlight>   
         </View>       
         <View style={{flex: 4}}>  
-          <TouchableHighlight >{/*onPress={this.PressText}>*/}
+          <TouchableHighlight>{/*onPress={this.PressText}>*/}
             <View style={{flex: 1}}>                            
               <Text style={styles.Time}>{event.startTime12 + '-' + event.endTime12}</Text>
               <Text style={styles.eventTitle}>{event.title}</Text>

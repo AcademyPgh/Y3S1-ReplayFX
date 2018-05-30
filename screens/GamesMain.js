@@ -4,7 +4,7 @@
  * @flow
  */
 import React, { Component } from 'react';
-import { Button, ScrollView, StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import { Button, ScrollView, StyleSheet, Text, View, Image, TouchableHighlight} from 'react-native';
 import { Fonts } from '../src/utils/Fonts';
 
 export default class GamesMain extends Component {
