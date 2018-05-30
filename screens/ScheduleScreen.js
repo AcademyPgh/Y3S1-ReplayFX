@@ -9,11 +9,9 @@ import {
   FlatList,
   Image,
   ImageBackground,
-  TouchableHighlight,
+  TouchableOpacity,
   Alert,
   Dimensions
-
-  
 } from 'react-native';
 import ScalableImage from 'react-native-scalable-image';
 
@@ -24,7 +22,7 @@ export default class ScheduleScreen extends React.Component {
   constructor(props) {
     super(props);
 
-    this.PressText=this.PressText.bind(this);
+    this.displayEvent=this.displayEvent.bind(this);
     this.PressStar=this.PressStar.bind(this);
   }
 
@@ -38,14 +36,14 @@ export default class ScheduleScreen extends React.Component {
     // }
   }
 
-  PressText() {
-    this.props.navigation.navigate('Schedule');
+  displayEvent(event) {
+    this.props.navigation.navigate('EventDetails', {eventInfo: event});
   }
 
   keyExtractor = (item, index) => item.id.toString();
 
   renderListItem = ({item}) => (
-    <EventItem event={item} />
+    <EventItem event={item} displayEvent={this.displayEvent}/>
   );
 
   render() {
@@ -71,29 +69,34 @@ export default class ScheduleScreen extends React.Component {
 }
 
 class EventItem extends React.PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.pressText = this.pressText.bind(this);
+  }
+
+  pressStar() {
+    Alert.alert('Clicked star in function!');
+  }
+
+  pressText() {
+    this.props.displayEvent(this.props.event);
+  }
 
   render() {
     const event = this.props.event;
 
     return (
       <View style={[styles.container, {backgroundColor: 'white', }]}>
-        <View style={{flex: 1, justifyContent: 'center'}}>
-          <TouchableHighlight>{/*onPress={this.PressStar} >*/}
-            <View style={styles.starContainer}>            
-                <Image style={styles.starbutton}
-                source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'},]}/>                            
-            </View>
-          </TouchableHighlight>   
-        </View>       
-        <View style={{flex: 4}}>  
-          <TouchableHighlight>{/*onPress={this.PressText}>*/}
-            <View style={{flex: 1}}>                            
-              <Text style={styles.Time}>{event.startTime12 + '-' + event.endTime12}</Text>
-              <Text style={styles.eventTitle}>{event.title}</Text>
-              <Text style={styles.Location}>{event.location}</Text>            
-            </View>                    
-          </TouchableHighlight>
-        </View>
+        <TouchableOpacity style={styles.starContainer} onPress={this.pressStar} >
+          <Image style={styles.starbutton}
+            source={require('../Images/Star.jpg')} style={[{width: 40, height: 40}, {flexDirection: 'row'},]}/>                            
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.eventTextContainer} onPress={this.pressText}>
+          <Text style={styles.Time}>{event.startTime12 + '-' + event.endTime12}</Text>
+          <Text style={styles.eventTitle}>{event.title}</Text>
+          <Text style={styles.Location}>{event.location}</Text>                
+        </TouchableOpacity>
       </View>
     );
   }
@@ -133,9 +136,6 @@ const styles = StyleSheet.create({
   starContainer: {
     flex: 1,
     justifyContent: 'center',
-    flexDirection: 'row',
-    width: 20,
-    paddingLeft: 40,
     alignItems: 'center',   
   },
   starbutton: {
@@ -145,6 +145,9 @@ const styles = StyleSheet.create({
     width: 20,
     paddingLeft: 40,
     alignItems: 'center',   
+  },
+  eventTextContainer: {
+    flex: 4,
   },
   text: {
 
