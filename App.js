@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 import { createNavigator, TabRouter, StackNavigator, TabNavigator, TabBarTop } from 'react-navigation';
 import {events, games, eventCategories, gameTypes} from './api-samples/sampleData';
+import { Fonts } from './src/utils/Fonts';
 
 import LandingScreen from './screens/LandingScreen';
 import HomeScreen from './screens/HomeScreen';
@@ -28,6 +29,8 @@ import EventDetailsScreen from './screens/EventDetailsScreen';
 import ArcadeListScreen from'./screens/ArcadeListScreen';
 import PinballListScreen from'./screens/PinballListScreen';
 import APIScreen from './screens/APIScreen';
+
+
 
 var showLandingPage = true;
 
@@ -72,7 +75,14 @@ export default class App extends React.Component {
     let content = <APIScreen dataLoaded={(apiData) => {this.handleAPILoaded(apiData)}}/>;
 
     if (this.state.apiLoaded) {
-      content = <RootStack screenProps={{apiData: this.state.apiData, dataLoadedTimestamp: this.state.dataLoadedTimestamp}}/>;
+      content = (
+        <View style={{flex: 1}}>
+          <RootStack screenProps={{apiData: this.state.apiData, dataLoadedTimestamp: this.state.dataLoadedTimestamp}}/>
+          <View style={[styles.footer,]}>
+            <Text style={styles.footerText}>#REPLAYFX</Text>
+          </View> 
+        </View>
+      );
     }
 
     return (
@@ -210,5 +220,20 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
+  },
+  footerText: {
+    fontSize: 30,
+    color: 'white',
+    textAlign: 'center',
+    fontFamily: Fonts.AvenirMedium,
+        
+  },
+  footer: {
+    height: 50,
+    paddingVertical: 5,
+    backgroundColor: '#000000',
+    flexDirection: 'column-reverse',
+    justifyContent: 'center',
+    
   },
 });
