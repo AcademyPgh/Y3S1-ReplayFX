@@ -6,6 +6,7 @@
 import React, { Component } from 'react';
 import { Button, ScrollView, StyleSheet, Text, View, Image, TouchableHighlight} from 'react-native';
 import { Fonts } from '../src/utils/Fonts';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class GamesMain extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -39,7 +40,7 @@ export default class GamesMain extends Component {
             </View>
 
               <View style={styles.imgcontainer}>
-              <Image source={require('../Images/chevron.png')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
+              <Icon name={'chevron-right'} size={40} color='#969696' />
               </View>
             
          </View>
@@ -54,7 +55,7 @@ export default class GamesMain extends Component {
             </View>
 
                 <View style={styles.imgcontainer}>
-                <Image source={require('../Images//chevron.png')} style={[{width: 40, height: 40}, {flexDirection: 'row'}]}/>
+                <Icon name={'chevron-right'} size={40} color='#969696' />
                 </View>
           
           </View>
