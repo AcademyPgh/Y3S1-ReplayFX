@@ -7,138 +7,80 @@ export default class HomeScreen extends Component {
 
     props = this.props;  
 
-   let ScreenHeight = Dimensions.get("window").height;
-   let ScreenWidth = Dimensions.get("window").width;
+    let ScreenHeight = Dimensions.get("window").height;
+    let ScreenWidth = Dimensions.get("window").width;
 
-     return (
+    return (
 
-       <View style={{flex:1}}> 
-       
-       
-         <View style={{flex: 1,}}>
-
-           <Image 
-           style={styles.stretch}
-           source={require('../Images/HomePage.png')}/>
-         </View>
-
-         <View style={{flex: 3}}>
+    <View style={{flex:1}}> 
 
 
-             <ImageBackground source={require('../Images/Background.jpg')} style={{flex:1}}>
-               
-             <ScrollView> 
-                  <ScrollView> 
-       <View style={styles.promoContainer}>
-       </View>
+      <View style={{flex: 1,}}>
+
+        <Image 
+        style={styles.stretch}
+        source={require('../Images/HomePage.png')}/>
+      </View>
+
+      <View style={{flex: 3}}>
+
+
+        {/*<ImageBackground source={require('../Images/Background.jpg')} style={{flex:1}}>*/}
+
+        <ScrollView> 
+
           <View style={[styles.container,]}>
-          <View style={styles.imgContainer}>
-          </View>
-    
-          <Text style={styles.text}
-                onPress={() => {
-                  /* 1. Navigate to the Schedule route with params */
-                  this.props.navigation.navigate('Schedule');
-                }}>SCHEDULE</Text>
-        </View>
-       
-        <View style={[styles.container,]}>
-         <View style={styles.imgContainer}>
-         </View>
-          <Text style={styles.text}
-                onPress={() => {
-                  /* 1. Navigate to the Schedule route with params */
-                  this.props.navigation.navigate('GamesMain');
-                }}>VIEW GAMES</Text>
-          </View>
-       
-       <View style={[styles.container,]}>
-         <View style={styles.imgContainer}>
-         </View>
-          <Text style={styles.text}
-                  onPress={() => {
-                    /* 1. Navigate to the Featured route with params */
-                    this.props.navigation.navigate('Schedule', {scheduleFilter: 'featured'});
-                  }}
-                >FEATURED</Text>
-          </View>
-       
-       <View style={[styles.container,]}>
-         <View style={styles.imgContainer}>
-         </View>          
-         <Text style={styles.text}
-            onPress={() => {
-              /* 1. Navigate to the OPENPLAYroute with params */
-              this.props.navigation.navigate('Schedule', {scheduleFilter: 'games'});
-            }}
-               
-         >OPEN PLAY</Text>
-         
-       </View>
-       <View style={[styles.container,]}>
-         <View style={styles.imgContainer}>
-         </View>
-         <Text style={styles.text}
-              onPress={() => {
-                /* 1. Navigate to the Compete route with params */
-                this.props.navigation.navigate('Schedule', {scheduleFilter: 'competitions'});
-              }}>COMPETE</Text>
-       </View>
 
-       <View style={[styles.container,]}>
-         <View style={styles.imgContainer}>
-         </View>
-         <Text style={styles.text}
-            onPress={() => {
-              /* 1. Navigate to the LIVE MUSIC route with params */
-              this.props.navigation.navigate('Schedule', {scheduleFilter: 'music'});
-            }}>LIVE MUSIC</Text>
-       </View>
-
-       <View style={[styles.container,]}>
-         <View style={styles.imgContainer}>
-         </View>  
-         <Text style={styles.text}
-          onPress={() => {
-            /* 1. Navigate to the Seminars route with params */
-            this.props.navigation.navigate('Schedule', {scheduleFilter: 'seminar'});
-          }}>SEMINARS</Text>
-       </View>
-
-       <View style={[styles.container,]}>
-         <View style={styles.imgContainer}>
-         </View>
-          <Text style={styles.text}
-              onPress={() => {
-                /* 1. Navigate to the Vendors route with params */
-                this.props.navigation.navigate('Schedule', {scheduleFilter: 'vendors'});
-          }}>VENDORS</Text>
-       </View>
-
-       <View style={[styles.container,]}>
-         <View style={styles.imgContainer}>
-         </View>         
             <Text style={styles.text}
-            onPress={() => { 
-            /* 1. Navigate to the Sponsors route with params */          
-            this.props.navigation.navigate('Sponsors', {});
-            }}>SPONSORS</Text>       
-       </View>
+              onPress={() => {
+              /* 1. Navigate to the Schedule route with params */
+              this.props.navigation.navigate('Schedule');
+              }}>
+              SCHEDULE
+            </Text>
+          </View>
 
-       <View style={[styles.container,]}>
-         <View style={styles.imgContainer}>
-         </View>
-         <Text style={styles.text}></Text>
-       </View>
-     
-       </ScrollView> 
-              
-               </ScrollView> 
-             </ImageBackground>
-           </View>
-           
-         </View>
-     );
+          <View style={[styles.container,]}>
+            <Text style={styles.text}
+              onPress={() => {
+              /* 1. Navigate to the Schedule route with params */
+              this.props.navigation.navigate('GamesMain');
+              }}>
+              VIEW GAMES
+            </Text>
+          </View>
+
+          {this.props.screenProps.apiData.eventCategories.map((category) => {
+            return (
+              <View style={[styles.container,]} key={category.Name}>
+                <Text style={styles.text}
+                  onPress={() => {
+                  /* 1. Navigate to the Featured route with params */
+                  this.props.navigation.navigate('Schedule', {scheduleFilter: category.Name});
+                  }}>
+                  {category.DisplayName.toUpperCase()}
+                </Text>
+              </View>
+            );
+          })}
+
+          <View style={[styles.container,]}>    
+            <Text style={styles.text}
+              onPress={() => { 
+              /* 1. Navigate to the Sponsors route with params */          
+              this.props.navigation.navigate('Sponsors', {});
+              }}>
+              SPONSORS
+            </Text>
+          </View>
+
+        </ScrollView> 
+
+      {/*</ImageBackground>*/}
+      </View>
+
+    </View>
+    );
   }
 }
 
