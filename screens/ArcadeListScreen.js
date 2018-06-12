@@ -34,15 +34,20 @@ export default class ArcadeListScreen extends React.Component {
     this.games = this.props.screenProps.apiData.games;
 
     this.state = {
-      searchFilter: '2001',
-      arcadeGames: []
+      searchFilter: '',
     };
+
+    this.handleChangeSearchText = this.handleChangeSearchText.bind(this);
   }
 
   showGameDetails(game) {
     //Alert.alert("You booped game id " + game.id + ":" + game.gameTitle + "!");
     
     this.props.navigation.navigate("ArcadeDetails", {gameInfo: game});
+  }
+
+  handleChangeSearchText(text) {
+    this.setState({searchFilter: text});
   }
 
   render() {
@@ -53,6 +58,7 @@ export default class ArcadeListScreen extends React.Component {
       <View style={{
         flex: 1,
       }}>
+        <Text style={{fontSize: 24}}>{'Search: ' + this.state.searchFilter}</Text>
         
           <ScalableImage width={Dimensions.get('window').width}
           source={require('../Images/ArcadeMainPageImage.jpg')}/>
@@ -61,10 +67,8 @@ export default class ArcadeListScreen extends React.Component {
           <TextInput
             style={{height: 60, borderColor: '#f3f3f3', backgroundColor: 'white', borderWidth: 12, padding: 5, textDecorationLine: 'none', fontSize: 20, fontFamily: 'Arial', color: 'gray', paddingLeft: 25}}
             placeholder="Search"
-            onChangeText={(text) => this.setState({text})}
-            />
-            <Text style={{padding: 1, fontSize: 42}}>
-            </Text>
+            onChangeText={this.handleChangeSearchText}
+          />
         </View> 
 
         <View>
@@ -80,7 +84,15 @@ export default class ArcadeListScreen extends React.Component {
                 const gameType = game.replayGameType;
                 const isArcade = gameType.name == 'Arcade';
 
-                return isArcade;
+                let matchesSearch = false;
+                const searchTerm = this.state.searchFilter.toLowerCase();
+                if (searchTerm.length == 0) {
+                  matchesSearch = true;
+                } else {
+                  matchesSearch = game.gameTitle.toLowerCase().includes(searchTerm);
+                }
+
+                return isArcade && matchesSearch;
             })
             
             .splice(0,100).map((game, index) => {
