@@ -149,9 +149,10 @@ export default class ScheduleScreenContainer extends React.Component {
         
         const m = moment(date);
         const day =  m.format("ddd");
-        const dateNum = m.date();
+        const month = m.format("MMMM");
+        const dateNum = m.format("DD");
   
-        return {key: index.toString(), date: m.toDate(), dayOfWeek: day, dayOfMonth: dateNum};
+        return {key: index.toString(), date: m.toDate(), dayOfWeek: day, dayOfMonth: dateNum, month: month};
       });
     }
 
@@ -181,6 +182,7 @@ export default class ScheduleScreenContainer extends React.Component {
     setupFavoriteFilter(favorites, events) {
       const favoriteEvents = [];
 
+      //TODO: Have to separate favorite events out to date sections
       favorites.forEach((eventId) => {
         const event = events.find((event) => { return event.id == eventId; });
         favoriteEvents.push(event);
@@ -192,8 +194,19 @@ export default class ScheduleScreenContainer extends React.Component {
     setupEventFilters(events) {
       this.filters = {};
 
+      //TODO: Make sections that are empty not show up in list
+      //create a filter for each tab, giving it a section headers object to section out dates
       this.tabs.forEach((tab) => {
-        this.filters[tab.name] = [];
+        const sections = {};
+
+        //create the section headers
+        this.eventDays.forEach((eventDay) => {
+          sections[eventDay.key] = {
+            title: `${eventDay.dayOfWeek} ${eventDay.month} ${eventDay.dayOfMonth}`,
+            data: []
+          };
+        });
+        this.filters[tab.name] = sections;
       });
 
       //loop through each event, adding it to filters where it belongs
@@ -201,12 +214,17 @@ export default class ScheduleScreenContainer extends React.Component {
 
         //put event in correct day filter
         const key = this.eventDays.find((day) => {return this.getDateString(day.date) == this.getDateString(event.date);}).key;
-        this.filters[key].push(event);
+        this.filters[key][key].data.push(event);
 
         //put event in each category it belongs to
         event.replayEventTypes.forEach((eventType) => {
-          this.filters[eventType.name].push(event);
+          this.filters[eventType.name][key].data.push(event);
         });
+      });
+
+      //now flatten the filters down to just an array of title and data, removing the keys
+      Object.keys(this.filters).forEach((filterName) => {
+        this.filters[filterName] = Object.keys(this.filters[filterName]).map(sectionKey => this.filters[filterName][sectionKey]);
       });
     }
 
@@ -291,7 +309,7 @@ export default class ScheduleScreenContainer extends React.Component {
             </View>
           </View>
           <View style={{flex:10}}>
-            {/* <ScrollView style={{flex:.25}}><Text>{JSON.stringify(this.filters['my-schedule'].map(event => event.id))}</Text></ScrollView> */}
+            {/* <ScrollView style={{flex:.25}}><Text>{JSON.stringify(this.filters)}</Text></ScrollView> */}
             <ScheduleScreen screenProps={this.props.screenProps} eventList={this.filters[this.state.filter]} favorites={this.state.favorites} onSetFavorite={this.setFavorite} navigation={this.props.navigation} />
           </View>
         </View>

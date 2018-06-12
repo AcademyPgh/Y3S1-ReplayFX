@@ -6,7 +6,7 @@ import {
   Button,
   View,
   ScrollView,
-  FlatList,
+  SectionList,
   Image,
   ImageBackground,
   TouchableOpacity,
@@ -40,7 +40,7 @@ export default class ScheduleScreen extends React.Component {
 
   keyExtractor = (item, index) => item.id.toString();
 
-  renderListItem = ({item}) => (
+  renderListItem = ({item, index, section}) => (
     <EventItem 
       event={item} 
       displayEvent={this.displayEvent} 
@@ -54,9 +54,12 @@ export default class ScheduleScreen extends React.Component {
     return(
       
       <View style={{flex: 1, flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: 'white'}}>
-        <FlatList 
-          data={this.props.eventList} 
+        <SectionList 
+          sections={this.props.eventList} 
           renderItem={this.renderListItem} 
+          renderSectionHeader={({section: {title}}) => (
+            <Text style={{fontWeight: 'bold'}}>{title}</Text>
+          )}
           keyExtractor={this.keyExtractor}
           ListHeaderComponent={
             <ScalableImage width={fullWidth}
