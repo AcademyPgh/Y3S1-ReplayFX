@@ -16,8 +16,6 @@ import {
 import ScalableImage from 'react-native-scalable-image';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const myIcon = (<Icon name="star" size={30} color='black' />)
-
 const fullWidth = Dimensions.get('window').width;
 
 export default class ScheduleScreen extends React.Component {
