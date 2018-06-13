@@ -12,9 +12,11 @@ import {
   ListView,
   Button,
   TouchableHighlight,
+  TouchableOpacity,
   Alert,
 } from 'react-native';
 import ScalableImage from 'react-native-scalable-image';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class ArcadeListScreen extends React.Component {
 
@@ -50,6 +52,10 @@ export default class ArcadeListScreen extends React.Component {
     this.setState({searchFilter: text});
   }
 
+  clearSearchText = () => {
+    this.setState({searchFilter: ''});
+  };
+
   render() {
     let ScreenHeight = Dimensions.get("window").height;
     let ScreenWidth = Dimensions.get("window").width;
@@ -58,25 +64,34 @@ export default class ArcadeListScreen extends React.Component {
       <View style={{
         flex: 1,
       }}>
-        <Text style={{fontSize: 24}}>{'Search: ' + this.state.searchFilter}</Text>
-        
-          <ScalableImage width={Dimensions.get('window').width}
+        <ScalableImage width={Dimensions.get('window').width}
           source={require('../Images/ArcadeMainPageImage.jpg')}/>
 
-        <View style={{}}>
+        <View style={{height: 34, margin: 8, borderRadius: 8, backgroundColor: 'white', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center'}}>
+          <View style={{width: 40, height: '100%', justifyContent: 'center', alignItems: 'center'}}>
+            <Icon name={'search'} size={24} color='lightgray' />
+          </View>
           <TextInput
-            style={{height: 60, borderColor: '#f3f3f3', backgroundColor: 'white', borderWidth: 12, padding: 5, textDecorationLine: 'none', fontSize: 20, fontFamily: 'Arial', color: 'gray', paddingLeft: 25}}
+            style={{flex: 1, height: '100%', padding: 0, textDecorationLine: 'none', fontSize: 20, fontFamily: 'Arial', color: 'gray'}}
             placeholder="Search"
+            placeholderTextColor='lightgray'
             onChangeText={this.handleChangeSearchText}
+            underlineColorAndroid='transparent'
+            value={this.state.searchFilter}
           />
-        </View> 
+          {this.state.searchFilter.length > 0 && 
+            <TouchableOpacity style={{width: 40, height: '100%', justifyContent: 'center', alignItems: 'center'}} onPress={this.clearSearchText}>
+              <Icon name={'remove'} size={24} color='gray' />
+            </TouchableOpacity>
+          }
+        </View>
 
         <View>
-        <AlphaBar/>
+          <AlphaBar/>
         </View>
 
         <View style={{
-          flex: 4, 
+          flex: 8, 
          }}>
           <ScrollView>
         
@@ -93,19 +108,19 @@ export default class ArcadeListScreen extends React.Component {
                 }
 
                 return isArcade && matchesSearch;
-            })
-            
-            .splice(0,100).map((game, index) => {
-             let style = [styles.item1];
-             if (index % 2 != 0){
-                 style.push(styles.item2);
-             }
-              return (
-                <TouchableHighlight key={game.id} onPress={() => {this.showGameDetails(game)}}>
-                  <View style={{borderTopWidth: StyleSheet.hairlineWidth}}><Text style={style}>{game.gameTitle}</Text></View>
-                </TouchableHighlight>
-              );
-            })}
+              })
+              .map((game, index) => {
+                let style = [styles.item1];
+                if (index % 2 != 0){
+                    style.push(styles.item2);
+                }
+                return (
+                  <TouchableHighlight key={game.id} onPress={() => {this.showGameDetails(game)}}>
+                    <View style={{borderTopWidth: StyleSheet.hairlineWidth}}><Text style={style}>{game.gameTitle}</Text></View>
+                  </TouchableHighlight>
+                );
+              })
+            }
           </ScrollView>
         </View>
     </View>
@@ -116,39 +131,37 @@ export default class ArcadeListScreen extends React.Component {
 class AlphaBar extends React.Component{
     render() {
         return ( 
-        <ScrollView horizontal={true}>
-        <View style={{flexDirection: 'row'}}>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>1-9</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>A</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>B</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>C</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>D</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>E</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>F</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>G</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>H</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>I</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>J</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>K</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>L</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>M</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>N</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>O</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>P</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>Q</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>R</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>S</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>T</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>U</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>V</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>W</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>X</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>Y</Text></View>
-        <View style={styles.letter}><Text style={styles.scrollLetterText}>Z</Text></View>
-
-      </View>
-      </ScrollView>
-
+          <ScrollView horizontal={true}>
+            <View style={{flexDirection: 'row'}}>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>1-9</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>A</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>B</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>C</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>D</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>E</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>F</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>G</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>H</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>I</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>J</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>K</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>L</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>M</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>N</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>O</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>P</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>Q</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>R</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>S</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>T</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>U</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>V</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>W</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>X</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>Y</Text></View>
+              <View style={styles.letter}><Text style={styles.scrollLetterText}>Z</Text></View>
+            </View>
+          </ScrollView>
         );
     }
 }
