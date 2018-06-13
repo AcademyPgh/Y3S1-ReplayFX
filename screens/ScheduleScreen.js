@@ -47,6 +47,22 @@ export default class ScheduleScreen extends React.Component {
     />
   );
 
+  renderSectionHeader = ({section: {title}}) => (
+    this.props.showSectionHeaders && <Text style={{fontWeight: 'bold', paddingLeft: 8}}>{title}</Text>
+  );
+
+  renderSeparator = () => {
+    return (
+      <View
+        style={{
+          height: StyleSheet.hairlineWidth * 4,
+          width: "100%",
+          backgroundColor: "#9ca4ab",
+        }}
+      />
+    );
+  };
+
   render() {
 
     return(
@@ -55,9 +71,7 @@ export default class ScheduleScreen extends React.Component {
         <SectionList 
           sections={this.props.eventList} 
           renderItem={this.renderListItem} 
-          renderSectionHeader={({section: {title}}) => (
-            <Text style={{fontWeight: 'bold'}}>{title}</Text>
-          )}
+          renderSectionHeader={this.renderSectionHeader}
           keyExtractor={this.keyExtractor}
           ListHeaderComponent={
             <ScalableImage width={fullWidth}
@@ -65,6 +79,8 @@ export default class ScheduleScreen extends React.Component {
               source={require('../Images/PromoSpot.jpg')}
             />
           }
+          ItemSeparatorComponent={this.renderSeparator}
+          SectionSeparatorComponent={this.renderSeparator}
         />
     </View>
     );
@@ -133,8 +149,8 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    borderWidth: StyleSheet.hairlineWidth * 2,
-    borderColor: '#9ca4ab',
+    //borderWidth: StyleSheet.hairlineWidth * 4,
+    //borderColor: '#9ca4ab',
     flexDirection: 'row',   
     paddingVertical: 5, 
   },
