@@ -6,7 +6,7 @@ import {
   View,
   Image,
   Dimensions,
-  FlatList,
+  SectionList,
   ScrollView,
   TextInput,
   ListView,
@@ -17,9 +17,11 @@ import {
 } from 'react-native';
 import ScalableImage from 'react-native-scalable-image';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import sectionListGetItemLayout from 'react-native-section-list-get-item-layout'
+
+const ROW_HEIGHT = 35;
 
 export default class ArcadeListScreen extends React.Component {
-
     static navigationOptions = ({ navigation, navigationOptions }) => {
       const { params } = navigation.state;
 
@@ -39,12 +41,14 @@ export default class ArcadeListScreen extends React.Component {
       searchFilter: '',
     };
 
+    alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    this.alphaSections = alphabet.split('');
+    this.alphaSections.unshift('0-9');
+
     this.handleChangeSearchText = this.handleChangeSearchText.bind(this);
   }
 
   showGameDetails(game) {
-    //Alert.alert("You booped game id " + game.id + ":" + game.gameTitle + "!");
-    
     this.props.navigation.navigate("ArcadeDetails", {gameInfo: game});
   }
 
@@ -56,13 +60,94 @@ export default class ArcadeListScreen extends React.Component {
     this.setState({searchFilter: ''});
   };
 
+  handleAlphaBarPress = (text) => {
+
+    const sectionIndex = this.alphaSections.indexOf(text);
+
+    this.sectionList.scrollToLocation({animated: false, sectionIndex: sectionIndex, itemIndex: 0});
+  }
+
+  filterGames = (games) => {
+    return games.filter(game =>{
+      const gameType = game.replayGameType;
+      const isArcade = gameType.name == 'Arcade';
+
+      let matchesSearch = false;
+      const searchTerm = this.state.searchFilter.toLowerCase();
+      if (searchTerm.length == 0) {
+        matchesSearch = true;
+      } else {
+        matchesSearch = game.gameTitle.toLowerCase().includes(searchTerm);
+      }
+
+      return isArcade && matchesSearch;
+    })
+  }
+
+  keyExtractor = (item, index) => item.id.toString();
+
+  renderGame = ({item, index, section}) => {
+    const totalIndex = section.startIndex + index;
+    let style = [styles.item1];
+    if (totalIndex % 2 != 0) {
+        style.push(styles.item2);
+    }
+    return (
+      <TouchableOpacity key={item.id} onPress={() => {this.showGameDetails(item)}}>
+        <View style={style}><Text style={styles.itemText}>{item.gameTitle}</Text></View>
+      </TouchableOpacity>
+    );
+  };
+
+  setSectionList = (el) => {
+    this.sectionList = el;
+  }
+
+  getItemLayout = sectionListGetItemLayout({
+    // The height of the row with rowData at the given sectionIndex and rowIndex
+    getItemHeight: (rowData, sectionIndex, rowIndex) => ROW_HEIGHT,
+  })
+
   render() {
     let ScreenHeight = Dimensions.get("window").height;
     let ScreenWidth = Dimensions.get("window").width;
- 
+
+    let displayedGames = this.filterGames(this.games);
+
+    //convert our alphaSections array into an object with a key for each section
+    let sectionedGames = {};
+    
+    this.alphaSections.forEach(section => {
+      sectionedGames[section] = [];
+    });
+
+    //put games into sections based on first character
+    //if first character isn't found in sections, push into first section
+    displayedGames.forEach(game => {
+      const gameTitle = game.gameTitle;
+      const firstchar = gameTitle[0];
+      const targetSection = sectionedGames[firstchar.toUpperCase()];
+
+      if (targetSection) {
+        targetSection.push(game);
+      } else {
+        sectionedGames[this.alphaSections[0]].push(game);
+      }
+    });
+
+    //used to track total index across sections
+    let sectionStartIndex = 0;
+
+    //now flatten the sections down to just an array of title and data, removing the keys
+    sectionedGames = Object.keys(sectionedGames).map(sectionKey => { 
+      const result = {title: sectionKey, startIndex: sectionStartIndex, data: sectionedGames[sectionKey]};
+      sectionStartIndex += sectionedGames[sectionKey].length;
+      return result;
+    });
+    
     return (
       <View style={{
-        flex: 1,
+        flex: 1, backgroundColor: 'whitesmoke'
       }}>
         <ScalableImage width={Dimensions.get('window').width}
           source={require('../Images/ArcadeMainPageImage.jpg')}/>
@@ -87,41 +172,20 @@ export default class ArcadeListScreen extends React.Component {
         </View>
 
         <View>
-          <AlphaBar/>
+          <AlphaBar onPress={this.handleAlphaBarPress}/>
         </View>
 
         <View style={{
           flex: 8, 
          }}>
-          <ScrollView>
-        
-            { this.games.filter(game =>{
-                const gameType = game.replayGameType;
-                const isArcade = gameType.name == 'Arcade';
-
-                let matchesSearch = false;
-                const searchTerm = this.state.searchFilter.toLowerCase();
-                if (searchTerm.length == 0) {
-                  matchesSearch = true;
-                } else {
-                  matchesSearch = game.gameTitle.toLowerCase().includes(searchTerm);
-                }
-
-                return isArcade && matchesSearch;
-              })
-              .map((game, index) => {
-                let style = [styles.item1];
-                if (index % 2 != 0){
-                    style.push(styles.item2);
-                }
-                return (
-                  <TouchableHighlight key={game.id} onPress={() => {this.showGameDetails(game)}}>
-                    <View style={{borderTopWidth: StyleSheet.hairlineWidth}}><Text style={style}>{game.gameTitle}</Text></View>
-                  </TouchableHighlight>
-                );
-              })
-            }
-          </ScrollView>
+          <SectionList 
+            ref={this.setSectionList}
+            sections={sectionedGames} 
+            renderItem={this.renderGame} 
+            keyExtractor={this.keyExtractor}
+            getItemLayout={this.getItemLayout}
+            initialNumToRender={20}
+          />
         </View>
     </View>
     );
@@ -129,41 +193,75 @@ export default class ArcadeListScreen extends React.Component {
 }
 
 class AlphaBar extends React.Component{
-    render() {
-        return ( 
-          <ScrollView horizontal={true}>
-            <View style={{flexDirection: 'row'}}>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>1-9</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>A</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>B</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>C</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>D</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>E</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>F</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>G</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>H</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>I</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>J</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>K</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>L</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>M</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>N</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>O</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>P</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>Q</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>R</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>S</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>T</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>U</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>V</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>W</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>X</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>Y</Text></View>
-              <View style={styles.letter}><Text style={styles.scrollLetterText}>Z</Text></View>
-            </View>
-          </ScrollView>
-        );
+  constructor(props) {
+    super(props);
+
+    alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    this.buttons = alphabet.split('');
+    this.buttons.unshift('0-9');
+
+    this.buttonLayout = {};
+  }
+
+  alphaScroll: ?ScrollView;
+
+  setScroll = (el) => {
+    this.alphaScroll = el;
+  }
+
+  layoutScroll = (e) => {
+    this.scrollWidth = e.nativeEvent.layout.width;
+  }
+
+  handleContentSizeChange = (contentHeight, contentWidth) => {
+    this.scrollContentWidth = contentWidth;
+  };
+
+  layoutButton = (e, key) => {
+    if (!this.buttonLayout[key]) {
+      this.buttonLayout[key] = {width: e.nativeEvent.layout.width, x: e.nativeEvent.layout.x};
     }
+  }
+
+  scrollToButton = (key, animate = true) => {
+    const scrollHalfWidth = this.scrollWidth * 0.5;
+    const button = this.buttonLayout[key];
+    const buttonCenter = button.x + (button.width * 0.5);
+
+    let scrollPos = buttonCenter - scrollHalfWidth;
+
+    scrollPos = scrollPos < 0 ? 0 : scrollPos;
+
+    this.alphaScroll.scrollTo({x: scrollPos, animated: animate});
+  }
+
+  handlePress = (key) => {
+    this.scrollToButton(key, true);
+    this.props.onPress(key);
+  }
+
+  render() {
+    return ( 
+      <ScrollView showsHorizontalScrollIndicator={false} horizontal={true} ref={this.setScroll} onLayout={this.layoutScroll} onContentSizeChange={this.handleContentSizeChange}>
+        <View style={{flexDirection: 'row'}}>
+          {this.buttons.map(text => {
+            let style = [styles.letter];
+            if (text.length > 1) {
+              style.push(styles.wideLetter);
+            }
+            return (
+              <TouchableHighlight style={style}
+                key={text}
+                onLayout={(e) => {this.layoutButton(e, text)}}
+                onPress={() => this.handlePress(text)}>
+                  <Text style={styles.scrollLetterText}>{text}</Text>
+              </TouchableHighlight>
+            );
+          })}
+        </View>
+      </ScrollView>
+    );
+  }
 }
  
 const styles=StyleSheet.create({
@@ -174,32 +272,38 @@ const styles=StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 22
-   },
-   letter: {
+  },
+  letter: {
     backgroundColor: '#555555',
     alignItems: 'center',
-     borderRightWidth: 0,
-     borderLeftWidth: .5,
-     borderRightColor: 'black',
-     borderLeftColor: 'black',
+    borderLeftWidth: StyleSheet.hairlineWidth * 3,
+    borderLeftColor: 'black',
+    width: 35,
+    margin: 0,
+  },
+  wideLetter: {
+    width: 48
   },
   scrollLetterText: {
-    fontSize: 20,
+    fontSize: 24,
     fontFamily: 'arial',
+    textAlign: 'center',
     color: '#e3e4e4',
     paddingBottom: 3,
     paddingTop: 3,
-    paddingLeft: 9,
-    paddingRight: 9, 
   },
    item1: {
-    padding: 5,
-    fontSize: 18,
-    fontFamily: 'Arial',
-    borderColor: 'black',
-    borderWidth: .5
+    height: ROW_HEIGHT,
+    paddingHorizontal: 5,
+    borderBottomWidth: StyleSheet.hairlineWidth * 4,
+    borderColor: '#9ca4ab',
+    justifyContent: 'center',
   },
   item2: {
     backgroundColor: '#dddddd',
   },
+  itemText: {
+    fontSize: 18,
+    fontFamily: 'Arial',
+  }
 });
