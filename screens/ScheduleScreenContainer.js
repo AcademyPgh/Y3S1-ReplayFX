@@ -38,8 +38,8 @@ export default class ScheduleScreenContainer extends React.Component {
       this.getEventDays = this.getEventDays.bind(this);
       this.setupTabs = this.setupTabs.bind(this);
       this.setupEventFilters = this.setupEventFilters.bind(this);
-      this.setupFAvoriteFilter = this.setupFavoriteFilter.bind(this);
-
+      this.setupFavoriteFilter = this.setupFavoriteFilter.bind(this);
+      this.isDateFilter = this.isDateFilter.bind(this);
       this.loadFavorites = this.loadFavorites.bind(this);
       this.addFavorite = this.addFavorite.bind(this);
       this.removeFavorite = this.removeFavorite.bind(this);
@@ -48,12 +48,13 @@ export default class ScheduleScreenContainer extends React.Component {
       this.getEventDays(this.props.screenProps.apiData.events);
       this.setupTabs(this.eventDays, this.props.screenProps.apiData.eventCategories);
       this.setupEventFilters(this.props.screenProps.apiData.events);
-
+      
       let filter = this.props.navigation.getParam('scheduleFilter', '');
       filter = this.getFilter(filter);
       
       this.state = {
         filter: filter,
+        showSectionHeaders: !this.isDateFilter(filter),
         favorites: [],
       };
 
@@ -149,9 +150,10 @@ export default class ScheduleScreenContainer extends React.Component {
         
         const m = moment(date);
         const day =  m.format("ddd");
-        const dateNum = m.date();
+        const month = m.format("MMMM");
+        const dateNum = m.format("DD");
   
-        return {key: index.toString(), date: m.toDate(), dayOfWeek: day, dayOfMonth: dateNum};
+        return {key: index.toString(), date: m.toDate(), dayOfWeek: day, dayOfMonth: dateNum, month: month};
       });
     }
 
@@ -179,21 +181,50 @@ export default class ScheduleScreenContainer extends React.Component {
     }
 
     setupFavoriteFilter(favorites, events) {
-      const favoriteEvents = [];
 
-      favorites.forEach((eventId) => {
-        const event = events.find((event) => { return event.id == eventId; });
-        favoriteEvents.push(event);
+      const sections = {};
+      //set up the sections based on day
+      this.eventDays.forEach((eventDay) => {
+        sections[eventDay.key] = {
+          title: `${eventDay.dayOfWeek} ${eventDay.month} ${eventDay.dayOfMonth}`,
+          data: []
+        };
       });
 
-      this.filters['my-schedule'] = favoriteEvents;
+      const favoriteEvents = sections;
+
+      favorites.forEach((eventId) => {
+
+        const event = events.find((event) => { return event.id == eventId; });
+
+        //figure out date key for event
+        const key = this.eventDays.find((day) => {return this.getDateString(day.date) == this.getDateString(event.date);}).key;
+
+        //put event into correct date section
+        favoriteEvents[key].data.push(event);
+      });
+
+      //now flatten the favorites down to just an array of title and data, removing the keys and empty sections
+      this.filters['my-schedule'] = Object.keys(favoriteEvents)
+        .filter(key => favoriteEvents[key].data.length > 0)
+        .map(sectionKey => favoriteEvents[sectionKey]);
     }
 
     setupEventFilters(events) {
       this.filters = {};
 
+      //create a filter for each tab, giving it a section headers object to section out dates
       this.tabs.forEach((tab) => {
-        this.filters[tab.name] = [];
+        const sections = {};
+
+        //create the section headers
+        this.eventDays.forEach((eventDay) => {
+          sections[eventDay.key] = {
+            title: `${eventDay.dayOfWeek} ${eventDay.month} ${eventDay.dayOfMonth}`,
+            data: []
+          };
+        });
+        this.filters[tab.name] = sections;
       });
 
       //loop through each event, adding it to filters where it belongs
@@ -201,12 +232,19 @@ export default class ScheduleScreenContainer extends React.Component {
 
         //put event in correct day filter
         const key = this.eventDays.find((day) => {return this.getDateString(day.date) == this.getDateString(event.date);}).key;
-        this.filters[key].push(event);
+        this.filters[key][key].data.push(event);
 
         //put event in each category it belongs to
         event.replayEventTypes.forEach((eventType) => {
-          this.filters[eventType.name].push(event);
+          this.filters[eventType.name][key].data.push(event);
         });
+      });
+
+      //now flatten the filters down to just an array of title and data, removing the keys
+      Object.keys(this.filters).forEach((filterName) => {
+        this.filters[filterName] = Object.keys(this.filters[filterName])
+          .filter(sectionKey => this.filters[filterName][sectionKey].data.length > 0)
+          .map(sectionKey => this.filters[filterName][sectionKey]);
       });
     }
 
@@ -222,12 +260,16 @@ export default class ScheduleScreenContainer extends React.Component {
     updateFilter(newFilter) {
       const filter = this.getFilter(newFilter);
       this.setState({filter: filter});
+      this.setState({showSectionHeaders: !this.isDateFilter(filter)});
+    }
+
+    isDateFilter(filter) {
+      return this.eventDays.some((day) => filter == day.key);
     }
 
     selectTab(tabName, animate = true) {
       this.scrollToTab(tabName, animate);
       this.updateFilter(tabName);
-      //TODO: focus tab so that its text is white, unfocused tabs should be grey
     }
 
     setTabScroll = (el) => {
@@ -291,8 +333,8 @@ export default class ScheduleScreenContainer extends React.Component {
             </View>
           </View>
           <View style={{flex:10}}>
-            {/* <ScrollView style={{flex:.25}}><Text>{JSON.stringify(this.filters['my-schedule'].map(event => event.id))}</Text></ScrollView> */}
-            <ScheduleScreen screenProps={this.props.screenProps} eventList={this.filters[this.state.filter]} favorites={this.state.favorites} onSetFavorite={this.setFavorite} navigation={this.props.navigation} />
+            {/* <ScrollView style={{flex:.25}}><Text>{JSON.stringify(this.filters)}</Text></ScrollView> */}
+            <ScheduleScreen screenProps={this.props.screenProps} eventList={this.filters[this.state.filter]} favorites={this.state.favorites} onSetFavorite={this.setFavorite} showSectionHeaders={this.state.showSectionHeaders} navigation={this.props.navigation} />
           </View>
         </View>
       );
