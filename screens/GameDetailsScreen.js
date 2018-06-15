@@ -25,15 +25,25 @@ export default class GameDetailsScreen extends React.Component {
     };
   }
 
+  arcadeImage = require('../Images/ArcadeGamePageImage.jpg');
+  pinballImage = require('../Images/PinballGamePageImage.jpg');
+
   render() {
     const gameInfo = this.props.navigation.getParam("gameInfo");
+
+    let image = this.arcadeImage;
+
+    if (gameInfo.replayGameType.name == 'Pinball') {
+      image = this.pinballImage;
+    }
+
     return (
         <View style={styles.container}>
           
          
             <ScalableImage width={Dimensions.get('window').width}
               background
-              source={require('../Images/ArcadeGamePageImage.jpg')}>         
+              source={image}>         
             <Text numberOfLines={1} adjustsFontSizeToFit style={styles.headerTextInput}>{gameInfo.gameTitle.toUpperCase()}</Text>
             <Text style={styles.headerText}>{gameInfo.replayGameType.name.toUpperCase()}</Text>
             </ScalableImage>          
