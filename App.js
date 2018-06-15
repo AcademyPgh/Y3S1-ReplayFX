@@ -99,50 +99,49 @@ const RootStack = StackNavigator(
     Home: {
       screen: HomeScreen,
       navigationOptions: {
-        title: 'Home',
+        title: 'HOME',
         header: null
       }
     },
     Schedule: {
       screen: ScheduleScreenContainer,
-      initialRouteParams: { scheduleFilter: 'thur' },
       navigationOptions: {
-        title: 'Schedule'
+        title: 'SCHEDULE'
       }
     },
     GamesList: {
     screen: GamesListScreen,
       initialRouteParams: { },
       navigationOptions: {
-        title: 'Games',
+        title: 'GAMES',
       }
     },
     Sponsors: {
       screen: SponsorsScreen,
       initialRouteParams: { },
       navigationOptions: {
-        title: 'Sponsors',
+        title: 'SPONSORS',
       }
     },
     GamesMain: {
       screen: GamesMain,
       initialRouteParams: { },
       navigationOptions: {
-        title: 'Choose Your Platform',
+        title: 'CHOOSE YOUR PLATFORM',
       }
     },
     GameDetails: {
       screen: GameDetailsScreen,
       initialRouteParams: { },
       navigationOptions: {
-        title: 'Game Detail',
+        title: 'GAMES',
       }
     },
     EventDetails: {
       screen: EventDetailsScreen,
       initialRouteParams: { },
       navigationOptions: {
-        title: 'Event Detail',
+        title: 'SCHEDULE',
       }
     },
     APITest: {
