@@ -10,6 +10,7 @@ import {
   AsyncStorage,
 } from 'react-native';
 import ScheduleScreen from './ScheduleScreen';
+import { homeButtonHeader } from '../src/utils/Headers';
 import moment from 'moment';
 
 const debug = [];
@@ -20,11 +21,7 @@ export default class ScheduleScreenContainer extends React.Component {
     static navigationOptions = ({ navigation, navigationOptions }) => {
       const { params, routeName } = navigation.state;
 
-      return {
-        headerRight: (
-          <Button onPress={() => {navigation.popToTop()}} title="Home" color="#000" />
-        ),
-      };
+      return homeButtonHeader(navigation);
     }
 
     tabScroll: ?ScrollView;

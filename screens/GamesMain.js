@@ -6,17 +6,14 @@
 import React, { Component } from 'react';
 import { Button, ScrollView, StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import { Fonts } from '../src/utils/Fonts';
+import { homeButtonHeader } from '../src/utils/Headers';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class GamesMain extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
-    return {
-      headerRight: (
-        <Button onPress={() => {navigation.popToTop()}} title="Home" color="#000" />
-      ),
-    };
+    return homeButtonHeader(navigation);
   }
 
   constructor(props) {

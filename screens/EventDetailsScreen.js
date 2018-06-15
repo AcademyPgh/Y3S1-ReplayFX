@@ -13,16 +13,13 @@ import {
 } from 'react-native';
 import ScalableImage from 'react-native-scalable-image';
 import { Fonts } from '../src/utils/Fonts';
+import { homeButtonHeader } from '../src/utils/Headers';
 
 export default class EventDetailsScreen extends React.Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
-    return {
-      headerRight: (
-        <Button onPress={() => {navigation.popToTop()}} title="Home" color="#000" />
-      ),
-    };
+    return homeButtonHeader(navigation);
   }
   render() {
     const width = Dimensions.get('window').width;
