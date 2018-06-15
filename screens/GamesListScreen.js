@@ -21,7 +21,7 @@ import sectionListGetItemLayout from 'react-native-section-list-get-item-layout'
 
 const ROW_HEIGHT = 35;
 
-export default class ArcadeListScreen extends React.Component {
+export default class GamesListScreen extends React.Component {
     static navigationOptions = ({ navigation, navigationOptions }) => {
       const { params } = navigation.state;
 
@@ -49,7 +49,7 @@ export default class ArcadeListScreen extends React.Component {
   }
 
   showGameDetails(game) {
-    this.props.navigation.navigate("ArcadeDetails", {gameInfo: game});
+    this.props.navigation.navigate("GameDetails", {gameInfo: game});
   }
 
   handleChangeSearchText(text) {
@@ -68,9 +68,12 @@ export default class ArcadeListScreen extends React.Component {
   }
 
   filterGames = (games) => {
+
+    const validGameType = this.props.navigation.getParam('gameType', null);
+
     return games.filter(game =>{
-      const gameType = game.replayGameType;
-      const isArcade = gameType.name == 'Arcade';
+      const gameType = game.replayGameType.id;
+      const isValidType = validGameType ? validGameType.Id == gameType : true;
 
       let matchesSearch = false;
       const searchTerm = this.state.searchFilter.toLowerCase();
@@ -80,7 +83,7 @@ export default class ArcadeListScreen extends React.Component {
         matchesSearch = game.gameTitle.toLowerCase().includes(searchTerm);
       }
 
-      return isArcade && matchesSearch;
+      return isValidType && matchesSearch;
     })
   }
 
@@ -107,6 +110,9 @@ export default class ArcadeListScreen extends React.Component {
     // The height of the row with rowData at the given sectionIndex and rowIndex
     getItemHeight: (rowData, sectionIndex, rowIndex) => ROW_HEIGHT,
   })
+
+  arcadeImage = require('../Images/ArcadeMainPageImage.jpg');
+  pinballImage = require('../Images/PinballMainPageImage.jpg');
 
   render() {
     let ScreenHeight = Dimensions.get("window").height;
@@ -144,13 +150,21 @@ export default class ArcadeListScreen extends React.Component {
       sectionStartIndex += sectionedGames[sectionKey].length;
       return result;
     });
+
+    const gameType = this.props.navigation.getParam('gameType', null);
+
+    let image = this.arcadeImage;
+
+    if (gameType && gameType.Name == 'Pinball') {
+      image = this.pinballImage;
+    }
     
     return (
       <View style={{
         flex: 1, backgroundColor: 'whitesmoke'
       }}>
         <ScalableImage width={Dimensions.get('window').width}
-          source={require('../Images/ArcadeMainPageImage.jpg')}/>
+          source={image}/>
 
         <View style={{height: 34, margin: 8, borderRadius: 8, backgroundColor: 'white', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center'}}>
           <View style={{width: 40, height: '100%', justifyContent: 'center', alignItems: 'center'}}>

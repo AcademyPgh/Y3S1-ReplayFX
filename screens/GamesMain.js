@@ -4,7 +4,7 @@
  * @flow
  */
 import React, { Component } from 'react';
-import { Button, ScrollView, StyleSheet, Text, View, Image, TouchableHighlight} from 'react-native';
+import { Button, ScrollView, StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import { Fonts } from '../src/utils/Fonts';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -19,11 +19,8 @@ export default class GamesMain extends Component {
     };
   }
 
-  PressChevronArcade() {
-    
-  }
-  PressChevronPinball() {
-    
+  constructor(props) {
+    super(props);
   }
 
   render() {
@@ -32,39 +29,25 @@ export default class GamesMain extends Component {
       // The parent will not have dimensions, so the children can't expand.
       // What if you add `height: 300` instead of `flex: 1`?      
       <ScrollView style={styles.background}> 
-        <TouchableHighlight onPress={this.PressChevronPinball} onPress={this.PressChevronPinball} onPress={() => {                  
-          this.props.navigation.navigate('PinballList')}}>
-          <View style={[styles.container, {backgroundColor: 'whitesmoke', }]}>
-            <View style={styles.text}>   
-               <Text style={styles.Font}>PINBALL</Text>
-            </View>
+        {
+          this.props.screenProps.apiData.gameTypes.map(gameType => {
+            return (
+              <TouchableOpacity key={gameType.Id} onPress={() => {                  
+                this.props.navigation.navigate('GamesList', {gameType: gameType})}}>
 
-              <View style={styles.imgcontainer}>
-              <Icon name={'chevron-right'} size={40} color='#969696' />
-              </View>
-            
-         </View>
-        </TouchableHighlight>
-
-        <TouchableHighlight onPress={this.PressChevronArcade} onPress={this.PressChevronArcade} onPress={() => {   
-          this.props.navigation.navigate('ArcadeList')}}>
-
-          <View style={[styles.container, {backgroundColor: 'whitesmoke', }]}>
-            <View style={styles.text}>   
-              <Text style={styles.Font}>ARCADE</Text>
-            </View>
-
-                <View style={styles.imgcontainer}>
-                <Icon name={'chevron-right'} size={40} color='#969696' />
+                <View style={[styles.container, {backgroundColor: 'whitesmoke', }]}>
+                  <View style={styles.text}>
+                    <Text style={styles.Font}>{gameType.Name.toUpperCase()}</Text>
+                  </View>
+                  <View style={styles.imgcontainer}>
+                    <Icon name={'chevron-right'} size={30} color='#969696' />
+                  </View>
                 </View>
-          
-          </View>
-        </TouchableHighlight>
-        
-       
-        </ScrollView> 
-      
-      
+              </TouchableOpacity>
+            );
+          })
+        }
+      </ScrollView>
     );
   }
 }
@@ -94,14 +77,13 @@ const styles = StyleSheet.create({
   },
   imgcontainer: {
     justifyContent: 'center',
-    width: 240,
-    alignItems: 'flex-end'
-
+    alignItems: 'flex-end',
+    paddingRight: 20
   },
   text:{
     justifyContent: 'center',
     paddingLeft: 20,
-
+    flex: 1
   },
   background:{
     height: 300,

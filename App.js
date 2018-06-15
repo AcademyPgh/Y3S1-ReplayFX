@@ -19,15 +19,12 @@ import { Fonts } from './src/utils/Fonts';
 
 import LandingScreen from './screens/LandingScreen';
 import HomeScreen from './screens/HomeScreen';
-import GameListScreen from './screens/GameListScreen';
+import GamesListScreen from './screens/GamesListScreen';
 import ScheduleScreenContainer from './screens/ScheduleScreenContainer';
 import SponsorsScreen from './screens/SponsorsScreen';
-import PinballDetailsScreen from './screens/PinballDetailsScreen';
 import GamesMain from './screens/GamesMain';
-import ArcadeDetailsScreen from './screens/ArcadeDetailsScreen';
+import GameDetailsScreen from './screens/GameDetailsScreen';
 import EventDetailsScreen from './screens/EventDetailsScreen';
-import ArcadeListScreen from'./screens/ArcadeListScreen';
-import PinballListScreen from'./screens/PinballListScreen';
 import APIScreen from './screens/APIScreen';
 
 
@@ -113,8 +110,8 @@ const RootStack = StackNavigator(
         title: 'Schedule'
       }
     },
-    Games: {
-    screen: GameListScreen,
+    GamesList: {
+    screen: GamesListScreen,
       initialRouteParams: { },
       navigationOptions: {
         title: 'Games',
@@ -127,13 +124,6 @@ const RootStack = StackNavigator(
         title: 'Sponsors',
       }
     },
-    PinballDetails: {
-      screen: PinballDetailsScreen,
-      initialRouteParams: { },
-      navigationOptions: {
-        title: 'Pinball Detail',
-      }
-    },
     GamesMain: {
       screen: GamesMain,
       initialRouteParams: { },
@@ -141,11 +131,11 @@ const RootStack = StackNavigator(
         title: 'Choose Your Platform',
       }
     },
-    ArcadeDetails: {
-      screen: ArcadeDetailsScreen,
+    GameDetails: {
+      screen: GameDetailsScreen,
       initialRouteParams: { },
       navigationOptions: {
-        title: 'Arcade Detail',
+        title: 'Game Detail',
       }
     },
     EventDetails: {
@@ -153,20 +143,6 @@ const RootStack = StackNavigator(
       initialRouteParams: { },
       navigationOptions: {
         title: 'Event Detail',
-      }
-    },
-    ArcadeList: {
-      screen: ArcadeListScreen,
-      initialRouteParams: { },
-      navigationOptions: {
-        title: 'Arcade List',
-      }
-    },
-    PinballList: {
-      screen: PinballListScreen,
-      initialRouteParams: { },
-      navigationOptions: {
-        title: 'Pinball List',
       }
     },
     APITest: {

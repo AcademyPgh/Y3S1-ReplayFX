@@ -14,7 +14,7 @@ import {
 import ScalableImage from 'react-native-scalable-image';
 import { Fonts } from '../src/utils/Fonts';
 
-export default class ArcadeDetailsScreen extends React.Component {
+export default class GameDetailsScreen extends React.Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
@@ -24,17 +24,28 @@ export default class ArcadeDetailsScreen extends React.Component {
       ),
     };
   }
+
+  arcadeImage = require('../Images/ArcadeGamePageImage.jpg');
+  pinballImage = require('../Images/PinballGamePageImage.jpg');
+
   render() {
     const gameInfo = this.props.navigation.getParam("gameInfo");
+
+    let image = this.arcadeImage;
+
+    if (gameInfo.replayGameType.name == 'Pinball') {
+      image = this.pinballImage;
+    }
+
     return (
         <View style={styles.container}>
           
          
             <ScalableImage width={Dimensions.get('window').width}
               background
-              source={require('../Images/ArcadeGamePageImage.jpg')}>         
+              source={image}>         
             <Text numberOfLines={1} adjustsFontSizeToFit style={styles.headerTextInput}>{gameInfo.gameTitle.toUpperCase()}</Text>
-            <Text style={styles.headerText}>ARCADE</Text>
+            <Text style={styles.headerText}>{gameInfo.replayGameType.name.toUpperCase()}</Text>
             </ScalableImage>          
           
             <ScrollView style={styles.detailsContainer}>

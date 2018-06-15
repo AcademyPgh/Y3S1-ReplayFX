@@ -37,15 +37,6 @@ export default class LandingScreen extends React.Component {
               }}
             />
             <Button
-              title="Games"
-              onPress={() => {
-                /* 1. Navigate to the Games route with no params */
-                this.props.navigation.navigate('Games', {
-                  gameList: this.props.screenProps.apiData.games
-                });
-              }}
-            />
-            <Button
               title="Featured"
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
@@ -114,31 +105,24 @@ export default class LandingScreen extends React.Component {
               }}
             />
             <Button
-              title="Arcade Details"
+              title="Game Details"
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
-                this.props.navigation.navigate('ArcadeDetails');
-              }}
-            />
-            <Button
-              title="Pinball Details"
-              onPress={() => {
-                /* 1. Navigate to the Schedule route with params */
-                this.props.navigation.navigate('PinballDetails');
+                this.props.navigation.navigate('GameDetails', {gameInfo: this.props.screenProps.apiData.games[0]});
               }}
             />
             <Button
               title="Arcade List"
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
-                this.props.navigation.navigate('ArcadeList');
+                this.props.navigation.navigate('GamesList', {gameType: this.props.screenProps.apiData.gameTypes[0]});
               }}
             />
             <Button
               title="Pinball List"
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
-                this.props.navigation.navigate('PinballList');
+                this.props.navigation.navigate('GamesList', {gameType: this.props.screenProps.apiData.gameTypes[1]});
               }}
             />
             <Button
