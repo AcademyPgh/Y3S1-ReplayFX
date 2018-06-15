@@ -14,7 +14,7 @@ import {
 import ScalableImage from 'react-native-scalable-image';
 import { Fonts } from '../src/utils/Fonts';
 
-export default class ArcadeDetailsScreen extends React.Component {
+export default class GameDetailsScreen extends React.Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
@@ -24,6 +24,7 @@ export default class ArcadeDetailsScreen extends React.Component {
       ),
     };
   }
+
   render() {
     const gameInfo = this.props.navigation.getParam("gameInfo");
     return (
@@ -34,7 +35,7 @@ export default class ArcadeDetailsScreen extends React.Component {
               background
               source={require('../Images/ArcadeGamePageImage.jpg')}>         
             <Text numberOfLines={1} adjustsFontSizeToFit style={styles.headerTextInput}>{gameInfo.gameTitle.toUpperCase()}</Text>
-            <Text style={styles.headerText}>ARCADE</Text>
+            <Text style={styles.headerText}>{gameInfo.replayGameType.name.toUpperCase()}</Text>
             </ScalableImage>          
           
             <ScrollView style={styles.detailsContainer}>
