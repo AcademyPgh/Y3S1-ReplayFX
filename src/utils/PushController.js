@@ -12,11 +12,10 @@ export default class PushController {
         let extraData = {id: eventId, eventId: eventId};
 
         let dataKey = 'tag';
-        let date = new Date(Date.now() + (1 * 1000));
+        const date = new Date(Date.now() + (5 * 1000));
 
         if (Platform.OS == 'ios') {
             dataKey = 'userInfo';
-            date = date.toISOString();
         } else {
             extraData = JSON.stringify(extraData);
         }

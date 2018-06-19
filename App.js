@@ -74,13 +74,19 @@ export default class App extends React.Component {
 
   handleNotification (notification) {
 
-    let dataKey = 'tag';
-    if (Platform.OS === 'ios') {
-      dataKey = 'userInfo';
-    }
-
     if (notification) {
+
+      if (!notification.userInteraction) { return; }
+      
+      let dataKey = 'tag';
+      if (Platform.OS === 'ios') {
+        dataKey = 'data';
+      }
+    
       const data = notification[dataKey];
+
+      Alert.alert(JSON.stringify(notification));
+
       if (data) {
         if (Platform.OS === 'android') {
           data = JSON.parse(data);
