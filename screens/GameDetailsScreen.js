@@ -26,7 +26,20 @@ export default class GameDetailsScreen extends React.Component {
   pinballImage = require('../Images/PinballGamePageImage.jpg');
 
   render() {
-    const gameInfo = this.props.navigation.getParam("gameInfo");
+    let gameInfo = this.props.navigation.getParam("gameInfo");
+
+    if (!gameInfo) {
+      const gameId = this.props.navigation.getParam("gameId");
+      if (gameId) {
+        gameInfo = this.props.screenProps.apiData.games.find(game => game.id == gameId);
+      }
+    } 
+
+    if (!gameInfo) {
+      Alert.alert("Game not found!");
+      this.props.navigation.goBack();
+      return null;
+    }
 
     let image = this.arcadeImage;
 

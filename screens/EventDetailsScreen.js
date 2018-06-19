@@ -10,6 +10,7 @@ import {
   Dimensions,
   ScrollView,
   AppRegistry,
+  Alert,
 } from 'react-native';
 import ScalableImage from 'react-native-scalable-image';
 import { Fonts } from '../src/utils/Fonts';
@@ -21,9 +22,24 @@ export default class EventDetailsScreen extends React.Component {
 
     return homeButtonHeader(navigation);
   }
+
   render() {
     const width = Dimensions.get('window').width;
-    const eventInfo = this.props.navigation.getParam("eventInfo");
+    let eventInfo = this.props.navigation.getParam("eventInfo");
+
+    if (!eventInfo) {
+      const eventId = this.props.navigation.getParam("eventId");
+      if (eventId) {
+        eventInfo = this.props.screenProps.apiData.events.find(event => event.id == eventId);
+      }
+    }
+
+    if (!eventInfo) {
+      Alert.alert("Event not found!");
+      this.props.navigation.goBack();
+      return null;
+    }
+
     return (
         <View style={{flex: 1}}>
           

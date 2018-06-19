@@ -12,6 +12,7 @@ import {
 import ScheduleScreen from './ScheduleScreen';
 import { homeButtonHeader } from '../src/utils/Headers';
 import moment from 'moment';
+import PushController from '../src/utils/PushController';
 
 const debug = [];
 
@@ -115,6 +116,7 @@ export default class ScheduleScreenContainer extends React.Component {
 
       if (!favorites.includes(eventId)) {
         favorites.push(event.id);
+        PushController.addNotification(eventId);
         this.persistFavorites(favorites);
         this.setState({favorites: favorites});
       }
@@ -127,6 +129,7 @@ export default class ScheduleScreenContainer extends React.Component {
       if (favorites.includes(eventId)) {
         eventIndex = favorites.indexOf(eventId);
         favorites.splice(eventIndex, 1);
+        PushController.removeNotification();
         this.persistFavorites(favorites);
         this.setState({favorites: favorites});
       }
