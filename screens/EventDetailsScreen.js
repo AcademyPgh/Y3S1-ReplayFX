@@ -13,6 +13,8 @@ import {
   Alert,
 } from 'react-native';
 import ScalableImage from 'react-native-scalable-image';
+import moment from 'moment';
+
 import { Fonts } from '../src/utils/Fonts';
 import { homeButtonHeader } from '../src/utils/Headers';
 
@@ -88,7 +90,7 @@ export default class EventDetailsScreen extends React.Component {
 
             <Text>
                 <Text style={styles.bolded}>Date: </Text>
-                <Text style={styles.descriptions}>{new Date(eventInfo.date).toLocaleDateString('en-US', {weekday: 'long', month: 'long', day: 'numeric'} )}</Text>
+                <Text style={styles.descriptions}>{moment(eventInfo.date).format('ddd, MMM DD')}</Text>
             </Text>
 
             <Text>
