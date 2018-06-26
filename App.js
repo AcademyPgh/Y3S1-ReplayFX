@@ -142,7 +142,7 @@ const RootStack = StackNavigator(
     Landing: {
       screen: LandingScreen,
       navigationOptions: {
-        title: 'Landing Page',
+        title: 'LANDING PAGE',
       }
     },
     Home: {
@@ -155,7 +155,7 @@ const RootStack = StackNavigator(
     Schedule: {
       screen: ScheduleScreenContainer,
       navigationOptions: {
-        title: 'SCHEDULE'
+        //title: 'SCHEDULE'
       }
     },
     GamesList: {
@@ -218,11 +218,13 @@ const RootStack = StackNavigator(
       },
       headerTintColor: '#ffffff',
       headerTitleStyle: {
-        fontWeight: 'bold',
+        fontWeight: 'normal',
         fontSize: 24,
-
+        fontFamily: Fonts.NunitoLight,
         textAlign: 'center',
-        flex: 1
+        flex: 1,
+        padding: 0,
+        margin: 0,
       },
     },
   }

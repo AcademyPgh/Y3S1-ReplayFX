@@ -47,10 +47,20 @@ export default class GameDetailsScreen extends React.Component {
       image = this.pinballImage;
     }
 
+    let titleNumLines = 1;
+    let titleFontSize = 25;
+
+    const titleLength = gameInfo.gameTitle.length;
+    
+    if (titleLength > 18) {
+      titleNumLines = 2;
+      titleFontSize = 18;
+    }
+
     let gameLocation = gameInfo.replayGameLocations.map((loc) => { return loc.location; }).join(', ');
 
     let locationFontSize = 95;
-    let numLines = 1;
+    let locationNumLines = 1;
 
     const locationLength = gameLocation.length;
 
@@ -58,10 +68,10 @@ export default class GameDetailsScreen extends React.Component {
       //need to adjust font size ourselves - adjustsFontSizeToFit is iOS only
       if (locationLength > 30) {
         locationFontSize = 28;
-        numLines = 5;
+        locationNumLines = 5;
       } else if (locationLength > 4) {
         locationFontSize = 44;
-        numLines = 3;
+        locationNumLines = 3;
       }
     }
 
@@ -71,10 +81,12 @@ export default class GameDetailsScreen extends React.Component {
          
             <ScalableImage width={Dimensions.get('window').width}
               background
-              source={image}>         
-            <Text numberOfLines={1} adjustsFontSizeToFit style={styles.headerTextInput}>{gameInfo.gameTitle.toUpperCase()}</Text>
-            <Text style={styles.headerText}>{gameInfo.replayGameType.name.toUpperCase()}</Text>
-            </ScalableImage>          
+              source={image}>      
+              <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>   
+                <Text numberOfLines={titleNumLines} adjustsFontSizeToFit style={[styles.headerTextInput, {fontSize: titleFontSize}]}>{gameInfo.gameTitle.toUpperCase()}</Text>
+                <Text style={styles.headerText}>{gameInfo.replayGameType.name.toUpperCase()}</Text>
+              </View>
+            </ScalableImage>
           
             <ScrollView style={styles.detailsContainer}>
               <Text>
@@ -97,16 +109,16 @@ export default class GameDetailsScreen extends React.Component {
                 <Text style={styles.descriptions}>{gameInfo.players}</Text>
               </Text>
 
-              <Text style={{marginTop: 5.5}}>
+              <Text style={{marginTop: 5.5, marginBottom: 18}}>
                 <Text style={styles.gameBioTitle}>Game Bio: </Text>
                 <Text style={styles.gameBioInput}>{gameInfo.overview}{"\n"}</Text>
-              </Text>                   
+              </Text>
           </ScrollView>
 
           <View>
             <View style={styles.locationBorder}/>
             <Text style={styles.location}>Location</Text>
-            <Text numberOfLines={numLines} adjustsFontSizeToFit style={[styles.locationInput, {fontSize: locationFontSize}]}>{gameLocation}</Text>
+            <Text numberOfLines={locationNumLines} adjustsFontSizeToFit style={[styles.locationInput, {fontSize: locationFontSize}]}>{gameLocation}</Text>
             <View style={styles.locationBorder}/>
           </View>
 
@@ -130,7 +142,7 @@ export default class GameDetailsScreen extends React.Component {
       color: '#ffffff',
       textAlign: 'center',
       letterSpacing: 2,
-      paddingTop: 20,
+      paddingTop: 12,
       paddingLeft: 10,
       paddingRight: 10,
     },
@@ -141,7 +153,7 @@ export default class GameDetailsScreen extends React.Component {
       color: '#ffffff',
       textAlign: 'center',
       letterSpacing: 2,
-      paddingBottom: 20,
+      paddingBottom: 12,
     },
 
     detailsContainer: {
@@ -177,7 +189,6 @@ export default class GameDetailsScreen extends React.Component {
       fontSize: 16, 
       letterSpacing: .5, 
       lineHeight: 18,
-
     },
 
     locationBorder: {

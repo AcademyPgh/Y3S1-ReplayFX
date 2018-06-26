@@ -22,7 +22,12 @@ export default class ScheduleScreenContainer extends React.Component {
     static navigationOptions = ({ navigation, navigationOptions }) => {
       const { params, routeName } = navigation.state;
 
-      return homeButtonHeader(navigation);
+      const title = navigation.getParam('title', 'SCHEDULE');
+
+      return {
+        ...homeButtonHeader(navigation),
+        title: title,
+      };
     }
 
     tabScroll: ?ScrollView;
@@ -42,6 +47,7 @@ export default class ScheduleScreenContainer extends React.Component {
       this.addFavorite = this.addFavorite.bind(this);
       this.removeFavorite = this.removeFavorite.bind(this);
       this.setFavorite = this.setFavorite.bind(this);
+      this.setTitle = this.setTitle.bind(this);
 
       this.getEventDays(this.props.screenProps.apiData.events);
       this.setupTabs(this.eventDays, this.props.screenProps.apiData.eventCategories);
@@ -260,7 +266,21 @@ export default class ScheduleScreenContainer extends React.Component {
     updateFilter(newFilter) {
       const filter = this.getFilter(newFilter);
       this.setState({filter: filter});
-      this.setState({showSectionHeaders: !this.isDateFilter(filter)});
+      const isDateFilter = this.isDateFilter(filter);
+      this.setState({showSectionHeaders: !isDateFilter});
+    }
+
+    setTitle(filter) {
+      const isDateFilter = this.isDateFilter(filter);
+      let title = 'SCHEDULE';
+      if (!isDateFilter) {
+        const tab = this.tabs.find((tab) => tab.name == filter);
+        if (tab) {
+          const tabText = tab.text.replace("\n", " ");
+          title = tabText;
+        }
+      }
+      this.props.navigation.setParams({ title: title });
     }
 
     isDateFilter(filter) {
@@ -270,6 +290,7 @@ export default class ScheduleScreenContainer extends React.Component {
     selectTab(tabName, animate = true) {
       this.scrollToTab(tabName, animate);
       this.updateFilter(tabName);
+      this.setTitle(tabName);
     }
 
     setTabScroll = (el) => {

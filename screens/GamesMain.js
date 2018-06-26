@@ -13,7 +13,14 @@ export default class GamesMain extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
-    return homeButtonHeader(navigation);
+    const homeButton = homeButtonHeader(navigation);
+    return {
+      ...homeButton,
+      headerTitleStyle: {
+        ...navigationOptions.headerTitleStyle,
+        fontSize: 18
+      },
+    };
   }
 
   constructor(props) {

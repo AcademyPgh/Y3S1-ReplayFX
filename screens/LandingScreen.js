@@ -65,6 +65,7 @@ export default class LandingScreen extends React.Component {
                 /* 1. Navigate to the Schedule route with params */
                 this.props.navigation.navigate('Schedule', {
                   scheduleFilter: 'featured',
+                  title: 'FEATURED'
                 });
               }}
             />
