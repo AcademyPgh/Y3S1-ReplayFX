@@ -4,6 +4,7 @@ import {
   Platform,
 } from 'react-native';
 import PushNotification from 'react-native-push-notification';
+import moment from 'moment';
 
 export default class PushController {
     static addNotification(eventInfo) {
@@ -16,8 +17,11 @@ export default class PushController {
 
         let dataKey = 'tag';
 
+        //const date = moment(eventInfo.date).add(moment.duration(eventInfo.startTime)).subtract(15, 'minutes').toDate();
 
-        const date = new Date(Date.now() + (60 * 1000));
+        const date = moment("2018-06-26T00:00:00").add(moment.duration("20:21")).toDate();
+
+        Alert.alert(date.toString());
 
         if (date < Date.now()) {
             return; //don't schedule anything if it's in the past
