@@ -85,8 +85,6 @@ export default class App extends React.Component {
     
       const data = notification[dataKey];
 
-      Alert.alert(JSON.stringify(notification));
-
       if (data) {
         if (Platform.OS === 'android') {
           data = JSON.parse(data);
