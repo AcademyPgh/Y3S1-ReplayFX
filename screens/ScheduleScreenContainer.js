@@ -121,8 +121,8 @@ export default class ScheduleScreenContainer extends React.Component {
       favorites = this.state.favorites;
 
       if (!favorites.includes(eventId)) {
-        favorites.push(event.id);
-        PushController.addNotification(eventId);
+        favorites.push(eventId);
+        PushController.addNotification(event);
         this.persistFavorites(favorites);
         this.setState({favorites: favorites});
       }
@@ -135,7 +135,7 @@ export default class ScheduleScreenContainer extends React.Component {
       if (favorites.includes(eventId)) {
         eventIndex = favorites.indexOf(eventId);
         favorites.splice(eventIndex, 1);
-        PushController.removeNotification();
+        PushController.removeNotification(eventId);
         this.persistFavorites(favorites);
         this.setState({favorites: favorites});
       }

@@ -6,13 +6,22 @@ import {
 import PushNotification from 'react-native-push-notification';
 
 export default class PushController {
-    static addNotification(eventId) {
+    static addNotification(eventInfo) {
 
-        const message = "Event: " + eventId;
-        let extraData = {id: eventId, eventId: eventId};
+        const id = eventInfo.id.toString();
+
+        //const title = "ReplayFX: Starting Soon!"
+        const message = eventInfo.title + " is starting soon!";
+        let extraData = {id: id, eventId: eventInfo.id};
 
         let dataKey = 'tag';
-        const date = new Date(Date.now() + (5 * 1000));
+
+
+        const date = new Date(Date.now() + (60 * 1000));
+
+        if (date < Date.now()) {
+            return; //don't schedule anything if it's in the past
+        }
 
         if (Platform.OS == 'ios') {
             dataKey = 'userInfo';
@@ -21,6 +30,8 @@ export default class PushController {
         }
 
         let details = {
+            id: id,
+            //title: title,
             message: message,
             date: date,
         }
@@ -30,7 +41,7 @@ export default class PushController {
         PushNotification.localNotificationSchedule(details);
     }
 
-    static removeNotification() {
-        //Alert.alert("Remove notification!");
+    static removeNotification(eventId) {
+        PushNotification.cancelLocalNotifications({id: eventId.toString()});
     }
 }
