@@ -57,7 +57,7 @@ export default class GameDetailsScreen extends React.Component {
       titleFontSize = 18;
     }
 
-    let gameLocation = gameInfo.replayGameLocations.map((loc) => { return loc.location; }).join(', ');
+    let gameLocation = gameInfo.replayGameLocations.map((loc) => { return loc.location; }).join(', ') || '';
 
     let locationFontSize = 95;
     let locationNumLines = 1;
@@ -77,8 +77,6 @@ export default class GameDetailsScreen extends React.Component {
 
     return (
         <View style={styles.container}>
-          
-         
             <ScalableImage width={Dimensions.get('window').width}
               background
               source={image}>      
@@ -89,38 +87,51 @@ export default class GameDetailsScreen extends React.Component {
             </ScalableImage>
           
             <ScrollView style={styles.detailsContainer}>
+
+              {gameInfo.releaseDate && 
               <Text>
                 <Text style={styles.titles}>Release Date: </Text>
                 <Text style={styles.descriptions}>{gameInfo.releaseDate}</Text>
               </Text>
+              }
 
+              {gameInfo.developer && 
               <Text>
                 <Text style={styles.titles}>Developer: </Text>
                 <Text style={styles.descriptions}>{gameInfo.developer}</Text>
               </Text>
+              }
 
+              {gameInfo.genre && 
               <Text>
                 <Text style={styles.titles}>Genre: </Text>
                 <Text style={styles.descriptions}>{gameInfo.genre}</Text>
                 </Text>
+              }
 
+              {gameInfo.players && 
               <Text>
                 <Text style={styles.titles}>Number of Players: </Text>
                 <Text style={styles.descriptions}>{gameInfo.players}</Text>
               </Text>
+              }
 
+              {gameInfo.overview && 
               <Text style={{marginTop: 5.5, marginBottom: 18}}>
                 <Text style={styles.gameBioTitle}>Game Bio: </Text>
                 <Text style={styles.gameBioInput}>{gameInfo.overview}{"\n"}</Text>
               </Text>
+              }
           </ScrollView>
 
+          {gameLocation.length > 0 &&
           <View>
             <View style={styles.locationBorder}/>
             <Text style={styles.location}>Location</Text>
             <Text numberOfLines={locationNumLines} adjustsFontSizeToFit style={[styles.locationInput, {fontSize: locationFontSize}]}>{gameLocation}</Text>
             <View style={styles.locationBorder}/>
           </View>
+          }
 
         </View>
   );}}
