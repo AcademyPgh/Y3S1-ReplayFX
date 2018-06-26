@@ -47,6 +47,24 @@ export default class GameDetailsScreen extends React.Component {
       image = this.pinballImage;
     }
 
+    let gameLocation = gameInfo.replayGameLocations.map((loc) => { return loc.location; }).join(', ');
+
+    let locationFontSize = 95;
+    let numLines = 1;
+
+    const locationLength = gameLocation.length;
+
+    if (Platform.OS == 'android') {
+      //need to adjust font size ourselves - adjustsFontSizeToFit is iOS only
+      if (locationLength > 30) {
+        locationFontSize = 28;
+        numLines = 5;
+      } else if (locationLength > 4) {
+        locationFontSize = 44;
+        numLines = 3;
+      }
+    }
+
     return (
         <View style={styles.container}>
           
@@ -88,7 +106,7 @@ export default class GameDetailsScreen extends React.Component {
           <View>
             <View style={styles.locationBorder}/>
             <Text style={styles.location}>Location</Text>
-            <Text numberOfLines={1} adjustsFontSizeToFit style={styles.locationInput}>{gameInfo.replayGameLocations.map((loc) => { return loc.location; }).join(', ')}</Text>
+            <Text numberOfLines={numLines} adjustsFontSizeToFit style={[styles.locationInput, {fontSize: locationFontSize}]}>{gameLocation}</Text>
             <View style={styles.locationBorder}/>
           </View>
 

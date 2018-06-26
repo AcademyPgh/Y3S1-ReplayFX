@@ -11,6 +11,38 @@ import {
 export default class LandingScreen extends React.Component {
   
     render() {
+
+      const sampleGame = {
+        "replayGameLocations": [
+            {
+                "id": 89,
+                "location": "Pinburgh Set 17"
+            },
+            {
+              "id": 89,
+              "location": "Pinburgh Set 46"
+          }
+          ,
+            {
+              "id": 89,
+              "location": "D6"
+          }
+        ],
+        "replayGameType": {
+            "id": 2,
+            "name": "Pinball"
+        },
+        "id": 255,
+        "gameTitle": "Alien Poker",
+        "overview": null,
+        "releaseDate": "1980",
+        "developer": "Williams",
+        "genre": "Fantasy - Outer Space - Cards - Gambling",
+        "players": "4",
+        "image": "17607f50-273b-4034-acc5-fe88e730ddf7.jpg",
+        "imageUrl": "https://replayfxpictures.blob.core.windows.net/images/17607f50-273b-4034-acc5-fe88e730ddf7.jpg"
+    };
+
       return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <Text>Landing Screen</Text>
@@ -108,7 +140,7 @@ export default class LandingScreen extends React.Component {
               title="Game Details"
               onPress={() => {
                 /* 1. Navigate to the Schedule route with params */
-                this.props.navigation.navigate('GameDetails', {gameInfo: this.props.screenProps.apiData.games[0]});
+                this.props.navigation.navigate('GameDetails', {gameInfo: sampleGame});
               }}
             />
             <Button
