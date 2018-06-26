@@ -17,11 +17,8 @@ export default class PushController {
 
         let dataKey = 'tag';
 
-        //const date = moment(eventInfo.date).add(moment.duration(eventInfo.startTime)).subtract(15, 'minutes').toDate();
-
-        const date = moment("2018-06-26T00:00:00").add(moment.duration("20:21")).toDate();
-
-        Alert.alert(date.toString());
+        //add the start time to the start of the event date, then subtract 15 minutes for the notification
+        const date = moment(eventInfo.date).startOf('day').add(moment.duration(eventInfo.startTime)).subtract(15, 'minutes').toDate();
 
         if (date < Date.now()) {
             return; //don't schedule anything if it's in the past
