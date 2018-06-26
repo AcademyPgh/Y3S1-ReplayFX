@@ -52,7 +52,7 @@ export default class EventDetailsScreen extends React.Component {
       titleFontSize = 18;
     }
 
-    const eventLocation = eventInfo.location;
+    const eventLocation = eventInfo.location || '';
     const locationLength = eventLocation.length;
 
     let locationFontSize = 95;
@@ -68,6 +68,14 @@ export default class EventDetailsScreen extends React.Component {
         locationNumLines = 3;
       }
     }
+
+    let eventDescription = eventInfo.description || '';
+
+    if (eventDescription.length > 0) {
+      eventDescription += "\n\n";
+    }
+
+    eventDescription += (eventInfo.extendedDescription || '');
 
     return (
         <View style={{flex: 1}}>
@@ -98,20 +106,22 @@ export default class EventDetailsScreen extends React.Component {
                 <Text style={styles.descriptions}>{eventInfo.startTime12 + " - " + eventInfo.endTime12}</Text>
             </Text>
 
+            {eventDescription.length > 0 && 
               <Text style={{marginTop: 5.5, marginBottom: 18}}>
                 <Text style={styles.gameBio}>Description: </Text>
-                <Text style={styles.gameBioText}>{eventInfo.description}{"\n"}{"\n"}</Text>
-                <Text style={styles.gameBioText}>{eventInfo.extendedDescription}{"\n"}
-                </Text>
-              </Text>          
+                <Text style={styles.gameBioText}>{eventDescription + "\n"}</Text>
+              </Text>
+            }
           </ScrollView>
 
+          {eventLocation.length > 0 &&
           <View>
             <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: 10,}}/>
             <Text style={{fontSize: 44, fontFamily: Fonts.AvenirBlack, textAlign: 'center', color: 'black',}}>Location</Text>
             <Text numberOfLines={locationNumLines} adjustsFontSizeToFit style={[styles.locationDetails, {fontSize: locationFontSize}]}>{eventLocation}</Text>
             <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: 10,}}/>
           </View>
+          }
 
         </View>
   );}}
