@@ -136,8 +136,6 @@ export default class EventDetailsScreen extends React.Component {
       color: '#ffffff',
       textAlign: 'center',
       letterSpacing: 2,
-      paddingBottom: 20,
-      paddingTop: 20,
       marginLeft: 20,
       marginRight: 20,
     },
