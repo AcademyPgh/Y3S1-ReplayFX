@@ -10,6 +10,7 @@ import {
   Dimensions,
   ScrollView,
   AppRegistry,
+  Alert,
 } from 'react-native';
 import ScalableImage from 'react-native-scalable-image';
 import { Fonts } from '../src/utils/Fonts';
@@ -21,22 +22,66 @@ export default class EventDetailsScreen extends React.Component {
 
     return homeButtonHeader(navigation);
   }
+
   render() {
     const width = Dimensions.get('window').width;
-    const eventInfo = this.props.navigation.getParam("eventInfo");
+    let eventInfo = this.props.navigation.getParam("eventInfo");
+
+    if (!eventInfo) {
+      const eventId = this.props.navigation.getParam("eventId");
+      if (eventId) {
+        eventInfo = this.props.screenProps.apiData.events.find(event => event.id == eventId);
+      }
+    }
+
+    if (!eventInfo) {
+      Alert.alert("Event not found!");
+      this.props.navigation.goBack();
+      return null;
+    }
+
+    let titleNumLines = 2;
+    let titleFontSize = 25;
+
+    const titleLength = eventInfo.title.length;
+    
+    if (titleLength > 32) {
+      titleNumLines = 2;
+      titleFontSize = 18;
+    }
+
+    const eventLocation = eventInfo.location;
+    const locationLength = eventLocation.length;
+
+    let locationFontSize = 95;
+    let locationNumLines = 1;
+
+    if (Platform.OS == 'android') {
+      //need to adjust font size ourselves - adjustsFontSizeToFit is iOS only
+      if (locationLength > 30) {
+        locationFontSize = 28;
+        locationNumLines = 5;
+      } else if (locationLength > 4) {
+        locationFontSize = 44;
+        locationNumLines = 3;
+      }
+    }
+
     return (
         <View style={{flex: 1}}>
           
             <ScalableImage width={Dimensions.get('window').width}
                 background
                 style={styles.headerImage}
-                source={require('../Images/PinballGamePageImage.jpg')}>         
-            <Text style={styles.headerText1}>LEARN</Text>
-            <Text 
-              adjustsFontSizeToFit
-              numberOfLines={1}
-              style={styles.headerText2}>{eventInfo.title.toUpperCase()}
-            </Text>
+                source={require('../Images/PinballGamePageImage.jpg')}>   
+              <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>      
+                {/*<Text style={styles.headerText1}>LEARN</Text>*/}
+                <Text 
+                  numberOfLines={titleNumLines} 
+                  adjustsFontSizeToFit 
+                  style={[styles.headerText2, {fontSize: titleFontSize}]}>{eventInfo.title.toUpperCase()}
+                </Text>
+              </View>
             </ScalableImage>
 
           <ScrollView style={styles.detailsContainer}>
@@ -51,7 +96,7 @@ export default class EventDetailsScreen extends React.Component {
                 <Text style={styles.descriptions}>{eventInfo.startTime12 + " - " + eventInfo.endTime12}</Text>
             </Text>
 
-              <Text style={{marginTop: 5.5}}>
+              <Text style={{marginTop: 5.5, marginBottom: 18}}>
                 <Text style={styles.gameBio}>Description: </Text>
                 <Text style={styles.gameBioText}>{eventInfo.description}{"\n"}{"\n"}</Text>
                 <Text style={styles.gameBioText}>{eventInfo.extendedDescription}{"\n"}
@@ -62,10 +107,7 @@ export default class EventDetailsScreen extends React.Component {
           <View>
             <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: 10,}}/>
             <Text style={{fontSize: 44, fontFamily: Fonts.AvenirBlack, textAlign: 'center', color: 'black',}}>Location</Text>
-            <Text 
-              adjustsFontSizeToFit
-              numberOfLines={1}
-              style={styles.locationDetails}>{eventInfo.location}</Text>
+            <Text numberOfLines={locationNumLines} adjustsFontSizeToFit style={[styles.locationDetails, {fontSize: locationFontSize}]}>{eventLocation}</Text>
             <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: 10,}}/>
           </View>
 
@@ -85,7 +127,7 @@ export default class EventDetailsScreen extends React.Component {
       color: '#ffffff',
       textAlign: 'center',
       letterSpacing: 2,
-      paddingTop: 20
+      paddingTop: 12
     },
 
     headerText2: {
@@ -95,6 +137,7 @@ export default class EventDetailsScreen extends React.Component {
       textAlign: 'center',
       letterSpacing: 2,
       paddingBottom: 20,
+      paddingTop: 20,
       marginLeft: 20,
       marginRight: 20,
     },

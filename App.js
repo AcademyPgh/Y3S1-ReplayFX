@@ -11,11 +11,15 @@ import {
   Text,
   Button,
   Image,
-  View
+  View,
+  Alert,
 } from 'react-native';
 import { createNavigator, TabRouter, StackNavigator, TabNavigator, TabBarTop } from 'react-navigation';
+import PushNotification from 'react-native-push-notification';
+
 import {events, games, eventCategories, gameTypes} from './api-samples/sampleData';
 import { Fonts } from './src/utils/Fonts';
+import NavigationService from './src/utils/NavigationService';
 
 import LandingScreen from './screens/LandingScreen';
 import HomeScreen from './screens/HomeScreen';
@@ -56,6 +60,48 @@ export default class App extends React.Component {
       apiData: apiData,
       dataLoadedTimestamp: new Date()
     }
+
+    //this.handleNotification = this.handleNotification.bind(this);
+  }
+
+  componentDidMount() {
+    PushNotification.configure({
+
+        // (required) Called when a remote or local notification is opened or received
+        onNotification: this.handleNotification,
+    });
+  }
+
+  handleNotification (notification) {
+
+    if (notification) {
+
+      if (!notification.userInteraction) { return; }
+      
+      let dataKey = 'tag';
+      if (Platform.OS === 'ios') {
+        dataKey = 'data';
+      }
+    
+      const data = notification[dataKey];
+
+      Alert.alert(JSON.stringify(notification));
+
+      if (data) {
+        if (Platform.OS === 'android') {
+          data = JSON.parse(data);
+        }
+
+        if (data.eventId) {
+          NavigationService.navigate('EventDetails', {eventId: data.eventId});
+        }
+      }
+    }
+
+      // process the notification
+
+      // required on iOS only (see fetchCompletionHandler docs: https://facebook.github.io/react-native/docs/pushnotificationios.html)
+      // notification.finish(PushNotificationIOS.FetchResult.NoData);
   }
 
   handleAPILoaded (apiData) {
@@ -74,7 +120,10 @@ export default class App extends React.Component {
     if (this.state.apiLoaded) {
       content = (
         <View style={{flex: 1}}>
-          <RootStack screenProps={{apiData: this.state.apiData, dataLoadedTimestamp: this.state.dataLoadedTimestamp}}/>
+          <RootStack 
+            ref={navigatorRef => NavigationService.setTopLevelNavigator(navigatorRef)}
+            screenProps={{apiData: this.state.apiData, dataLoadedTimestamp: this.state.dataLoadedTimestamp}}
+          />
           <View style={[styles.footer,]}>
             <Text style={styles.footerText}>#REPLAYFX</Text>
           </View> 
@@ -93,7 +142,7 @@ const RootStack = StackNavigator(
     Landing: {
       screen: LandingScreen,
       navigationOptions: {
-        title: 'Landing Page',
+        title: 'LANDING PAGE',
       }
     },
     Home: {
@@ -106,7 +155,7 @@ const RootStack = StackNavigator(
     Schedule: {
       screen: ScheduleScreenContainer,
       navigationOptions: {
-        title: 'SCHEDULE'
+        //title: 'SCHEDULE'
       }
     },
     GamesList: {
@@ -169,11 +218,13 @@ const RootStack = StackNavigator(
       },
       headerTintColor: '#ffffff',
       headerTitleStyle: {
-        fontWeight: 'bold',
+        fontWeight: 'normal',
         fontSize: 24,
-
+        fontFamily: Fonts.NunitoLight,
         textAlign: 'center',
-        flex: 1
+        flex: 1,
+        padding: 0,
+        margin: 0,
       },
     },
   }

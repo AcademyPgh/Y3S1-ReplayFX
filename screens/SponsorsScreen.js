@@ -23,7 +23,7 @@ export default class SponsorsScreen extends React.Component {
         // The parent will not have dimensions, so the children can't expand.
         // What if you add `height: 300` instead of `flex: 1`?      
         <ScrollView style={styles.background}> 
-          
+          <View style={{flex: 1}}>
             <View style={styles.container1}>
                 <View style={styles.imgcontainer}>
                 <Image source={require('../Images/pair-logo-red.png')}/>
@@ -36,14 +36,14 @@ export default class SponsorsScreen extends React.Component {
                 </View>
             </View>
   
-             <View style={styles.container2}>
+             <View style={styles.container1}>
                 <View style={styles.imgcontainer}>
                 <Image source={require('../Images/AcademyTranspRed.png')}/>
                 </View>
             </View>
            
-         
-          </ScrollView> 
+         </View>
+        </ScrollView> 
         
         
       );
@@ -58,33 +58,22 @@ export default class SponsorsScreen extends React.Component {
    
      
     container1: {
-      height: '33.3333%',
       paddingVertical: 10,
-      borderWidth: .4,
+      borderWidth: StyleSheet.hairlineWidth,
       borderColor: '#9ca4ab',
       justifyContent: 'center',
-      
+      alignItems: 'center',
+      flex: 1,
     },
-      container2: {
-      height: '33.3333%',
-      paddingVertical: 50,
-      borderWidth: .4,
-      borderColor: '#9ca4ab',
-      justifyContent: 'center',
-      
-    },
-    
-      imgcontainer: {
+    imgcontainer: {
       justifyContent: 'center',
       flexDirection: 'row',
-  
+      flex: 1,
     },
     background:{
-      height: 300,
+      flex: 1,
       backgroundColor: 'whitesmoke',
       borderColor: '#9ca4ab',
-     
-  
     },
   
       

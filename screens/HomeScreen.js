@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { AppRegistry, ScrollView, Dimensions, Image, ImageBackground, Alert, Text, View, TouchableOpacity, StyleSheet } from 'react-native'
+import ScalableImage from 'react-native-scalable-image';
+import { Fonts } from '../src/utils/Fonts';
 
 export default class HomeScreen extends Component {
    
@@ -14,20 +16,12 @@ export default class HomeScreen extends Component {
 
     <View style={{flex:1}}> 
 
-
-      <View style={{flex: 1,}}>
-
-        <Image 
-        style={styles.stretch}
-        source={require('../Images/HomePage.png')}/>
-      </View>
-
-      <View style={{flex: 3}}>
-
-
         {/*<ImageBackground source={require('../Images/Background.jpg')} style={{flex:1}}>*/}
 
         <ScrollView> 
+
+          <ScalableImage width={Dimensions.get('window').width}
+              source={require('../Images/HomePage.png')} />
 
           <View style={[styles.container,]}>
 
@@ -56,7 +50,7 @@ export default class HomeScreen extends Component {
                 <Text style={styles.text}
                   onPress={() => {
                   /* 1. Navigate to the Featured route with params */
-                  this.props.navigation.navigate('Schedule', {scheduleFilter: category.Name});
+                  this.props.navigation.navigate('Schedule', {scheduleFilter: category.Name, title: category.DisplayName.toUpperCase()});
                   }}>
                   {category.DisplayName.toUpperCase()}
                 </Text>
@@ -78,8 +72,6 @@ export default class HomeScreen extends Component {
 
       {/*</ImageBackground>*/}
       </View>
-
-    </View>
     );
   }
 }
@@ -90,26 +82,19 @@ export default class HomeScreen extends Component {
 
 const styles = StyleSheet.create ({
 
-  stretch: {
-   flex: 1,
-   width: '100%',
-   height: 100
-  },
-
   text: {
-   justifyContent: 'center',
-   paddingLeft: 20,
+   marginHorizontal: 20,
    flex: 1,
    fontSize: 30,
+   fontFamily: Fonts.NunitoLight,
+   color: 'black',
+   borderBottomWidth: StyleSheet.hairlineWidth * 6,
+   borderColor: 'black',
  },
 
   container: {
    flex: 1,
-   paddingVertical: 15,
-   borderWidth: .5,
-   borderColor: '#9ca4ab',
-   flexDirection: 'row',   
-   
+   paddingVertical: 12,   
  },
 
 

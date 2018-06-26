@@ -94,7 +94,7 @@ export default class GamesListScreen extends React.Component {
     }
     return (
       <TouchableOpacity key={item.id} onPress={() => {this.showGameDetails(item)}}>
-        <View style={style}><Text style={styles.itemText}>{item.gameTitle}</Text></View>
+        <View style={style}><Text numberOfLines={1} style={styles.itemText}>{item.gameTitle}</Text></View>
       </TouchableOpacity>
     );
   };
@@ -316,5 +316,6 @@ const styles=StyleSheet.create({
   itemText: {
     fontSize: 18,
     fontFamily: 'Arial',
+    paddingRight: 12
   }
 });

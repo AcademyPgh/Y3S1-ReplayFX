@@ -26,12 +26,53 @@ export default class GameDetailsScreen extends React.Component {
   pinballImage = require('../Images/PinballGamePageImage.jpg');
 
   render() {
-    const gameInfo = this.props.navigation.getParam("gameInfo");
+    let gameInfo = this.props.navigation.getParam("gameInfo");
+
+    if (!gameInfo) {
+      const gameId = this.props.navigation.getParam("gameId");
+      if (gameId) {
+        gameInfo = this.props.screenProps.apiData.games.find(game => game.id == gameId);
+      }
+    } 
+
+    if (!gameInfo) {
+      Alert.alert("Game not found!");
+      this.props.navigation.goBack();
+      return null;
+    }
 
     let image = this.arcadeImage;
 
     if (gameInfo.replayGameType.name == 'Pinball') {
       image = this.pinballImage;
+    }
+
+    let titleNumLines = 1;
+    let titleFontSize = 25;
+
+    const titleLength = gameInfo.gameTitle.length;
+    
+    if (titleLength > 18) {
+      titleNumLines = 2;
+      titleFontSize = 18;
+    }
+
+    let gameLocation = gameInfo.replayGameLocations.map((loc) => { return loc.location; }).join(', ');
+
+    let locationFontSize = 95;
+    let locationNumLines = 1;
+
+    const locationLength = gameLocation.length;
+
+    if (Platform.OS == 'android') {
+      //need to adjust font size ourselves - adjustsFontSizeToFit is iOS only
+      if (locationLength > 30) {
+        locationFontSize = 28;
+        locationNumLines = 5;
+      } else if (locationLength > 4) {
+        locationFontSize = 44;
+        locationNumLines = 3;
+      }
     }
 
     return (
@@ -40,10 +81,12 @@ export default class GameDetailsScreen extends React.Component {
          
             <ScalableImage width={Dimensions.get('window').width}
               background
-              source={image}>         
-            <Text numberOfLines={1} adjustsFontSizeToFit style={styles.headerTextInput}>{gameInfo.gameTitle.toUpperCase()}</Text>
-            <Text style={styles.headerText}>{gameInfo.replayGameType.name.toUpperCase()}</Text>
-            </ScalableImage>          
+              source={image}>      
+              <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>   
+                <Text numberOfLines={titleNumLines} adjustsFontSizeToFit style={[styles.headerTextInput, {fontSize: titleFontSize}]}>{gameInfo.gameTitle.toUpperCase()}</Text>
+                <Text style={styles.headerText}>{gameInfo.replayGameType.name.toUpperCase()}</Text>
+              </View>
+            </ScalableImage>
           
             <ScrollView style={styles.detailsContainer}>
               <Text>
@@ -66,16 +109,16 @@ export default class GameDetailsScreen extends React.Component {
                 <Text style={styles.descriptions}>{gameInfo.players}</Text>
               </Text>
 
-              <Text style={{marginTop: 5.5}}>
+              <Text style={{marginTop: 5.5, marginBottom: 18}}>
                 <Text style={styles.gameBioTitle}>Game Bio: </Text>
                 <Text style={styles.gameBioInput}>{gameInfo.overview}{"\n"}</Text>
-              </Text>                   
+              </Text>
           </ScrollView>
 
           <View>
             <View style={styles.locationBorder}/>
             <Text style={styles.location}>Location</Text>
-            <Text numberOfLines={1} adjustsFontSizeToFit style={styles.locationInput}>{gameInfo.replayGameLocations.map((loc) => { return loc.location; }).join(', ')}</Text>
+            <Text numberOfLines={locationNumLines} adjustsFontSizeToFit style={[styles.locationInput, {fontSize: locationFontSize}]}>{gameLocation}</Text>
             <View style={styles.locationBorder}/>
           </View>
 
@@ -99,7 +142,7 @@ export default class GameDetailsScreen extends React.Component {
       color: '#ffffff',
       textAlign: 'center',
       letterSpacing: 2,
-      paddingTop: 20,
+      paddingTop: 12,
       paddingLeft: 10,
       paddingRight: 10,
     },
@@ -110,7 +153,7 @@ export default class GameDetailsScreen extends React.Component {
       color: '#ffffff',
       textAlign: 'center',
       letterSpacing: 2,
-      paddingBottom: 20,
+      paddingBottom: 12,
     },
 
     detailsContainer: {
@@ -146,7 +189,6 @@ export default class GameDetailsScreen extends React.Component {
       fontSize: 16, 
       letterSpacing: .5, 
       lineHeight: 18,
-
     },
 
     locationBorder: {
