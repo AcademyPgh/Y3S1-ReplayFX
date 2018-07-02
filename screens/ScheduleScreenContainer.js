@@ -91,6 +91,12 @@ export default class ScheduleScreenContainer extends React.Component {
       }
     }
 
+    componentDidMount() {
+      setTimeout(() => {
+        this.selectTab(this.state.filter, true);
+      }, 250);
+    }
+
     //handle favorites
     loadFavorites() {
       AsyncStorage.getItem(favoritesKey)
@@ -305,12 +311,15 @@ export default class ScheduleScreenContainer extends React.Component {
 
     layoutScroll = (e) => {
       this.scrollWidth = e.nativeEvent.layout.width;
-      this.selectTab(this.state.filter, true);
     }
 
     scrollToTab(tabName, animate = true) {
       const scrollHalfWidth = this.scrollWidth * 0.5;
       const tab = this.tabLayout[tabName];
+
+      //if tab doesn't exist just return so user doesn't get an error
+      if (!tab) { return; }
+
       const tabCenter = tab.x + (tab.width * 0.5);
 
       let scrollPos = tabCenter - scrollHalfWidth;
