@@ -252,8 +252,8 @@ class AlphaBar extends React.Component{
   }
 
   render() {
-    return ( 
-      <ScrollView showsHorizontalScrollIndicator={false} horizontal={true} ref={this.setScroll} onLayout={this.layoutScroll} onContentSizeChange={this.handleContentSizeChange}>
+    return (
+      <ScrollView style={{backgroundColor: '#555555'}} contentContainerStyle={{backgroundColor: '#555555'}} showsHorizontalScrollIndicator={false} horizontal={true} ref={this.setScroll} onLayout={this.layoutScroll} onContentSizeChange={this.handleContentSizeChange}>
         <View style={{flexDirection: 'row'}}>
           {this.buttons.map(text => {
             let style = [styles.letter];
