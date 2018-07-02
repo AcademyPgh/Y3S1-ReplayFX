@@ -40,6 +40,9 @@ export default class APIScreen extends React.Component {
     this.debug = false;
     this.apiData = {source: null};
     this.liveDataLoaded = false;
+    this.currentRetry = 0;
+    this.maxRetries = 3;
+    this.mounted = false;
 
     this.err = [];
 
@@ -64,8 +67,25 @@ export default class APIScreen extends React.Component {
       //TODO: handle failed requests - try again? when do we decide to go to local storage?
       //for now, send an empty array back - will have to load sample data
       //this.props.dataLoaded(null);
-      this.setState({err: "Couldn't connect to server."});
+     
+      if (this.mounted) {
+        this.setState({err: "Couldn't connect to server."});
+      } else {
+        //auto-retry
+        this.currentRetry++;
+        if (this.currentRetry <= this.maxRetries) {
+          setTimeout(this.loadAPIData, 5000);
+        }
+      }
     }
+  }
+
+  componentWillMount() {
+    this.mounted = true;
+  }
+
+  componentWillUnmount() {
+    this.mounted = false;
   }
 
   _persistData(apiData) {
@@ -93,8 +113,10 @@ export default class APIScreen extends React.Component {
   loadAPIData() {
     //axios.all([this.getData('<eventurl>'), this.getData('<categoriesurl>')])
     //axios.all([this.getEventCategories(), this.getEvents(), this.getGameTypes(), this.getGames()])
+    if (this.mounted) {
+      this.setState({err: null});
+    }
 
-    this.setState({err: null});
     //filter array beforehand - only call ones that have failed
     filteredCalls = apiCalls.filter((obj) => this.apiData[obj.key] == null);
 
