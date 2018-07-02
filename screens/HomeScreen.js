@@ -20,7 +20,7 @@ export default class HomeScreen extends Component {
 
         <ScrollView> 
 
-          <ScalableImage width={Dimensions.get('window').width}
+          <ScalableImage style={{marginTop: -2}} width={Dimensions.get('window').width}
               source={require('../Images/HomePage.png')} />
 
           <View style={[styles.container,]}>
