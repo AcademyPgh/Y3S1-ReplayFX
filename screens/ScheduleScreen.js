@@ -48,7 +48,7 @@ export default class ScheduleScreen extends React.Component {
   );
 
   renderSectionHeader = ({section: {title}}) => (
-    this.props.showSectionHeaders && <Text style={{fontWeight: 'bold', paddingLeft: 8}}>{title}</Text>
+    this.props.showSectionHeaders && <View style={styles.sectionHeader}><Text style={{fontWeight: 'bold', paddingLeft: 8}}>{title}</Text></View>
   );
 
   renderSeparator = () => {
@@ -82,7 +82,7 @@ export default class ScheduleScreen extends React.Component {
           ItemSeparatorComponent={this.renderSeparator}
           SectionSeparatorComponent={this.renderSeparator}
         />
-    </View>
+      </View>
     );
   }
 }
@@ -159,14 +159,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',   
   },
-  starbutton: {
-    backgroundColor: '#859a9b',
-    justifyContent: 'center',
-    flexDirection: 'row',
-    width: 20,
-    paddingLeft: 40,
-    alignItems: 'center',   
-  },
   eventTextContainer: {
     flex: 4,
   },
@@ -182,4 +174,8 @@ const styles = StyleSheet.create({
     width: '100%',
     //resizeMode: 'contain',
   },
+  sectionHeader: {
+    backgroundColor: 'whitesmoke',
+    flex: 1,
+  }
 });
