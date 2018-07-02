@@ -41,7 +41,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
 
-    const skipAPILoad = true;
+    const skipAPILoad = false;
 
     let apiData = null;
 

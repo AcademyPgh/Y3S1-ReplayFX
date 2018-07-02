@@ -23,11 +23,11 @@ import { homeButtonHeader } from '../src/utils/Headers';
 const ROW_HEIGHT = 35;
 
 export default class GamesListScreen extends React.Component {
-    static navigationOptions = ({ navigation, navigationOptions }) => {
-      const { params } = navigation.state;
+  static navigationOptions = ({ navigation, navigationOptions }) => {
+    const { params } = navigation.state;
 
-      return homeButtonHeader(navigation);
-    }
+    return homeButtonHeader(navigation);
+  }
 
   constructor(props) {
     super(props);
