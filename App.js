@@ -13,6 +13,7 @@ import {
   Image,
   View,
   Alert,
+  StatusBar,
 } from 'react-native';
 import { createNavigator, TabRouter, StackNavigator, TabNavigator, TabBarTop } from 'react-navigation';
 import PushNotification from 'react-native-push-notification';
@@ -117,20 +118,21 @@ export default class App extends React.Component {
 
     if (this.state.apiLoaded) {
       content = (
-        <View style={{flex: 1}}>
           <RootStack 
             ref={navigatorRef => NavigationService.setTopLevelNavigator(navigatorRef)}
             screenProps={{apiData: this.state.apiData, dataLoadedTimestamp: this.state.dataLoadedTimestamp}}
           />
-          <View style={[styles.footer,]}>
-            <Text style={styles.footerText}>#REPLAYFX</Text>
-          </View> 
-        </View>
       );
     }
 
     return (
-      content
+      <View style={{flex: 1, backgroundColor: 'white'}}>
+        <StatusBar backgroundColor="black" barStyle="light-content"/>
+        {content}
+        <View style={[styles.footer,]}>
+          <Text style={styles.footerText}>#REPLAYFX</Text>
+        </View> 
+      </View>
     );
   }
 }
