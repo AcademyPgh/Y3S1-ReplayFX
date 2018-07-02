@@ -343,7 +343,7 @@ export default class ScheduleScreenContainer extends React.Component {
             </View>
 
             <View style={{flex:4, backgroundColor:'#272727'}}>
-              <ScrollView ref={this.setTabScroll} onLayout={this.layoutScroll} onContentSizeChange={this.handleContentSizeChange} horizontal={true} contentContainerStyle={{alignItems: 'center'}}>
+              <ScrollView ref={this.setTabScroll} onLayout={this.layoutScroll} onContentSizeChange={this.handleContentSizeChange} horizontal={true} contentContainerStyle={{backgroundColor: '#272727', alignItems: 'center'}} style={{backgroundColor: '#272727'}}>
                 {this.tabs.map((tab) => (
                   <TouchableOpacity 
                   key={tab.name}
