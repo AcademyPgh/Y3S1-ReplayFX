@@ -12,20 +12,7 @@ import {
 } from 'react-native';
 import axios from 'axios';
 import { Fonts } from '../src/utils/Fonts';
-
-// const apiCalls = {
-//   eventCategories: 'http://replayfxcalendar.azurewebsites.net/public/categories',
-//   events: 'http://replayfxcalendar.azurewebsites.net/public',
-//   gameTypes: 'http://replayfxcalendar.azurewebsites.net/public/gametypes',
-//   games: 'http://replayfxcalendar.azurewebsites.net/public/games',
-// }
-
-const apiCalls = [
-  {key: 'events', url: 'http://replayfxcalendar.azurewebsites.net/public'},
-  {key: 'games', url: 'http://replayfxcalendar.azurewebsites.net/public/games'},
-  {key: 'eventCategories', url: 'http://replayfxcalendar.azurewebsites.net/public/categories'},
-  {key: 'gameTypes', url: 'http://replayfxcalendar.azurewebsites.net/public/gametypes'},
-];
+import { apiCalls } from '../config';
 
 const persistKey = "@ReplayFX:apiData";
 
