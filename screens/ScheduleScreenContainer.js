@@ -8,6 +8,7 @@ import {
   ScrollView,
   TouchableOpacity,
   AsyncStorage,
+  Alert
 } from 'react-native';
 import ScheduleScreen from './ScheduleScreen';
 import { homeButtonHeader } from '../src/utils/Headers';
@@ -67,23 +68,24 @@ export default class ScheduleScreenContainer extends React.Component {
       this.tabLayout = {};
     }
 
-    componentWillReceiveProps(nextProps) {
-      const eventDataChanged = nextProps.screenProps.dataLoadedTimestamp > this.props.screenProps.dataLoadedTimeStamp;
-      const filterChanged = nextProps.navigation.getParam('scheduleFilter') != this.state.filter;
+    // this function doesn't need to be called because react navigation appears to reload the component entirely when re-navigating to it
+    // componentWillReceiveProps(nextProps) {
+    //   const eventDataChanged = nextProps.screenProps.dataLoadedTimestamp > this.props.screenProps.dataLoadedTimeStamp;
+    //   const filterChanged = nextProps.navigation.getParam('scheduleFilter') != this.state.filter;
   
-      const events = nextProps.screenProps.apiData.events;
-      const eventCategories = nextProps.screenProps.apiData.eventCategories;
+    //   const events = nextProps.screenProps.apiData.events;
+    //   const eventCategories = nextProps.screenProps.apiData.eventCategories;
   
-      if (eventDataChanged) {
-        this.getEventDays(events);
-        this.setupTabs(this.eventDays, eventCategories);
-        this.setupEventFilters(events);
-      }
+    //   if (eventDataChanged) {
+    //     this.getEventDays(events);
+    //     this.setupTabs(this.eventDays, eventCategories);
+    //     this.setupEventFilters(events);
+    //   }
   
-      if (filterChanged || eventDataChanged) {
-        this.updateFilter(nextProps.navigation.getParam('scheduleFilter'));
-      }
-    }
+    //   if (filterChanged || eventDataChanged) {
+    //     this.updateFilter(nextProps.navigation.getParam('scheduleFilter'));
+    //   }
+    // }
 
     componentWillUpdate(nextProps, nextState) {
       if (nextState.filter == 'my-schedule' && this.state.filter != 'my-schedule') {
@@ -209,11 +211,14 @@ export default class ScheduleScreenContainer extends React.Component {
 
         const event = events.find((event) => { return event.id == eventId; });
 
-        //figure out date key for event
-        const key = this.eventDays.find((day) => {return this.getDateString(day.date) == this.getDateString(event.date);}).key;
+        //TODO: We should probably clear out old favorites that aren't valid anymore at some point
+        if (event) {
+          //figure out date key for event
+          const key = this.eventDays.find((day) => {return this.getDateString(day.date) == this.getDateString(event.date);}).key;
 
-        //put event into correct date section
-        favoriteEvents[key].data.push(event);
+          //put event into correct date section
+          favoriteEvents[key].data.push(event);
+        }
       });
 
       //now flatten the favorites down to just an array of title and data, removing the keys and empty sections
@@ -363,7 +368,7 @@ export default class ScheduleScreenContainer extends React.Component {
             </View>
           </View>
           <View style={{flex:10}}>
-            {/* <ScrollView style={{flex:.25}}><Text>{JSON.stringify(this.filters)}</Text></ScrollView> */}
+            {/* <ScrollView style={{flex:2}}><Text>{JSON.stringify(this.props.navigation)}</Text><Text>{JSON.stringify(this.state)}</Text></ScrollView> */}
             <ScheduleScreen screenProps={this.props.screenProps} eventList={this.filters[this.state.filter]} favorites={this.state.favorites} onSetFavorite={this.setFavorite} showSectionHeaders={this.state.showSectionHeaders} navigation={this.props.navigation} />
           </View>
         </View>
