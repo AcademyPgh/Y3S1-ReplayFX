@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, ScrollView, Dimensions, Image, ImageBackground, Alert, Text, View, TouchableOpacity, StyleSheet } from 'react-native'
+import { AppRegistry, StatusBar, ScrollView, Dimensions, Image, ImageBackground, Alert, Text, View, TouchableOpacity, StyleSheet } from 'react-native'
 import ScalableImage from 'react-native-scalable-image';
 import { Fonts } from '../src/utils/Fonts';
 
@@ -15,6 +15,7 @@ export default class HomeScreen extends Component {
     return (
 
     <View style={{flex:1}}> 
+      <StatusBar backgroundColor="black" barStyle="light-content"/>
 
         {/*<ImageBackground source={require('../Images/Background.jpg')} style={{flex:1}}>*/}
 
