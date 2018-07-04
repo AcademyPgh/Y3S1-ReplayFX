@@ -62,6 +62,16 @@ export default class HomeScreen extends Component {
             <Text style={styles.text}
               onPress={() => { 
               /* 1. Navigate to the Sponsors route with params */          
+              this.props.navigation.navigate('VendorsList', {});
+              }}>
+              SHOP
+            </Text>
+          </View>
+
+          <View style={[styles.container,]}>    
+            <Text style={styles.text}
+              onPress={() => { 
+              /* 1. Navigate to the Sponsors route with params */          
               this.props.navigation.navigate('Sponsors', {});
               }}>
               SPONSORS

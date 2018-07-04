@@ -18,7 +18,7 @@ import moment from 'moment';
 import { Fonts } from '../src/utils/Fonts';
 import { homeButtonHeader } from '../src/utils/Headers';
 
-export default class EventDetailsScreen extends React.Component {
+export default class VendorDetailsScreen extends React.Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
@@ -27,17 +27,17 @@ export default class EventDetailsScreen extends React.Component {
 
   render() {
     const width = Dimensions.get('window').width;
-    let eventInfo = this.props.navigation.getParam("eventInfo");
+    let vendorInfo = this.props.navigation.getParam("vendorInfo");
 
-    if (!eventInfo) {
-      const eventId = this.props.navigation.getParam("eventId");
-      if (eventId) {
-        eventInfo = this.props.screenProps.apiData.events.find(event => event.id == eventId);
+    if (!vendorInfo) {
+      const vendorId = this.props.navigation.getParam("vendorId");
+      if (vendorId) {
+        vendorInfo = this.props.screenProps.apiData.vendors.find(vendor => vendor.id == vendorId);
       }
     }
 
-    if (!eventInfo) {
-      Alert.alert("Event not found!");
+    if (!vendorInfo) {
+      Alert.alert("Vendor not found!");
       this.props.navigation.goBack();
       return null;
     }
@@ -46,7 +46,7 @@ export default class EventDetailsScreen extends React.Component {
     let titleFontSize = 25;
     let titleLetterSpacing = 2;
 
-    const titleLength = eventInfo.title.length;
+    const titleLength = vendorInfo.title.length;
     
     if (titleLength > 32) {
       titleNumLines = 2;
@@ -54,8 +54,8 @@ export default class EventDetailsScreen extends React.Component {
       titleLetterSpacing = 0;
     }
 
-    const eventLocation = eventInfo.location || '';
-    const locationLength = eventLocation.length;
+    const vendorLocation = vendorInfo.location || '';
+    const locationLength = vendorLocation.length;
 
     let locationFontSize = 95;
     let locationNumLines = 1;
@@ -71,13 +71,13 @@ export default class EventDetailsScreen extends React.Component {
       }
     }
 
-    let eventDescription = eventInfo.description || '';
+    let vendorDescription = vendorInfo.description || '';
 
-    if (eventDescription.length > 0) {
-      eventDescription += "\n\n";
+    if (vendorDescription.length > 0) {
+      vendorDescription += "\n\n";
     }
 
-    eventDescription += (eventInfo.extendedDescription || '');
+    vendorDescription += (vendorInfo.extendedDescription || '');
 
     return (
         <View style={{flex: 1}}>
@@ -85,42 +85,31 @@ export default class EventDetailsScreen extends React.Component {
             <ScalableImage width={Dimensions.get('window').width}
                 background
                 style={styles.headerImage}
-                source={require('../Images/PinballGamePageImage.jpg')}>   
+                source={require('../Images/ArcadeGamePageImage.jpg')}>   
               <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>      
                 {/*<Text style={styles.headerText1}>LEARN</Text>*/}
                 <Text 
                   numberOfLines={titleNumLines} 
                   adjustsFontSizeToFit 
-                  style={[styles.headerText2, {fontSize: titleFontSize, letterSpacing: titleLetterSpacing}]}>{eventInfo.title.toUpperCase()}
+                  style={[styles.headerText2, {fontSize: titleFontSize, letterSpacing: titleLetterSpacing}]}>{vendorInfo.title.toUpperCase()}
                 </Text>
               </View>
             </ScalableImage>
 
           <ScrollView style={styles.detailsContainer}>
-
-            <Text>
-                <Text style={styles.bolded}>Date: </Text>
-                <Text style={styles.descriptions}>{moment(eventInfo.date).format('ddd, MMM DD')}</Text>
-            </Text>
-
-            <Text>
-                <Text style={styles.bolded}>Time: </Text>
-                <Text style={styles.descriptions}>{eventInfo.startTime12 + " - " + eventInfo.endTime12}</Text>
-            </Text>
-
-            {eventDescription.length > 0 && 
+            {vendorDescription.length > 0 && 
               <Text style={{marginTop: 5.5, marginBottom: 18}}>
-                <Text style={styles.gameBio}>Description: </Text>
-                <Text style={styles.gameBioText}>{eventDescription + "\n"}</Text>
+                { /* <Text style={styles.vendorBio}>Description: </Text> */ }
+                <Text style={styles.vendorBioText}>{vendorDescription + "\n"}</Text>
               </Text>
             }
           </ScrollView>
 
-          {eventLocation.length > 0 &&
+          {vendorLocation.length > 0 &&
           <View>
             <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: 10,}}/>
             <Text style={{fontSize: 44, fontFamily: Fonts.AvenirBlack, textAlign: 'center', color: 'black',}}>Location</Text>
-            <Text numberOfLines={locationNumLines} adjustsFontSizeToFit style={[styles.locationDetails, {fontSize: locationFontSize}]}>{eventLocation}</Text>
+            <Text numberOfLines={locationNumLines} adjustsFontSizeToFit style={[styles.locationDetails, {fontSize: locationFontSize}]}>{vendorLocation}</Text>
             <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: 10,}}/>
           </View>
           }
@@ -173,7 +162,7 @@ export default class EventDetailsScreen extends React.Component {
       color: '#000000',
     }, 
 
-    gameBio: {
+    vendorBio: {
       fontFamily: Fonts.AvenirBlack, 
       fontSize: 16, 
       letterSpacing: 1, 
@@ -181,7 +170,7 @@ export default class EventDetailsScreen extends React.Component {
       color: '#000000',
     },
 
-    gameBioText: {
+    vendorBioText: {
       fontFamily: Fonts.AvenirMedium, 
       fontSize: 16, 
       letterSpacing: .5, 

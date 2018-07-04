@@ -47,14 +47,16 @@ export default class GameDetailsScreen extends React.Component {
       image = this.pinballImage;
     }
 
-    let titleNumLines = 1;
+    let titleNumLines = 2;
     let titleFontSize = 25;
+    let titleLetterSpacing = 2;
 
     const titleLength = gameInfo.gameTitle.length;
     
-    if (titleLength > 18) {
+    if (titleLength > 32) {
       titleNumLines = 2;
       titleFontSize = 18;
+      titleLetterSpacing = 0;
     }
 
     let gameLocation = gameInfo.replayGameLocations.map((loc) => { return loc.location; }).join(', ') || '';
@@ -81,7 +83,7 @@ export default class GameDetailsScreen extends React.Component {
               background
               source={image}>      
               <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>   
-                <Text numberOfLines={titleNumLines} adjustsFontSizeToFit style={[styles.headerTextInput, {fontSize: titleFontSize}]}>{gameInfo.gameTitle.toUpperCase()}</Text>
+                <Text numberOfLines={titleNumLines} adjustsFontSizeToFit style={[styles.headerTextInput, {fontSize: titleFontSize, letterSpacing: titleLetterSpacing}]}>{gameInfo.gameTitle.toUpperCase()}</Text>
                 <Text style={styles.headerText}>{gameInfo.replayGameType.name.toUpperCase()}</Text>
               </View>
             </ScalableImage>
@@ -165,6 +167,7 @@ export default class GameDetailsScreen extends React.Component {
       textAlign: 'center',
       letterSpacing: 2,
       paddingBottom: 12,
+      marginTop: -8,
     },
 
     detailsContainer: {

@@ -30,6 +30,8 @@ import SponsorsScreen from './screens/SponsorsScreen';
 import GamesMain from './screens/GamesMain';
 import GameDetailsScreen from './screens/GameDetailsScreen';
 import EventDetailsScreen from './screens/EventDetailsScreen';
+import VendorsScreen from './screens/VendorsScreen';
+import VendorDetailsScreen from './screens/VendorDetailsScreen';
 import APIScreen from './screens/APIScreen';
 
 
@@ -158,11 +160,11 @@ const RootStack = StackNavigator(
         //title: 'SCHEDULE'
       }
     },
-    GamesList: {
-    screen: GamesListScreen,
+    EventDetails: {
+      screen: EventDetailsScreen,
       initialRouteParams: { },
       navigationOptions: {
-        title: 'GAMES',
+        title: 'SCHEDULE',
       }
     },
     Sponsors: {
@@ -179,6 +181,13 @@ const RootStack = StackNavigator(
         title: 'CHOOSE YOUR PLATFORM',
       }
     },
+    GamesList: {
+      screen: GamesListScreen,
+      initialRouteParams: { },
+      navigationOptions: {
+        title: 'GAMES',
+      }
+    },
     GameDetails: {
       screen: GameDetailsScreen,
       initialRouteParams: { },
@@ -186,11 +195,18 @@ const RootStack = StackNavigator(
         title: 'GAMES',
       }
     },
-    EventDetails: {
-      screen: EventDetailsScreen,
+    VendorsList: {
+      screen: VendorsScreen,
       initialRouteParams: { },
       navigationOptions: {
-        title: 'SCHEDULE',
+        title: 'VENDORS',
+      }
+    },
+    VendorDetails: {
+      screen: VendorDetailsScreen,
+      initialRouteParams: { },
+      navigationOptions: {
+        title: 'VENDORS',
       }
     },
     APITest: {
