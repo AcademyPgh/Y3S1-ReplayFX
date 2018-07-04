@@ -6,4 +6,5 @@ export const apiCalls = [
     {key: 'games', url: 'https://replayfxcalendar.azurewebsites.net/public/games'},
     {key: 'eventCategories', url: 'https://replayfxcalendar.azurewebsites.net/public/categories'},
     {key: 'gameTypes', url: 'https://replayfxcalendar.azurewebsites.net/public/gametypes'},
+    {key: 'vendors', url: 'https://replayfxcalendar.azurewebsites.net/public/vendors'},
 ];

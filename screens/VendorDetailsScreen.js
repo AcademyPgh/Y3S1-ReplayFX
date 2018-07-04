@@ -11,6 +11,8 @@ import {
   ScrollView,
   AppRegistry,
   Alert,
+  Linking,
+  TouchableOpacity,
 } from 'react-native';
 import ScalableImage from 'react-native-scalable-image';
 import moment from 'moment';
@@ -18,26 +20,36 @@ import moment from 'moment';
 import { Fonts } from '../src/utils/Fonts';
 import { homeButtonHeader } from '../src/utils/Headers';
 
-export default class EventDetailsScreen extends React.Component {
+export default class VendorDetailsScreen extends React.Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
     return homeButtonHeader(navigation);
   }
 
+  openVendorWebsite = (url) => {
+    Linking.canOpenURL(url).then(supported => {
+      if (!supported) {
+        console.log('Can\'t handle url: ' + url);
+      } else {
+        return Linking.openURL(url);
+      }
+    }).catch(err => console.error('An error occurred', err));
+  }
+
   render() {
     const width = Dimensions.get('window').width;
-    let eventInfo = this.props.navigation.getParam("eventInfo");
+    let vendorInfo = this.props.navigation.getParam("vendorInfo");
 
-    if (!eventInfo) {
-      const eventId = this.props.navigation.getParam("eventId");
-      if (eventId) {
-        eventInfo = this.props.screenProps.apiData.events.find(event => event.id == eventId);
+    if (!vendorInfo) {
+      const vendorId = this.props.navigation.getParam("vendorId");
+      if (vendorId) {
+        vendorInfo = this.props.screenProps.apiData.vendors.find(vendor => vendor.id == vendorId);
       }
     }
 
-    if (!eventInfo) {
-      Alert.alert("Event not found!");
+    if (!vendorInfo) {
+      Alert.alert("Vendor not found!");
       this.props.navigation.goBack();
       return null;
     }
@@ -46,7 +58,7 @@ export default class EventDetailsScreen extends React.Component {
     let titleFontSize = 25;
     let titleLetterSpacing = 2;
 
-    const titleLength = eventInfo.title.length;
+    const titleLength = vendorInfo.title.length;
     
     if (titleLength > 32) {
       titleNumLines = 2;
@@ -54,30 +66,33 @@ export default class EventDetailsScreen extends React.Component {
       titleLetterSpacing = 0;
     }
 
-    const eventLocation = eventInfo.location || '';
-    const locationLength = eventLocation.length;
+    const vendorLocation = vendorInfo.location || '';
+    const locationLength = vendorLocation.length;
 
     let locationFontSize = 95;
     let locationNumLines = 1;
+    let locationLineHeight = 110;
 
     if (Platform.OS == 'android') {
       //need to adjust font size ourselves - adjustsFontSizeToFit is iOS only
       if (locationLength > 30) {
         locationFontSize = 28;
         locationNumLines = 5;
+        locationLineHeight = undefined;
       } else if (locationLength > 4) {
         locationFontSize = 44;
         locationNumLines = 3;
+        locationLineHeight = undefined;
       }
     }
 
-    let eventDescription = eventInfo.description || '';
+    let vendorDescription = vendorInfo.description || '';
 
-    if (eventDescription.length > 0) {
-      eventDescription += "\n\n";
+    if (vendorDescription.length > 0) {
+      vendorDescription += "\n\n";
     }
 
-    eventDescription += (eventInfo.extendedDescription || '');
+    vendorDescription += (vendorInfo.extendedDescription || '');
 
     return (
         <View style={{flex: 1}}>
@@ -85,43 +100,49 @@ export default class EventDetailsScreen extends React.Component {
             <ScalableImage width={Dimensions.get('window').width}
                 background
                 style={styles.headerImage}
-                source={require('../Images/PinballGamePageImage.jpg')}>   
+                source={require('../Images/ArcadeGamePageImage.jpg')}>   
               <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>      
                 {/*<Text style={styles.headerText1}>LEARN</Text>*/}
                 <Text 
                   numberOfLines={titleNumLines} 
                   adjustsFontSizeToFit 
-                  style={[styles.headerText2, {fontSize: titleFontSize, letterSpacing: titleLetterSpacing}]}>{eventInfo.title.toUpperCase()}
+                  style={[styles.headerText2, {fontSize: titleFontSize, letterSpacing: titleLetterSpacing}]}>{vendorInfo.title.toUpperCase()}
                 </Text>
               </View>
             </ScalableImage>
 
           <ScrollView style={styles.detailsContainer}>
 
-            <Text>
-                <Text style={styles.bolded}>Date: </Text>
-                <Text style={styles.descriptions}>{moment(eventInfo.date).format('ddd, MMM DD')}</Text>
-            </Text>
-
-            <Text>
-                <Text style={styles.bolded}>Time: </Text>
-                <Text style={styles.descriptions}>{eventInfo.startTime12 + " - " + eventInfo.endTime12}</Text>
-            </Text>
-
-            {eventDescription.length > 0 && 
-              <Text style={{marginTop: 5.5, marginBottom: 18}}>
-                <Text style={styles.gameBio}>Description: </Text>
-                <Text style={styles.gameBioText}>{eventDescription + "\n"}</Text>
-              </Text>
+            {vendorInfo.imageUrl && 
+              <View style={{alignItems: 'center', margin: 10, marginTop: 0,}}>
+                <ScalableImage width={Dimensions.get('window').width - 40}
+                  source={{uri: vendorInfo.imageUrl}} />
+              </View>
             }
+
+            {vendorDescription && 
+              <Text style={styles.vendorBioText}>{vendorDescription}{"\n"}</Text>
+            }
+
           </ScrollView>
 
-          {eventLocation.length > 0 &&
+          {vendorInfo.url && 
           <View>
-            <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: 10,}}/>
+
+            <View style={{borderTopColor: 'black', borderTopWidth: 1, margin: 10, marginBottom: -10, paddingVertical: 10, justifyContent: 'center', alignItems: 'center'}}>
+              <TouchableOpacity 
+                onPress={() => this.openVendorWebsite(vendorInfo.url)}
+              >
+                <Text style={styles.website}>{vendorInfo.url}</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+          }
+
+          {vendorLocation.length > 0 &&
+          <View style={{borderColor: 'black', borderBottomWidth: 1, borderTopWidth: 1, margin: 10, paddingVertical: 0,}}>
             <Text style={{fontSize: 44, fontFamily: Fonts.AvenirBlack, textAlign: 'center', color: 'black',}}>Location</Text>
-            <Text numberOfLines={locationNumLines} adjustsFontSizeToFit style={[styles.locationDetails, {fontSize: locationFontSize}]}>{eventLocation}</Text>
-            <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: 10,}}/>
+            <Text numberOfLines={locationNumLines} adjustsFontSizeToFit style={[styles.locationDetails, {fontSize: locationFontSize, lineHeight: locationLineHeight}]}>{vendorLocation}</Text>
           </View>
           }
 
@@ -173,7 +194,7 @@ export default class EventDetailsScreen extends React.Component {
       color: '#000000',
     }, 
 
-    gameBio: {
+    vendorBio: {
       fontFamily: Fonts.AvenirBlack, 
       fontSize: 16, 
       letterSpacing: 1, 
@@ -181,19 +202,28 @@ export default class EventDetailsScreen extends React.Component {
       color: '#000000',
     },
 
-    gameBioText: {
+    vendorBioText: {
       fontFamily: Fonts.AvenirMedium, 
       fontSize: 16, 
       letterSpacing: .5, 
       lineHeight: 18,
       color: '#000000',
+      marginTop: 5,
+      marginBottom: 18,
+    },
+
+    website: {
+      textAlign: 'center',
+      fontFamily: Fonts.AvenirBlack,
+      fontSize: 18,
+      color: '#6c588d',
     },
 
     locationDetails: {
       marginLeft: 20, 
       marginRight: 20, 
       fontSize: 95, 
-      //lineHeight: 110, 
+      lineHeight: undefined, 
       fontFamily: Fonts.AvenirBlack, 
       textAlign: 'center', 
       textAlignVertical: "center",
