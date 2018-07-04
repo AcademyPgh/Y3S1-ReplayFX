@@ -64,7 +64,7 @@ export default class HomeScreen extends Component {
               /* 1. Navigate to the Sponsors route with params */          
               this.props.navigation.navigate('VendorsList', {});
               }}>
-              SHOP
+              VENDORS
             </Text>
           </View>
 

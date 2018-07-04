@@ -11,6 +11,8 @@ import {
   ScrollView,
   AppRegistry,
   Alert,
+  Linking,
+  TouchableOpacity,
 } from 'react-native';
 import ScalableImage from 'react-native-scalable-image';
 import moment from 'moment';
@@ -23,6 +25,16 @@ export default class VendorDetailsScreen extends React.Component {
     const { params } = navigation.state;
 
     return homeButtonHeader(navigation);
+  }
+
+  openVendorWebsite = (url) => {
+    Linking.canOpenURL(url).then(supported => {
+      if (!supported) {
+        console.log('Can\'t handle url: ' + url);
+      } else {
+        return Linking.openURL(url);
+      }
+    }).catch(err => console.error('An error occurred', err));
   }
 
   render() {
@@ -59,15 +71,18 @@ export default class VendorDetailsScreen extends React.Component {
 
     let locationFontSize = 95;
     let locationNumLines = 1;
+    let locationLineHeight = 110;
 
     if (Platform.OS == 'android') {
       //need to adjust font size ourselves - adjustsFontSizeToFit is iOS only
       if (locationLength > 30) {
         locationFontSize = 28;
         locationNumLines = 5;
+        locationLineHeight = undefined;
       } else if (locationLength > 4) {
         locationFontSize = 44;
         locationNumLines = 3;
+        locationLineHeight = undefined;
       }
     }
 
@@ -97,20 +112,37 @@ export default class VendorDetailsScreen extends React.Component {
             </ScalableImage>
 
           <ScrollView style={styles.detailsContainer}>
-            {vendorDescription.length > 0 && 
-              <Text style={{marginTop: 5.5, marginBottom: 18}}>
-                { /* <Text style={styles.vendorBio}>Description: </Text> */ }
-                <Text style={styles.vendorBioText}>{vendorDescription + "\n"}</Text>
-              </Text>
+
+            {vendorInfo.imageUrl && 
+              <View style={{alignItems: 'center', margin: 10, marginTop: 0,}}>
+                <ScalableImage width={Dimensions.get('window').width - 40}
+                  source={{uri: vendorInfo.imageUrl}} />
+              </View>
             }
+
+            {vendorDescription && 
+              <Text style={styles.vendorBioText}>{vendorDescription}{"\n"}</Text>
+            }
+
           </ScrollView>
 
-          {vendorLocation.length > 0 &&
+          {vendorInfo.url && 
           <View>
-            <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: 10,}}/>
+
+            <View style={{borderTopColor: 'black', borderTopWidth: 1, margin: 10, marginBottom: -10, paddingVertical: 10, justifyContent: 'center', alignItems: 'center'}}>
+              <TouchableOpacity 
+                onPress={() => this.openVendorWebsite(vendorInfo.url)}
+              >
+                <Text style={styles.website}>{vendorInfo.url}</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+          }
+
+          {vendorLocation.length > 0 &&
+          <View style={{borderColor: 'black', borderBottomWidth: 1, borderTopWidth: 1, margin: 10, paddingVertical: 0,}}>
             <Text style={{fontSize: 44, fontFamily: Fonts.AvenirBlack, textAlign: 'center', color: 'black',}}>Location</Text>
-            <Text numberOfLines={locationNumLines} adjustsFontSizeToFit style={[styles.locationDetails, {fontSize: locationFontSize}]}>{vendorLocation}</Text>
-            <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: 10,}}/>
+            <Text numberOfLines={locationNumLines} adjustsFontSizeToFit style={[styles.locationDetails, {fontSize: locationFontSize, lineHeight: locationLineHeight}]}>{vendorLocation}</Text>
           </View>
           }
 
@@ -176,13 +208,22 @@ export default class VendorDetailsScreen extends React.Component {
       letterSpacing: .5, 
       lineHeight: 18,
       color: '#000000',
+      marginTop: 5,
+      marginBottom: 18,
+    },
+
+    website: {
+      textAlign: 'center',
+      fontFamily: Fonts.AvenirBlack,
+      fontSize: 18,
+      color: '#6c588d',
     },
 
     locationDetails: {
       marginLeft: 20, 
       marginRight: 20, 
       fontSize: 95, 
-      //lineHeight: 110, 
+      lineHeight: undefined, 
       fontFamily: Fonts.AvenirBlack, 
       textAlign: 'center', 
       textAlignVertical: "center",
