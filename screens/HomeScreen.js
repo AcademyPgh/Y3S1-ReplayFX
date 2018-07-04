@@ -100,6 +100,7 @@ const styles = StyleSheet.create ({
    color: 'black',
    borderBottomWidth: StyleSheet.hairlineWidth * 6,
    borderColor: 'black',
+   borderStyle: 'solid'
  },
 
   container: {
