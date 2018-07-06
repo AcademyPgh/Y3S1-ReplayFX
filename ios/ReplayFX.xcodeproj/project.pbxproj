@@ -1768,7 +1768,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.academypgh.ReplayFX;
+				PRODUCT_BUNDLE_IDENTIFIER = com.academypgh.ReplayFXApp;
 				PRODUCT_NAME = ReplayFX;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1796,7 +1796,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.academypgh.ReplayFX;
+				PRODUCT_BUNDLE_IDENTIFIER = com.academypgh.ReplayFXApp;
 				PRODUCT_NAME = ReplayFX;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
