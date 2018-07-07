@@ -37,7 +37,7 @@ import APIScreen from './screens/APIScreen';
 
 
 
-var showLandingPage = true;
+var showLandingPage = false;
 
 class App extends React.Component {
 
