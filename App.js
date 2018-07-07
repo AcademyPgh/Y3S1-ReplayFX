@@ -4,6 +4,7 @@
  * @flow
  */
 
+import codePush from 'react-native-code-push';
 import React, { Component } from 'react';
 import {
   Platform,
@@ -38,7 +39,7 @@ import APIScreen from './screens/APIScreen';
 
 var showLandingPage = true;
 
-export default class App extends React.Component {
+class App extends React.Component {
 
   constructor(props) {
     super(props);
@@ -279,3 +280,5 @@ const styles = StyleSheet.create({
     
   },
 });
+
+export default codePush(App);
