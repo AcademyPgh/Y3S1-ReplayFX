@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { AppRegistry, StatusBar, ScrollView, Dimensions, Image, ImageBackground, Alert, Text, View, TouchableOpacity, StyleSheet } from 'react-native'
 import ScalableImage from 'react-native-scalable-image';
 import { Fonts } from '../src/utils/Fonts';
+import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
 
 export default class HomeScreen extends Component {
    
@@ -12,6 +13,7 @@ export default class HomeScreen extends Component {
     let ScreenHeight = Dimensions.get("window").height;
     let ScreenWidth = Dimensions.get("window").width;
 
+    //Alert.alert('SW:' + ScreenWidth + ',SH:' + ScreenHeight + ',scl:' + scale(30));
     return (
 
     <View style={{flex:1}}> 
@@ -94,19 +96,19 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create ({
 
   text: {
-   marginHorizontal: 20,
+   marginHorizontal: scale(20),
    flex: 1,
-   fontSize: 30,
+   fontSize: scale(30),
    fontFamily: Fonts.NunitoLight,
    color: 'black',
-   borderBottomWidth: StyleSheet.hairlineWidth * 6,
+   borderBottomWidth: verticalScale(StyleSheet.hairlineWidth * 6),
    borderColor: 'black',
    borderStyle: 'solid'
  },
 
   container: {
    flex: 1,
-   paddingVertical: 12,   
+   paddingVertical: verticalScale(12),   
  },
 
 
