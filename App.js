@@ -4,7 +4,7 @@
  * @flow
  */
 
-import codePush from 'react-native-code-push';
+import codePush, {InstallMode} from 'react-native-code-push';
 import React, { Component } from 'react';
 import {
   Platform,
