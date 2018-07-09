@@ -75,7 +75,7 @@ class App extends React.Component {
         // (required) Called when a remote or local notification is opened or received
         onNotification: this.handleNotification,
     });
-    codePush.sync({installMode: InstallMode.IMMEDIATE});
+    codePush.sync({installMode: InstallMode.ON_NEXT_RESUME});
   }
 
   handleNotification (notification) {
