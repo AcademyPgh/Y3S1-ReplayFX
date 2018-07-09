@@ -7,7 +7,7 @@ export const homeButtonHeader = (navigation) => {
     return {
     headerRight: (
         <TouchableOpacity onPress={() => {navigation.popToTop()}} style={{paddingRight: scale(10)}}>
-          <Icon name="home" size={scale(40)} color='white' />
+          <Icon name="home" size={40} color='white' />
         </TouchableOpacity>
       ),
     };
