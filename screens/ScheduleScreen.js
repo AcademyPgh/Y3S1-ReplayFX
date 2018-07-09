@@ -26,7 +26,8 @@ export default class ScheduleScreen extends React.Component {
 
     this.displayEvent = this.displayEvent.bind(this);
     this.setFavorite = this.setFavorite.bind(this);
-
+    this.promo = this.promo.bind(this);
+    this.displayEventById = this.displayEventById.bind(this);
   }
 
   setFavorite(event, shouldBeFavorite) {
@@ -35,6 +36,10 @@ export default class ScheduleScreen extends React.Component {
 
   displayEvent(event) {
     this.props.navigation.navigate('EventDetails', {eventInfo: event});
+  }
+
+  displayEventById(event_id) {
+    this.props.navigation.navigate('EventDetails', {eventId: event_id});
   }
 
   keyExtractor = (item, index) => item.id.toString();
@@ -64,6 +69,16 @@ export default class ScheduleScreen extends React.Component {
     );
   };
 
+  promo() {
+    return (<TouchableOpacity onPress={() => this.displayEventById(332)}>
+      <ScalableImage width={fullWidth}
+              style={styles.promoContainer}
+              source={require('../Images/tiny-goldeneye.jpg')}
+            />
+    </TouchableOpacity>
+    )
+  }
+
   render() {
 
     return(
@@ -75,10 +90,7 @@ export default class ScheduleScreen extends React.Component {
           renderSectionHeader={this.renderSectionHeader}
           keyExtractor={this.keyExtractor}
           ListHeaderComponent={
-            <ScalableImage width={fullWidth}
-              style={styles.promoContainer}
-              source={require('../Images/PromoSpot.jpg')}
-            />
+            this.promo()
           }
           ItemSeparatorComponent={this.renderSeparator}
           SectionSeparatorComponent={this.renderSeparator}
