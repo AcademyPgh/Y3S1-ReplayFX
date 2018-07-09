@@ -9,6 +9,7 @@ import {
   Image,
 } from 'react-native';
 import { homeButtonHeader } from '../src/utils/Headers';
+import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
 
 export default class SponsorsScreen extends React.Component {
     static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -22,28 +23,19 @@ export default class SponsorsScreen extends React.Component {
         // Try removing the `flex: 1` on the parent View.
         // The parent will not have dimensions, so the children can't expand.
         // What if you add `height: 300` instead of `flex: 1`?      
-        <ScrollView style={styles.background}> 
-          <View style={{flex: 1}}>
+        <View style={styles.background}> 
             <View style={styles.container1}>
-                <View style={styles.imgcontainer}>
-                <Image source={require('../Images/pair-logo-red.png')}/>
-                </View>
+                <Image style={{height: '100%', resizeMode: 'contain'}} source={require('../Images/pair-logo-red.png')}/>
             </View>
   
            <View style={styles.container1}>
-                <View style={styles.imgcontainer}>
-                <Image source={require('../Images/lfgtranspred.png')}/>
-                </View>
+                <Image style={{height: '100%', resizeMode: 'contain'}}  source={require('../Images/lfgtranspred.png')}/>
             </View>
   
              <View style={styles.container1}>
-                <View style={styles.imgcontainer}>
-                <Image source={require('../Images/AcademyTranspRed.png')}/>
-                </View>
+                <Image style={{height: '100%', resizeMode: 'contain'}}  source={require('../Images/AcademyTranspRed.png')}/>
             </View>
-           
-         </View>
-        </ScrollView> 
+        </View> 
         
         
       );
@@ -58,7 +50,7 @@ export default class SponsorsScreen extends React.Component {
    
      
     container1: {
-      paddingVertical: 10,
+      paddingVertical: verticalScale(10),
       borderWidth: StyleSheet.hairlineWidth,
       borderColor: '#9ca4ab',
       justifyContent: 'center',

@@ -16,6 +16,7 @@ import {
 import ScalableImage from 'react-native-scalable-image';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { homeButtonHeader } from '../src/utils/Headers';
+import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
 
 const fullWidth = Dimensions.get('window').width;
 
@@ -46,14 +47,14 @@ export default class VendorsScreen extends React.Component {
   );
 
   renderSectionHeader = ({section: {title}}) => (
-    this.props.showSectionHeaders && <View style={styles.sectionHeader}><Text style={{fontWeight: 'bold', paddingLeft: 8}}>{title}</Text></View>
+    this.props.showSectionHeaders && <View style={styles.sectionHeader}><Text style={{fontWeight: 'bold', paddingLeft: scale(8)}}>{title}</Text></View>
   );
 
   renderSeparator = () => {
     return (
       <View
         style={{
-          height: StyleSheet.hairlineWidth * 4,
+          height: StyleSheet.hairlineWidth * 2,
           width: "100%",
           backgroundColor: "#9ca4ab",
         }}
@@ -110,7 +111,9 @@ class VendorItem extends React.PureComponent {
       <View style={[styles.container, {backgroundColor: 'white', }]}>
         <TouchableOpacity style={styles.vendorTextContainer} onPress={this.pressText}>
           <Text style={styles.vendorTitle}>{vendor.title}</Text>
+          {vendor.description && 
           <Text numberOfLines={3} style={styles.vendorDescription}>{vendor.description}</Text>
+          }
         </TouchableOpacity>
       </View>
     );
@@ -122,25 +125,25 @@ const styles = StyleSheet.create({
     paddingVertical: 2,
     color: 'black',
     fontWeight: 'bold',
-    fontSize: 24,
+    fontSize: scale(24),
   },
   vendorDescription: {
     color: '#9ca4ab',
-    fontSize: 16,   
+    fontSize: scale(16),   
   },
 
   topText: {
     justifyContent: 'center',
     color: 'blue',
-    fontSize: 18,
+    fontSize: scale(18),
   },
   container: {
     flex: 1,
-    paddingVertical: 5, 
+    paddingVertical: verticalScale(5), 
   },
   vendorTextContainer: {
     flex: 1,
-    paddingHorizontal: 8,
+    paddingHorizontal: scale(8),
   },
   text: {
 

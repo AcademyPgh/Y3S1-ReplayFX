@@ -47,6 +47,17 @@ export default class HomeScreen extends Component {
             </Text>
           </View>
 
+          <View style={[styles.container,]}>
+
+            <Text style={styles.text}
+              onPress={() => {
+              /* 1. Navigate to the Schedule route with params */
+              this.props.navigation.navigate('Schedule', {scheduleFilter: 'my-schedule', title: 'MY SCHEDULE'});
+              }}>
+              MY SCHEDULE
+            </Text>
+          </View>
+
           {this.props.screenProps.apiData.eventCategories.map((category) => {
             return (
               <View style={[styles.container,]} key={category.Name}>
@@ -101,7 +112,7 @@ const styles = StyleSheet.create ({
    fontSize: scale(30),
    fontFamily: Fonts.NunitoLight,
    color: 'black',
-   borderBottomWidth: verticalScale(StyleSheet.hairlineWidth * 6),
+   borderBottomWidth: StyleSheet.hairlineWidth * 2,
    borderColor: 'black',
    borderStyle: 'solid'
  },

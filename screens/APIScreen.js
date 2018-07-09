@@ -13,6 +13,7 @@ import {
 import axios from 'axios';
 import { Fonts } from '../src/utils/Fonts';
 import { apiCalls } from '../config';
+import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
 
 const persistKey = "@ReplayFX:apiData";
 
@@ -162,7 +163,7 @@ export default class APIScreen extends React.Component {
 
   const styles = StyleSheet.create({
     text: {
-      fontSize: 24,
+      fontSize: scale(24),
       color: 'whitesmoke',
       fontFamily: Fonts.AvenirBlack,
     },
@@ -170,8 +171,8 @@ export default class APIScreen extends React.Component {
       backgroundColor: 'black',
       borderColor: 'whitesmoke',
       borderWidth: StyleSheet.hairlineWidth * 10,
-      padding: 12,
-      margin: 12,
-      borderRadius: 12,
+      padding: scale(12),
+      margin: scale(12),
+      borderRadius: scale(12),
     }
   });

@@ -14,6 +14,7 @@ import {
 import ScalableImage from 'react-native-scalable-image';
 import { Fonts } from '../src/utils/Fonts';
 import { homeButtonHeader } from '../src/utils/Headers';
+import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
 
 export default class GameDetailsScreen extends React.Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -61,7 +62,7 @@ export default class GameDetailsScreen extends React.Component {
 
     let gameLocation = gameInfo.replayGameLocations.map((loc) => { return loc.location; }).join(', ') || '';
 
-    let locationFontSize = 95;
+    let locationFontSize = 38;
     let locationNumLines = 1;
 
     const locationLength = gameLocation.length;
@@ -69,10 +70,10 @@ export default class GameDetailsScreen extends React.Component {
     if (Platform.OS == 'android') {
       //need to adjust font size ourselves - adjustsFontSizeToFit is iOS only
       if (locationLength > 30) {
-        locationFontSize = 28;
+        locationFontSize = 26;
         locationNumLines = 5;
       } else if (locationLength > 4) {
-        locationFontSize = 44;
+        locationFontSize = 32;
         locationNumLines = 3;
       }
     }
@@ -83,7 +84,7 @@ export default class GameDetailsScreen extends React.Component {
               background
               source={image}>      
               <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>   
-                <Text numberOfLines={titleNumLines} adjustsFontSizeToFit style={[styles.headerTextInput, {fontSize: titleFontSize, letterSpacing: titleLetterSpacing}]}>{gameInfo.gameTitle.toUpperCase()}</Text>
+                <Text numberOfLines={titleNumLines} adjustsFontSizeToFit style={[styles.headerTextInput, {fontSize: scale(titleFontSize), letterSpacing: titleLetterSpacing}]}>{gameInfo.gameTitle.toUpperCase()}</Text>
                 <Text style={styles.headerText}>{gameInfo.replayGameType.name.toUpperCase()}</Text>
               </View>
             </ScalableImage>
@@ -119,7 +120,7 @@ export default class GameDetailsScreen extends React.Component {
               }
 
               {gameInfo.overview && 
-              <Text style={{marginTop: 5.5, marginBottom: 18}}>
+              <Text style={{marginTop: verticalScale(5.5), marginBottom: verticalScale(18)}}>
                 <Text style={styles.gameBioTitle}>Game Bio: </Text>
                 <Text style={styles.gameBioInput}>{gameInfo.overview}{"\n"}</Text>
               </Text>
@@ -130,7 +131,7 @@ export default class GameDetailsScreen extends React.Component {
           <View>
             <View style={styles.locationBorder}/>
             <Text style={styles.location}>Location</Text>
-            <Text numberOfLines={locationNumLines} adjustsFontSizeToFit style={[styles.locationInput, {fontSize: locationFontSize}]}>{gameLocation}</Text>
+            <Text numberOfLines={locationNumLines} adjustsFontSizeToFit style={[styles.locationInput, {fontSize: scale(locationFontSize)}]}>{gameLocation}</Text>
             <View style={styles.locationBorder}/>
           </View>
           }
@@ -150,81 +151,81 @@ export default class GameDetailsScreen extends React.Component {
     },
     
     headerTextInput: {
-      fontSize: 25,
+      fontSize: scale(25),
       fontFamily: Fonts.AvenirBlack,
       color: '#ffffff',
       textAlign: 'center',
       letterSpacing: 2,
-      paddingTop: 12,
-      paddingLeft: 10,
-      paddingRight: 10,
+      paddingTop: verticalScale(12),
+      paddingLeft: scale(10),
+      paddingRight: scale(10),
     },
 
     headerText: {
-      fontSize: 25,
+      fontSize: scale(25),
       fontFamily: Fonts.AvenirBlack,
       color: '#ffffff',
       textAlign: 'center',
       letterSpacing: 2,
-      paddingBottom: 12,
-      marginTop: -8,
+      paddingBottom: verticalScale(12),
+      marginTop: verticalScale(-8),
     },
 
     detailsContainer: {
-        padding: 20,
+        padding: scale(20),
     },  
           
     titles: {
       fontFamily: Fonts.AvenirBlack,
       color: '#000000',
-      fontSize: 16,
+      fontSize: scale(16),
       letterSpacing: 1,
-      lineHeight: 28,
+      lineHeight: scale(28),
     },
       
     descriptions: {
       fontFamily: Fonts.AvenirMedium,
       color: '#000000',
-      fontSize: 16,
-      lineHeight: 28,
+      fontSize: scale(16),
+      lineHeight: scale(28),
     }, 
 
     gameBioTitle: {
       fontFamily: Fonts.AvenirBlack, 
       color: '#000000',
-      fontSize: 16, 
+      fontSize: scale(16), 
       letterSpacing: 1, 
-      lineHeight: 18,
+      lineHeight: scale(18),
     },
 
     gameBioInput: {
       fontFamily: Fonts.AvenirMedium,
       color: '#000000', 
-      fontSize: 16, 
+      fontSize: scale(16), 
       letterSpacing: .5, 
-      lineHeight: 18,
+      lineHeight: scale(18),
     },
 
     locationBorder: {
       borderBottomColor: 'black', 
       borderBottomWidth: 1, 
-      margin: 10
+      margin: verticalScale(10)
     },
 
     location: {
-      fontSize: 44, 
+      fontSize: scale(28), 
       fontFamily: Fonts.AvenirBlack, 
       color: '#000000',
       textAlign: 'center',
     },
 
     locationInput: {
-      fontSize: 95, 
+      fontSize: scale(38), 
       fontFamily: Fonts.AvenirBlack,
       color: '#000000',
       textAlign: 'center',
-      paddingLeft: 10,
-      paddingRight: 10,
+      paddingLeft: scale(10),
+      paddingRight: scale(10),
     },
 
 });

@@ -14,6 +14,7 @@ import ScheduleScreen from './ScheduleScreen';
 import { homeButtonHeader } from '../src/utils/Headers';
 import moment from 'moment';
 import PushController from '../src/utils/PushController';
+import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
 
 const debug = [];
 
@@ -106,6 +107,7 @@ export default class ScheduleScreenContainer extends React.Component {
         if (favorites) {
           favorites = JSON.parse(favorites);
           this.setState({favorites: favorites});
+          this.setupFavoriteFilter(favorites, this.props.screenProps.apiData.events);
         }
       }).catch((err) => {
         //Alert.alert(err);
@@ -341,10 +343,10 @@ export default class ScheduleScreenContainer extends React.Component {
     render() {
       return (
         <View style={{flex:1}}>
-          <View style={{flex:1, flexDirection:'row', height:'10%', borderStyle: 'solid', borderColor: 'white', borderTopWidth: (StyleSheet.hairlineWidth*1), borderBottomWidth: (StyleSheet.hairlineWidth * 2)}}>
+          <View style={{flexDirection:'row', height:verticalScale(50), borderStyle: 'solid', borderColor: 'white', borderTopWidth: (StyleSheet.hairlineWidth), borderBottomWidth: (StyleSheet.hairlineWidth)}}>
             
             <View style={{flex:1, alignItems:'center', justifyContent:'center', backgroundColor: '#272727'}}>
-              <Text style={{fontSize: 24, color:'white'}}>JULY</Text>
+              <Text style={{fontSize: verticalScale(24), color:'white'}}>JULY</Text>
             </View>
 
             <View style={{flex:4, backgroundColor:'#272727'}}>
@@ -378,9 +380,10 @@ export default class ScheduleScreenContainer extends React.Component {
 
   const styles = StyleSheet.create({
     tab: {
-      flex: 1, padding: 4, paddingHorizontal: 15
+      flex: 1, padding: verticalScale(4), paddingHorizontal: scale(15)
     },
     tabLabel: {
+      fontSize: verticalScale(16),
       textAlign: 'center',
     },
     tabLabelFocused: {

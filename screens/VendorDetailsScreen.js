@@ -19,6 +19,7 @@ import moment from 'moment';
 
 import { Fonts } from '../src/utils/Fonts';
 import { homeButtonHeader } from '../src/utils/Headers';
+import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
 
 export default class VendorDetailsScreen extends React.Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -69,21 +70,16 @@ export default class VendorDetailsScreen extends React.Component {
     const vendorLocation = vendorInfo.location || '';
     const locationLength = vendorLocation.length;
 
-    let locationFontSize = 95;
+    let locationFontSize = 38;
     let locationNumLines = 1;
-    let locationLineHeight = 110;
 
-    if (Platform.OS == 'android') {
       //need to adjust font size ourselves - adjustsFontSizeToFit is iOS only
-      if (locationLength > 30) {
-        locationFontSize = 28;
-        locationNumLines = 5;
-        locationLineHeight = undefined;
-      } else if (locationLength > 4) {
-        locationFontSize = 44;
-        locationNumLines = 3;
-        locationLineHeight = undefined;
-      }
+    if (locationLength > 30) {
+      locationFontSize = 24;
+      locationNumLines = 5;
+    } else if (locationLength > 4) {
+      locationFontSize = 32;
+      locationNumLines = 3;
     }
 
     let vendorDescription = vendorInfo.description || '';
@@ -106,7 +102,7 @@ export default class VendorDetailsScreen extends React.Component {
                 <Text 
                   numberOfLines={titleNumLines} 
                   adjustsFontSizeToFit 
-                  style={[styles.headerText2, {fontSize: titleFontSize, letterSpacing: titleLetterSpacing}]}>{vendorInfo.title.toUpperCase()}
+                  style={[styles.headerText2, {fontSize: scale(titleFontSize), letterSpacing: titleLetterSpacing}]}>{vendorInfo.title.toUpperCase()}
                 </Text>
               </View>
             </ScalableImage>
@@ -114,22 +110,23 @@ export default class VendorDetailsScreen extends React.Component {
           <ScrollView style={styles.detailsContainer}>
 
             {vendorInfo.imageUrl && 
-              <View style={{alignItems: 'center', margin: 10, marginTop: 0,}}>
-                <ScalableImage width={Dimensions.get('window').width - 40}
+              <View style={{alignItems: 'center', margin: scale(10), marginTop: 0,}}>
+                <ScalableImage width={Dimensions.get('window').width - scale(40)}
                   source={{uri: vendorInfo.imageUrl}} />
               </View>
             }
 
-            {vendorDescription && 
+            {vendorDescription.length > 0 && 
               <Text style={styles.vendorBioText}>{vendorDescription}{"\n"}</Text>
             }
+
 
           </ScrollView>
 
           {vendorInfo.url && 
           <View>
 
-            <View style={{borderTopColor: 'black', borderTopWidth: 1, margin: 10, marginBottom: -10, paddingVertical: 10, justifyContent: 'center', alignItems: 'center'}}>
+            <View style={{borderTopColor: 'black', borderTopWidth: 1, margin: verticalScale(10), marginBottom: verticalScale(-10), paddingVertical: verticalScale(5), justifyContent: 'center', alignItems: 'center'}}>
               <TouchableOpacity 
                 onPress={() => this.openVendorWebsite(vendorInfo.url)}
               >
@@ -140,9 +137,9 @@ export default class VendorDetailsScreen extends React.Component {
           }
 
           {vendorLocation.length > 0 &&
-          <View style={{borderColor: 'black', borderBottomWidth: 1, borderTopWidth: 1, margin: 10, paddingVertical: 0,}}>
-            <Text style={{fontSize: 44, fontFamily: Fonts.AvenirBlack, textAlign: 'center', color: 'black',}}>Location</Text>
-            <Text numberOfLines={locationNumLines} adjustsFontSizeToFit style={[styles.locationDetails, {fontSize: locationFontSize, lineHeight: locationLineHeight}]}>{vendorLocation}</Text>
+          <View style={{borderColor: 'black', borderBottomWidth: 1, borderTopWidth: 1, margin: verticalScale(10), paddingVertical: 0,}}>
+            <Text style={{fontSize: scale(28), fontFamily: Fonts.AvenirBlack, textAlign: 'center', color: 'black',}}>Location</Text>
+            <Text numberOfLines={locationNumLines} adjustsFontSizeToFit style={[styles.locationDetails, {fontSize: scale(locationFontSize)}]}>{vendorLocation}</Text>
           </View>
           }
 
@@ -157,73 +154,72 @@ export default class VendorDetailsScreen extends React.Component {
     },
     
     headerText1: {
-      fontSize: 25,
+      fontSize: scale(25),
       fontFamily: Fonts.AvenirBlack,
       color: '#ffffff',
       textAlign: 'center',
       letterSpacing: 2,
-      paddingTop: 12
+      paddingTop: verticalScale(12)
     },
 
     headerText2: {
-      fontSize: 25,
+      fontSize: scale(25),
       fontFamily: Fonts.AvenirBlack,
       color: '#ffffff',
       textAlign: 'center',
       letterSpacing: 2,
-      marginLeft: 20,
-      marginRight: 20,
+      marginLeft: scale(20),
+      marginRight: scale(20),
     },
 
     detailsContainer: {
-        padding: 20,
+        padding: scale(20),
     },  
           
     bolded: {
       fontFamily: Fonts.AvenirBlack,
-      fontSize: 16,
+      fontSize: scale(16),
       letterSpacing: 1,
-      lineHeight: 28,
+      lineHeight: scale(28),
       color: '#000000',
     },
       
     descriptions: {
       fontFamily: Fonts.AvenirMedium,
-      fontSize: 16,
-      lineHeight: 28,
+      fontSize: scale(16),
+      lineHeight: scale(28),
       color: '#000000',
     }, 
 
     vendorBio: {
       fontFamily: Fonts.AvenirBlack, 
-      fontSize: 16, 
+      fontSize: scale(16), 
       letterSpacing: 1, 
-      lineHeight: 18,
+      lineHeight: scale(18),
       color: '#000000',
     },
 
     vendorBioText: {
       fontFamily: Fonts.AvenirMedium, 
-      fontSize: 16, 
+      fontSize: scale(16), 
       letterSpacing: .5, 
-      lineHeight: 18,
+      lineHeight: scale(18),
       color: '#000000',
       marginTop: 5,
-      marginBottom: 18,
+      marginBottom: verticalScale(18),
     },
 
     website: {
       textAlign: 'center',
       fontFamily: Fonts.AvenirBlack,
-      fontSize: 18,
+      fontSize: scale(18),
       color: '#6c588d',
     },
 
     locationDetails: {
-      marginLeft: 20, 
-      marginRight: 20, 
-      fontSize: 95, 
-      lineHeight: undefined, 
+      marginLeft: scale(12), 
+      marginRight: scale(12), 
+      fontSize: scale(38), 
       fontFamily: Fonts.AvenirBlack, 
       textAlign: 'center', 
       textAlignVertical: "center",

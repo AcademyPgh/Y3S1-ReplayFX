@@ -19,8 +19,9 @@ import ScalableImage from 'react-native-scalable-image';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import sectionListGetItemLayout from 'react-native-section-list-get-item-layout';
 import { homeButtonHeader } from '../src/utils/Headers';
+import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
 
-const ROW_HEIGHT = 35;
+const ROW_HEIGHT = verticalScale(35);
 
 export default class GamesListScreen extends React.Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -163,12 +164,12 @@ export default class GamesListScreen extends React.Component {
         <ScalableImage width={Dimensions.get('window').width}
           source={image}/>
 
-        <View style={{height: 34, margin: 8, borderRadius: 8, backgroundColor: 'white', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center'}}>
-          <View style={{width: 40, height: '100%', justifyContent: 'center', alignItems: 'center'}}>
-            <Icon name={'search'} size={24} color='lightgray' />
+        <View style={{height: verticalScale(34), margin: scale(8), borderRadius: scale(8), backgroundColor: 'white', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center'}}>
+          <View style={{width: verticalScale(40), height: '100%', justifyContent: 'center', alignItems: 'center'}}>
+            <Icon name={'search'} size={verticalScale(24)} color='lightgray' />
           </View>
           <TextInput
-            style={{flex: 1, height: '100%', padding: 0, textDecorationLine: 'none', fontSize: 20, fontFamily: 'Arial', color: 'gray'}}
+            style={{flex: 1, height: '100%', padding: 0, textDecorationLine: 'none', fontSize: scale(20), fontFamily: 'Arial', color: 'gray'}}
             placeholder="Search"
             placeholderTextColor='lightgray'
             onChangeText={this.handleChangeSearchText}
@@ -176,8 +177,8 @@ export default class GamesListScreen extends React.Component {
             value={this.state.searchFilter}
           />
           {this.state.searchFilter.length > 0 && 
-            <TouchableOpacity style={{width: 40, height: '100%', justifyContent: 'center', alignItems: 'center'}} onPress={this.clearSearchText}>
-              <Icon name={'remove'} size={24} color='gray' />
+            <TouchableOpacity style={{width: verticalScale(40), height: '100%', justifyContent: 'center', alignItems: 'center'}} onPress={this.clearSearchText}>
+              <Icon name={'remove'} size={verticalScale(24)} color='gray' />
             </TouchableOpacity>
           }
         </View>
@@ -280,33 +281,29 @@ const styles=StyleSheet.create({
    flex: 1,
    width: '100%',
   },
-  container: {
-    flex: 1,
-    paddingTop: 22
-  },
   letter: {
     backgroundColor: '#555555',
     alignItems: 'center',
     borderLeftWidth: StyleSheet.hairlineWidth * 3,
     borderLeftColor: 'black',
-    width: 35,
+    width: scale(35),
     margin: 0,
   },
   wideLetter: {
-    width: 48
+    width: scale(48)
   },
   scrollLetterText: {
-    fontSize: 24,
+    fontSize: scale(24),
     fontFamily: 'arial',
     textAlign: 'center',
     color: '#e3e4e4',
-    paddingBottom: 3,
-    paddingTop: 3,
+    paddingBottom: verticalScale(3),
+    paddingTop: verticalScale(3),
   },
-   item1: {
+  item1: {
     height: ROW_HEIGHT,
-    paddingHorizontal: 5,
-    borderBottomWidth: StyleSheet.hairlineWidth * 4,
+    paddingHorizontal: scale(5),
+    borderBottomWidth: StyleSheet.hairlineWidth * 2,
     borderColor: '#9ca4ab',
     justifyContent: 'center',
   },
@@ -314,8 +311,8 @@ const styles=StyleSheet.create({
     backgroundColor: '#dddddd',
   },
   itemText: {
-    fontSize: 18,
+    fontSize: scale(18),
     fontFamily: 'Arial',
-    paddingRight: 12
+    paddingRight: scale(12)
   }
 });
