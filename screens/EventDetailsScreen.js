@@ -17,6 +17,8 @@ import moment from 'moment';
 
 import { Fonts } from '../src/utils/Fonts';
 import { homeButtonHeader } from '../src/utils/Headers';
+import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
+
 
 export default class EventDetailsScreen extends React.Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -57,16 +59,16 @@ export default class EventDetailsScreen extends React.Component {
     const eventLocation = eventInfo.location || '';
     const locationLength = eventLocation.length;
 
-    let locationFontSize = 95;
+    let locationFontSize = 38;
     let locationNumLines = 1;
 
     if (Platform.OS == 'android') {
       //need to adjust font size ourselves - adjustsFontSizeToFit is iOS only
       if (locationLength > 30) {
-        locationFontSize = 28;
+        locationFontSize = 24;
         locationNumLines = 5;
       } else if (locationLength > 4) {
-        locationFontSize = 44;
+        locationFontSize = 32;
         locationNumLines = 3;
       }
     }
@@ -91,7 +93,7 @@ export default class EventDetailsScreen extends React.Component {
                 <Text 
                   numberOfLines={titleNumLines} 
                   adjustsFontSizeToFit 
-                  style={[styles.headerText2, {fontSize: titleFontSize, letterSpacing: titleLetterSpacing}]}>{eventInfo.title.toUpperCase()}
+                  style={[styles.headerText2, {fontSize: scale(titleFontSize), letterSpacing: titleLetterSpacing}]}>{eventInfo.title.toUpperCase()}
                 </Text>
               </View>
             </ScalableImage>
@@ -109,7 +111,7 @@ export default class EventDetailsScreen extends React.Component {
             </Text>
 
             {eventDescription.length > 0 && 
-              <Text style={{marginTop: 5.5, marginBottom: 18}}>
+              <Text style={{marginTop: verticalScale(5.5), marginBottom: verticalScale(18)}}>
                 <Text style={styles.gameBio}>Description: </Text>
                 <Text style={styles.gameBioText}>{eventDescription + "\n"}</Text>
               </Text>
@@ -118,10 +120,10 @@ export default class EventDetailsScreen extends React.Component {
 
           {eventLocation.length > 0 &&
           <View>
-            <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: 10,}}/>
-            <Text style={{fontSize: 44, fontFamily: Fonts.AvenirBlack, textAlign: 'center', color: 'black',}}>Location</Text>
-            <Text numberOfLines={locationNumLines} adjustsFontSizeToFit style={[styles.locationDetails, {fontSize: locationFontSize}]}>{eventLocation}</Text>
-            <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: 10,}}/>
+            <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: verticalScale(10),}}/>
+            <Text style={{fontSize: scale(28), fontFamily: Fonts.AvenirBlack, textAlign: 'center', color: 'black',}}>Location</Text>
+            <Text numberOfLines={locationNumLines} adjustsFontSizeToFit style={[styles.locationDetails, {fontSize: scale(locationFontSize)}]}>{eventLocation}</Text>
+            <View style={{borderBottomColor: 'black', borderBottomWidth: 1, margin: verticalScale(10),}}/>
           </View>
           }
 
@@ -136,63 +138,63 @@ export default class EventDetailsScreen extends React.Component {
     },
     
     headerText1: {
-      fontSize: 25,
+      fontSize: scale(25),
       fontFamily: Fonts.AvenirBlack,
       color: '#ffffff',
       textAlign: 'center',
       letterSpacing: 2,
-      paddingTop: 12
+      paddingTop: verticalScale(12)
     },
 
     headerText2: {
-      fontSize: 25,
+      fontSize: scale(25),
       fontFamily: Fonts.AvenirBlack,
       color: '#ffffff',
       textAlign: 'center',
       letterSpacing: 2,
-      marginLeft: 20,
-      marginRight: 20,
+      marginLeft: scale(20),
+      marginRight: scale(20),
     },
 
     detailsContainer: {
-        padding: 20,
+        padding: scale(20),
     },  
           
     bolded: {
       fontFamily: Fonts.AvenirBlack,
-      fontSize: 16,
+      fontSize: scale(16),
       letterSpacing: 1,
-      lineHeight: 28,
+      lineHeight: scale(28),
       color: '#000000',
     },
       
     descriptions: {
       fontFamily: Fonts.AvenirMedium,
-      fontSize: 16,
-      lineHeight: 28,
+      fontSize: scale(16),
+      lineHeight: scale(28),
       color: '#000000',
     }, 
 
     gameBio: {
       fontFamily: Fonts.AvenirBlack, 
-      fontSize: 16, 
+      fontSize: scale(16), 
       letterSpacing: 1, 
-      lineHeight: 18,
+      lineHeight: scale(18),
       color: '#000000',
     },
 
     gameBioText: {
       fontFamily: Fonts.AvenirMedium, 
-      fontSize: 16, 
+      fontSize: scale(16), 
       letterSpacing: .5, 
-      lineHeight: 18,
+      lineHeight: scale(18),
       color: '#000000',
     },
 
     locationDetails: {
-      marginLeft: 20, 
-      marginRight: 20, 
-      fontSize: 95, 
+      marginLeft: scale(12), 
+      marginRight: scale(12), 
+      fontSize: scale(38), 
       //lineHeight: 110, 
       fontFamily: Fonts.AvenirBlack, 
       textAlign: 'center', 

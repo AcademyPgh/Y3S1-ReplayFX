@@ -22,6 +22,7 @@ import PushNotification from 'react-native-push-notification';
 import {events, games, eventCategories, gameTypes} from './api-samples/sampleData';
 import { Fonts } from './src/utils/Fonts';
 import NavigationService from './src/utils/NavigationService';
+import { scale, verticalScale, moderateScale } from './src/utils/Scaling';
 
 import LandingScreen from './screens/LandingScreen';
 import HomeScreen from './screens/HomeScreen';
@@ -180,7 +181,7 @@ const RootStack = StackNavigator(
       screen: GamesMain,
       initialRouteParams: { },
       navigationOptions: {
-        title: 'CHOOSE YOUR PLATFORM',
+        title: 'CHOOSE PLATFORM',
       }
     },
     GamesList: {
@@ -237,7 +238,7 @@ const RootStack = StackNavigator(
       headerTintColor: '#ffffff',
       headerTitleStyle: {
         fontWeight: 'normal',
-        fontSize: 24,
+        fontSize: scale(24),
         fontFamily: Fonts.NunitoLight,
         textAlign: 'center',
         flex: 1,
@@ -255,26 +256,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
   footerText: {
-    fontSize: 30,
+    fontSize: scale(30),
     color: 'white',
     textAlign: 'center',
     fontFamily: Fonts.AvenirMedium,
         
   },
   footer: {
-    height: 50,
-    paddingVertical: 5,
+    height: verticalScale(50),
+    paddingVertical: verticalScale(5),
     backgroundColor: '#000000',
     flexDirection: 'column-reverse',
     justifyContent: 'center',

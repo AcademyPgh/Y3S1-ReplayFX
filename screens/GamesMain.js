@@ -8,6 +8,7 @@ import { Button, ScrollView, StyleSheet, Text, View, Image, TouchableOpacity} fr
 import { Fonts } from '../src/utils/Fonts';
 import { homeButtonHeader } from '../src/utils/Headers';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
 
 export default class GamesMain extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -18,7 +19,7 @@ export default class GamesMain extends Component {
       ...homeButton,
       headerTitleStyle: {
         ...navigationOptions.headerTitleStyle,
-        fontSize: 18
+        fontSize: scale(18)
       },
     };
   }
@@ -44,7 +45,7 @@ export default class GamesMain extends Component {
                     <Text style={styles.Font}>{gameType.Name.toUpperCase()}</Text>
                   </View>
                   <View style={styles.imgcontainer}>
-                    <Icon name={'chevron-right'} size={30} color='#969696' />
+                    <Icon name={'chevron-right'} size={scale(30)} color='#969696' />
                   </View>
                 </View>
               </TouchableOpacity>
@@ -61,9 +62,9 @@ const styles = StyleSheet.create({
   
   
   Font: {
-    paddingBottom: 5,
+    paddingBottom: verticalScale(5),
     color: '#969696',
-    fontSize: 28,
+    fontSize: scale(28),
     fontFamily: Fonts.NunitoLight,
   },
 
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    paddingVertical: 10,
+    paddingVertical: verticalScale(10),
     borderWidth: .5,
     borderColor: '#9ca4ab',
     flexDirection: 'row',
@@ -82,15 +83,14 @@ const styles = StyleSheet.create({
   imgcontainer: {
     justifyContent: 'center',
     alignItems: 'flex-end',
-    paddingRight: 20
+    paddingRight: scale(20),
   },
   text:{
     justifyContent: 'center',
-    paddingLeft: 20,
+    paddingLeft: scale(20),
     flex: 1
   },
   background:{
-    height: 300,
     borderWidth: .5,
     backgroundColor: '#f3f3f3',
     borderColor: '#9ca4ab',

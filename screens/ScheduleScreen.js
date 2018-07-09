@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 import ScalableImage from 'react-native-scalable-image';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
 
 const fullWidth = Dimensions.get('window').width;
 
@@ -48,14 +49,14 @@ export default class ScheduleScreen extends React.Component {
   );
 
   renderSectionHeader = ({section: {title}}) => (
-    this.props.showSectionHeaders && <View style={styles.sectionHeader}><Text style={{fontWeight: 'bold', paddingLeft: 8}}>{title}</Text></View>
+    this.props.showSectionHeaders && <View style={styles.sectionHeader}><Text style={{fontWeight: 'bold', paddingLeft: scale(8)}}>{title}</Text></View>
   );
 
   renderSeparator = () => {
     return (
       <View
         style={{
-          height: StyleSheet.hairlineWidth * 4,
+          height: StyleSheet.hairlineWidth * 2,
           width: "100%",
           backgroundColor: "#9ca4ab",
         }}
@@ -111,7 +112,7 @@ class EventItem extends React.PureComponent {
     return (
       <View style={[styles.container, {backgroundColor: 'white', }]}>
         <TouchableOpacity style={styles.starContainer} onPress={this.pressStar} >
-          <Icon name={iconName} size={40} color='black' />
+          <Icon name={iconName} size={scale(40)} color='black' />
         </TouchableOpacity>
         <TouchableOpacity style={styles.eventTextContainer} onPress={this.pressText}>
           <Text style={styles.Time}>{event.startTime12 + '-' + event.endTime12}</Text>
@@ -125,34 +126,29 @@ class EventItem extends React.PureComponent {
 
 const styles = StyleSheet.create({
   eventTitle: {
-    paddingVertical: 2,
+    paddingVertical: 1,
     color: 'black',
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: scale(18),
 
   },
   Time: {
-    paddingVertical: 2,
+    paddingVertical: 1,
     color: '#9ca4ab',
-    fontSize: 16,
+    fontSize: scale(16),
     
   },
   Location: {
+    paddingVertical: 1,
     color: '#9ca4ab',
-    fontSize: 16,   
-  },
-
-  topText: {
-    justifyContent: 'center',
-    color: 'blue',
-    fontSize: 18,
+    fontSize: scale(16),   
   },
   container: {
     flex: 1,
     //borderWidth: StyleSheet.hairlineWidth * 4,
     //borderColor: '#9ca4ab',
     flexDirection: 'row',   
-    paddingVertical: 5, 
+    paddingVertical: 2, 
   },
   starContainer: {
     flex: 1,
