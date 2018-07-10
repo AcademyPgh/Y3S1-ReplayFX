@@ -1782,7 +1782,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.academypgh.ReplayFXApp;
 				PRODUCT_NAME = ReplayFX;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1813,7 +1813,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.academypgh.ReplayFXApp;
 				PRODUCT_NAME = ReplayFX;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
