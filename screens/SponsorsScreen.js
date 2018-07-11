@@ -25,7 +25,7 @@ export default class SponsorsScreen extends React.Component {
         // What if you add `height: 300` instead of `flex: 1`?      
         <View style={styles.background}> 
             <View style={styles.container1}>
-                <Image style={{height: '100%', resizeMode: 'contain'}} source={require('../Images/pair-logo-red.png')}/>
+                <Image style={{height: '100%', resizeMode: 'contain'}} source={require('../Images/eBay_Logo_small.png')}/>
             </View>
   
            <View style={styles.container1}>
