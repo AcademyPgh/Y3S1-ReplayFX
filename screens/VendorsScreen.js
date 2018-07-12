@@ -17,6 +17,7 @@ import ScalableImage from 'react-native-scalable-image';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { homeButtonHeader } from '../src/utils/Headers';
 import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
+import Promo from '../src/components/Promo';
 
 const fullWidth = Dimensions.get('window').width;
 
@@ -31,6 +32,7 @@ export default class VendorsScreen extends React.Component {
     super(props);
 
     this.displayVendor = this.displayVendor.bind(this);
+    this.displayEventById = this.displayEventById.bind(this);
   }
 
   displayVendor(vendor) {
@@ -62,6 +64,10 @@ export default class VendorsScreen extends React.Component {
     );
   };
 
+  displayEventById(event_id) {
+    this.props.navigation.navigate('EventDetails', {eventId: event_id});
+  }
+
   processVendorSections(vendorList) {
     if (!vendorList) {
       vendorList = [];
@@ -80,10 +86,7 @@ export default class VendorsScreen extends React.Component {
           renderSectionHeader={this.renderSectionHeader}
           keyExtractor={this.keyExtractor}
           ListHeaderComponent={
-            <ScalableImage width={fullWidth}
-              style={styles.promoContainer}
-              source={require('../Images/PromoSpot.jpg')}
-            />
+            <Promo displayEventById={this.displayEventById} width={fullWidth} styles={styles}/>
           }
           ItemSeparatorComponent={this.renderSeparator}
           SectionSeparatorComponent={this.renderSeparator}

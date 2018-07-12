@@ -29,13 +29,15 @@ export default class VendorDetailsScreen extends React.Component {
   }
 
   openVendorWebsite = (url) => {
-    Linking.canOpenURL(url).then(supported => {
-      if (!supported) {
-        console.log('Can\'t handle url: ' + url);
-      } else {
-        return Linking.openURL(url);
-      }
-    }).catch(err => console.error('An error occurred', err));
+    if (url) {
+      Linking.canOpenURL(url).then(supported => {
+        if (!supported) {
+          console.log('Can\'t handle url: ' + url);
+        } else {
+          return Linking.openURL(url);
+        }
+      }).catch(err => console.error('An error occurred', err));
+    }
   }
 
   render() {
@@ -111,8 +113,10 @@ export default class VendorDetailsScreen extends React.Component {
 
             {vendorInfo.imageUrl && 
               <View style={{alignItems: 'center', margin: scale(10), marginTop: 0,}}>
-                <ScalableImage width={Dimensions.get('window').width - scale(40)}
-                  source={{uri: vendorInfo.imageUrl}} />
+                <TouchableOpacity onPress={() => this.openVendorWebsite(vendorInfo.url)} >
+                  <ScalableImage width={Dimensions.get('window').width - scale(40)}
+                    source={{uri: vendorInfo.imageUrl}} />
+                </TouchableOpacity>
               </View>
             }
 
