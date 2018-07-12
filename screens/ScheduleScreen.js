@@ -16,6 +16,7 @@ import {
 import ScalableImage from 'react-native-scalable-image';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
+import Promo from '../src/components/Promo';
 
 const fullWidth = Dimensions.get('window').width;
 
@@ -90,7 +91,7 @@ export default class ScheduleScreen extends React.Component {
           renderSectionHeader={this.renderSectionHeader}
           keyExtractor={this.keyExtractor}
           ListHeaderComponent={
-            this.promo()
+            <Promo displayEventById={this.displayEventById} width={fullWidth} styles={styles}/>
           }
           ItemSeparatorComponent={this.renderSeparator}
           SectionSeparatorComponent={this.renderSeparator}
