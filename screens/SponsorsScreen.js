@@ -7,6 +7,8 @@ import {
   View,
   ScrollView,
   Image,
+  Linking,
+  TouchableOpacity
 } from 'react-native';
 import { homeButtonHeader } from '../src/utils/Headers';
 import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
@@ -18,6 +20,18 @@ export default class SponsorsScreen extends React.Component {
       return homeButtonHeader(navigation);
     }
   
+    openVendorWebsite = (url) => {
+      if (url) {
+        Linking.canOpenURL(url).then(supported => {
+          if (!supported) {
+            console.log('Can\'t handle url: ' + url);
+          } else {
+            return Linking.openURL(url);
+          }
+        }).catch(err => console.error('An error occurred', err));
+      }
+    }
+    
     render() {
       return (
         // Try removing the `flex: 1` on the parent View.
@@ -25,15 +39,21 @@ export default class SponsorsScreen extends React.Component {
         // What if you add `height: 300` instead of `flex: 1`?      
         <View style={styles.background}> 
             <View style={styles.container1}>
+              <TouchableOpacity onPress={() => this.openVendorWebsite('https://www.ebay.com')} >
                 <Image style={{height: '100%', resizeMode: 'contain'}} source={require('../Images/eBay_Logo_small.png')}/>
+              </TouchableOpacity>
             </View>
   
-           <View style={styles.container1}>
+            <View style={styles.container1}>
+              <TouchableOpacity onPress={() => this.openVendorWebsite('https://www.lfgpgh.com')} >
                 <Image style={{height: '100%', resizeMode: 'contain'}}  source={require('../Images/lfgtranspred.png')}/>
+              </TouchableOpacity>
             </View>
   
-             <View style={styles.container1}>
+            <View style={styles.container1}>
+              <TouchableOpacity onPress={() => this.openVendorWebsite('https://www.academypgh.com')} >
                 <Image style={{height: '100%', resizeMode: 'contain'}}  source={require('../Images/AcademyTranspRed.png')}/>
+              </TouchableOpacity>
             </View>
         </View> 
         
