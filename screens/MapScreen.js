@@ -4,19 +4,13 @@ import { Fonts } from '../src/utils/Fonts';
 import { homeButtonHeader } from '../src/utils/Headers';
 import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
 import ImageZoom from 'react-native-image-pan-zoom';
+import ScalableImage from 'react-native-scalable-image';
 
 export default class MapScreen extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
-    const homeButton = homeButtonHeader(navigation);
-    return {
-      ...homeButton,
-      headerTitleStyle: {
-        ...navigationOptions.headerTitleStyle,
-        fontSize: scale(18)
-      },
-    };
+    return homeButtonHeader(navigation);
   }
 
   constructor(props) {
@@ -30,9 +24,7 @@ export default class MapScreen extends Component {
               cropHeight={Dimensions.get("window").height}
               imageWidth={Dimensions.get("window").width}
               imageHeight={Dimensions.get("window").height}>
-        <Image 
-          style={{width: Dimensions.get("window").width, height: Dimensions.get("window").height, resizeMode: 'contain'}}
-          source={require('../Images/replayfx-map.jpg')}/>
+          <ScalableImage width={Dimensions.get("window").width} source={require('../Images/replayfx-map.jpg')}/>
         </ImageZoom>
       </View>
     );
