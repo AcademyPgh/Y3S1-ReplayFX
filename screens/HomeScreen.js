@@ -58,6 +58,15 @@ export default class HomeScreen extends Component {
             </Text>
           </View>
 
+          <View style={[styles.container,]}>    
+            <Text style={styles.text}
+              onPress={() => {       
+              this.props.navigation.navigate('Map', {});
+              }}>
+              MAP
+            </Text>
+          </View>
+          
           {this.props.screenProps.apiData.eventCategories.map((category) => {
             return (
               <View style={[styles.container,]} key={category.Name}>
@@ -89,15 +98,6 @@ export default class HomeScreen extends Component {
               this.props.navigation.navigate('Sponsors', {});
               }}>
               SPONSORS
-            </Text>
-          </View>
-
-          <View style={[styles.container,]}>    
-            <Text style={styles.text}
-              onPress={() => {       
-              this.props.navigation.navigate('Map', {});
-              }}>
-              MAP
             </Text>
           </View>
 
