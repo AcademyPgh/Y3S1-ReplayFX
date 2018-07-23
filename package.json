@@ -21,6 +21,7 @@
     "react-native": "0.55.3",
     "react-native-code-push": "^5.3.5",
     "react-native-elements": "^0.19.1",
+    "react-native-image-pan-zoom": "^2.1.7",
     "react-native-push-notification": "^3.0.2",
     "react-native-scalable-image": "^0.4.0",
     "react-native-section-list-get-item-layout": "^2.2.3",

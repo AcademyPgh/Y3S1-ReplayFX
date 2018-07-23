@@ -35,6 +35,7 @@ import EventDetailsScreen from './screens/EventDetailsScreen';
 import VendorsScreen from './screens/VendorsScreen';
 import VendorDetailsScreen from './screens/VendorDetailsScreen';
 import APIScreen from './screens/APIScreen';
+import MapScreen from './screens/MapScreen';
 
 
 
@@ -210,6 +211,13 @@ const RootStack = StackNavigator(
       initialRouteParams: { },
       navigationOptions: {
         title: 'VENDORS',
+      }
+    },
+    Map: {
+      screen: MapScreen,
+      initialRouteParams: { },
+      navigationOptions: {
+        title: 'MAP',
       }
     },
     APITest: {

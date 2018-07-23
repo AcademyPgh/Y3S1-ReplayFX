@@ -92,6 +92,15 @@ export default class HomeScreen extends Component {
             </Text>
           </View>
 
+          <View style={[styles.container,]}>    
+            <Text style={styles.text}
+              onPress={() => {       
+              this.props.navigation.navigate('Map', {});
+              }}>
+              MAP
+            </Text>
+          </View>
+
         </ScrollView> 
 
       {/*</ImageBackground>*/}
