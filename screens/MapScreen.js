@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet, Image, Dimensions, View} from 'react-native';
-import { Fonts } from '../src/utils/Fonts';
+import { Dimensions, View} from 'react-native';
 import { homeButtonHeader } from '../src/utils/Headers';
-import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
 import ImageZoom from 'react-native-image-pan-zoom';
 import ScalableImage from 'react-native-scalable-image';
 
@@ -30,49 +28,3 @@ export default class MapScreen extends Component {
     );
   }
 }
-
-
-const styles = StyleSheet.create({
-  
-  
-  Font: {
-    paddingBottom: verticalScale(5),
-    color: '#969696',
-    fontSize: scale(28),
-    fontFamily: Fonts.NunitoLight,
-  },
-
-  
-
-  container: {
-    flex: 1,
-    paddingVertical: verticalScale(10),
-    borderWidth: .5,
-    borderColor: '#9ca4ab',
-    flexDirection: 'row',
-   
-
-    
-  },
-  imgcontainer: {
-    justifyContent: 'center',
-    alignItems: 'flex-end',
-    paddingRight: scale(20),
-  },
-  text:{
-    justifyContent: 'center',
-    paddingLeft: scale(20),
-    flex: 1
-  },
-  background:{
-    borderWidth: .5,
-    backgroundColor: '#f3f3f3',
-    borderColor: '#9ca4ab',
-   
-
-  },
-
-    
-});
-
-
