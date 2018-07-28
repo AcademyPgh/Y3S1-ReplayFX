@@ -209,9 +209,28 @@ export default class ScheduleScreenContainer extends React.Component {
 
       const favoriteEvents = sections;
 
-      favorites.forEach((eventId) => {
+      favorites = favorites.map((eventId) => {
 
         const event = events.find((event) => { return event.id == eventId; });
+        
+        if (event) {
+          return event;
+        }
+      });
+
+      //sort favorites by start time, then later by date
+      favorites.sort((a, b) => { 
+        if (a.startTime < b.startTime) {
+          return -1;
+        } 
+        else if (a.startTime > b.startTime) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+
+      favorites.forEach((event) => {
 
         //TODO: We should probably clear out old favorites that aren't valid anymore at some point
         if (event) {
