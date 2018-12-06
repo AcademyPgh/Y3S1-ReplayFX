@@ -18,6 +18,7 @@ import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
 
 const debug = [];
 
+//TODO: Favorites persist key should be specific to a convention
 const favoritesKey = '@ReplayFX:favoriteEvents';
 
 export default class ScheduleScreenContainer extends React.Component {
@@ -359,6 +360,7 @@ export default class ScheduleScreenContainer extends React.Component {
       this.scrollContentWidth = contentWidth;
     };
   
+    // TODO: "JULY" text below will need to be calculated based on convention dates
     render() {
       return (
         <View style={{flex:1}}>

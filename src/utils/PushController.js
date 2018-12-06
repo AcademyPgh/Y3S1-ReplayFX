@@ -11,7 +11,6 @@ export default class PushController {
 
         const id = eventInfo.id.toString();
 
-        //const title = "ReplayFX: Starting Soon!"
         const message = eventInfo.title + " is starting soon!";
         let extraData = {id: id, eventId: eventInfo.id};
 

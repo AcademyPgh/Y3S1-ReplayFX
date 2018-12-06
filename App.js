@@ -131,6 +131,7 @@ class App extends React.Component {
       );
     }
 
+    //TODO: Hashtag will need to be pulled from convention information.
     return (
       <View style={{flex: 1, backgroundColor: 'white'}}>
         <StatusBar backgroundColor="black" barStyle="light-content"/>

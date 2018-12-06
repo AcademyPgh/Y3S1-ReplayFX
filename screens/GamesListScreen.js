@@ -109,6 +109,7 @@ export default class GamesListScreen extends React.Component {
     getItemHeight: (rowData, sectionIndex, rowIndex) => ROW_HEIGHT,
   })
 
+  // TODO: Game header images will need to be specific to game type from convention
   arcadeImage = require('../Images/ArcadeMainPageImage.jpg');
   pinballImage = require('../Images/PinballMainPageImage.jpg');
 

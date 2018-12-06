@@ -23,9 +23,11 @@ export default class HomeScreen extends Component {
 
         <ScrollView> 
 
+          {/* TODO: Header image will need to be specific to convention */}
           <ScalableImage style={{marginTop: -2}} width={Dimensions.get('window').width}
               source={require('../Images/HomePage.png')} />
 
+          {/* TODO: Links will need to be specific to convention features */}
           <View style={[styles.container,]}>
 
             <Text style={styles.text}

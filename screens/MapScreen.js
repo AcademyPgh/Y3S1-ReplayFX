@@ -15,6 +15,7 @@ export default class MapScreen extends Component {
     super(props);
   }
 
+  //TODO: Map will need to be specific to a convention
   render() {
     return (  
       <View style={{flex: 1}}>
