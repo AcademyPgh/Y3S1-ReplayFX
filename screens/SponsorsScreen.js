@@ -32,6 +32,7 @@ export default class SponsorsScreen extends React.Component {
       }
     }
     
+    // TODO: Sponsors need to be specific to convention
     render() {
       return (
         // Try removing the `flex: 1` on the parent View.

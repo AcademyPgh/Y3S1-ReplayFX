@@ -360,6 +360,7 @@ export default class ScheduleScreenContainer extends React.Component {
       this.scrollContentWidth = contentWidth;
     };
   
+    // TODO: "JULY" text below will need to be calculated based on convention dates
     render() {
       return (
         <View style={{flex:1}}>
