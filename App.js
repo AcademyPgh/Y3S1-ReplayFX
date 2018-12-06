@@ -46,7 +46,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    const skipAPILoad = false;
+    const skipAPILoad = true;
 
     let apiData = null;
 
@@ -131,6 +131,7 @@ class App extends React.Component {
       );
     }
 
+    //TODO: ReplayFX hashtag will need to be pulled from convention information.
     return (
       <View style={{flex: 1, backgroundColor: 'white'}}>
         <StatusBar backgroundColor="black" barStyle="light-content"/>

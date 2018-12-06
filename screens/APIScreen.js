@@ -15,6 +15,7 @@ import { Fonts } from '../src/utils/Fonts';
 import { apiCalls } from '../config';
 import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
 
+//TODO: Persist key should be specific to a convention
 const persistKey = "@ReplayFX:apiData";
 
 export default class APIScreen extends React.Component {

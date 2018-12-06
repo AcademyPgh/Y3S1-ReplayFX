@@ -18,6 +18,7 @@ import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
 
 const debug = [];
 
+//TODO: Favorites persist key should be specific to a convention
 const favoritesKey = '@ReplayFX:favoriteEvents';
 
 export default class ScheduleScreenContainer extends React.Component {
