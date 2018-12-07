@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -47,7 +46,6 @@
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* ReplayFXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ReplayFXTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
-<<<<<<< ours
 		2EA4BAE91D084BD89CC15485 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A272D53B7F89474F8DB52350 /* Nunito-Light.ttf */; };
 		31B3891A442C4175B79B9DBB /* Avenir-Medium-09.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF5934315BB9477490A09669 /* Avenir-Medium-09.ttf */; };
 		36C5829688CB4C8BA7DC0DF5 /* Nunito-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55315AE44694BDA85EDFE2F /* Nunito-ExtraLightItalic.ttf */; };
@@ -58,8 +56,6 @@
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		641AAC8F356E46DDBEFA73BB /* Avenir-Black-03.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 039BCE0433FD4CCD849795FE /* Avenir-Black-03.ttf */; };
 		79AF19B668F543D782946F0D /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B12246E2BF984528B2073E6C /* Entypo.ttf */; };
-=======
->>>>>>> theirs
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8C0DBE9DC19F4F309EBA6F2A /* Avenir-Oblique-11.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD0562C7403F4F4097FFACDE /* Avenir-Oblique-11.ttf */; };
 		8EC877AAD1F549B2B0326F95 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8268655CFF674AFAB02EE135 /* Nunito-Bold.ttf */; };
@@ -1013,11 +1009,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-<<<<<<< ours
-				LastUpgradeCheck = 610;
-=======
-				LastUpgradeCheck = 0940;
->>>>>>> theirs
+				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -1789,11 +1781,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-<<<<<<< ours
 				PRODUCT_BUNDLE_IDENTIFIER = com.academypgh.ReplayFXApp;
-=======
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
->>>>>>> theirs
 				PRODUCT_NAME = ReplayFX;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1824,11 +1812,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-<<<<<<< ours
 				PRODUCT_BUNDLE_IDENTIFIER = com.academypgh.ReplayFXApp;
-=======
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
->>>>>>> theirs
 				PRODUCT_NAME = ReplayFX;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";

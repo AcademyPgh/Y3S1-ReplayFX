@@ -15,6 +15,8 @@ target 'ReplayFX' do
   platform :ios, '9.0'
   pod 'CodePush', :path => '../node_modules/react-native-code-push'
 
+  pod 'A0Auth0', :path => '../node_modules/react-native-auth0'
+
   target 'ReplayFXTests' do
     inherit! :search_paths
     # Pods for testing

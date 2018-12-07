@@ -3,6 +3,7 @@ import { Dimensions, View} from 'react-native';
 import { homeButtonHeader } from '../src/utils/Headers';
 import ImageZoom from 'react-native-image-pan-zoom';
 import ScalableImage from 'react-native-scalable-image';
+import Auth from '../src/components/Auth';
 
 export default class MapScreen extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -19,6 +20,7 @@ export default class MapScreen extends Component {
   render() {
     return (  
       <View style={{flex: 1}}>
+        <Auth />
         <ImageZoom cropWidth={Dimensions.get("window").width}
               cropHeight={Dimensions.get("window").height}
               imageWidth={Dimensions.get("window").width}
