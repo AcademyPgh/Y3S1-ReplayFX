@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {Text, Clipboard} from 'react-native';
 
 import Auth0 from 'react-native-auth0';
 const auth0 = new Auth0({ domain: 'event-services.auth0.com', clientId: 'd5M70OQqxt8z4tjjiCzroltq5XrF9XOa' });
@@ -19,6 +19,7 @@ export default class Auth extends React.Component {
                 // Successfully authenticated
                 // Store the accessToken
                 this.setState({auth: credentials});
+                Clipboard.setString(JSON.stringify(credentials));
             })
             .catch(error => console.log(error));
     }
