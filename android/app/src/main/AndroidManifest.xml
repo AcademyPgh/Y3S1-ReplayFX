@@ -34,9 +34,9 @@
             <category android:name="android.intent.category.DEFAULT" />
             <category android:name="android.intent.category.BROWSABLE" />
             <data
-                android:host="YOUR_AUTH0_DOMAIN"
-                android:pathPrefix="/android/${applicationId}/callback"
-                android:scheme="${applicationId}" />
+                android:host="event-services.auth0.com"
+                android:pathPrefix="/android/com.replayfx/callback"
+                android:scheme="com.replayfx" />
         </intent-filter>
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
