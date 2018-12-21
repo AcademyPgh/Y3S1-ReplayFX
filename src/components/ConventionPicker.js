@@ -17,12 +17,12 @@ export default class ConventionPicker extends React.Component {
 
     renderConvention = (convention) => {
         return (
-            <TouchableOpacity key={convention.Id} onPress={() => {                  
+            <TouchableOpacity key={convention.id} onPress={() => {                  
                 this.handleConventionSelected(convention)}}>
 
                 <View style={[styles.container, {backgroundColor: 'whitesmoke', }]}>
                 <View style={styles.text}>
-                    <Text style={styles.Font}>{convention.Name}</Text>
+                    <Text style={styles.Font}>{convention.name}</Text>
                 </View>
                 <View style={styles.imgcontainer}>
                     <Icon name={'chevron-right'} size={scale(30)} color='#969696' />

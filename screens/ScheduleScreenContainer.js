@@ -53,7 +53,7 @@ export default class ScheduleScreenContainer extends React.Component {
       this.setTitle = this.setTitle.bind(this);
 
       this.getEventDays(this.props.screenProps.apiData.events);
-      this.setupTabs(this.eventDays, this.props.screenProps.apiData.eventCategories);
+      this.setupTabs(this.eventDays, this.props.screenProps.apiData.eventTypes);
       this.setupEventFilters(this.props.screenProps.apiData.events);
       
       let filter = this.props.navigation.getParam('scheduleFilter', '');

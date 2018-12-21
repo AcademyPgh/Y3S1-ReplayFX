@@ -67,7 +67,7 @@ export default class ConventionLoader extends React.Component {
   fetchData() {
     AsyncStorage.getItem(this.persistKey)
       .then((conventionData) => {
-        if (this.mounted) {
+        if (this.mounted && conventionData) {
             const localData = JSON.parse(conventionData);
             this.setState({localData: localData});
             this.handleFinished(localData, true);

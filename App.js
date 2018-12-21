@@ -51,16 +51,16 @@ class App extends React.Component {
 
     let apiData = null;
 
-    if (skipAPILoad) {
-      //load sample api data
-      apiData = {
-        source: 'sample',
-        events: events,
-        games: games,
-        eventCategories: eventCategories,
-        gameTypes: gameTypes
-      }
-    }
+    // if (skipAPILoad) {
+    //   //load sample api data
+    //   apiData = {
+    //     source: 'sample',
+    //     events: events,
+    //     games: games,
+    //     eventCategories: eventCategories,
+    //     gameTypes: gameTypes
+    //   }
+    // }
 
     this.state = {
       apiLoaded: skipAPILoad,

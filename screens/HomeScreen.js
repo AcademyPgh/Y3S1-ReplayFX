@@ -69,15 +69,15 @@ export default class HomeScreen extends Component {
             </Text>
           </View>
           
-          {this.props.screenProps.apiData.EventTypes.map((category) => {
+          {this.props.screenProps.apiData.eventTypes.map((category) => {
             return (
-              <View style={[styles.container,]} key={category.Name}>
+              <View style={[styles.container,]} key={category.name}>
                 <Text style={styles.text}
                   onPress={() => {
                   /* 1. Navigate to the Featured route with params */
-                  this.props.navigation.navigate('Schedule', {scheduleFilter: category.Name, title: category.DisplayName.toUpperCase()});
+                  this.props.navigation.navigate('Schedule', {scheduleFilter: category.name, title: category.displayName.toUpperCase()});
                   }}>
-                  {category.DisplayName.toUpperCase()}
+                  {category.displayName.toUpperCase()}
                 </Text>
               </View>
             );
