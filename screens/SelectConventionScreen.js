@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import ConventionsLoader from '../src/components/ConventionsLoader';
+import ConventionPicker from '../src/components/ConventionPicker';
 
 export default class SelectConventionScreen extends React.Component {
 
-    handleConventionLoaded = (conventionData, loadSuccessful) => {
-        //TODO: Navigate to SelectConventionScreen
-    }
-
     render() {
-        return <ConventionLoader onConventionLoaded={this.handleConventionLoaded} />;
+        //return <ConventionLoader onConventionLoaded={this.props.onConventionLoaded} />;
+        return <ConventionPicker conventionList={this.props.conventionList} 
+                    isLocalList={this.props.isLocalList} 
+                    onConventionSelected={this.props.onConventionSelected}
+        />;
     }
 }

@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import {
   AsyncStorage,
 } from 'react-native';
-import { apiGetConventionList } from '../../config';
+import { getConventionDataURL } from '../utils/API';
 import { getConventionPersistKey } from '../utils/Persist';
-
-const url = apiGetConventionList;
+import Loader from './Loader';
 
 export default class ConventionLoader extends React.Component {
   constructor(props){
@@ -19,8 +18,9 @@ export default class ConventionLoader extends React.Component {
 
     //TODO: Insert convention ID
     this.persistKey = getConventionPersistKey(this.props.convention);
+    this.url = getConventionDataURL(this.props.convention);
 
-    this.handleConventionLoaded = this.handleConventionsLoaded.bind(this);
+    this.handleConventionLoaded = this.handleConventionLoaded.bind(this);
     this.handleRequestFailed = this.handleRequestFailed.bind(this);
     this.handleFinished = this.handleFinished.bind(this);
     this.fetchData = this.fetchData.bind(this);
@@ -31,23 +31,24 @@ export default class ConventionLoader extends React.Component {
   handleConventionLoaded(conventionData) {
     if (conventionData) {
       this.persistData(conventionData);
-      this.handleFinished(conventionData, true);
+      this.handleFinished(conventionData, false);
     } else {
       this.handleRequestFailed();
     }
   }
 
   handleRequestFailed() {
-    if (this.mounted) {
-        if (this.state.localData) {
-            this.handleFinished(this.state.localData, false);
-        }
-    }
+    // local data should have already been sent up as soon as it was loaded
+    // if (this.mounted) {
+    //     if (this.state.localData) {
+    //         this.handleFinished(this.state.localData, true);
+    //     }
+    // }
   }
 
-  handleFinished(conventionData, loadSuccessful) {
+  handleFinished(conventionData, isLocalData) {
     if (this.props.onConventionLoaded) {
-        this.props.onConventionLoaded(conventionData, loadSuccessful);
+        this.props.onConventionLoaded(conventionData, isLocalData);
     }
   }
 
@@ -67,7 +68,9 @@ export default class ConventionLoader extends React.Component {
     AsyncStorage.getItem(this.persistKey)
       .then((conventionData) => {
         if (this.mounted) {
-            this.setState({localData: conventionData});
+            const localData = JSON.parse(conventionData);
+            this.setState({localData: localData});
+            this.handleFinished(localData, true);
         }
       }).catch((err) => {
         //Alert.alert(err);
@@ -75,7 +78,7 @@ export default class ConventionLoader extends React.Component {
   }
 
   render() {
-    return <Loader loadingText="Loading convention..." url={url} onLoaded={this.handleConventionLoaded} onFailed={this.handleRequestFailed} maxAutoRetries={3} />;
+    return <Loader loadingText="Loading convention..." url={this.url} onLoaded={this.handleConventionLoaded} onFailed={this.handleRequestFailed} onBack={this.props.onBack} maxAutoRetries={3} />;
   }
   
 }

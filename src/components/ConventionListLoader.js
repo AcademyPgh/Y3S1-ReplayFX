@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import {
   AsyncStorage,
+  Alert,
 } from 'react-native';
-import { apiGetConventionList } from '../../config';
+import { getConventionListURL } from '../utils/API';
 import { persistPrefix } from '../utils/Persist';
+import Loader from './Loader';
 
 const persistKey = persistPrefix + "conventionList";
-const url = apiGetConventionList;
+const url = getConventionListURL;
 
 export default class ConventionListLoader extends React.Component {
   constructor(props){
@@ -29,7 +31,7 @@ export default class ConventionListLoader extends React.Component {
   handleConventionsLoaded(conventionList) {
     if (conventionList) {
       this.persistData(conventionList);
-      this.handleFinished(conventionList, true);
+      this.handleFinished(conventionList, false);
     } else {
       this.handleRequestFailed();
     }
@@ -38,14 +40,14 @@ export default class ConventionListLoader extends React.Component {
   handleRequestFailed() {
     if (this.mounted) {
         if (this.state.localConventionList) {
-            this.handleFinished(this.state.localConventionList, false);
+            this.handleFinished(this.state.localConventionList, true);
         }
     }
   }
 
-  handleFinished(conventionList, loadSuccessful) {
+  handleFinished(conventionList, isLocalData) {
     if (this.props.onConventionsLoaded) {
-        this.props.onConventionsLoaded(conventionList, loadSuccessful);
+        this.props.onConventionsLoaded(conventionList, isLocalData);
     }
   }
 
@@ -64,8 +66,8 @@ export default class ConventionListLoader extends React.Component {
   fetchData() {
     AsyncStorage.getItem(persistKey)
       .then((conventionList) => {
-        if (this.mounted) {
-            this.setState({localConventionList: conventionList});
+        if (this.mounted && conventionList) {
+            this.setState({localConventionList: JSON.parse(conventionList)});
         }
       }).catch((err) => {
         //Alert.alert(err);

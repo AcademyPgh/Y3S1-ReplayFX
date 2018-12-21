@@ -15,6 +15,7 @@ import {
   View,
   Alert,
   StatusBar,
+  AsyncStorage,
 } from 'react-native';
 import { createNavigator, TabRouter, StackNavigator, TabNavigator, TabBarTop } from 'react-navigation';
 import PushNotification from 'react-native-push-notification';
@@ -67,6 +68,8 @@ class App extends React.Component {
       dataLoadedTimestamp: new Date()
     }
 
+    //AsyncStorage.clear();
+
     //this.handleNotification = this.handleNotification.bind(this);
   }
 
@@ -109,7 +112,7 @@ class App extends React.Component {
       // notification.finish(PushNotificationIOS.FetchResult.NoData);
   }
 
-  handleAPILoaded (apiData) {
+  handleAPILoaded = (apiData) => {
     if (this.state.apiData == null || apiData != null) {
       this.setState({
         apiLoaded: true, 
@@ -120,9 +123,11 @@ class App extends React.Component {
   }
 
   render() {
-    let content = <APIScreen dataLoaded={(apiData) => {this.handleAPILoaded(apiData)}}/>;
-
-    if (this.state.apiLoaded) {
+    let content = null;
+    
+    if (!this.state.apiLoaded) {
+      content = <APIScreen onDataLoaded={this.handleAPILoaded} />;
+    } else {
       content = (
           <RootStack 
             ref={navigatorRef => NavigationService.setTopLevelNavigator(navigatorRef)}

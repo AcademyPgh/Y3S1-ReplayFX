@@ -40,7 +40,7 @@ export default class APILoader extends React.Component {
     if (apiCalls.every((obj) => this.apiData[obj.key] != null)) {
       this._persistData(apiData);
       this.apiData.source = "web";
-      this.props.dataLoaded(this.apiData);
+      this.props.onDataLoaded(this.apiData);
       this.liveDataLoaded = true;
     } else {
       //TODO: handle failed requests - try again? when do we decide to go to local storage?

@@ -3,11 +3,7 @@ import ConventionListLoader from '../src/components/ConventionListLoader';
 
 export default class LoadConventionsScreen extends React.Component {
 
-    handleConventionsLoaded = (conventionList, loadSuccessful) => {
-
-    }
-
     render() {
-        return <ConventionListLoader onConventionsLoaded={this.handleConventionsLoaded} />;
+        return <ConventionListLoader onConventionsLoaded={this.props.onConventionsLoaded} />;
     }
 }

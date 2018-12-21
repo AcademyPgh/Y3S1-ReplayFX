@@ -69,7 +69,7 @@ export default class HomeScreen extends Component {
             </Text>
           </View>
           
-          {this.props.screenProps.apiData.eventCategories.map((category) => {
+          {this.props.screenProps.apiData.EventTypes.map((category) => {
             return (
               <View style={[styles.container,]} key={category.Name}>
                 <Text style={styles.text}

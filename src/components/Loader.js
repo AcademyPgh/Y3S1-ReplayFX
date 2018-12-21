@@ -29,18 +29,18 @@ export default class ConventionListLoader extends React.Component {
     if (data) {
       this.props.onLoaded(data);
     } else {
-      this.handleRequestFailed("Unknown error.");
+      this.handleRequestFailed("Unknown error. Response: " + JSON.stringify(data));
     }
   }
 
   handleRequestFailed(error) {
+    if (this.props.onFailed) {
+      this.props.onFailed(error);
+    }
+
     if (this.mounted) {
         this.setState({err: error});
     } else {
-        if (this.props.requestFailed) {
-          this.props.onFailed(error);
-        }
-
         //auto-retry
         this.currentRetry++;
         if (this.currentRetry <= this.maxRetries) {
@@ -66,14 +66,17 @@ export default class ConventionListLoader extends React.Component {
     if (this.mounted) {
       this.setState({err: null});
     }
-
+    
+    //TODO: Remove delay
+    setTimeout(() => {
     axios.get(this.props.url, {timeout: 10000})
         .then((result) => {
-            this.handleDataLoaded(result);
+            this.handleDataLoaded(result.data);
         })
         .catch((error) => { 
             this.handleRequestFailed(error);
         });
+      }, 1000);
   }
 
   render() {

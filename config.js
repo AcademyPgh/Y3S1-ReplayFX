@@ -10,8 +10,4 @@ export const apiCalls = [
     {key: 'vendors', url: 'https://replayfxcalendar.azurewebsites.net/public/vendors'},
 ];
 
-//TODO: fill out
-export const apiGetConventionList = '';
-export const apiGetConvention = '';
-
 export const appName = "OSGConAssistant";

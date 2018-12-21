@@ -25,7 +25,7 @@ export default class Loading extends React.Component {
 
         return (
             <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'black'}}>          
-                <Text style={styles.text}>{this.props.err ? this.props.err : this.props.text || 'Loading...'}</Text>
+                <Text style={styles.text}>{this.props.err ? this.props.err.message : this.props.text || 'Loading...'}</Text>
                 <View style={{flexDirection: "row"}}>
                 {
                     this.props.onBack &&
@@ -42,7 +42,7 @@ export default class Loading extends React.Component {
                 </View>
                 {debugData}
             </View>
-        )
+        );
     }
 
 }
