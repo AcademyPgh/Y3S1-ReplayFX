@@ -49,7 +49,7 @@ class App extends React.Component {
 
     const skipAPILoad = false;
 
-    let apiData = {hashtag: 'osgapp'};
+    let apiData = null;
 
     // if (skipAPILoad) {
     //   //load sample api data
@@ -136,13 +136,18 @@ class App extends React.Component {
       );
     }
 
+    let hashTag = "#OSGAPP";
+    if (this.state.apiData && this.state.apiData.hashtag) {
+      hashTag = "#" + this.state.apiData.hashtag.toUpperCase();
+    }
+
     //TODO: Hashtag will need to be pulled from convention information.
     return (
       <View style={{flex: 1, backgroundColor: 'white'}}>
         <StatusBar backgroundColor="black" barStyle="light-content"/>
         {content}
         <View style={[styles.footer,]}>
-          <Text style={styles.footerText}>#{this.state.apiData.hashtag.toUpperCase()}</Text>
+          <Text style={styles.footerText}>{hashTag}</Text>
         </View> 
       </View>
     );
