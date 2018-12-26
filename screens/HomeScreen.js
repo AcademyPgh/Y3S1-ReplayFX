@@ -24,7 +24,7 @@ export default class HomeScreen extends Component {
         <ScrollView> 
 
           {/* TODO: Header image will need to be specific to convention */}
-          <View style={{elevation: 4, backgroundColor: '#CCC'}}>
+          <View style={styles.headerImageContainer}>
             <ScalableImage style={styles.headerImage} width={Dimensions.get('window').width}
                 source={{uri: props.screenProps.apiData.headerImageUrl}} />
           </View>
@@ -135,15 +135,16 @@ const styles = StyleSheet.create ({
  },
 
   headerImage: {
-    borderWidth: 1,
-    borderRadius: 2,
-    borderColor: '#ddd',
-    borderBottomWidth: 0,
+    marginTop: -2,
+  },
+
+  headerImageContainer: {
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
     shadowRadius: 2,
-    marginTop: -2,
+    elevation: 4,
+    backgroundColor: 'whitesmoke'
   }
 
 
