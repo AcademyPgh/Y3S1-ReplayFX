@@ -20,7 +20,6 @@ export default class MapScreen extends Component {
   render() {
     return (  
       <View style={{flex: 1}}>
-        <Auth />
         <ImageZoom cropWidth={Dimensions.get("window").width}
               cropHeight={Dimensions.get("window").height}
               imageWidth={Dimensions.get("window").width}
