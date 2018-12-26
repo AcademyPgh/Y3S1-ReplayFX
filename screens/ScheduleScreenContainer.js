@@ -167,7 +167,7 @@ export default class ScheduleScreenContainer extends React.Component {
         
         const m = moment(date);
         const day =  m.format("ddd");
-        const month = m.format("MMMM");
+        const month = m.format("MMM");
         const dateNum = m.format("DD");
   
         return {key: index.toString(), date: m.toDate(), dayOfWeek: day, dayOfMonth: dateNum, month: month};
@@ -189,11 +189,16 @@ export default class ScheduleScreenContainer extends React.Component {
 
       eventCategories.forEach((category) => {
         const tab = {
-          name: category.Name,
-          text: category.DisplayName.toUpperCase().replace(" ", "\n")
+          name: category.name,
+          text: category.displayName.toUpperCase().replace(" ", "\n")
         };
         this.tabs.push(tab);
       });
+
+      if(eventDays.length > 0)
+      {
+        this.month = eventDays[0].month;
+      }
 
     }
 
@@ -274,7 +279,7 @@ export default class ScheduleScreenContainer extends React.Component {
         this.filters[key][key].data.push(event);
 
         //put event in each category it belongs to
-        event.replayEventTypes.forEach((eventType) => {
+        event.eventTypes.forEach((eventType) => {
           this.filters[eventType.name][key].data.push(event);
         });
       });
@@ -367,7 +372,7 @@ export default class ScheduleScreenContainer extends React.Component {
           <View style={{flexDirection:'row', height:verticalScale(50), borderStyle: 'solid', borderColor: 'white', borderTopWidth: (StyleSheet.hairlineWidth), borderBottomWidth: (StyleSheet.hairlineWidth)}}>
             
             <View style={{flex:1, alignItems:'center', justifyContent:'center', backgroundColor: '#272727'}}>
-              <Text style={{fontSize: verticalScale(24), color:'white'}}>JULY</Text>
+              <Text style={{fontSize: verticalScale(24), color:'white'}}>{this.month}</Text>
             </View>
 
             <View style={{flex:4, backgroundColor:'#272727'}}>

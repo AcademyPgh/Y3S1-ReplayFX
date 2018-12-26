@@ -49,7 +49,7 @@ class App extends React.Component {
 
     const skipAPILoad = false;
 
-    let apiData = null;
+    let apiData = {};
 
     // if (skipAPILoad) {
     //   //load sample api data
@@ -142,7 +142,7 @@ class App extends React.Component {
         <StatusBar backgroundColor="black" barStyle="light-content"/>
         {content}
         <View style={[styles.footer,]}>
-          <Text style={styles.footerText}>#REPLAYFX</Text>
+          <Text style={styles.footerText}>#{this.state.apiData.hashtag}</Text>
         </View> 
       </View>
     );

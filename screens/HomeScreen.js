@@ -24,9 +24,10 @@ export default class HomeScreen extends Component {
         <ScrollView> 
 
           {/* TODO: Header image will need to be specific to convention */}
-          <ScalableImage style={{marginTop: -2}} width={Dimensions.get('window').width}
-              source={require('../Images/HomePage.png')} />
-
+          <View style={{elevation: 4, backgroundColor: '#CCC'}}>
+            <ScalableImage style={styles.headerImage} width={Dimensions.get('window').width}
+                source={{uri: props.screenProps.apiData.headerImageUrl}} />
+          </View>
           {/* TODO: Links will need to be specific to convention features */}
           <View style={[styles.container,]}>
 
@@ -133,6 +134,17 @@ const styles = StyleSheet.create ({
    paddingVertical: verticalScale(12),   
  },
 
+  headerImage: {
+    borderWidth: 1,
+    borderRadius: 2,
+    borderColor: '#ddd',
+    borderBottomWidth: 0,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    marginTop: -2,
+  }
 
 
 })
