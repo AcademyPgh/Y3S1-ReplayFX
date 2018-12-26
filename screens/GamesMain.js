@@ -37,12 +37,12 @@ export default class GamesMain extends Component {
         {
           this.props.screenProps.apiData.gameTypes.map(gameType => {
             return (
-              <TouchableOpacity key={gameType.Id} onPress={() => {                  
+              <TouchableOpacity key={gameType.id} onPress={() => {                  
                 this.props.navigation.navigate('GamesList', {gameType: gameType})}}>
 
                 <View style={[styles.container, {backgroundColor: 'whitesmoke', }]}>
                   <View style={styles.text}>
-                    <Text style={styles.Font}>{gameType.Name.toUpperCase()}</Text>
+                    <Text style={styles.Font}>{gameType.name.toUpperCase()}</Text>
                   </View>
                   <View style={styles.imgcontainer}>
                     <Icon name={'chevron-right'} size={scale(30)} color='#969696' />

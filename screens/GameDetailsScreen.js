@@ -42,11 +42,7 @@ export default class GameDetailsScreen extends React.Component {
       return null;
     }
 
-    let image = this.arcadeImage;
-
-    if (gameInfo.replayGameType.name == 'Pinball') {
-      image = this.pinballImage;
-    }
+    let image = gameInfo.gameType.headerImageUrl;
 
     let titleNumLines = 2;
     let titleFontSize = 25;
@@ -60,7 +56,7 @@ export default class GameDetailsScreen extends React.Component {
       titleLetterSpacing = 0;
     }
 
-    let gameLocation = gameInfo.replayGameLocations.map((loc) => { return loc.location; }).join(', ') || '';
+    let gameLocation = gameInfo.gameLocations.map((loc) => { return loc.location; }).join(', ') || '';
 
     let locationFontSize = 38;
     let locationNumLines = 1;
@@ -82,10 +78,11 @@ export default class GameDetailsScreen extends React.Component {
         <View style={styles.container}>
             <ScalableImage width={Dimensions.get('window').width}
               background
-              source={image}>      
-              <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>   
+              source={{uri: image}}
+              blurRadius={3}>      
+              <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(20, 20, 20, .2)', }}>   
                 <Text numberOfLines={titleNumLines} adjustsFontSizeToFit style={[styles.headerTextInput, {fontSize: scale(titleFontSize), letterSpacing: titleLetterSpacing}]}>{gameInfo.gameTitle.toUpperCase()}</Text>
-                <Text style={styles.headerText}>{gameInfo.replayGameType.name.toUpperCase()}</Text>
+                <Text style={styles.headerText}>{gameInfo.gameType.name.toUpperCase()}</Text>
               </View>
             </ScalableImage>
           

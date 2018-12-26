@@ -49,7 +49,7 @@ class App extends React.Component {
 
     const skipAPILoad = false;
 
-    let apiData = {};
+    let apiData = {hashtag: 'osgapp'};
 
     // if (skipAPILoad) {
     //   //load sample api data
@@ -142,7 +142,7 @@ class App extends React.Component {
         <StatusBar backgroundColor="black" barStyle="light-content"/>
         {content}
         <View style={[styles.footer,]}>
-          <Text style={styles.footerText}>#{this.state.apiData.hashtag}</Text>
+          <Text style={styles.footerText}>#{this.state.apiData.hashtag.toUpperCase()}</Text>
         </View> 
       </View>
     );
