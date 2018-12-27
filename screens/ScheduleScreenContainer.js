@@ -197,7 +197,7 @@ export default class ScheduleScreenContainer extends React.Component {
 
       if(eventDays.length > 0)
       {
-        this.month = eventDays[0].month;
+        this.month = eventDays[0].month.toUpperCase();
       }
 
     }
