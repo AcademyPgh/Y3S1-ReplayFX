@@ -17,7 +17,6 @@ import {
   StatusBar,
   AsyncStorage,
 } from 'react-native';
-import { createNavigator, TabRouter, StackNavigator, TabNavigator, TabBarTop } from 'react-navigation';
 import PushNotification from 'react-native-push-notification';
 
 import {events, games, eventCategories, gameTypes} from './api-samples/sampleData';
@@ -25,45 +24,16 @@ import { Fonts } from './src/utils/Fonts';
 import NavigationService from './src/utils/NavigationService';
 import { scale, verticalScale, moderateScale } from './src/utils/Scaling';
 
-import LandingScreen from './screens/LandingScreen';
-import HomeScreen from './screens/HomeScreen';
-import GamesListScreen from './screens/GamesListScreen';
-import ScheduleScreenContainer from './screens/ScheduleScreenContainer';
-import SponsorsScreen from './screens/SponsorsScreen';
-import GamesMain from './screens/GamesMain';
-import GameDetailsScreen from './screens/GameDetailsScreen';
-import EventDetailsScreen from './screens/EventDetailsScreen';
-import VendorsScreen from './screens/VendorsScreen';
-import VendorDetailsScreen from './screens/VendorDetailsScreen';
-import APIScreen from './screens/APIScreen';
-import MapScreen from './screens/MapScreen';
-
-
-
-var showLandingPage = false;
+import RootStack from './Routing';
 
 class App extends React.Component {
 
   constructor(props) {
     super(props);
 
-    const skipAPILoad = false;
-
     let apiData = null;
 
-    // if (skipAPILoad) {
-    //   //load sample api data
-    //   apiData = {
-    //     source: 'sample',
-    //     events: events,
-    //     games: games,
-    //     eventCategories: eventCategories,
-    //     gameTypes: gameTypes
-    //   }
-    // }
-
     this.state = {
-      apiLoaded: skipAPILoad,
       apiData: apiData,
       dataLoadedTimestamp: new Date()
     }
@@ -115,7 +85,6 @@ class App extends React.Component {
   handleAPILoaded = (apiData) => {
     if (this.state.apiData == null || apiData != null) {
       this.setState({
-        apiLoaded: true, 
         apiData: apiData,
         dataLoadedTimestamp: new Date()
       });
@@ -123,18 +92,15 @@ class App extends React.Component {
   }
 
   render() {
-    let content = null;
-    
-    if (!this.state.apiLoaded) {
-      content = <APIScreen onDataLoaded={this.handleAPILoaded} />;
-    } else {
-      content = (
-          <RootStack 
-            ref={navigatorRef => NavigationService.setTopLevelNavigator(navigatorRef)}
-            screenProps={{apiData: this.state.apiData, dataLoadedTimestamp: this.state.dataLoadedTimestamp}}
-          />
-      );
-    }
+    let content = (
+        <RootStack 
+          ref={navigatorRef => NavigationService.setTopLevelNavigator(navigatorRef)}
+          screenProps={{apiData: this.state.apiData, 
+            dataLoadedTimestamp: this.state.dataLoadedTimestamp,
+            onConventionDataLoaded: this.handleAPILoaded
+          }}
+        />
+    );
 
     let hashTag = "#OSGAPP";
     if (this.state.apiData && this.state.apiData.hashtag) {
@@ -154,119 +120,6 @@ class App extends React.Component {
   }
 }
 
-const RootStack = StackNavigator(
-  {
-    Landing: {
-      screen: LandingScreen,
-      navigationOptions: {
-        title: 'LANDING PAGE',
-      }
-    },
-    Home: {
-      screen: HomeScreen,
-      navigationOptions: {
-        title: 'HOME',
-        header: null
-      }
-    },
-    Schedule: {
-      screen: ScheduleScreenContainer,
-      navigationOptions: {
-        //title: 'SCHEDULE'
-      }
-    },
-    EventDetails: {
-      screen: EventDetailsScreen,
-      initialRouteParams: { },
-      navigationOptions: {
-        title: 'SCHEDULE',
-      }
-    },
-    Sponsors: {
-      screen: SponsorsScreen,
-      initialRouteParams: { },
-      navigationOptions: {
-        title: 'SPONSORS',
-      }
-    },
-    GamesMain: {
-      screen: GamesMain,
-      initialRouteParams: { },
-      navigationOptions: {
-        title: 'CHOOSE PLATFORM',
-      }
-    },
-    GamesList: {
-      screen: GamesListScreen,
-      initialRouteParams: { },
-      navigationOptions: {
-        title: 'GAMES',
-      }
-    },
-    GameDetails: {
-      screen: GameDetailsScreen,
-      initialRouteParams: { },
-      navigationOptions: {
-        title: 'GAMES',
-      }
-    },
-    VendorsList: {
-      screen: VendorsScreen,
-      initialRouteParams: { },
-      navigationOptions: {
-        title: 'VENDORS',
-      }
-    },
-    VendorDetails: {
-      screen: VendorDetailsScreen,
-      initialRouteParams: { },
-      navigationOptions: {
-        title: 'VENDORS',
-      }
-    },
-    Map: {
-      screen: MapScreen,
-      initialRouteParams: { },
-      navigationOptions: {
-        title: 'MAP',
-      }
-    },
-    APITest: {
-      screen: APIScreen,
-      navigationOptions: {
-        title: 'API Test',
-      }
-    },
-    
-    // Featured: {
-    //   screen: ScheduleScreenContainer,
-    //   initialRouteParams: { scheduleFilter: 'featured' },
-    //   navigationOptions: {
-    //     title: 'Featured'
-    //   }
-    // },
-    
-  },
-  {
-    initialRouteName: (showLandingPage ? 'Landing' : 'Home'),
-    navigationOptions: {
-      //title: 'Home',
-      headerStyle: {
-        backgroundColor: '#000000',
-      },
-      headerTintColor: '#ffffff',
-      headerTitleStyle: {
-        fontWeight: 'normal',
-        fontSize: scale(24),
-        fontFamily: Fonts.NunitoLight,
-        textAlign: 'center',
-        flex: 1,
-        padding: 0,
-        margin: 0,
-      },
-    },
-  }
-);
 
 const styles = StyleSheet.create({
   container: {
