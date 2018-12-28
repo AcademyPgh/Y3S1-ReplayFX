@@ -23,6 +23,7 @@ import {events, games, eventCategories, gameTypes} from './api-samples/sampleDat
 import { Fonts } from './src/utils/Fonts';
 import NavigationService from './src/utils/NavigationService';
 import { scale, verticalScale, moderateScale } from './src/utils/Scaling';
+import SettingsButton from './src/components/SettingsButton';
 
 import RootStack from './Routing';
 
@@ -103,8 +104,13 @@ class App extends React.Component {
     );
 
     let hashTag = "#OSGAPP";
-    if (this.state.apiData && this.state.apiData.hashtag) {
+    let settingsButton = null;
+    if (this.state.apiData) {
+      if (this.state.apiData.hashtag) {
       hashTag = "#" + this.state.apiData.hashtag.toUpperCase();
+      }
+      
+      settingsButton = <SettingsButton />;
     }
 
     //TODO: Hashtag will need to be pulled from convention information.
@@ -113,7 +119,11 @@ class App extends React.Component {
         <StatusBar backgroundColor="black" barStyle="light-content"/>
         {content}
         <View style={[styles.footer,]}>
-          <Text style={styles.footerText}>{hashTag}</Text>
+          <View style={{flex: 1}} />
+          <View style={{flex: 4}}>
+            <Text style={styles.footerText}>{hashTag}</Text>
+          </View>
+          <View style={{flex: 1}}>{settingsButton}</View>
         </View> 
       </View>
     );
@@ -129,18 +139,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   footerText: {
-    fontSize: scale(30),
+    fontSize: scale(25),
     color: 'white',
     textAlign: 'center',
     fontFamily: Fonts.AvenirMedium,
-        
   },
   footer: {
     height: verticalScale(50),
     paddingVertical: verticalScale(5),
     backgroundColor: '#000000',
-    flexDirection: 'column-reverse',
+    flexDirection: 'row',
     justifyContent: 'center',
+    alignItems: 'center',
     
   },
 });
