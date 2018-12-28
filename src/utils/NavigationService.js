@@ -1,6 +1,6 @@
 import { NavigationActions } from 'react-navigation';
 
-let navigator;
+var navigator;
 
 function setTopLevelNavigator(navigatorRef) {
   navigator = navigatorRef;
@@ -22,8 +22,13 @@ function isReady() {
     return false;
 }
 
+function getNavigator() {
+  return navigator;
+}
+
 export default {
   navigate,
   setTopLevelNavigator,
-  isReady
+  isReady,
+  getNavigator
 };
