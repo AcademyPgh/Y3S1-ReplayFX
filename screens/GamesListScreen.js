@@ -70,8 +70,8 @@ export default class GamesListScreen extends React.Component {
     const validGameType = this.props.navigation.getParam('gameType', null);
 
     return games.filter(game =>{
-      const gameType = game.replayGameType.id;
-      const isValidType = validGameType ? validGameType.Id == gameType : true;
+      const gameType = game.gameType.id;
+      const isValidType = validGameType ? validGameType.id == gameType : true;
 
       let matchesSearch = false;
       const searchTerm = this.state.searchFilter.toLowerCase();
@@ -154,16 +154,18 @@ export default class GamesListScreen extends React.Component {
 
     let image = this.arcadeImage;
 
-    if (gameType && gameType.Name == 'Pinball') {
+    if (gameType && gameType.name == 'Pinball') {
       image = this.pinballImage;
     }
     
+    image = gameType.headerImageUrl;
+
     return (
       <View style={{
         flex: 1, backgroundColor: 'whitesmoke'
       }}>
         <ScalableImage width={Dimensions.get('window').width}
-          source={image}/>
+          source={{uri: image}}/>
 
         <View style={{height: verticalScale(34), margin: scale(8), borderRadius: scale(8), backgroundColor: 'white', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center'}}>
           <View style={{width: verticalScale(40), height: '100%', justifyContent: 'center', alignItems: 'center'}}>

@@ -20,12 +20,13 @@ export default class MapScreen extends Component {
   render() {
     return (  
       <View style={{flex: 1}}>
-        <Auth />
         <ImageZoom cropWidth={Dimensions.get("window").width}
               cropHeight={Dimensions.get("window").height}
               imageWidth={Dimensions.get("window").width}
               imageHeight={Dimensions.get("window").height}>
-          <ScalableImage width={Dimensions.get("window").width} source={require('../Images/replayfx-map.jpg')}/>
+          <ScalableImage width={Dimensions.get("window").width} 
+            source={{uri: this.props.screenProps.apiData.mapImageUrl}}
+          />
         </ImageZoom>
       </View>
     );

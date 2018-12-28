@@ -117,6 +117,17 @@ class EventItem extends React.PureComponent {
     this.props.displayEvent(this.props.event);
   }
 
+  getTime(event) {
+    let splitter = "-";
+    if (event.startTime12 === null || event.endTime12 === null)
+    {
+      splitter = "";
+    }
+    const start = event.startTime12 === null ? "" : event.startTime12;
+    const end = event.endTime12 === null ? "" : event.endTime12
+    return `${start}${splitter}${end}`;
+  }
+
   render() {
     const event = this.props.event;
 
@@ -128,7 +139,7 @@ class EventItem extends React.PureComponent {
           <Icon name={iconName} size={scale(40)} color='black' />
         </TouchableOpacity>
         <TouchableOpacity style={styles.eventTextContainer} onPress={this.pressText}>
-          <Text style={styles.Time}>{event.startTime12 + '-' + event.endTime12}</Text>
+          <Text style={styles.Time}>{this.getTime(event)}</Text>
           <Text style={styles.eventTitle}>{event.title}</Text>
           <Text style={styles.Location}>{event.location}</Text>                
         </TouchableOpacity>

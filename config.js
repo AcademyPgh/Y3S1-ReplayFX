@@ -9,3 +9,5 @@ export const apiCalls = [
     {key: 'gameTypes', url: 'https://replayfxcalendar.azurewebsites.net/public/gametypes'},
     {key: 'vendors', url: 'https://replayfxcalendar.azurewebsites.net/public/vendors'},
 ];
+
+export const appName = "OSGConAssistant";

@@ -1,0 +1,92 @@
+import React, { Component } from 'react';
+import {
+  AsyncStorage,
+} from 'react-native';
+import axios from 'axios';
+
+import Loading from './Loading';
+
+export default class ConventionListLoader extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      err: null,
+    }
+
+    this.debug = false;
+    this.currentRetry = 0;
+    this.maxRetries = this.props.maxAutoRetries || 3;
+    this.retryDelay = 1000;
+    this.mounted = false;
+
+    this.loadData = this.loadData.bind(this);
+    this.handleDataLoaded = this.handleDataLoaded.bind(this);
+    this.handleRequestFailed = this.handleRequestFailed.bind(this);
+  }
+
+  handleDataLoaded(data) {
+    if (data) {
+      this.props.onLoaded(data);
+    } else {
+      this.handleRequestFailed("Unknown error. Response: " + JSON.stringify(data));
+    }
+  }
+
+  handleRequestFailed(error) {
+    if (this.props.onFailed) {
+      this.props.onFailed(error);
+    }
+
+    if (this.mounted) {
+        this.setState({err: error});
+    } else {
+        //auto-retry
+        this.currentRetry++;
+        if (this.currentRetry <= this.maxRetries) {
+          setTimeout(this.loadData, this.retryDelay);
+        }
+    }
+  }
+
+  componentWillMount() {
+    this.mounted = true;
+  }
+
+  componentWillUnmount() {
+    this.mounted = false;
+  }
+
+  componentDidMount()
+  {
+    this.loadData();
+  }
+
+  loadData() {
+    if (this.mounted) {
+      this.setState({err: null});
+    }
+    
+    //TODO: Remove delay
+    setTimeout(() => {
+    axios.get(this.props.url, {timeout: 10000})
+        .then((result) => {
+            this.handleDataLoaded(result.data);
+        })
+        .catch((error) => { 
+            this.handleRequestFailed(error);
+        });
+      }, 1000);
+  }
+
+  render() {
+    if (this.state.err) {
+      return (
+          <Loading text={this.props.loadingText} err={this.state.err} onRetry={this.loadData} onBack={this.props.onBack} />
+      );
+    } else {
+      return <Loading text={this.props.loadingText} />;
+    }
+  }
+  
+}

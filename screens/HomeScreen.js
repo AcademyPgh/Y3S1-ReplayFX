@@ -24,9 +24,10 @@ export default class HomeScreen extends Component {
         <ScrollView> 
 
           {/* TODO: Header image will need to be specific to convention */}
-          <ScalableImage style={{marginTop: -2}} width={Dimensions.get('window').width}
-              source={require('../Images/HomePage.png')} />
-
+          <View style={styles.headerImageContainer}>
+            <ScalableImage style={styles.headerImage} width={Dimensions.get('window').width}
+                source={{uri: props.screenProps.apiData.headerImageUrl}} />
+          </View>
           {/* TODO: Links will need to be specific to convention features */}
           <View style={[styles.container,]}>
 
@@ -69,15 +70,15 @@ export default class HomeScreen extends Component {
             </Text>
           </View>
           
-          {this.props.screenProps.apiData.eventCategories.map((category) => {
+          {this.props.screenProps.apiData.eventTypes.map((category) => {
             return (
-              <View style={[styles.container,]} key={category.Name}>
+              <View style={[styles.container,]} key={category.name}>
                 <Text style={styles.text}
                   onPress={() => {
                   /* 1. Navigate to the Featured route with params */
-                  this.props.navigation.navigate('Schedule', {scheduleFilter: category.Name, title: category.DisplayName.toUpperCase()});
+                  this.props.navigation.navigate('Schedule', {scheduleFilter: category.name, title: category.displayName.toUpperCase()});
                   }}>
-                  {category.DisplayName.toUpperCase()}
+                  {category.displayName.toUpperCase()}
                 </Text>
               </View>
             );
@@ -133,6 +134,18 @@ const styles = StyleSheet.create ({
    paddingVertical: verticalScale(12),   
  },
 
+  headerImage: {
+    marginTop: -2,
+  },
+
+  headerImageContainer: {
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    elevation: 4,
+    backgroundColor: 'whitesmoke'
+  }
 
 
 })

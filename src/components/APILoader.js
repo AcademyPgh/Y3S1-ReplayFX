@@ -1,24 +1,16 @@
 import React, { Component } from 'react';
 import {
-  Platform,
-  StyleSheet,
-  Text,
-  Button,
-  View,
-  ScrollView,
-  Alert,
-  TouchableOpacity,
   AsyncStorage,
 } from 'react-native';
 import axios from 'axios';
-import { Fonts } from '../src/utils/Fonts';
-import { apiCalls } from '../config';
-import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
+import { apiCalls } from '../../config';
+
+import Loading from './Loading';
 
 //TODO: Persist key should be specific to a convention
 const persistKey = "@ReplayFX:apiData";
 
-export default class APIScreen extends React.Component {
+export default class APILoader extends React.Component {
   constructor(props){
     super(props);
 
@@ -33,9 +25,7 @@ export default class APIScreen extends React.Component {
     this.maxRetries = 3;
     this.mounted = false;
 
-    this.err = [];
-
-    //load the apiData object with the apiCalls keys and a null value
+    //initialize the apiData object with the apiCalls keys and a null value
     apiCalls.forEach((obj) => { this.apiData[obj.key] = null; });
 
     this.loadAPIData = this.loadAPIData.bind(this);
@@ -50,7 +40,7 @@ export default class APIScreen extends React.Component {
     if (apiCalls.every((obj) => this.apiData[obj.key] != null)) {
       this._persistData(apiData);
       this.apiData.source = "web";
-      this.props.dataLoaded(this.apiData);
+      this.props.onDataLoaded(this.apiData);
       this.liveDataLoaded = true;
     } else {
       //TODO: handle failed requests - try again? when do we decide to go to local storage?
@@ -122,58 +112,24 @@ export default class APIScreen extends React.Component {
         //   games: games ? games.data.length : null,
         // };
         this.handleDataLoaded(this.apiData);
-      }, (errors) => {
-        this.setState({err: errors});
       }
     );
   }
 
   getData(url) {
-    return axios.get(url, {timeout: 10000}).catch((reason) => { this.err.push(reason); return null; });
-    //return axios.get(url, {url: url, timeout: 10000});
+    //catch the individual errors so calls aren't cancelled and we know which ones succeeded.
+    //axios.all normally just fails as soon as one fails and you don't know which call was the problem.
+    return axios.get(url, {timeout: 10000}).catch((reason) => { return null; });
   }
-  
 
-  //http://replayfxcalendar.azurewebsites.net/public
-    render() {
-      let debugData = null;
-      if (this.debug) {
-        debugData = 
-          <View style={{flex: 1}}>
-            <Text style={{color: 'white'}}>State={JSON.stringify(this.state)}</Text>
-            <Text style={{color: 'white'}}>Props={JSON.stringify(this.props)}</Text>
-            <Text style={{color: 'white'}}>apiData={JSON.stringify(this.apiData)}</Text>
-          </View>;
-      }
-
+  render() {
+    if (this.state.err) {
       return (
-        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'black'}}>          
-          <Text style={styles.text}>{this.state.err ? this.state.err : 'Loading...'}</Text>
-          {
-            this.state.err &&
-              <TouchableOpacity style={styles.button} onPress={this.loadAPIData}>
-                <Text style={styles.text}>Retry</Text>
-              </TouchableOpacity>
-          }
-          {debugData}
-        </View>
-     )
+          <Loading err={this.state.err} onRetry={this.loadAPIData} />
+      );
+    } else {
+      return <Loading />;
     }
-  
   }
-
-  const styles = StyleSheet.create({
-    text: {
-      fontSize: scale(24),
-      color: 'whitesmoke',
-      fontFamily: Fonts.AvenirBlack,
-    },
-    button: {
-      backgroundColor: 'black',
-      borderColor: 'whitesmoke',
-      borderWidth: StyleSheet.hairlineWidth * 10,
-      padding: scale(12),
-      margin: scale(12),
-      borderRadius: scale(12),
-    }
-  });
+  
+}
