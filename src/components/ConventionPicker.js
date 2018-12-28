@@ -36,7 +36,7 @@ export default class ConventionPicker extends React.Component {
     {
         return (
             <ScrollView style={styles.background}> 
-                <Text style={styles.Font}>Select Convention:</Text>
+                {/*<Text style={styles.Font}>Select Convention:</Text>*/}
                 {
                     this.props.conventionList.map(convention => {
                         return this.renderConvention(convention);

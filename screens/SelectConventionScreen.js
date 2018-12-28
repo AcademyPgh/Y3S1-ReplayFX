@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Text, View} from 'react-native';
+import {Text, View, Alert} from 'react-native';
 import {withNavigationFocus} from 'react-navigation';
 
 import { goHome } from '../src/utils/Navigation';
@@ -8,37 +8,67 @@ import LoadConventionContainer from '../src/components/LoadConventionContainer';
 import SelectConventionContainer from '../src/components/SelectConventionContainer';
 
 export class SelectConventionScreen extends React.Component {
+  static navigationOptions = ({ navigation, navigationOptions }) => {
+
+    if (navigation.getParam('hideHeader', false)) {
+      return { header: null };
+    } else {
+      return navigationOptions;
+    }
+  }
+
   constructor(props){
     super(props);
 
+    this.selectConvention = "selectConvention";
+    this.loadConvention = "loadConvention";
+
     this.state = {
+      currStep: this.selectConvention,
       selectedConvention: null,
-      conventionData: null,
     };
+  }
+
+  componentWillMount() {
+    this.willFocusSubscription = this.props.navigation.addListener('willFocus', this.handleWillFocus);
+    this.didBlurSubscription = this.props.navigation.addListener('didBlur', this.handleDidBlur);
+  }
+
+  componentWillUnmount() {
+    this.willFocusSubscription.remove();
+    this.didBlurSubscription.remove();
+  }
+
+  handleWillFocus = () => {
+    this.displayConventionSelection();
+  }
+
+  handleDidBlur = () => {
+    this.displayConventionSelection();
   }
 
   handleConventionSelected = (convention) => {
     this.setState({
+      currStep: this.loadConvention,
       selectedConvention: convention,
     });
+    this.props.navigation.setParams({'hideHeader': true});
   }
 
   handleConventionLoaded = (conventionData) => {
-    this.setState({
-        conventionData: conventionData,
-    });
-
     if (this.props.screenProps.onConventionDataLoaded) {
       this.props.screenProps.onConventionDataLoaded(conventionData);
     }
 
-    goHome(this.props.navigation);
-
-    this.handleBackToConventionSelection();
+    if ((this.state.currStep == this.loadConvention) && this.props.navigation.isFocused) {
+      goHome(this.props.navigation);
+      this.displayConventionSelection();
+    }
   }
   
-  handleBackToConventionSelection = () => {
-    this.setState({selectedConvention: null, conventionData: null});
+  displayConventionSelection = () => {
+    this.setState({currStep: this.selectConvention});
+    this.props.navigation.setParams({'hideHeader': false});
   }
 
   render() {
@@ -47,17 +77,16 @@ export class SelectConventionScreen extends React.Component {
     const isLocalList = this.props.navigation.getParam('isLocalList', false);
 
     //return <APILoader dataLoaded={this.props.dataLoaded} />;
-    if (!this.state.selectedConvention) {
+    if (this.state.currStep == this.selectConvention) {
       return (
         <SelectConventionContainer conventionList={conventionList} isLocalList={isLocalList} onConventionSelected={this.handleConventionSelected} />
       );
-    } else if (!this.state.conventionData) {
+    } else if (this.state.currStep == this.loadConvention) {
       return (
-        <LoadConventionContainer conventionToLoad={this.state.selectedConvention} onConventionLoaded={this.handleConventionLoaded} onBack={this.handleBackToConventionSelection} />
+        <LoadConventionContainer conventionToLoad={this.state.selectedConvention} onConventionLoaded={this.handleConventionLoaded} onBack={this.displayConventionSelection} />
       );
     } else {
         return <View style={{flex: 1, backgroundColor: 'black'}} />;
-      return <Text>Convention loaded: {JSON.stringify(this.state.conventionData)}</Text>;
     }
   }
 }
