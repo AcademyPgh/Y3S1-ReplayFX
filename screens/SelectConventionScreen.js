@@ -10,6 +10,11 @@ import SelectConventionContainer from '../src/components/SelectConventionContain
 export class SelectConventionScreen extends React.Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
 
+    navigationOptions = {
+      ...navigationOptions,
+      headerRight: (<View />)
+    };
+    
     if (navigation.getParam('hideHeader', false)) {
       return { header: null };
     } else {
