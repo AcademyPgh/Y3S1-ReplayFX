@@ -1,5 +1,6 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import { Dimensions, ScrollView, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import ScalableImage from 'react-native-scalable-image';
 import { Fonts } from '../utils/Fonts';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { scale, verticalScale, moderateScale } from '../utils/Scaling';
@@ -32,11 +33,13 @@ export default class ConventionPicker extends React.Component {
         );
     }
 
-    render()
-    {
+    render() {
         return (
             <ScrollView style={styles.background}> 
-                {/*<Text style={styles.Font}>Select Convention:</Text>*/}
+                <View style={styles.headerImageContainer}>
+                    <ScalableImage style={styles.headerImage} width={Dimensions.get('window').width}
+                        source={require('../../Images/SelectConventionHeader.png')} />
+                </View>
                 {
                     this.props.conventionList.map(convention => {
                         return this.renderConvention(convention);
@@ -49,21 +52,17 @@ export default class ConventionPicker extends React.Component {
 
 const styles = StyleSheet.create({
     Font: {
-      paddingBottom: verticalScale(5),
-      color: '#969696',
       fontSize: scale(28),
       fontFamily: Fonts.NunitoLight,
     },
     container: {
       flex: 1,
       paddingVertical: verticalScale(10),
-      borderWidth: .5,
-      borderColor: '#9ca4ab',
       flexDirection: 'row',
     },
     imgcontainer: {
       justifyContent: 'center',
-      alignItems: 'flex-end',
+      alignItems: 'center',
       paddingRight: scale(20),
     },
     text:{
@@ -72,8 +71,17 @@ const styles = StyleSheet.create({
       flex: 1
     },
     background:{
-      borderWidth: .5,
       backgroundColor: '#f3f3f3',
-      borderColor: '#9ca4ab',
+    },
+    headerImage: {
+      marginTop: -2,
+    },
+    headerImageContainer: {
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.8,
+      shadowRadius: 2,
+      elevation: 4,
+      paddingBottom: 10,
     },
   });
