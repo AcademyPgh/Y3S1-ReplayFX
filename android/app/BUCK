@@ -45,12 +45,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "com.replayfx",
+    package = "com.osgcon",
 )
 
 android_resource(
     name = "res",
-    package = "com.replayfx",
+    package = "com.osgcon",
     res = "src/main/res",
 )
 

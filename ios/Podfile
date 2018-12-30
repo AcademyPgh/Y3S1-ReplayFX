@@ -1,11 +1,11 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'ReplayFX' do
+target 'OSGCon' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
 
-  # Pods for ReplayFX
+  # Pods for OSGCon
   pod 'AppCenter/Crashes', '~> 1.7.1'
   pod 'AppCenter/Analytics', '~> 1.7.1'
   pod 'AppCenterReactNativeShared', '~> 1.6.0'
@@ -13,24 +13,20 @@ target 'ReplayFX' do
   
 
   platform :ios, '9.0'
-  pod 'CodePush', :path => '../node_modules/react-native-code-push'
-
-  pod 'A0Auth0', :path => '../node_modules/react-native-auth0'
-
-  target 'ReplayFXTests' do
+  target 'OSGConTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
 end
 
-target 'ReplayFX-tvOS' do
+target 'OSGCon-tvOS' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
 
-  # Pods for ReplayFX-tvOS
+  # Pods for OSGCon-tvOS
 
-  target 'ReplayFX-tvOSTests' do
+  target 'OSGCon-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
