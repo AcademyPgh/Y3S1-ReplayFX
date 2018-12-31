@@ -110,6 +110,13 @@ export default class EventDetailsScreen extends React.Component {
                 <Text style={styles.descriptions}>{eventInfo.startTime12 + " - " + eventInfo.endTime12}</Text>
             </Text>
 
+            {eventInfo.imageUrl &&
+              <ScalableImage width={Dimensions.get('window').width/2}
+                style={styles.eventImage}
+                source={{uri: eventInfo.imageUrl}}
+              />
+            }
+
             {eventDescription.length > 0 && 
               <Text style={{marginTop: verticalScale(5.5), marginBottom: verticalScale(18)}}>
                 <Text style={styles.gameBio}>Description: </Text>
@@ -135,6 +142,10 @@ export default class EventDetailsScreen extends React.Component {
     headerImage: {
       width: undefined,
       height: undefined,
+    },
+
+    eventImage: {
+      alignSelf: 'center',
     },
     
     headerText1: {

@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -89,6 +88,17 @@
 		F45EF678F4AB4748BEC5A68F /* Nunito-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC886E60D0AF47CB87A68EA5 /* Nunito-BlackItalic.ttf */; };
 		F8E1252497E143C38F4EE36A /* Avenir-Medium-09.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C89AF5B79A24F0C9655C8C0 /* Avenir-Medium-09.ttf */; };
 		F951D0CE3DE64387B493EFAE /* Avenir-HeavyOblique-06.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E61E502253A8488682FBB13C /* Avenir-HeavyOblique-06.ttf */; };
+		9CE2EFA04D8E4753A392EB69 /* Avenir-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F178EADF53A421C9B35A21F /* Avenir-Black.ttf */; };
+		25DD8CC4ED17445582AB200B /* Avenir-BlackOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D1D02095FE74683B69D0107 /* Avenir-BlackOblique.ttf */; };
+		A844DF96CF2447E7BEB5E0A0 /* Avenir-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB4B200944A4465B2827C24 /* Avenir-Book.ttf */; };
+		5E9A560C5C9C4BEC90210BD0 /* Avenir-BookOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94CEE137A7B44392920C4E4D /* Avenir-BookOblique.ttf */; };
+		834FC3802319476B9EA25854 /* Avenir-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0014E47F06C1498DAFC1E8CA /* Avenir-Heavy.ttf */; };
+		1898FBD359A34E1DA58DAEA8 /* Avenir-HeavyOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94964FF5D15D457894D63879 /* Avenir-HeavyOblique.ttf */; };
+		88EF659C7CF24F3EA32267E6 /* Avenir-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A029635C5A8F4D2198816908 /* Avenir-Light.ttf */; };
+		9406B777C12D4D0BBBDD8958 /* Avenir-LightOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C6EBD637C894DA5B53FA211 /* Avenir-LightOblique.ttf */; };
+		76DA3E6DFB5646D7A4F65326 /* Avenir-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6BC4EAC08E7428A88A94186 /* Avenir-Medium.ttf */; };
+		E60FDAE7699743EE85EAEBC9 /* Avenir-MediumOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F22C2FA6FC64E1784ED9372 /* Avenir-MediumOblique.ttf */; };
+		FD092C03B0FD4D41A0828B38 /* Avenir-Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86CD0555FA854CDD97B140E3 /* Avenir-Oblique.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -538,6 +548,17 @@
 		F0603D6401C14FC1ABE1F3DD /* Avenir-BlackOblique-04.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Avenir-BlackOblique-04.ttf"; path = "../assets/fonts/Avenir-BlackOblique-04.ttf"; sourceTree = "<group>"; };
 		F171BA33D4A3221C176A622D /* Pods-OSGConTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSGConTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OSGConTests/Pods-OSGConTests.release.xcconfig"; sourceTree = "<group>"; };
 		FE180B62FC62B167E6C9BE7B /* Pods-OSGCon-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSGCon-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OSGCon-tvOSTests/Pods-OSGCon-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6F178EADF53A421C9B35A21F /* Avenir-Black.ttf */ = {isa = PBXFileReference; name = "Avenir-Black.ttf"; path = "../assets/fonts/Avenir-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5D1D02095FE74683B69D0107 /* Avenir-BlackOblique.ttf */ = {isa = PBXFileReference; name = "Avenir-BlackOblique.ttf"; path = "../assets/fonts/Avenir-BlackOblique.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AFB4B200944A4465B2827C24 /* Avenir-Book.ttf */ = {isa = PBXFileReference; name = "Avenir-Book.ttf"; path = "../assets/fonts/Avenir-Book.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		94CEE137A7B44392920C4E4D /* Avenir-BookOblique.ttf */ = {isa = PBXFileReference; name = "Avenir-BookOblique.ttf"; path = "../assets/fonts/Avenir-BookOblique.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0014E47F06C1498DAFC1E8CA /* Avenir-Heavy.ttf */ = {isa = PBXFileReference; name = "Avenir-Heavy.ttf"; path = "../assets/fonts/Avenir-Heavy.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		94964FF5D15D457894D63879 /* Avenir-HeavyOblique.ttf */ = {isa = PBXFileReference; name = "Avenir-HeavyOblique.ttf"; path = "../assets/fonts/Avenir-HeavyOblique.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A029635C5A8F4D2198816908 /* Avenir-Light.ttf */ = {isa = PBXFileReference; name = "Avenir-Light.ttf"; path = "../assets/fonts/Avenir-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6C6EBD637C894DA5B53FA211 /* Avenir-LightOblique.ttf */ = {isa = PBXFileReference; name = "Avenir-LightOblique.ttf"; path = "../assets/fonts/Avenir-LightOblique.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A6BC4EAC08E7428A88A94186 /* Avenir-Medium.ttf */ = {isa = PBXFileReference; name = "Avenir-Medium.ttf"; path = "../assets/fonts/Avenir-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7F22C2FA6FC64E1784ED9372 /* Avenir-MediumOblique.ttf */ = {isa = PBXFileReference; name = "Avenir-MediumOblique.ttf"; path = "../assets/fonts/Avenir-MediumOblique.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		86CD0555FA854CDD97B140E3 /* Avenir-Oblique.ttf */ = {isa = PBXFileReference; name = "Avenir-Oblique.ttf"; path = "../assets/fonts/Avenir-Oblique.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -778,6 +799,17 @@
 				D84879F7F50B40BC974B70FD /* Octicons.ttf */,
 				54DE2FC4009D4726A66BA749 /* SimpleLineIcons.ttf */,
 				066D8E8A41D94EA7B6767896 /* Zocial.ttf */,
+				6F178EADF53A421C9B35A21F /* Avenir-Black.ttf */,
+				5D1D02095FE74683B69D0107 /* Avenir-BlackOblique.ttf */,
+				AFB4B200944A4465B2827C24 /* Avenir-Book.ttf */,
+				94CEE137A7B44392920C4E4D /* Avenir-BookOblique.ttf */,
+				0014E47F06C1498DAFC1E8CA /* Avenir-Heavy.ttf */,
+				94964FF5D15D457894D63879 /* Avenir-HeavyOblique.ttf */,
+				A029635C5A8F4D2198816908 /* Avenir-Light.ttf */,
+				6C6EBD637C894DA5B53FA211 /* Avenir-LightOblique.ttf */,
+				A6BC4EAC08E7428A88A94186 /* Avenir-Medium.ttf */,
+				7F22C2FA6FC64E1784ED9372 /* Avenir-MediumOblique.ttf */,
+				86CD0555FA854CDD97B140E3 /* Avenir-Oblique.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1574,6 +1606,17 @@
 				1A2708C00FFF42A9BC8421DD /* Octicons.ttf in Resources */,
 				70EFCBFC42CF4BFDAD5A5146 /* SimpleLineIcons.ttf in Resources */,
 				5312F9A7F9704327B3714028 /* Zocial.ttf in Resources */,
+				9CE2EFA04D8E4753A392EB69 /* Avenir-Black.ttf in Resources */,
+				25DD8CC4ED17445582AB200B /* Avenir-BlackOblique.ttf in Resources */,
+				A844DF96CF2447E7BEB5E0A0 /* Avenir-Book.ttf in Resources */,
+				5E9A560C5C9C4BEC90210BD0 /* Avenir-BookOblique.ttf in Resources */,
+				834FC3802319476B9EA25854 /* Avenir-Heavy.ttf in Resources */,
+				1898FBD359A34E1DA58DAEA8 /* Avenir-HeavyOblique.ttf in Resources */,
+				88EF659C7CF24F3EA32267E6 /* Avenir-Light.ttf in Resources */,
+				9406B777C12D4D0BBBDD8958 /* Avenir-LightOblique.ttf in Resources */,
+				76DA3E6DFB5646D7A4F65326 /* Avenir-Medium.ttf in Resources */,
+				E60FDAE7699743EE85EAEBC9 /* Avenir-MediumOblique.ttf in Resources */,
+				FD092C03B0FD4D41A0828B38 /* Avenir-Oblique.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
