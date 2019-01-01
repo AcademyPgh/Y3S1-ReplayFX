@@ -89,31 +89,38 @@ export default class GameDetailsScreen extends React.Component {
             <ScrollView style={styles.detailsContainer}>
 
               {gameInfo.releaseDate && 
-              <Text>
+              <View style={styles.titleContainer}>
                 <Text style={styles.titles}>Release Date: </Text>
                 <Text style={styles.descriptions}>{gameInfo.releaseDate}</Text>
-              </Text>
+              </View>
               }
 
               {gameInfo.developer && 
-              <Text>
+              <View style={styles.titleContainer}>
                 <Text style={styles.titles}>Developer: </Text>
                 <Text style={styles.descriptions}>{gameInfo.developer}</Text>
-              </Text>
+              </View>
               }
 
               {gameInfo.genre && 
-              <Text>
+              <View style={styles.titleContainer}>
                 <Text style={styles.titles}>Genre: </Text>
                 <Text style={styles.descriptions}>{gameInfo.genre}</Text>
-                </Text>
+              </View>
               }
 
               {gameInfo.players && 
-              <Text>
+              <View style={styles.titleContainer}>
                 <Text style={styles.titles}>Number of Players: </Text>
                 <Text style={styles.descriptions}>{gameInfo.players}</Text>
-              </Text>
+              </View>
+              }
+
+              {gameInfo.imageUrl &&
+              <ScalableImage width={Dimensions.get('window').width/2}
+                style={styles.gameImage}
+                source={{uri: gameInfo.imageUrl}}
+              />
               }
 
               {gameInfo.overview && 
@@ -142,6 +149,16 @@ export default class GameDetailsScreen extends React.Component {
       flex: 1,
     },
    
+    titleContainer: {
+      flex: 1,
+      flexDirection: 'row',
+    },
+
+    gameImage: {
+      borderColor: '#AAA',
+      alignSelf: 'center',
+    },
+
     headerImage: {
       width: undefined,
       height: undefined,
@@ -159,13 +176,14 @@ export default class GameDetailsScreen extends React.Component {
     },
 
     headerText: {
-      fontSize: scale(25),
+      fontSize: scale(20),
       fontFamily: Fonts.AvenirBlack,
       color: '#ffffff',
       textAlign: 'center',
       letterSpacing: 2,
       paddingBottom: verticalScale(12),
       marginTop: verticalScale(-8),
+      fontWeight: 'bold',
     },
 
     detailsContainer: {
