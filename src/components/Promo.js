@@ -7,38 +7,16 @@ export default class Promo extends Component {
     constructor(props){
         super(props);
 
-        this.promos = [
-            <TouchableOpacity onPress={() => this.props.displayEventById(332)}>
-                <ScalableImage width={this.props.width}
-                    style={this.props.styles.promoContainer}
-                    source={require('../../Images/tiny-goldeneye.jpg')}
-                />
-            </TouchableOpacity>,
-            <TouchableOpacity onPress={() => this.props.displayEventById(375)}>
-                <ScalableImage width={this.props.width}
-                    style={this.props.styles.promoContainer}
-                    source={require('../../Images/blood-drive.jpg')}
-                />
-            </TouchableOpacity>,
-            <TouchableOpacity onPress={() => this.props.displayEventById(398)}>
-                <ScalableImage width={this.props.width}
-                    style={this.props.styles.promoContainer}
-                    source={require('../../Images/klask-promo.jpg')}
-                />
-            </TouchableOpacity>,
-            <TouchableOpacity onPress={() => this.props.displayEventById(359)}>
-                <ScalableImage width={this.props.width}
-                    style={this.props.styles.promoContainer}
-                    source={require('../../Images/cosplay-contest.jpg')}
-                />
-            </TouchableOpacity>,
-            <TouchableOpacity onPress={() => this.props.displayEventById(338)}>
-                <ScalableImage width={this.props.width}
-                    style={this.props.styles.promoContainer}
-                    source={require('../../Images/steel-samurai.jpg')}
-                />
-            </TouchableOpacity>
-        ]
+        this.promos = this.props.promos.map(promo => {
+            return (
+                <TouchableOpacity onPress={() => this.props.displayEventById(promo.id)}>
+                    <ScalableImage width={this.props.width}
+                        style={this.props.styles.promoContainer}
+                        source={{uri: promo.imageUrl}}
+                    />
+                </TouchableOpacity>
+            )
+        });
         this.value = Math.floor(Math.random() * this.promos.length);
     }
 

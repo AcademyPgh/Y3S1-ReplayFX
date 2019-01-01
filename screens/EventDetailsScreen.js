@@ -27,6 +27,17 @@ export default class EventDetailsScreen extends React.Component {
     return homeButtonHeader(navigation);
   }
 
+  getTime(event) {
+    let splitter = "-";
+    if (event.startTime12 === null || event.endTime12 === null)
+    {
+      splitter = "";
+    }
+    const start = event.startTime12 === null ? "" : event.startTime12;
+    const end = event.endTime12 === null ? "" : event.endTime12
+    return `${start}${splitter}${end}`;
+  }
+
   render() {
     const width = Dimensions.get('window').width;
     let eventInfo = this.props.navigation.getParam("eventInfo");
@@ -104,12 +115,12 @@ export default class EventDetailsScreen extends React.Component {
                 <Text style={styles.bolded}>Date: </Text>
                 <Text style={styles.descriptions}>{moment(eventInfo.date).format('ddd, MMM DD')}</Text>
             </Text>
-
-            <Text>
-                <Text style={styles.bolded}>Time: </Text>
-                <Text style={styles.descriptions}>{eventInfo.startTime12 + " - " + eventInfo.endTime12}</Text>
-            </Text>
-
+            {(eventInfo.startTime12 || eventInfo.endTime12) &&
+              <Text>
+                  <Text style={styles.bolded}>Time: </Text>
+                  <Text style={styles.descriptions}>{this.getTime(eventInfo)}</Text>
+              </Text>
+            }
             {eventInfo.imageUrl &&
               <ScalableImage width={Dimensions.get('window').width/2}
                 style={styles.eventImage}

@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
   Text,
-  Button,
   View,
-  ScrollView,
   SectionList,
-  Image,
-  ImageBackground,
   TouchableOpacity,
-  Alert,
   Dimensions
 } from 'react-native';
 import ScalableImage from 'react-native-scalable-image';
@@ -20,14 +14,13 @@ import Promo from '../src/components/Promo';
 
 const fullWidth = Dimensions.get('window').width;
 
-export default class ScheduleScreen extends React.Component {
+export default class ScheduleScreen extends Component {
 
   constructor(props) {
     super(props);
 
     this.displayEvent = this.displayEvent.bind(this);
     this.setFavorite = this.setFavorite.bind(this);
-    this.promo = this.promo.bind(this);
     this.displayEventById = this.displayEventById.bind(this);
   }
 
@@ -70,16 +63,6 @@ export default class ScheduleScreen extends React.Component {
     );
   };
 
-  promo() {
-    return (<TouchableOpacity onPress={() => this.displayEventById(332)}>
-      <ScalableImage width={fullWidth}
-              style={styles.promoContainer}
-              source={require('../Images/tiny-goldeneye.jpg')}
-            />
-    </TouchableOpacity>
-    )
-  }
-
   render() {
 
     return(
@@ -91,7 +74,7 @@ export default class ScheduleScreen extends React.Component {
           renderSectionHeader={this.renderSectionHeader}
           keyExtractor={this.keyExtractor}
           ListHeaderComponent={
-            <Promo displayEventById={this.displayEventById} width={fullWidth} styles={styles}/>
+            <Promo promos={this.props.screenProps.apiData.promos} displayEventById={this.displayEventById} width={fullWidth} styles={styles}/>
           }
           ItemSeparatorComponent={this.renderSeparator}
           SectionSeparatorComponent={this.renderSeparator}
