@@ -3,7 +3,7 @@ import {
   AsyncStorage,
 } from 'react-native';
 import { getConventionDataURL } from '../utils/API';
-import { getConventionPersistKey } from '../utils/Persist';
+import { getConventionPersistKey, persistData } from '../utils/Persist';
 import Loader from './Loader';
 
 export default class ConventionLoader extends React.Component {
@@ -16,8 +16,7 @@ export default class ConventionLoader extends React.Component {
 
     this.mounted = false;
 
-    //TODO: Insert convention ID
-    this.persistKey = getConventionPersistKey(this.props.convention);
+    this.persistKey = getConventionPersistKey(this.props.convention.id);
     this.url = getConventionDataURL(this.props.convention);
 
     this.handleConventionLoaded = this.handleConventionLoaded.bind(this);
@@ -30,7 +29,7 @@ export default class ConventionLoader extends React.Component {
 
   handleConventionLoaded(conventionData) {
     if (conventionData) {
-      this.persistData(conventionData);
+      this.persistConventionData(conventionData);
       this.handleFinished(conventionData, false);
     } else {
       this.handleRequestFailed();
@@ -60,8 +59,8 @@ export default class ConventionLoader extends React.Component {
     this.mounted = false;
   }
 
-  persistData(conventionData) {
-      AsyncStorage.setItem(this.persistKey, JSON.stringify(conventionData));
+  persistConventionData(conventionData) {
+      persistData(this.persistKey, conventionData);
   }
 
   fetchData() {

@@ -15,11 +15,9 @@ import { homeButtonHeader } from '../src/utils/Headers';
 import moment from 'moment';
 import PushController from '../src/utils/PushController';
 import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
+import { getConventionPersistKey, persistData } from '../src/utils/Persist';
 
 const debug = [];
-
-//TODO: Favorites persist key should be specific to a convention
-const favoritesKey = '@ReplayFX:favoriteEvents';
 
 export default class ScheduleScreenContainer extends React.Component {
     static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -51,6 +49,9 @@ export default class ScheduleScreenContainer extends React.Component {
       this.removeFavorite = this.removeFavorite.bind(this);
       this.setFavorite = this.setFavorite.bind(this);
       this.setTitle = this.setTitle.bind(this);
+
+      const conventionID = this.props.screenProps.apiData.id;
+      this.favoritesKey = getConventionPersistKey(conventionID) + ":favoriteEvents";
 
       this.getEventDays(this.props.screenProps.apiData.events);
       this.setupTabs(this.eventDays, this.props.screenProps.apiData.eventTypes);
@@ -103,7 +104,7 @@ export default class ScheduleScreenContainer extends React.Component {
 
     //handle favorites
     loadFavorites() {
-      AsyncStorage.getItem(favoritesKey)
+      AsyncStorage.getItem(this.favoritesKey)
       .then((favorites) => {
         if (favorites) {
           favorites = JSON.parse(favorites);
@@ -116,7 +117,7 @@ export default class ScheduleScreenContainer extends React.Component {
     }
 
     persistFavorites(favorites) {
-      AsyncStorage.setItem(favoritesKey, JSON.stringify(favorites));
+      persistData(this.favoritesKey, favorites);
     }
 
     setFavorite(event, shouldBeFavorite) {

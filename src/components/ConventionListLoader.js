@@ -4,7 +4,7 @@ import {
   Alert,
 } from 'react-native';
 import { getConventionListURL } from '../utils/API';
-import { persistPrefix } from '../utils/Persist';
+import { persistPrefix, persistData } from '../utils/Persist';
 import Loader from './Loader';
 
 const persistKey = persistPrefix + "conventionList";
@@ -30,7 +30,7 @@ export default class ConventionListLoader extends React.Component {
 
   handleConventionsLoaded(conventionList) {
     if (conventionList) {
-      this.persistData(conventionList);
+      this.persistConventionList(conventionList);
       this.handleFinished(conventionList, false);
     } else {
       this.handleRequestFailed();
@@ -59,8 +59,8 @@ export default class ConventionListLoader extends React.Component {
     this.mounted = false;
   }
 
-  persistData(conventionList) {
-      AsyncStorage.setItem(persistKey, JSON.stringify(conventionList));
+  persistConventionList(conventionList) {
+      persistData(persistKey, conventionList);
   }
 
   fetchData() {
