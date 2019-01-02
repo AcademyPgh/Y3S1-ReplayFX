@@ -67,8 +67,6 @@ export default class ConventionListLoader extends React.Component {
       this.setState({err: null});
     }
     
-    //TODO: Remove delay
-    setTimeout(() => {
     axios.get(this.props.url, {timeout: 10000})
         .then((result) => {
             this.handleDataLoaded(result.data);
@@ -76,7 +74,6 @@ export default class ConventionListLoader extends React.Component {
         .catch((error) => { 
             this.handleRequestFailed(error);
         });
-      }, 1000);
   }
 
   render() {

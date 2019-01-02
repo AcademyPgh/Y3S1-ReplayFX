@@ -5,7 +5,6 @@ import { Fonts } from '../utils/Fonts';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { scale, verticalScale, moderateScale } from '../utils/Scaling';
 
-// TODO: Promo images will need to come from convention
 export default class ConventionPicker extends React.Component {
     constructor(props){
         super(props);

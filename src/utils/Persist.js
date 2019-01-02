@@ -3,7 +3,6 @@ import {AsyncStorage} from 'react-native';
 export const persistPrefix = "@OSGCA:";
 
 export function getConventionPersistKey(conventionID) {
-    //TODO: Insert convention ID
     return persistPrefix + "[" + conventionID + "]";
 }
 

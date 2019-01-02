@@ -23,9 +23,6 @@ export default class GameDetailsScreen extends React.Component {
     return homeButtonHeader(navigation);
   }
 
-  arcadeImage = require('../Images/ArcadeGamePageImage.jpg');
-  pinballImage = require('../Images/PinballGamePageImage.jpg');
-
   render() {
     let gameInfo = this.props.navigation.getParam("gameInfo");
 

@@ -86,7 +86,7 @@ export default class VendorsScreen extends React.Component {
           renderSectionHeader={this.renderSectionHeader}
           keyExtractor={this.keyExtractor}
           ListHeaderComponent={
-            <Promo displayEventById={this.displayEventById} width={fullWidth} styles={styles}/>
+            <Promo promos={this.props.screenProps.apiData.promos} displayEventById={this.displayEventById} width={fullWidth} styles={styles}/>
           }
           ItemSeparatorComponent={this.renderSeparator}
           SectionSeparatorComponent={this.renderSeparator}
