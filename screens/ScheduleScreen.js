@@ -78,6 +78,7 @@ export default class ScheduleScreen extends Component {
           }
           ItemSeparatorComponent={this.renderSeparator}
           SectionSeparatorComponent={this.renderSeparator}
+          stickySectionHeadersEnabled
         />
       </View>
     );
