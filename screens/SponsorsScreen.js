@@ -8,10 +8,14 @@ import {
   ScrollView,
   Image,
   Linking,
-  TouchableOpacity
+  TouchableOpacity,
+  Dimensions,
 } from 'react-native';
+import ScalableImage from 'react-native-scalable-image';
 import { homeButtonHeader } from '../src/utils/Headers';
 import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
+
+const fullWidth = Dimensions.get('window').width;
 
 export default class SponsorsScreen extends React.Component {
     static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -31,45 +35,34 @@ export default class SponsorsScreen extends React.Component {
         }).catch(err => console.error('An error occurred', err));
       }
     }
+
+    renderSponsor = (sponsorInfo) => {
+      return (
+        <View style={styles.container1}>
+          <TouchableOpacity onPress={() => this.openVendorWebsite(sponsorInfo.url)} >
+            <ScalableImage width={fullWidth * .80}
+                    source={{uri: sponsorInfo.imageUrl}}
+            />
+          </TouchableOpacity>
+        </View>
+      );
+    }
     
     // TODO: Sponsors need to be specific to convention
     render() {
-      return (
-        // Try removing the `flex: 1` on the parent View.
-        // The parent will not have dimensions, so the children can't expand.
-        // What if you add `height: 300` instead of `flex: 1`?      
-        <View style={styles.background}> 
-            <View style={styles.container1}>
-              <TouchableOpacity onPress={() => this.openVendorWebsite('https://www.ebay.com')} >
-                <Image style={{height: '100%', resizeMode: 'contain'}} source={require('../Images/eBay_Logo_small.png')}/>
-              </TouchableOpacity>
-            </View>
-  
-            <View style={styles.container1}>
-              <TouchableOpacity onPress={() => this.openVendorWebsite('https://www.lfgpgh.com')} >
-                <Image style={{height: '100%', resizeMode: 'contain'}}  source={require('../Images/lfgtranspred.png')}/>
-              </TouchableOpacity>
-            </View>
-  
-            <View style={styles.container1}>
-              <TouchableOpacity onPress={() => this.openVendorWebsite('https://www.academypgh.com')} >
-                <Image style={{height: '100%', resizeMode: 'contain'}}  source={require('../Images/AcademyTranspRed.png')}/>
-              </TouchableOpacity>
-            </View>
-        </View> 
-        
-        
+      const sponsors = this.props.screenProps.apiData.sponsors;
+
+      return (  
+        <ScrollView style={styles.background}> 
+          {
+            sponsors.map(sponsor => this.renderSponsor(sponsor))
+          }
+        </ScrollView> 
       );
     }
   }
-  
-   
-  
+
   const styles = StyleSheet.create({
-    
-   
-   
-     
     container1: {
       paddingVertical: verticalScale(10),
       borderWidth: StyleSheet.hairlineWidth,
@@ -78,16 +71,9 @@ export default class SponsorsScreen extends React.Component {
       alignItems: 'center',
       flex: 1,
     },
-    imgcontainer: {
-      justifyContent: 'center',
-      flexDirection: 'row',
-      flex: 1,
-    },
     background:{
       flex: 1,
       backgroundColor: 'whitesmoke',
       borderColor: '#9ca4ab',
     },
-  
-      
   });
