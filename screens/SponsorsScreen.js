@@ -38,7 +38,7 @@ export default class SponsorsScreen extends React.Component {
 
     renderSponsor = (sponsorInfo) => {
       return (
-        <View style={styles.container1}>
+        <View style={styles.container1} key={sponsorInfo.id}>
           <TouchableOpacity onPress={() => this.openVendorWebsite(sponsorInfo.url)} >
             <ScalableImage width={fullWidth * .80}
                     source={{uri: sponsorInfo.imageUrl}}
