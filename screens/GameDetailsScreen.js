@@ -154,6 +154,7 @@ export default class GameDetailsScreen extends React.Component {
     gameImage: {
       borderColor: '#AAA',
       alignSelf: 'center',
+      borderRadius: 5,
     },
 
     headerImage: {

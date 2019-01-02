@@ -157,6 +157,7 @@ export default class EventDetailsScreen extends React.Component {
 
     eventImage: {
       alignSelf: 'center',
+      borderRadius: 5,
     },
     
     headerText1: {
