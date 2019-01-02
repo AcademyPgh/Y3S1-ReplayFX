@@ -62,7 +62,7 @@ export default class ScheduleScreenContainer extends React.Component {
       
       this.state = {
         filter: filter,
-        showSectionHeaders: !this.isDateFilter(filter),
+        showSectionHeaders: true, //!this.isDateFilter(filter),
         favorites: [],
       };
 
@@ -306,7 +306,7 @@ export default class ScheduleScreenContainer extends React.Component {
       const filter = this.getFilter(newFilter);
       this.setState({filter: filter});
       const isDateFilter = this.isDateFilter(filter);
-      this.setState({showSectionHeaders: !isDateFilter});
+      //this.setState({showSectionHeaders: !isDateFilter});
     }
 
     setTitle(filter) {
