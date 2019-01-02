@@ -23,7 +23,6 @@ export default class HomeScreen extends Component {
 
         <ScrollView> 
 
-          {/* TODO: Header image will need to be specific to convention */}
           <View style={styles.headerImageContainer}>
             <ScalableImage style={styles.headerImage} width={Dimensions.get('window').width}
                 source={{uri: props.screenProps.apiData.headerImageUrl}} />

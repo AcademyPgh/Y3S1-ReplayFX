@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import ScalableImage from 'react-native-scalable-image';
 
-// TODO: Promo images will need to come from convention
 export default class Promo extends Component {
     constructor(props){
         super(props);
