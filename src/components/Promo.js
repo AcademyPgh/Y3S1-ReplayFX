@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import ScalableImage from 'react-native-scalable-image';
 
 // TODO: Promo images will need to come from convention
@@ -22,7 +22,11 @@ export default class Promo extends Component {
 
     render()
     {
-        return this.promos[this.value];
+        if (this.promos && this.promos.length > 0) {
+            return this.promos[this.value];
+        } else {
+            return <View style={{flex: 0, width: 0, height: 0}} />;
+        }
     }
 }
 
