@@ -9,6 +9,7 @@ export const Colors = {
     LightGray: '#969696',
     BlueGray: '#9ca4ab',
     NegativeSpace: '#f3f3f3',
+    ContainerBackground: 'whitesmoke',
 };
 
 export const Layout = {

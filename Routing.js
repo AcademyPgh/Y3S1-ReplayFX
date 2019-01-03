@@ -10,7 +10,7 @@ import HomeScreen from './screens/HomeScreen';
 import GamesListScreen from './screens/GamesListScreen';
 import ScheduleScreenContainer from './screens/ScheduleScreenContainer';
 import SponsorsScreen from './screens/SponsorsScreen';
-import GamesMain from './screens/GamesMain';
+import Games from './src/features/Games/Games.index';
 import GameDetailsScreen from './screens/GameDetailsScreen';
 import EventDetailsScreen from './screens/EventDetailsScreen';
 import VendorsScreen from './screens/VendorsScreen';
@@ -68,7 +68,7 @@ export default RootStack = StackNavigator(
         }
       },
       GamesMain: {
-        screen: GamesMain,
+        screen: Games,
         initialRouteParams: { },
         navigationOptions: {
           title: 'CHOOSE PLATFORM',
