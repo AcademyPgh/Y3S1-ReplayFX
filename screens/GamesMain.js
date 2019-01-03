@@ -8,7 +8,7 @@ import { Button, ScrollView, Text, View, Image, TouchableOpacity} from 'react-na
 import { homeButtonHeader } from '../src/utils/Headers';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { scale } from '../src/utils/Scaling';
-import { styles } from '../src/features/Games/styles';
+import { styles } from '../src/features/Games/Games.styles';
 
 export default class GamesMain extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
