@@ -36,10 +36,10 @@ export default class Games extends Component {
                 this.props.navigation.navigate('GamesList', {gameType: gameType})}}>
 
                 <View style={styles.container}>
-                  <View style={styles.text}>
+                  <View>
                     <Text style={styles.Font}>{gameType.name.toUpperCase()}</Text>
                   </View>
-                  <View style={styles.imgcontainer}>
+                  <View>
                     <Icon name={'chevron-right'} style={styles.navigationChevron} />
                   </View>
                 </View>
