@@ -4,11 +4,11 @@
  * @flow
  */
 import React, { Component } from 'react';
-import { Button, ScrollView, StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
-import { Fonts } from '../src/utils/Fonts';
+import { Button, ScrollView, Text, View, Image, TouchableOpacity} from 'react-native';
 import { homeButtonHeader } from '../src/utils/Headers';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
+import { scale } from '../src/utils/Scaling';
+import { styles } from '../src/features/Games/styles';
 
 export default class GamesMain extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -56,49 +56,3 @@ export default class GamesMain extends Component {
     );
   }
 }
-
-
-const styles = StyleSheet.create({
-  
-  
-  Font: {
-    paddingBottom: verticalScale(5),
-    color: '#969696',
-    fontSize: scale(28),
-    fontFamily: Fonts.NunitoLight,
-  },
-
-  
-
-  container: {
-    flex: 1,
-    paddingVertical: verticalScale(10),
-    borderWidth: .5,
-    borderColor: '#9ca4ab',
-    flexDirection: 'row',
-   
-
-    
-  },
-  imgcontainer: {
-    justifyContent: 'center',
-    alignItems: 'flex-end',
-    paddingRight: scale(20),
-  },
-  text:{
-    justifyContent: 'center',
-    paddingLeft: scale(20),
-    flex: 1
-  },
-  background:{
-    borderWidth: .5,
-    backgroundColor: '#f3f3f3',
-    borderColor: '#9ca4ab',
-   
-
-  },
-
-    
-});
-
-
