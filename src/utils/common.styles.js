@@ -1,7 +1,8 @@
 export const Fonts = {
     Light: 'Nunito-Light',
-    Medium: 'Avenir-Medium',
-    Heavy: 'Avenir-Black'
+    // these aren't being used yet, but when they are, I think these are the names
+    // Medium: 'Avenir-Medium',
+    // Heavy: 'Avenir-Black'
 };
 
 export const Colors = {
