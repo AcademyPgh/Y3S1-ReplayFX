@@ -1,22 +1,11 @@
 import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  Button,
-  View,
-  Image,
-  ImageBackground,
-  Dimensions,
-  ScrollView,
-  AppRegistry,
-} from 'react-native';
+import { Platform, Text, View, Dimensions, ScrollView } from 'react-native';
 import ScalableImage from 'react-native-scalable-image';
-import { Fonts } from '../src/utils/Fonts';
-import { homeButtonHeader } from '../src/utils/Headers';
-import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
+import { homeButtonHeader } from '../../utils/Headers';
+import { scale, verticalScale, moderateScale } from '../../utils/Scaling';
+import { styles } from './Games.styles';
 
-export default class GameDetailsScreen extends React.Component {
+export default class GameDetails extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
@@ -77,7 +66,7 @@ export default class GameDetailsScreen extends React.Component {
               background
               source={{uri: image}}
               blurRadius={3}>      
-              <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(20, 20, 20, .2)', }}>   
+              <View style={styles.detailTitleHeader}>   
                 <Text numberOfLines={titleNumLines} adjustsFontSizeToFit style={[styles.headerTextInput, {fontSize: scale(titleFontSize), letterSpacing: titleLetterSpacing}]}>{gameInfo.gameTitle.toUpperCase()}</Text>
                 <Text style={styles.headerText}>{gameInfo.gameType.name.toUpperCase()}</Text>
               </View>
@@ -139,106 +128,3 @@ export default class GameDetailsScreen extends React.Component {
 
         </View>
   );}}
-  
-  const styles=StyleSheet.create({
-    
-    container: {
-      flex: 1,
-    },
-   
-    titleContainer: {
-      flex: 1,
-      flexDirection: 'row',
-    },
-
-    gameImage: {
-      borderColor: '#AAA',
-      alignSelf: 'center',
-      borderRadius: 5,
-    },
-
-    headerImage: {
-      width: undefined,
-      height: undefined,
-    },
-    
-    headerTextInput: {
-      fontSize: scale(25),
-      fontFamily: Fonts.AvenirBlack,
-      color: '#ffffff',
-      textAlign: 'center',
-      letterSpacing: 2,
-      paddingTop: verticalScale(12),
-      paddingLeft: scale(10),
-      paddingRight: scale(10),
-    },
-
-    headerText: {
-      fontSize: scale(20),
-      fontFamily: Fonts.AvenirBlack,
-      color: '#ffffff',
-      textAlign: 'center',
-      letterSpacing: 2,
-      paddingBottom: verticalScale(12),
-      marginTop: verticalScale(-8),
-      fontWeight: 'bold',
-    },
-
-    detailsContainer: {
-        padding: scale(20),
-    },  
-          
-    titles: {
-      fontFamily: Fonts.AvenirBlack,
-      color: '#000000',
-      fontSize: scale(16),
-      letterSpacing: 1,
-      lineHeight: scale(28),
-    },
-      
-    descriptions: {
-      fontFamily: Fonts.AvenirMedium,
-      color: '#000000',
-      fontSize: scale(16),
-      lineHeight: scale(28),
-    }, 
-
-    gameBioTitle: {
-      fontFamily: Fonts.AvenirBlack, 
-      color: '#000000',
-      fontSize: scale(16), 
-      letterSpacing: 1, 
-      lineHeight: scale(18),
-    },
-
-    gameBioInput: {
-      fontFamily: Fonts.AvenirMedium,
-      color: '#000000', 
-      fontSize: scale(16), 
-      letterSpacing: .5, 
-      lineHeight: scale(18),
-    },
-
-    locationBorder: {
-      borderBottomColor: 'black', 
-      borderBottomWidth: 1, 
-      margin: verticalScale(10)
-    },
-
-    location: {
-      fontSize: scale(28), 
-      fontFamily: Fonts.AvenirBlack, 
-      color: '#000000',
-      textAlign: 'center',
-    },
-
-    locationInput: {
-      fontSize: scale(38), 
-      fontFamily: Fonts.AvenirBlack,
-      color: '#000000',
-      textAlign: 'center',
-      paddingLeft: scale(10),
-      paddingRight: scale(10),
-    },
-
-});

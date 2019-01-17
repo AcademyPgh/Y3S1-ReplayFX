@@ -35,7 +35,7 @@ export default class Games extends Component {
               <TouchableOpacity key={gameType.id} onPress={() => {                  
                 this.props.navigation.navigate('GamesList', {gameType: gameType})}}>
 
-                <View style={styles.container}>
+                <View style={styles.indexContainer}>
                   <View>
                     <Text style={styles.Font}>{gameType.name.toUpperCase()}</Text>
                   </View>
@@ -51,3 +51,4 @@ export default class Games extends Component {
     );
   }
 }
+

@@ -1,17 +1,15 @@
 import { StackNavigator, } from 'react-navigation';
 
 import { Fonts } from './src/utils/Fonts';
-import { scale, verticalScale, moderateScale } from './src/utils/Scaling';
+import { scale } from './src/utils/Scaling';
 
 import LandingScreen from './screens/LandingScreen';
 import LoadConventionsScreen from './screens/LoadConventionsScreen';
 import SelectConventionScreen from './screens/SelectConventionScreen';
 import HomeScreen from './screens/HomeScreen';
-import GamesListScreen from './screens/GamesListScreen';
 import ScheduleScreenContainer from './screens/ScheduleScreenContainer';
 import SponsorsScreen from './screens/SponsorsScreen';
-import Games from './src/features/Games/Games.index';
-import GameDetailsScreen from './screens/GameDetailsScreen';
+import GamesNav from './src/features/Games/Games.navigation';
 import EventDetailsScreen from './screens/EventDetailsScreen';
 import VendorsScreen from './screens/VendorsScreen';
 import VendorDetailsScreen from './screens/VendorDetailsScreen';
@@ -67,27 +65,7 @@ export default RootStack = StackNavigator(
           title: 'SPONSORS',
         }
       },
-      GamesMain: {
-        screen: Games,
-        initialRouteParams: { },
-        navigationOptions: {
-          title: 'CHOOSE PLATFORM',
-        }
-      },
-      GamesList: {
-        screen: GamesListScreen,
-        initialRouteParams: { },
-        navigationOptions: {
-          title: 'GAMES',
-        }
-      },
-      GameDetails: {
-        screen: GameDetailsScreen,
-        initialRouteParams: { },
-        navigationOptions: {
-          title: 'GAMES',
-        }
-      },
+      ...GamesNav,
       VendorsList: {
         screen: VendorsScreen,
         initialRouteParams: { },
@@ -137,5 +115,6 @@ export default RootStack = StackNavigator(
           margin: 0,
         },
       },
+      headerMode: 'screen',
     }
   );
