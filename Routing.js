@@ -8,7 +8,7 @@ import LoadConventionsScreen from './screens/LoadConventionsScreen';
 import SelectConventionScreen from './screens/SelectConventionScreen';
 import HomeScreen from './screens/HomeScreen';
 import ScheduleScreenContainer from './screens/ScheduleScreenContainer';
-import SponsorsScreen from './screens/SponsorsScreen';
+import SponsorsNav from './src/features/Sponsors/navigation';
 import GamesNav from './src/features/Games/Games.navigation';
 import EventDetailsScreen from './screens/EventDetailsScreen';
 import VendorsScreen from './screens/VendorsScreen';
@@ -58,13 +58,7 @@ export default RootStack = StackNavigator(
           title: 'SCHEDULE',
         }
       },
-      Sponsors: {
-        screen: SponsorsScreen,
-        initialRouteParams: { },
-        navigationOptions: {
-          title: 'SPONSORS',
-        }
-      },
+      ...SponsorsNav,
       ...GamesNav,
       VendorsList: {
         screen: VendorsScreen,
