@@ -10,9 +10,8 @@ import HomeScreen from './screens/HomeScreen';
 import ScheduleScreenContainer from './screens/ScheduleScreenContainer';
 import SponsorsNav from './src/features/Sponsors/navigation';
 import GamesNav from './src/features/Games/Games.navigation';
+import VendorsNav from './src/features/Vendors/navigation';
 import EventDetailsScreen from './screens/EventDetailsScreen';
-import VendorsScreen from './screens/VendorsScreen';
-import VendorDetailsScreen from './screens/VendorDetailsScreen';
 import MapScreen from './screens/MapScreen';
 
 var showLandingPage = false;
@@ -60,20 +59,7 @@ export default RootStack = StackNavigator(
       },
       ...SponsorsNav,
       ...GamesNav,
-      VendorsList: {
-        screen: VendorsScreen,
-        initialRouteParams: { },
-        navigationOptions: {
-          title: 'VENDORS',
-        }
-      },
-      VendorDetails: {
-        screen: VendorDetailsScreen,
-        initialRouteParams: { },
-        navigationOptions: {
-          title: 'VENDORS',
-        }
-      },
+      ...VendorsNav,
       Map: {
         screen: MapScreen,
         initialRouteParams: { },
