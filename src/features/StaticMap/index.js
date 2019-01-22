@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { Dimensions, View} from 'react-native';
-import { homeButtonHeader } from '../src/utils/Headers';
+import { homeButtonHeader } from '../../utils/Headers';
 import ImageZoom from 'react-native-image-pan-zoom';
 import ScalableImage from 'react-native-scalable-image';
-import Auth from '../src/components/Auth';
 
-export default class MapScreen extends Component {
+export default class StaticMap extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 

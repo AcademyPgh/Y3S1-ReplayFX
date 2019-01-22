@@ -10,16 +10,17 @@ import {
   AsyncStorage,
   Alert
 } from 'react-native';
-import ScheduleScreen from './ScheduleScreen';
-import { homeButtonHeader } from '../src/utils/Headers';
+import Schedule from './Schedule';
+import { homeButtonHeader } from '../../utils/Headers';
 import moment from 'moment';
-import PushController from '../src/utils/PushController';
-import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
-import { getConventionPersistKey, persistData } from '../src/utils/Persist';
+import PushController from '../../utils/PushController';
+import { scale, verticalScale, moderateScale } from '../../utils/Scaling';
+import { getConventionPersistKey, persistData } from '../../utils/Persist';
+import { styles } from './styles';
 
 const debug = [];
 
-export default class ScheduleScreenContainer extends React.Component {
+export default class ScheduleContainer extends Component {
     static navigationOptions = ({ navigation, navigationOptions }) => {
       const { params, routeName } = navigation.state;
 
@@ -397,25 +398,9 @@ export default class ScheduleScreenContainer extends React.Component {
           </View>
           <View style={{flex:10}}>
             {/* <ScrollView style={{flex:2}}><Text>{JSON.stringify(this.props.navigation)}</Text><Text>{JSON.stringify(this.state)}</Text></ScrollView> */}
-            <ScheduleScreen screenProps={this.props.screenProps} eventList={this.filters[this.state.filter]} favorites={this.state.favorites} onSetFavorite={this.setFavorite} showSectionHeaders={this.state.showSectionHeaders} navigation={this.props.navigation} />
+            <Schedule screenProps={this.props.screenProps} eventList={this.filters[this.state.filter]} favorites={this.state.favorites} onSetFavorite={this.setFavorite} showSectionHeaders={this.state.showSectionHeaders} navigation={this.props.navigation} />
           </View>
         </View>
       );
     }
   }
-
-  const styles = StyleSheet.create({
-    tab: {
-      flex: 1, padding: verticalScale(4), paddingHorizontal: scale(15)
-    },
-    tabLabel: {
-      fontSize: verticalScale(16),
-      textAlign: 'center',
-    },
-    tabLabelFocused: {
-      color: 'white',
-    },
-    tabLabelUnfocused: {
-      color: 'grey',
-    }
-  });

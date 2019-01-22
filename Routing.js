@@ -7,12 +7,11 @@ import LandingScreen from './screens/LandingScreen';
 import LoadConventionsScreen from './screens/LoadConventionsScreen';
 import SelectConventionScreen from './screens/SelectConventionScreen';
 import HomeScreen from './screens/HomeScreen';
-import ScheduleScreenContainer from './screens/ScheduleScreenContainer';
 import SponsorsNav from './src/features/Sponsors/navigation';
 import GamesNav from './src/features/Games/Games.navigation';
 import VendorsNav from './src/features/Vendors/navigation';
-import EventDetailsScreen from './screens/EventDetailsScreen';
-import MapScreen from './screens/MapScreen';
+import StaticMap from './src/features/StaticMap/navigation';
+import ScheduleNav from './src/features/Schedule/navigation';
 
 var showLandingPage = false;
 
@@ -44,29 +43,11 @@ export default RootStack = StackNavigator(
           header: null
         }
       },
-      Schedule: {
-        screen: ScheduleScreenContainer,
-        navigationOptions: {
-          //title: 'SCHEDULE'
-        }
-      },
-      EventDetails: {
-        screen: EventDetailsScreen,
-        initialRouteParams: { },
-        navigationOptions: {
-          title: 'SCHEDULE',
-        }
-      },
+      ...ScheduleNav,
       ...SponsorsNav,
       ...GamesNav,
       ...VendorsNav,
-      Map: {
-        screen: MapScreen,
-        initialRouteParams: { },
-        navigationOptions: {
-          title: 'MAP',
-        }
-      },
+      ...StaticMap,
       
       // Featured: {
       //   screen: ScheduleScreenContainer,

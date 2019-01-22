@@ -63,7 +63,7 @@ export default class HomeScreen extends Component {
           <View style={[styles.container,]}>    
             <Text style={styles.text}
               onPress={() => {       
-              this.props.navigation.navigate('Map', {});
+              this.props.navigation.navigate('StaticMap', {});
               }}>
               MAP
             </Text>

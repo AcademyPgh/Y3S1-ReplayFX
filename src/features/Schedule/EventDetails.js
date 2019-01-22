@@ -1,26 +1,15 @@
 import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  Button,
-  View,
-  Image,
-  ImageBackground,
-  Dimensions,
-  ScrollView,
-  AppRegistry,
-  Alert,
-} from 'react-native';
+import { Platform, Text, View, Dimensions, ScrollView, Alert,} from 'react-native';
 import ScalableImage from 'react-native-scalable-image';
 import moment from 'moment';
 
-import { Fonts } from '../src/utils/Fonts';
-import { homeButtonHeader } from '../src/utils/Headers';
-import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
+import { Fonts } from '../../utils/Fonts';
+import { homeButtonHeader } from '../../utils/Headers';
+import { scale, verticalScale, moderateScale } from '../../utils/Scaling';
+import { styles } from './styles';
 
 
-export default class EventDetailsScreen extends React.Component {
+export default class EventDetails extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
@@ -147,82 +136,3 @@ export default class EventDetailsScreen extends React.Component {
 
         </View>
   );}}
-  
-  const styles=StyleSheet.create({
-   
-    headerImage: {
-      width: undefined,
-      height: undefined,
-    },
-
-    eventImage: {
-      alignSelf: 'center',
-      borderRadius: 5,
-    },
-    
-    headerText1: {
-      fontSize: scale(25),
-      fontFamily: Fonts.AvenirBlack,
-      color: '#ffffff',
-      textAlign: 'center',
-      letterSpacing: 2,
-      paddingTop: verticalScale(12)
-    },
-
-    headerText2: {
-      fontSize: scale(25),
-      fontFamily: Fonts.AvenirBlack,
-      color: '#ffffff',
-      textAlign: 'center',
-      letterSpacing: 2,
-      marginLeft: scale(20),
-      marginRight: scale(20),
-    },
-
-    detailsContainer: {
-        padding: scale(20),
-    },  
-          
-    bolded: {
-      fontFamily: Fonts.AvenirBlack,
-      fontSize: scale(16),
-      letterSpacing: 1,
-      lineHeight: scale(28),
-      color: '#000000',
-    },
-      
-    descriptions: {
-      fontFamily: Fonts.AvenirMedium,
-      fontSize: scale(16),
-      lineHeight: scale(28),
-      color: '#000000',
-    }, 
-
-    gameBio: {
-      fontFamily: Fonts.AvenirBlack, 
-      fontSize: scale(16), 
-      letterSpacing: 1, 
-      lineHeight: scale(18),
-      color: '#000000',
-    },
-
-    gameBioText: {
-      fontFamily: Fonts.AvenirMedium, 
-      fontSize: scale(16), 
-      letterSpacing: .5, 
-      lineHeight: scale(18),
-      color: '#000000',
-    },
-
-    locationDetails: {
-      marginLeft: scale(12), 
-      marginRight: scale(12), 
-      fontSize: scale(38), 
-      //lineHeight: 110, 
-      fontFamily: Fonts.AvenirBlack, 
-      textAlign: 'center', 
-      textAlignVertical: "center",
-      color: '#000000',
-    },
-
-});

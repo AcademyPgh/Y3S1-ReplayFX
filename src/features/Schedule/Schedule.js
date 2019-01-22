@@ -9,12 +9,12 @@ import {
 } from 'react-native';
 import ScalableImage from 'react-native-scalable-image';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
-import Promo from '../src/components/Promo';
+import { scale, verticalScale, moderateScale } from '../../utils/Scaling';
+import Promo from '../../components/Promo';
 
 const fullWidth = Dimensions.get('window').width;
 
-export default class ScheduleScreen extends Component {
+export default class Schedule extends Component {
 
   constructor(props) {
     super(props);
