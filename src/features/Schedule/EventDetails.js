@@ -87,7 +87,7 @@ export default class EventDetails extends Component {
             <ScalableImage width={Dimensions.get('window').width}
                 background
                 style={styles.headerImage}
-                source={require('../Images/PinballGamePageImage.jpg')}>   
+                source={require('../../../Images/PinballGamePageImage.jpg')}>   
               <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>      
                 {/*<Text style={styles.headerText1}>LEARN</Text>*/}
                 <Text 

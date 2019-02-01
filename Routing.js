@@ -12,6 +12,7 @@ import GamesNav from './src/features/Games/Games.navigation';
 import VendorsNav from './src/features/Vendors/navigation';
 import StaticMap from './src/features/StaticMap/navigation';
 import ScheduleNav from './src/features/Schedule/navigation';
+import ProfileNav from './src/features/Profile/navigation';
 
 var showLandingPage = false;
 
@@ -48,6 +49,7 @@ export default RootStack = StackNavigator(
       ...GamesNav,
       ...VendorsNav,
       ...StaticMap,
+      ...ProfileNav,
       
       // Featured: {
       //   screen: ScheduleScreenContainer,
