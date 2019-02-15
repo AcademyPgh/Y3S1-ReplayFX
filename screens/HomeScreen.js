@@ -77,6 +77,15 @@ export default class HomeScreen extends Component {
               PROFILE
             </Text>
           </View>
+
+          <View style={[styles.container,]}>    
+            <Text style={styles.text}
+              onPress={() => {       
+              this.props.navigation.navigate('SocialFeed', {});
+              }}>
+              FEED
+            </Text>
+          </View>
           
           {this.props.screenProps.apiData.eventTypes.map((category) => {
             return (

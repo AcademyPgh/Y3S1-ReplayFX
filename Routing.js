@@ -1,4 +1,4 @@
-import { StackNavigator, } from 'react-navigation';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import { Fonts } from './src/utils/Fonts';
 import { scale } from './src/utils/Scaling';
@@ -13,10 +13,11 @@ import VendorsNav from './src/features/Vendors/navigation';
 import StaticMap from './src/features/StaticMap/navigation';
 import ScheduleNav from './src/features/Schedule/navigation';
 import ProfileNav from './src/features/Profile/navigation';
+import SocialFeedNav from './src/features/SocialFeed/navigation';
 
 var showLandingPage = false;
 
-export default RootStack = StackNavigator(
+const RootStack = createStackNavigator(
     {
       Landing: {
         screen: LandingScreen,
@@ -50,6 +51,7 @@ export default RootStack = StackNavigator(
       ...VendorsNav,
       ...StaticMap,
       ...ProfileNav,
+      ...SocialFeedNav,
       
       // Featured: {
       //   screen: ScheduleScreenContainer,
@@ -62,7 +64,7 @@ export default RootStack = StackNavigator(
     },
     {
       initialRouteName: (showLandingPage ? 'Landing' : 'LoadConventions'),
-      navigationOptions: {
+      defaultNavigationOptions: {
         //title: 'Home',
         headerStyle: {
           backgroundColor: '#000000',
@@ -81,3 +83,5 @@ export default RootStack = StackNavigator(
       headerMode: 'screen',
     }
   );
+
+export default createAppContainer(RootStack);
