@@ -6,9 +6,13 @@ import { ClientId, Audience, Domain } from '../utils/AuthVars';
 const auth0 = new Auth0({ domain: Domain, clientId: ClientId })
 
 export const GetUserToken = new Promise((resolve, reject) => {
-    AsyncStorage.getItem("accessToken").then(accessToken => {
-        if (accessToken !== null && false) {
-            resolve(accessToken);
+    AsyncStorage.getItem("credentials").then(credentials => {
+        let creds = JSON.parse(credentials);
+        console.log(creds);
+        if(creds && creds.expiresOn && creds.expiresOn > Date.now())
+        {
+            console.log("Still logged in until " + creds.expiresOn);
+            resolve(creds.idToken);
         }
         else
         {
@@ -19,11 +23,11 @@ export const GetUserToken = new Promise((resolve, reject) => {
                 console.log(credentials);
                 // Successfully authenticated
                 // Store the accessToken
-                AsyncStorage.setItem("accessToken", credentials.idToken);
-                AsyncStorage.setItem("refreshToken", credentials.accessToken);
+                credentials.expiresOn = Date.now() + credentials.expiresIn;
+                AsyncStorage.setItem("credentials", JSON.stringify(credentials));
                 resolve(credentials.idToken);
             })
             .catch(error => reject(error));
         }
-    });
+    });        
 });
