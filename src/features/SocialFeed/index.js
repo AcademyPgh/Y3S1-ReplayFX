@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {View, KeyboardAvoidingView, ScrollView} from 'react-native';
+import {View, ScrollView, Text} from 'react-native';
 import { styles } from './styles';
 import {GetUserToken} from '../../components/Auth';
 import {getConventionFeedURL, getConventionFeedPostURL} from '../../utils/API';
@@ -7,6 +7,7 @@ import Post from './Post';
 import { homeButtonHeader } from '../../utils/Headers';
 import { scale } from '../../utils/Scaling';
 import Input from './input';
+import Spinner from './Spinner';
 
 export default class SocialFeed extends Component {
     static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -15,7 +16,7 @@ export default class SocialFeed extends Component {
           ...homeButton,
           headerTitleStyle: {
             ...navigationOptions.headerTitleStyle,
-            fontSize: scale(18)
+            fontSize: scale(25)
           },
         };
       }
@@ -26,7 +27,8 @@ export default class SocialFeed extends Component {
         this.state = {
             feed: [],
             readyToPost: true,
-            userText: ""
+            userText: "",
+            loaded: false
         }
 
         this.postThatPost = this.postThatPost.bind(this);
@@ -34,23 +36,28 @@ export default class SocialFeed extends Component {
     }
 
     getPosts() {
-        GetUserToken
-        .then(token => {
-            this.setState({token});
-            fetch(getConventionFeedURL(this.props.screenProps.apiData))
-            .then((res) => res.json())
-            .then((res) => {
-                console.log(res);
-                this.setState({feed: res});
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-        });
+        fetch(getConventionFeedURL(this.props.screenProps.apiData))
+        .then((res) => {
+            console.log(res);
+            return res.json();
+        })
+        .then((res) => {
+            console.log(res);
+            this.setState({feed: res, loaded: true});
+        })
+        .catch((err) => {
+            //setTimeout(this.getPosts, 1000); // this can make it weird/angry
+        })
     }
 
     componentDidMount() {
         this.getPosts();
+        let timer = setInterval(this.getPosts, 10000);
+        this.setState({timer})
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.state.timer);
     }
 
     postThatPost(text) {
@@ -70,7 +77,8 @@ export default class SocialFeed extends Component {
                 })
             })
             .then((res) => {
-                this.setState({readToPost: true});
+                this.setState({readyToPost: true});
+                console.log(res);
                 if (res.status == 200)
                 {
                     return res.json();
@@ -86,7 +94,7 @@ export default class SocialFeed extends Component {
                 }
             })
             .then((res) => {
-                console.log(res);
+                //console.log(res);
                 this.getPosts();
             })
             .catch((err) => {
@@ -97,15 +105,27 @@ export default class SocialFeed extends Component {
 
     render()
     {
-        return (
-            <View style={{flex: 1}}>
-                <ScrollView>
+        let posts = null;
+        if(this.state.feed.length > 0)
+        {
+            posts = (<View style={{flex: 1}}>
+                <ScrollView style={{backgroundColor: 'whitesmoke'}}>
                     {this.state.feed.map((row, index) => {
                         return <Post post={row} key={index}/>
                     })}
                 </ScrollView>
                 <Input post={this.postThatPost} />
                 <View style={{height: 50}}></View>
-            </View>)
+            </View>);
+        }
+        else
+        {
+            posts = (<View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                <Text>Loading social feed...</Text>
+                <Spinner size={45} />
+                <View style={{height: 50}}></View>
+            </View>);
+        }
+        return posts;
     }
 }

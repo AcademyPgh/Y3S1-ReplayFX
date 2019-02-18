@@ -1,25 +1,42 @@
 import React, { Component } from 'react';
-import {Text, View} from 'react-native';
+import {Text, View, TouchableHighlight} from 'react-native';
 import { styles } from './styles';
 import {GetUserToken} from '../../components/Auth';
-import Axios from 'axios';
 import {getProfileURL} from '../../utils/API';
+import { scale } from '../../utils/Scaling';
+import { homeButtonHeader } from '../../utils/Headers';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import SwitchInput from './SwitchInput';
 
 export default class Profile extends Component {
+    static navigationOptions = ({ navigation, navigationOptions }) => {
+        const homeButton = homeButtonHeader(navigation);
+        return {
+          ...homeButton,
+          headerTitleStyle: {
+            ...navigationOptions.headerTitleStyle,
+            fontSize: scale(25)
+          },
+        };
+      }
+    
     constructor(props){
         super(props);
         this.state = {
-            token: "hi"
+            token: "hi",
         };
+
+        this.saveChanges = this.saveChanges.bind(this);
+        this.cancelChanges = this.cancelChanges.bind(this);
     }
 
     componentDidMount() {
         GetUserToken
         .then(token => {
-            this.setState({token});
-            Axios.get(getProfileURL, { headers: { Authorization: `Bearer ${token}`}})
+            fetch(getProfileURL, { headers: { Authorization: `Bearer ${token}`}})
+                .then((res) => res.json())
                 .then((res) => {
-                    this.setState({user: res.data});
+                    this.setState({...res, original: res});
                 })
                 .catch((err) => {
                     console.log(err);
@@ -27,12 +44,90 @@ export default class Profile extends Component {
         });
     }
 
+    updateInput(value)
+    {
+        this.setState(value);
+    }
+
+    saveChanges()
+    {
+        GetUserToken
+        .then(token => {
+            fetch(getProfileURL, { 
+                headers: { 
+                    Authorization: `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                },
+                method: 'POST',
+                body: JSON.stringify({
+                    //post: {
+                        displayName: this.state.displayName,
+                        name: this.state.name
+                    //}
+                })
+            })
+            .then((res) => {
+                this.setState({readyToPost: true});
+                console.log(res);
+                if (res.status == 200)
+                {
+                    return res.json();
+                }
+                else if (res.status == 401)
+                {
+                    throw new Error('Unauthorized API Call');
+                }
+                else
+                {
+                    console.log(res);
+                    throw new Error('API Call failed!');
+                }
+            })
+            .then((res) => {
+                console.log(res);
+                this.setState({displayNameEdit: false, nameEdit: false, ...res, original: res});
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+        });
+
+    }
+
+    cancelChanges()
+    {
+        this.setState({displayNameEdit: false, nameEdit: false, ...this.state.original})
+    }
+
     render()
     {
-        return (<View>
-            {this.state.user && 
-            <Text>{this.state.user.displayName}</Text>
-            }
+        return (
+        <View style={styles.container}>
+            <Text style={styles.title}>Display Name <Icon style={styles.title} name="unlock"/></Text>
+            <SwitchInput 
+                onChange={(value) => this.setState({displayName: value})}
+                text={this.state.displayName} 
+                textStyle={styles.text}
+                editStyle={styles.editText}
+                isEditable={this.state.displayNameEdit}
+                onEditRequest={() => this.setState({displayNameEdit: true})}
+            />
+            <Text style={styles.title}>Full Name <Icon style={styles.title} name="unlock"/></Text>
+            <SwitchInput 
+                onChange={(value) => this.setState({name: value})}
+                text={this.state.name} 
+                textStyle={styles.text} 
+                editStyle={styles.editText}
+                isEditable={this.state.nameEdit}
+                onEditRequest={() => this.setState({nameEdit: true})}
+            />
+            <Text style={styles.title}>Email <Icon style={styles.title} name="lock"/></Text>
+            <Text style={styles.text}>{this.state.email}</Text>
+            <View style={styles.buttonContainer}>
+                <TouchableHighlight onPress={this.cancelChanges}><Icon name="times-circle" size={45} color="#d66" /></TouchableHighlight>
+                <TouchableHighlight onPress={this.saveChanges}><Icon name="check" size={45} color="#6d6" /></TouchableHighlight>
+            </View>
+            <View style={styles.keyboardPadding}></View>
         </View>)
     }
 }
