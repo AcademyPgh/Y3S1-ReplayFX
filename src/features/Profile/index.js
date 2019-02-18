@@ -28,10 +28,12 @@ export default class Profile extends Component {
 
         this.saveChanges = this.saveChanges.bind(this);
         this.cancelChanges = this.cancelChanges.bind(this);
+        this.getProfile = this.getProfile.bind(this);
     }
 
-    componentDidMount() {
-        GetUserToken
+    getProfile()
+    {
+        GetUserToken(false)
         .then(token => {
             fetch(getProfileURL, { headers: { Authorization: `Bearer ${token}`}})
                 .then((res) => res.json())
@@ -44,6 +46,10 @@ export default class Profile extends Component {
         });
     }
 
+    componentDidMount() {
+        this.getProfile();
+    }
+
     updateInput(value)
     {
         this.setState(value);
@@ -51,7 +57,7 @@ export default class Profile extends Component {
 
     saveChanges()
     {
-        GetUserToken
+        GetUserToken(false)
         .then(token => {
             fetch(getProfileURL, { 
                 headers: { 
@@ -75,7 +81,10 @@ export default class Profile extends Component {
                 }
                 else if (res.status == 401)
                 {
-                    throw new Error('Unauthorized API Call');
+                    GetUserToken(true)
+                    .then(() => {
+                        getProfile();
+                    });
                 }
                 else
                 {

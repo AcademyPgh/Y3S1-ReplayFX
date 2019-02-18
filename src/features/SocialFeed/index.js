@@ -28,7 +28,8 @@ export default class SocialFeed extends Component {
             feed: [],
             readyToPost: true,
             userText: "",
-            loaded: false
+            loaded: false,
+            retries: 0,
         }
 
         this.postThatPost = this.postThatPost.bind(this);
@@ -61,9 +62,9 @@ export default class SocialFeed extends Component {
     }
 
     postThatPost(text) {
-        GetUserToken
+        GetUserToken(false)
         .then(token => {
-            this.setState({token});
+            this.setState({token, retries: 0});
             fetch(getConventionFeedPostURL(this.props.screenProps.apiData), { 
                 headers: { 
                     Authorization: `Bearer ${token}`,
@@ -85,7 +86,17 @@ export default class SocialFeed extends Component {
                 }
                 else if (res.status == 401)
                 {
-                    throw new Error('Unauthorized API Call');
+                    GetUserToken(true)
+                    .then(() => {
+                        this.setState({retries: this.state.retries + 1})
+                        .then(() => {
+                            if(this.state.retries < 5)
+                            {
+                                this.postThatPost(text)
+                            }
+                        })
+                    });
+                    //throw new Error('Unauthorized API Call');
                 }
                 else
                 {
@@ -106,7 +117,7 @@ export default class SocialFeed extends Component {
     render()
     {
         let posts = null;
-        if(this.state.feed.length > 0)
+        if(this.state.loaded)
         {
             posts = (<View style={{flex: 1}}>
                 <ScrollView style={{backgroundColor: 'whitesmoke'}}>
