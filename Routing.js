@@ -1,25 +1,23 @@
-import { StackNavigator, } from 'react-navigation';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import { Fonts } from './src/utils/Fonts';
-import { scale, verticalScale, moderateScale } from './src/utils/Scaling';
+import { scale } from './src/utils/Scaling';
 
 import LandingScreen from './screens/LandingScreen';
 import LoadConventionsScreen from './screens/LoadConventionsScreen';
 import SelectConventionScreen from './screens/SelectConventionScreen';
 import HomeScreen from './screens/HomeScreen';
-import GamesListScreen from './screens/GamesListScreen';
-import ScheduleScreenContainer from './screens/ScheduleScreenContainer';
-import SponsorsScreen from './screens/SponsorsScreen';
-import GamesMain from './screens/GamesMain';
-import GameDetailsScreen from './screens/GameDetailsScreen';
-import EventDetailsScreen from './screens/EventDetailsScreen';
-import VendorsScreen from './screens/VendorsScreen';
-import VendorDetailsScreen from './screens/VendorDetailsScreen';
-import MapScreen from './screens/MapScreen';
+import SponsorsNav from './src/features/Sponsors/navigation';
+import GamesNav from './src/features/Games/Games.navigation';
+import VendorsNav from './src/features/Vendors/navigation';
+import StaticMap from './src/features/StaticMap/navigation';
+import ScheduleNav from './src/features/Schedule/navigation';
+import ProfileNav from './src/features/Profile/navigation';
+import SocialFeedNav from './src/features/SocialFeed/navigation';
 
 var showLandingPage = false;
 
-export default RootStack = StackNavigator(
+const RootStack = createStackNavigator(
     {
       Landing: {
         screen: LandingScreen,
@@ -47,68 +45,13 @@ export default RootStack = StackNavigator(
           header: null
         }
       },
-      Schedule: {
-        screen: ScheduleScreenContainer,
-        navigationOptions: {
-          //title: 'SCHEDULE'
-        }
-      },
-      EventDetails: {
-        screen: EventDetailsScreen,
-        initialRouteParams: { },
-        navigationOptions: {
-          title: 'SCHEDULE',
-        }
-      },
-      Sponsors: {
-        screen: SponsorsScreen,
-        initialRouteParams: { },
-        navigationOptions: {
-          title: 'SPONSORS',
-        }
-      },
-      GamesMain: {
-        screen: GamesMain,
-        initialRouteParams: { },
-        navigationOptions: {
-          title: 'CHOOSE PLATFORM',
-        }
-      },
-      GamesList: {
-        screen: GamesListScreen,
-        initialRouteParams: { },
-        navigationOptions: {
-          title: 'GAMES',
-        }
-      },
-      GameDetails: {
-        screen: GameDetailsScreen,
-        initialRouteParams: { },
-        navigationOptions: {
-          title: 'GAMES',
-        }
-      },
-      VendorsList: {
-        screen: VendorsScreen,
-        initialRouteParams: { },
-        navigationOptions: {
-          title: 'VENDORS',
-        }
-      },
-      VendorDetails: {
-        screen: VendorDetailsScreen,
-        initialRouteParams: { },
-        navigationOptions: {
-          title: 'VENDORS',
-        }
-      },
-      Map: {
-        screen: MapScreen,
-        initialRouteParams: { },
-        navigationOptions: {
-          title: 'MAP',
-        }
-      },
+      ...ScheduleNav,
+      ...SponsorsNav,
+      ...GamesNav,
+      ...VendorsNav,
+      ...StaticMap,
+      ...ProfileNav,
+      ...SocialFeedNav,
       
       // Featured: {
       //   screen: ScheduleScreenContainer,
@@ -121,7 +64,7 @@ export default RootStack = StackNavigator(
     },
     {
       initialRouteName: (showLandingPage ? 'Landing' : 'LoadConventions'),
-      navigationOptions: {
+      defaultNavigationOptions: {
         //title: 'Home',
         headerStyle: {
           backgroundColor: '#000000',
@@ -137,5 +80,8 @@ export default RootStack = StackNavigator(
           margin: 0,
         },
       },
+      headerMode: 'screen',
     }
   );
+
+export default createAppContainer(RootStack);

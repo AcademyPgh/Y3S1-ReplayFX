@@ -138,6 +138,16 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-vector-icons')
+    implementation project(':react-native-sensitive-info')
+    implementation project(':react-native-push-notification')
+    implementation project(':react-native-gesture-handler')
+    implementation project(':react-native-code-push')
+    implementation project(':react-native-auth0')
+    implementation project(':appcenter-crashes')
+    implementation project(':appcenter-analytics')
+    implementation project(':appcenter')
+    compile project(':react-native-sensitive-info')
     compile project(':react-native-vector-icons')
     compile project(':react-native-push-notification')
     compile project(':react-native-code-push')

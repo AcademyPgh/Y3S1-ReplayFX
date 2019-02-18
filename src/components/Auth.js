@@ -1,34 +1,36 @@
-import React from 'react';
-import {Text, Clipboard} from 'react-native';
-
+import {AsyncStorage} from 'react-native';
 import Auth0 from 'react-native-auth0';
-const auth0 = new Auth0({ domain: 'event-services.auth0.com', clientId: 'd5M70OQqxt8z4tjjiCzroltq5XrF9XOa' });
+import { ClientId, Audience, Domain } from '../utils/AuthVars';
 
-export default class Auth extends React.Component {
-    state = {
-        auth: {},
-    }
+const auth0 = new Auth0({ domain: Domain, clientId: ClientId })
 
-    componentDidMount() {
-        auth0
+export const GetUserToken = (force) => {return new Promise((resolve, reject) => {
+    AsyncStorage.getItem("credentials").then(credentials => {
+        let creds = JSON.parse(credentials);
+        console.log(creds);
+        if(creds === null || creds.expiresOn === undefined || creds.expiresOn < Date.now())
+        {
+            force = true;
+        }
+        if(force === false)
+        {
+            console.log("Still logged in until " + creds.expiresOn);
+            resolve(creds.idToken);
+        }
+        else
+        {
+            auth0
             .webAuth
-            .authorize({scope: 'openid profile email', audience: 'https://event-services.auth0.com/userinfo'})
+            .authorize({scope: 'openid profile email', audience: Audience})
             .then(credentials => {
                 console.log(credentials);
                 // Successfully authenticated
                 // Store the accessToken
-                this.setState({auth: credentials});
-                Clipboard.setString(JSON.stringify(credentials));
+                credentials.expiresOn = Date.now() + (credentials.expiresIn * 1000);
+                AsyncStorage.setItem("credentials", JSON.stringify(credentials));
+                resolve(credentials.idToken);
             })
-            .catch(error => console.log(error));
-    }
-
-    render()
-    {
-        if (this.state.auth) {
-            return <Text>{"Authenticated! " + JSON.stringify(this.state.auth)}</Text>;
-        } else {
-            return <Text>"Authenticating..."</Text>;
+            .catch(error => reject(error));
         }
-    }
-}
+    });        
+})};

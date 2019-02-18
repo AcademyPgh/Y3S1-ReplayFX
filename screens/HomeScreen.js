@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, StatusBar, ScrollView, Dimensions, Image, ImageBackground, Alert, Text, View, TouchableOpacity, StyleSheet } from 'react-native'
+import { StatusBar, ScrollView, Dimensions, Text, View, StyleSheet } from 'react-native'
 import ScalableImage from 'react-native-scalable-image';
 import { Fonts } from '../src/utils/Fonts';
 import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
@@ -63,9 +63,27 @@ export default class HomeScreen extends Component {
           <View style={[styles.container,]}>    
             <Text style={styles.text}
               onPress={() => {       
-              this.props.navigation.navigate('Map', {});
+              this.props.navigation.navigate('StaticMap', {});
               }}>
               MAP
+            </Text>
+          </View>
+
+          <View style={[styles.container,]}>    
+            <Text style={styles.text}
+              onPress={() => {       
+              this.props.navigation.navigate('Profile', {});
+              }}>
+              PROFILE
+            </Text>
+          </View>
+
+          <View style={[styles.container,]}>    
+            <Text style={styles.text}
+              onPress={() => {       
+              this.props.navigation.navigate('SocialFeed', {});
+              }}>
+              FEED
             </Text>
           </View>
           
