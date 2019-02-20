@@ -474,6 +474,7 @@
 		50780136217C4A9687A64B66 /* Avenir-Heavy.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Avenir-Heavy.ttf"; path = "../assets/fonts/Avenir-Heavy.ttf"; sourceTree = "<group>"; };
 		51DB15A2D3B44D2BA0700C27 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		52165145221DF285000E31B9 /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
+		5259F629221E18E800ACD5AD /* OSGCon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = OSGCon.entitlements; path = OSGCon/OSGCon.entitlements; sourceTree = "<group>"; };
 		57128D38B61B436CB648C085 /* AppCenter-Config.plist */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.xml; name = "AppCenter-Config.plist"; path = "OSGCon/AppCenter-Config.plist"; sourceTree = "<group>"; };
 		5B9B785D67BF40DBBF47AEB4 /* Nunito-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-SemiBoldItalic.ttf"; path = "../assets/fonts/Nunito-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		5BE3779A0BAC4668BBBFCC6E /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
@@ -687,6 +688,7 @@
 		13B07FAE1A68108700A75B9A /* OSGCon */ = {
 			isa = PBXGroup;
 			children = (
+				5259F629221E18E800ACD5AD /* OSGCon.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -1061,6 +1063,11 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 852Q762CE6;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1832,6 +1839,7 @@
 			baseConfigurationReference = 62B3B617183561C0E7257DDB /* Pods-OSGCon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OSGCon/OSGCon.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 852Q762CE6;
@@ -1863,6 +1871,7 @@
 			baseConfigurationReference = C3E6D08F843C01EBAA56A6FA /* Pods-OSGCon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OSGCon/OSGCon.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 852Q762CE6;
 				HEADER_SEARCH_PATHS = (
