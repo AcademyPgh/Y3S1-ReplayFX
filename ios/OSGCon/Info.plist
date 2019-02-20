@@ -21,7 +21,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2</string>
+	<string>5</string>
 	<key>CodePushDeploymentKey</key>
 	<string>KAZ3DtSs-FPq1LTXqZfPBlkEX5CzrJA-ptB-4</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -39,24 +39,34 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>None</string>
+			<key>CFBundleURLName</key>
+			<string>auth0</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+			</array>
+		</dict>
+	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string/>
-	<key>NSMainNibFile</key>
-	<string>LaunchScreen</string>
+	<string></string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Avenir-Black-03.ttf</string>
-		<string>Avenir-BlackOblique-04.ttf</string>
-		<string>Avenir-Book-01.ttf</string>
-		<string>Avenir-BookOblique-02.ttf</string>
-		<string>Avenir-Heavy-05.ttf</string>
-		<string>Avenir-HeavyOblique-06.ttf</string>
-		<string>Avenir-Light-07.ttf</string>
-		<string>Avenir-LightOblique-08.ttf</string>
-		<string>Avenir-Medium-09.ttf</string>
-		<string>Avenir-MediumOblique-10.ttf</string>
-		<string>Avenir-Oblique-11.ttf</string>
-		<string>Avenir-Roman-12.ttf</string>
+		<string>Avenir-Black.ttf</string>
+		<string>Avenir-BlackOblique.ttf</string>
+		<string>Avenir-Book.ttf</string>
+		<string>Avenir-BookOblique.ttf</string>
+		<string>Avenir-Heavy.ttf</string>
+		<string>Avenir-HeavyOblique.ttf</string>
+		<string>Avenir-Light.ttf</string>
+		<string>Avenir-LightOblique.ttf</string>
+		<string>Avenir-Medium.ttf</string>
+		<string>Avenir-MediumOblique.ttf</string>
+		<string>Avenir-Oblique.ttf</string>
 		<string>Avenir-Roman.ttf</string>
 		<string>Nunito-Black.ttf</string>
 		<string>Nunito-BlackItalic.ttf</string>
@@ -83,17 +93,6 @@
 		<string>Octicons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
-		<string>Avenir-Black.ttf</string>
-		<string>Avenir-BlackOblique.ttf</string>
-		<string>Avenir-Book.ttf</string>
-		<string>Avenir-BookOblique.ttf</string>
-		<string>Avenir-Heavy.ttf</string>
-		<string>Avenir-HeavyOblique.ttf</string>
-		<string>Avenir-Light.ttf</string>
-		<string>Avenir-LightOblique.ttf</string>
-		<string>Avenir-Medium.ttf</string>
-		<string>Avenir-MediumOblique.ttf</string>
-		<string>Avenir-Oblique.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
