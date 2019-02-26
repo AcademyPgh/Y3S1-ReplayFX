@@ -28,20 +28,26 @@ export class SelectConventionScreen extends React.Component {
     this.selectConvention = "selectConvention";
     this.loadConvention = "loadConvention";
 
+    // Force load specific convention
     this.state = {
-      currStep: this.selectConvention,
-      selectedConvention: null,
+      currStep: this.loadConvention,
+      selectedConvention: {id: 5},
+      singleConvention: true
     };
   }
 
   componentWillMount() {
-    this.willFocusSubscription = this.props.navigation.addListener('willFocus', this.handleWillFocus);
-    this.didBlurSubscription = this.props.navigation.addListener('didBlur', this.handleDidBlur);
+    if (!this.state.singleConvention) {
+      this.willFocusSubscription = this.props.navigation.addListener('willFocus', this.handleWillFocus);
+      this.didBlurSubscription = this.props.navigation.addListener('didBlur', this.handleDidBlur);
+    }
   }
 
   componentWillUnmount() {
-    this.willFocusSubscription.remove();
-    this.didBlurSubscription.remove();
+    if (!this.state.singleConvention) {
+      this.willFocusSubscription.remove();
+      this.didBlurSubscription.remove();
+    }
   }
 
   handleWillFocus = () => {
