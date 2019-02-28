@@ -13,7 +13,7 @@ export default class HomeScreen extends Component {
             onPress={() => {
             this.props.navigation.navigate(menuItem.type, menuItem.options);
             }}>
-            {menuItem.title}
+            {menuItem.title.toUpperCase()}
           </Text>
         </View>))
     );
@@ -81,7 +81,7 @@ const styles = StyleSheet.create ({
    borderBottomWidth: StyleSheet.hairlineWidth * 2,
    borderColor: 'black',
    borderStyle: 'solid',
-   textTransform: 'uppercase'
+   //textTransform: 'uppercase'
  },
 
   container: {

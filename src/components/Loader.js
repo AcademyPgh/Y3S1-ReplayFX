@@ -5,6 +5,7 @@ import {
 import axios from 'axios';
 
 import Loading from './Loading';
+import { CheckUserToken } from '../components/Auth';
 
 export default class ConventionListLoader extends React.Component {
   constructor(props){
@@ -62,18 +63,24 @@ export default class ConventionListLoader extends React.Component {
     this.loadData();
   }
 
-  loadData() {
+  async loadData() {
     if (this.mounted) {
       this.setState({err: null});
     }
     
-    axios.get(this.props.url, {timeout: 10000})
-        .then((result) => {
-            this.handleDataLoaded(result.data);
-        })
-        .catch((error) => { 
-            this.handleRequestFailed(error);
-        });
+    let token = await CheckUserToken();
+    let headers = null;
+    if(token)
+    {
+      headers = { Authorization: 'Bearer ' + token };
+    }
+    axios.get(this.props.url, {headers, timeout: 10000})
+    .then((result) => {
+        this.handleDataLoaded(result.data);
+    })
+    .catch((error) => { 
+        this.handleRequestFailed(error);
+    });
   }
 
   render() {

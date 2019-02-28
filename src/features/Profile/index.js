@@ -63,6 +63,7 @@ export default class Profile extends Component {
                     }
                 })
                 .then((res) => {
+                    console.log(res);
                     this.setState({...res, original: res});
                 })
                 .catch((err) => {

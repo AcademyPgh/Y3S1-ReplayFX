@@ -34,3 +34,28 @@ export const GetUserToken = (force) => {return new Promise((resolve, reject) => 
         }
     });        
 })};
+
+export const CheckUserToken = () => {return new Promise((resolve) => {
+    AsyncStorage.getItem("credentials")
+    .then(credentials => {
+        const creds = JSON.parse(credentials);
+        if(creds === null || creds.idToken === undefined)
+        {
+            resolve(null);
+        }
+        else
+        {
+            if(creds.expiresOn < Date.now())
+            {
+                resolve(null);
+            }
+            else
+            {
+                resolve(creds.idToken);
+            }
+        }
+    })
+    .catch((err) => {
+        resolve(null);
+    });
+})}
