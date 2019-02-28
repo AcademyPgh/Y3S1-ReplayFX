@@ -24,6 +24,7 @@ export default class Profile extends Component {
         super(props);
         this.state = {
             token: "hi",
+            attempts: 0
         };
 
         this.saveChanges = this.saveChanges.bind(this);
@@ -36,7 +37,31 @@ export default class Profile extends Component {
         GetUserToken(false)
         .then(token => {
             fetch(getProfileURL, { headers: { Authorization: `Bearer ${token}`}})
-                .then((res) => res.json())
+                .then((res) => {
+                    if (res.status == 200)
+                    {
+                        this.setState({attempts: 0});
+                        return res.json();
+                    }
+                    else if (res.status == 401)
+                    {
+                        if(this.state.attempts > 2)
+                        {
+                            throw new Error('Unauthorized, token refresh failed');
+                        }
+                        this.setState({attempts: this.state.attempts + 1});
+                        GetUserToken(true)
+                        .then(() => {
+                            this.getProfile();
+                        });
+                        throw new Error('Unauthorized, forcing token refresh');
+                    }
+                    else
+                    {
+                        console.log(res);
+                        throw new Error('API Call failed!');
+                    }
+                })
                 .then((res) => {
                     this.setState({...res, original: res});
                 })
@@ -77,14 +102,21 @@ export default class Profile extends Component {
                 console.log(res);
                 if (res.status == 200)
                 {
+                    this.setState({attempts: 0});
                     return res.json();
                 }
                 else if (res.status == 401)
                 {
+                    if(this.state.attempts > 2)
+                    {
+                        throw new Error('Unauthorized, token refresh failed');
+                    }
+                    this.setState({attempts: this.state.attempts + 1});
                     GetUserToken(true)
                     .then(() => {
-                        getProfile();
+                        this.saveChanges();
                     });
+                    throw new Error('Unauthorized, forcing token refresh');
                 }
                 else
                 {

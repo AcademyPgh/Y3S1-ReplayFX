@@ -25,13 +25,16 @@ export default class HomeScreen extends Component {
       [
         {type: 'Schedule', title: 'Schedule'},
         {type: 'Schedule', title: 'My Schedule', options: {title: 'MY SCHEDULE', scheduleFilter: 'my-schedule'}},
-        {type: 'GamesMain', title: 'Games',},
-        {type: 'SocialFeed', title: 'Conversation'},
-        {type: 'StaticMap', title: 'Map'},
-        {type: 'Profile', title: 'Profile'},
-        {type: 'Schedule', title: 'After Dark', options: {title: 'AFTER DARK', scheduleFilter: 'After Dark'}},
+        //{type: 'GamesMain', title: 'Games',},
+        {type: 'SocialFeed', title: 'Social Wall'},
         {type: 'VendorsList', title: 'Vendors'},
-        {type: 'Sponsors', title: 'Sponsors'}
+        //{type: 'StaticMap', title: 'Map'},
+        {type: 'Schedule', title: 'Overall', options: {title: 'OVERALL', scheduleFilter: 'Overall'}},
+        {type: 'Schedule', title: 'Education', options: {title: 'EDUCATION', scheduleFilter: 'Education'}},
+        {type: 'Schedule', title: 'After Dark', options: {title: 'AFTER DARK', scheduleFilter: 'After Dark'}},
+        {type: 'Schedule', title: 'Gear', options: {title: 'GEAR', scheduleFilter: 'Gear'}},
+        {type: 'Profile', title: 'Profile'},
+        //{type: 'Sponsors', title: 'Sponsors'}
       ];
 
     props = this.props;  
