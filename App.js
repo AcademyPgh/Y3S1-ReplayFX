@@ -19,7 +19,6 @@ import {
 } from 'react-native';
 import PushNotification from 'react-native-push-notification';
 
-import {events, games, eventCategories, gameTypes} from './api-samples/sampleData';
 import { Fonts } from './src/utils/Fonts';
 import NavigationService from './src/utils/NavigationService';
 import { scale, verticalScale, moderateScale } from './src/utils/Scaling';
@@ -36,7 +35,9 @@ class App extends React.Component {
 
     this.state = {
       apiData: apiData,
-      dataLoadedTimestamp: new Date()
+      dataLoadedTimestamp: new Date(),
+      singleConvention: true,
+      selectedConvention: {id: 5}
     }
 
     //AsyncStorage.clear();
@@ -98,19 +99,22 @@ class App extends React.Component {
           ref={navigatorRef => NavigationService.setTopLevelNavigator(navigatorRef)}
           screenProps={{apiData: this.state.apiData, 
             dataLoadedTimestamp: this.state.dataLoadedTimestamp,
-            onConventionDataLoaded: this.handleAPILoaded
+            onConventionDataLoaded: this.handleAPILoaded,
+            singleConvention: this.state.singleConvention,
+            selectedConvention: this.state.selectedConvention
           }}
         />
     );
 
     let hashTag = "#OSGAPP";
     let settingsButton = null;
+
     if (this.state.apiData) {
       if (this.state.apiData.hashtag) {
       hashTag = "#" + this.state.apiData.hashtag.toUpperCase();
       }
       
-      settingsButton = <SettingsButton />;
+      settingsButton = <SettingsButton singleConvention={this.state.singleConvention}/>;
     }
 
     return (

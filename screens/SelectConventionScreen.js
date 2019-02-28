@@ -30,24 +30,18 @@ export class SelectConventionScreen extends React.Component {
 
     // Force load specific convention
     this.state = {
-      currStep: this.loadConvention,
-      selectedConvention: {id: 5},
-      singleConvention: true
+      currStep: this.selectConvention,
     };
   }
 
   componentWillMount() {
-    if (!this.state.singleConvention) {
-      this.willFocusSubscription = this.props.navigation.addListener('willFocus', this.handleWillFocus);
-      this.didBlurSubscription = this.props.navigation.addListener('didBlur', this.handleDidBlur);
-    }
+    this.willFocusSubscription = this.props.navigation.addListener('willFocus', this.handleWillFocus);
+    this.didBlurSubscription = this.props.navigation.addListener('didBlur', this.handleDidBlur);
   }
 
   componentWillUnmount() {
-    if (!this.state.singleConvention) {
-      this.willFocusSubscription.remove();
-      this.didBlurSubscription.remove();
-    }
+    this.willFocusSubscription.remove();
+    this.didBlurSubscription.remove();
   }
 
   handleWillFocus = () => {

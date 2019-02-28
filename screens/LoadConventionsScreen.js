@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import {View, Text} from 'react-native';
 
-import { goToConventionList } from '../src/utils/Navigation';
+import { goToConventionList, goHome } from '../src/utils/Navigation';
 import LoadConventionsContainer from '../src/components/LoadConventionsContainer';
+import LoadConventionContainer from '../src/components/LoadConventionContainer';
 
 export class LoadConventionsScreen extends React.Component {
   constructor(props){
@@ -16,6 +17,8 @@ export class LoadConventionsScreen extends React.Component {
       conventionList: null,
       isLocalList: null,
     };
+
+    this.handleConventionLoaded = this.handleConventionLoaded.bind(this);
   }
 
   componentWillMount() {
@@ -41,9 +44,20 @@ export class LoadConventionsScreen extends React.Component {
     goToConventionList(this.props.navigation, conventions, isLocalData);
   }
 
+  handleConventionLoaded = (conventionData) => {
+    if (this.props.screenProps.onConventionDataLoaded) {
+      this.props.screenProps.onConventionDataLoaded(conventionData);
+      goHome(this.props.navigation);
+    }
+  }
+
   render() {
     //return <APILoader dataLoaded={this.props.dataLoaded} />;
-    if (this.state.fetching) {
+    if (this.props.screenProps.singleConvention)
+    {
+      return (<LoadConventionContainer conventionToLoad={this.props.screenProps.selectedConvention} onConventionLoaded={this.handleConventionLoaded} onBack={goHome} />);
+    }
+    else if (this.state.fetching) {
       return (
         <LoadConventionsContainer onConventionsLoaded={this.handleConventionsLoaded} />
       );

@@ -5,8 +5,34 @@ import { Fonts } from '../src/utils/Fonts';
 import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
 
 export default class HomeScreen extends Component {
+  getMenuItem(menu){
+    return (
+      menu.map((menuItem, index) =>
+        (<View key={index} style={[styles.container,]}>
+          <Text style={styles.text}
+            onPress={() => {
+            this.props.navigation.navigate(menuItem.type, menuItem.options);
+            }}>
+            {menuItem.title}
+          </Text>
+        </View>))
+    );
+  }
    
   render() {
+    // const menu = this.props.screenProps.apiData.menu;
+    const menu = 
+      [
+        {type: 'Schedule', title: 'Schedule'},
+        {type: 'Schedule', title: 'My Schedule', options: {title: 'MY SCHEDULE', scheduleFilter: 'my-schedule'}},
+        {type: 'GamesMain', title: 'Games',},
+        {type: 'SocialFeed', title: 'Conversation'},
+        {type: 'StaticMap', title: 'Map'},
+        {type: 'Profile', title: 'Profile'},
+        {type: 'Schedule', title: 'After Dark', options: {title: 'AFTER DARK', scheduleFilter: 'After Dark'}},
+        {type: 'VendorsList', title: 'Vendors'},
+        {type: 'Sponsors', title: 'Sponsors'}
+      ];
 
     props = this.props;  
 
@@ -27,100 +53,8 @@ export default class HomeScreen extends Component {
             <ScalableImage style={styles.headerImage} width={Dimensions.get('window').width}
                 source={{uri: props.screenProps.apiData.headerImageUrl}} />
           </View>
-          {/* TODO: Links will need to be specific to convention features */}
-          <View style={[styles.container,]}>
-
-            <Text style={styles.text}
-              onPress={() => {
-              /* 1. Navigate to the Schedule route with params */
-              this.props.navigation.navigate('Schedule');
-              }}>
-              SCHEDULE
-            </Text>
-          </View>
-
-          <View style={[styles.container,]}>
-            <Text style={styles.text}
-              onPress={() => {
-              /* 1. Navigate to the Schedule route with params */
-              this.props.navigation.navigate('GamesMain');
-              }}>
-              VIEW GAMES
-            </Text>
-          </View>
-
-          <View style={[styles.container,]}>
-
-            <Text style={styles.text}
-              onPress={() => {
-              /* 1. Navigate to the Schedule route with params */
-              this.props.navigation.navigate('Schedule', {scheduleFilter: 'my-schedule', title: 'MY SCHEDULE'});
-              }}>
-              MY SCHEDULE
-            </Text>
-          </View>
-
-          <View style={[styles.container,]}>    
-            <Text style={styles.text}
-              onPress={() => {       
-              this.props.navigation.navigate('StaticMap', {});
-              }}>
-              MAP
-            </Text>
-          </View>
-
-          <View style={[styles.container,]}>    
-            <Text style={styles.text}
-              onPress={() => {       
-              this.props.navigation.navigate('Profile', {});
-              }}>
-              PROFILE
-            </Text>
-          </View>
-
-          <View style={[styles.container,]}>    
-            <Text style={styles.text}
-              onPress={() => {       
-              this.props.navigation.navigate('SocialFeed', {});
-              }}>
-              FEED
-            </Text>
-          </View>
           
-          {this.props.screenProps.apiData.eventTypes.map((category) => {
-            return (
-              <View style={[styles.container,]} key={category.name}>
-                <Text style={styles.text}
-                  onPress={() => {
-                  /* 1. Navigate to the Featured route with params */
-                  this.props.navigation.navigate('Schedule', {scheduleFilter: category.name, title: category.displayName.toUpperCase()});
-                  }}>
-                  {category.displayName.toUpperCase()}
-                </Text>
-              </View>
-            );
-          })}
-
-          <View style={[styles.container,]}>    
-            <Text style={styles.text}
-              onPress={() => { 
-              /* 1. Navigate to the Sponsors route with params */          
-              this.props.navigation.navigate('VendorsList', {});
-              }}>
-              VENDORS
-            </Text>
-          </View>
-
-          <View style={[styles.container,]}>    
-            <Text style={styles.text}
-              onPress={() => { 
-              /* 1. Navigate to the Sponsors route with params */          
-              this.props.navigation.navigate('Sponsors', {});
-              }}>
-              SPONSORS
-            </Text>
-          </View>
-
+          {this.getMenuItem(menu)}
         </ScrollView> 
 
       {/*</ImageBackground>*/}
@@ -143,7 +77,8 @@ const styles = StyleSheet.create ({
    color: 'black',
    borderBottomWidth: StyleSheet.hairlineWidth * 2,
    borderColor: 'black',
-   borderStyle: 'solid'
+   borderStyle: 'solid',
+   textTransform: 'uppercase'
  },
 
   container: {
