@@ -38,6 +38,7 @@ export default class Profile extends Component {
             fetch(getProfileURL, { headers: { Authorization: `Bearer ${token}`}})
                 .then((res) => res.json())
                 .then((res) => {
+                    console.log(res);
                     this.setState({...res, original: res});
                 })
                 .catch((err) => {
