@@ -5,7 +5,7 @@ import { scale, verticalScale } from '../../utils/Scaling';
 export const styles = StyleSheet.create({
     textBox: {
         height: 40,
-        borderColor: 'grey',
+        borderColor: 'transparent',
         borderWidth: 1,
         flex: 5
     },
@@ -15,19 +15,35 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
     },
     inputContainer: {
-        flex: 1, 
+        height: 56,
         flexDirection: 'row', 
+        borderColor: '#A0A0A0',
+        borderWidth: 1,
+        borderRadius: 5,
+        margin: 5,
         padding: 5
     },
     postText: {
-        fontSize: 30
+        fontSize: scale(22),
+        color: '#000',
+        fontFamily: Fonts.Light
     },
     postTime: {
-        alignItems: 'flex-end',
+        alignItems: 'flex-end'
+    },
+    postName: {
+        fontSize: scale(14),
+        color: '#000000',
+        fontFamily: Fonts.Heavy
+    },
+    postDate: {
+        fontSize: scale(12),
+        color: '#000000',
+        fontFamily: Fonts.Medium
     },
     postContainer: {
         backgroundColor: 'white', 
-        borderTopLeftRadius: 5,
+        borderRadius: 5,
         margin: 5,
         padding: 5, 
         flex: 1,

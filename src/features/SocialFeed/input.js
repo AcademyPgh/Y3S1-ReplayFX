@@ -22,7 +22,7 @@ export default class Input extends Component {
             <View style={styles.inputContainer}>
                 <TextInput style={styles.textBox} onChangeText={(text) => this.setState({userText: text})} value={this.state.userText} />
                 <TouchableOpacity style={styles.touchBox} onPress={this.sendPost}>
-                    <Icon name="location-arrow" size={40} color='blue' />
+                    <Icon name="comment" size={36} color="#A0A0A0" />
                 </TouchableOpacity>
             </View>);
     }

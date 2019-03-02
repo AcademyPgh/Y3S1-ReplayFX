@@ -22,7 +22,7 @@ export default class Post extends Component {
             <View style={styles.postContainer}>
                 <Text style={styles.postText}>{post.text}</Text>
                 <View style={styles.postTime}>
-                    <Text>{dateString} by <Text style={styles.postName}>{post.postedBy.displayName}</Text></Text>
+                    <Text style={styles.postDate}>{dateString} by <Text style={styles.postName}>{post.postedBy.displayName}</Text></Text>
                 </View>
             </View>)
     }
