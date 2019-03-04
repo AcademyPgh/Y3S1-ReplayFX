@@ -29,10 +29,7 @@ export default class HomeScreen extends Component {
         {type: 'SocialFeed', title: 'Social Wall'},
         {type: 'VendorsList', title: 'Vendors'},
         //{type: 'StaticMap', title: 'Map'},
-        {type: 'Schedule', title: 'Overall', options: {title: 'OVERALL', scheduleFilter: 'Overall'}},
-        {type: 'Schedule', title: 'Education', options: {title: 'EDUCATION', scheduleFilter: 'Education'}},
-        {type: 'Schedule', title: 'After Dark', options: {title: 'AFTER DARK', scheduleFilter: 'After Dark'}},
-        {type: 'Schedule', title: 'Gear', options: {title: 'GEAR', scheduleFilter: 'Gear'}},
+        ...this.props.screenProps.apiData.eventTypes.map(item => {return {type: 'Schedule', title: item.name, options: {title: item.displayName, scheduleFilter: item.name}}}),
         {type: 'Profile', title: 'Profile'},
         //{type: 'Sponsors', title: 'Sponsors'}
       ];

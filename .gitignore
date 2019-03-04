@@ -32,6 +32,9 @@ build/
 .gradle
 local.properties
 *.iml
+.classpath
+.project
+.settings
 
 # node.js
 #
