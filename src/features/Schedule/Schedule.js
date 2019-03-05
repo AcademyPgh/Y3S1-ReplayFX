@@ -11,6 +11,7 @@ import ScalableImage from 'react-native-scalable-image';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { scale, verticalScale, moderateScale } from '../../utils/Scaling';
 import Promo from '../../components/Promo';
+import {styles} from './styles';
 
 const fullWidth = Dimensions.get('window').width;
 
@@ -72,6 +73,9 @@ export default class Schedule extends Component {
           sections={this.props.eventList} 
           renderItem={this.renderListItem} 
           renderSectionHeader={this.renderSectionHeader}
+          ListEmptyComponent={
+            <View style={styles.notifyText}><Text style={styles.emptyText}>{this.props.emptyText}</Text></View>
+          }
           keyExtractor={this.keyExtractor}
           ListHeaderComponent={
             <Promo promos={this.props.screenProps.apiData.promos} displayEventById={this.displayEventById} width={fullWidth} styles={styles}/>
@@ -131,55 +135,3 @@ class EventItem extends React.PureComponent {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  eventTitle: {
-    paddingVertical: 1,
-    color: 'black',
-    fontWeight: 'bold',
-    fontSize: scale(18),
-
-  },
-  Time: {
-    paddingVertical: 1,
-    color: '#9ca4ab',
-    fontSize: scale(16),
-    
-  },
-  Location: {
-    paddingVertical: 1,
-    color: '#9ca4ab',
-    fontSize: scale(16),   
-  },
-  container: {
-    flex: 1,
-    //borderWidth: StyleSheet.hairlineWidth * 4,
-    //borderColor: '#9ca4ab',
-    flexDirection: 'row',   
-    paddingVertical: 2, 
-  },
-  starContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',   
-  },
-  eventTextContainer: {
-    flex: 4,
-  },
-  text: {
-
-  },
-  textContainer: {
-    // width: '50%',
-    // borderRadius: 20,
-    // padding: 0,
-  },
-  promoContainer: {  
-    width: '100%',
-    //resizeMode: 'contain',
-  },
-  sectionHeader: {
-    backgroundColor: 'whitesmoke',
-    flex: 1,
-  }
-});

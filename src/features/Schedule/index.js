@@ -368,6 +368,11 @@ export default class ScheduleContainer extends Component {
     };
   
     render() {
+      let emptyText = "No Events Listed";
+      if(this.state.filter === 'my-schedule')
+      {
+        emptyText = "Click the Star next to events to add them to your personal schedule!";
+      }
       return (
         <View style={{flex:1}}>
           <View style={{flexDirection:'row', height:verticalScale(50), borderStyle: 'solid', borderColor: 'white', borderTopWidth: (StyleSheet.hairlineWidth), borderBottomWidth: (StyleSheet.hairlineWidth)}}>
@@ -398,7 +403,7 @@ export default class ScheduleContainer extends Component {
           </View>
           <View style={{flex:10}}>
             {/* <ScrollView style={{flex:2}}><Text>{JSON.stringify(this.props.navigation)}</Text><Text>{JSON.stringify(this.state)}</Text></ScrollView> */}
-            <Schedule screenProps={this.props.screenProps} eventList={this.filters[this.state.filter]} favorites={this.state.favorites} onSetFavorite={this.setFavorite} showSectionHeaders={this.state.showSectionHeaders} navigation={this.props.navigation} />
+            <Schedule screenProps={this.props.screenProps} emptyText={emptyText} eventList={this.filters[this.state.filter]} favorites={this.state.favorites} onSetFavorite={this.setFavorite} showSectionHeaders={this.state.showSectionHeaders} navigation={this.props.navigation} />
           </View>
         </View>
       );

@@ -90,4 +90,72 @@ export   const styles = StyleSheet.create({
         textAlignVertical: "center",
         color: '#000000',
       },
+
+      notifyText: {
+        marginLeft: scale(12), 
+        marginRight: scale(12), 
+        fontSize: scale(22), 
+        //lineHeight: 110, 
+        fontFamily: Fonts.Heavy, 
+        textAlign: 'center', 
+        textAlignVertical: "center",
+        color: '#000000',
+      },
+
+      emptyText: {
+        marginLeft: scale(12), 
+        marginRight: scale(12), 
+        fontSize: scale(22), 
+        //lineHeight: 110, 
+        fontFamily: Fonts.Heavy, 
+      }, 
+      eventTitle: {
+        paddingVertical: 1,
+        color: 'black',
+        fontWeight: 'bold',
+        fontSize: scale(18),
+    
+      },
+      Time: {
+        paddingVertical: 1,
+        color: '#9ca4ab',
+        fontSize: scale(16),
+        
+      },
+      Location: {
+        paddingVertical: 1,
+        color: '#9ca4ab',
+        fontSize: scale(16),   
+      },
+      container: {
+        flex: 1,
+        //borderWidth: StyleSheet.hairlineWidth * 4,
+        //borderColor: '#9ca4ab',
+        flexDirection: 'row',   
+        paddingVertical: 2, 
+      },
+      starContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',   
+      },
+      eventTextContainer: {
+        flex: 4,
+      },
+      text: {
+    
+      },
+      textContainer: {
+        // width: '50%',
+        // borderRadius: 20,
+        // padding: 0,
+      },
+      promoContainer: {  
+        width: '100%',
+        //resizeMode: 'contain',
+      },
+      sectionHeader: {
+        backgroundColor: 'whitesmoke',
+        flex: 1,
+      }
   });
