@@ -4,21 +4,40 @@ import { ClientId, Audience, Domain } from '../utils/AuthVars';
 
 const auth0 = new Auth0({ domain: Domain, clientId: ClientId })
 
-export const GetUserToken = (force) => {return new Promise((resolve, reject) => {
+export const GetUserToken = (options) => {return new Promise((resolve, reject) => {
     AsyncStorage.getItem("credentials").then(credentials => {
-        let creds = JSON.parse(credentials);
+        let {force, checkOnly, forceOnPrevLogon} = options;
+        const creds = JSON.parse(credentials); // will be null if never set before
+        const prevUser = !(creds === null || creds.expiresOn === null);
         console.log(creds);
-        if(creds === null || creds.expiresOn === undefined || creds.expiresOn < Date.now())
+        if(prevUser && forceOnPrevLogon === true)
+        {
+            force = true;
+        }
+        if(prevUser && creds.expiresOn < Date.now())
         {
             force = true;
         }
         if(force === false)
         {
-            console.log("Still logged in until " + creds.expiresOn);
-            resolve(creds.idToken);
+            //console.log("Still logged in until " + creds.expiresOn);
+            console.log("Login refresh not forced: ", creds);
+            if(prevUser)
+            {
+                resolve(creds.idToken);
+            }
+            else
+            {
+                resolve(null);
+            }
+        }
+        else if(checkOnly === true) // wasn't current user already
+        {
+            resolve(null);
         }
         else
         {
+
             auth0
             .webAuth
             .authorize({scope: 'openid profile email', audience: Audience})
@@ -31,31 +50,12 @@ export const GetUserToken = (force) => {return new Promise((resolve, reject) => 
                 resolve(credentials.idToken);
             })
             .catch(error => reject(error));
+            
         }
     });        
 })};
 
-export const CheckUserToken = () => {return new Promise((resolve) => {
-    AsyncStorage.getItem("credentials")
-    .then(credentials => {
-        const creds = JSON.parse(credentials);
-        if(creds === null || creds.idToken === undefined)
-        {
-            resolve(null);
-        }
-        else
-        {
-            if(creds.expiresOn < Date.now())
-            {
-                resolve(null);
-            }
-            else
-            {
-                resolve(creds.idToken);
-            }
-        }
-    })
-    .catch((err) => {
-        resolve(null);
-    });
+export const CheckUserToken = (checkOnly) => {return new Promise((resolve) => {
+    GetUserToken(checkOnly)
+    .then(res => {resolve(res)});
 })}

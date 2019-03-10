@@ -62,7 +62,7 @@ export default class SocialFeed extends Component {
     }
 
     postThatPost(text) {
-        GetUserToken(false)
+        GetUserToken({force: false})
         .then(token => {
             this.setState({token, retries: 0});
             fetch(getConventionFeedPostURL(this.props.screenProps.apiData), { 
@@ -86,7 +86,7 @@ export default class SocialFeed extends Component {
                 }
                 else if (res.status == 401)
                 {
-                    GetUserToken(true)
+                    GetUserToken({force: true})
                     .then(() => {
                         this.setState({retries: this.state.retries + 1})
                         .then(() => {

@@ -34,7 +34,7 @@ export default class Profile extends Component {
 
     getProfile()
     {
-        GetUserToken(false)
+        GetUserToken({force: false})
         .then(token => {
             fetch(getProfileURL, { headers: { Authorization: `Bearer ${token}`}})
                 .then((res) => {
@@ -50,7 +50,7 @@ export default class Profile extends Component {
                             throw new Error('Unauthorized, token refresh failed');
                         }
                         this.setState({attempts: this.state.attempts + 1});
-                        GetUserToken(true)
+                        GetUserToken({force: true})
                         .then(() => {
                             this.getProfile();
                         });
@@ -83,7 +83,7 @@ export default class Profile extends Component {
 
     saveChanges()
     {
-        GetUserToken(false)
+        GetUserToken({force: false})
         .then(token => {
             fetch(getProfileURL, { 
                 headers: { 
@@ -113,7 +113,7 @@ export default class Profile extends Component {
                         throw new Error('Unauthorized, token refresh failed');
                     }
                     this.setState({attempts: this.state.attempts + 1});
-                    GetUserToken(true)
+                    GetUserToken({force: true})
                     .then(() => {
                         this.saveChanges();
                     });

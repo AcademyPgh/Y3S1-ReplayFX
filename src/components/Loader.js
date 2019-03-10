@@ -5,7 +5,7 @@ import {
 import axios from 'axios';
 
 import Loading from './Loading';
-import { CheckUserToken } from '../components/Auth';
+import { GetUserToken } from '../components/Auth';
 
 export default class ConventionListLoader extends React.Component {
   constructor(props){
@@ -68,7 +68,7 @@ export default class ConventionListLoader extends React.Component {
       this.setState({err: null});
     }
     
-    let token = await CheckUserToken();
+    let token = await GetUserToken({force: false});
     let headers = null;
     if(token)
     {
