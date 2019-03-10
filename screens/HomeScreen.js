@@ -1,10 +1,22 @@
 import React, { Component } from 'react';
-import { StatusBar, ScrollView, Dimensions, Text, View, StyleSheet } from 'react-native'
+import { StatusBar, ScrollView, Dimensions, Text, View, StyleSheet, RefreshControl } from 'react-native'
 import ScalableImage from 'react-native-scalable-image';
 import { Fonts } from '../src/utils/Fonts';
 import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
+import { loadConvention } from '../src/utils/DataRequest';
 
 export default class HomeScreen extends Component {
+  constructor(props)
+  {
+    super(props);
+
+    this.state = {
+      refreshing: false
+    }
+
+    this.onRefresh = this.onRefresh.bind(this);
+  }
+
   getMenuItem(menu){
     return (
       menu.map((menuItem, index) =>
@@ -17,6 +29,17 @@ export default class HomeScreen extends Component {
           </Text>
         </View>))
     );
+  }
+
+  async onRefresh() {
+    this.setState({refreshing: true});
+    loadConvention(this.props.screenProps.apiData)
+    .then((results) => {
+      this.props.screenProps.onConventionDataLoaded(results);
+    })
+    .finally(() => {
+      this.setState({refreshing: false});
+    });
   }
    
   render() {
@@ -47,7 +70,13 @@ export default class HomeScreen extends Component {
 
         {/*<ImageBackground source={require('../Images/Background.jpg')} style={{flex:1}}>*/}
 
-        <ScrollView> 
+        <ScrollView 
+          refreshControl={
+            <RefreshControl
+              refreshing={this.state.refreshing}
+              onRefresh={this.onRefresh}
+            />}
+        > 
 
           <View style={styles.headerImageContainer}>
             <ScalableImage style={styles.headerImage} width={Dimensions.get('window').width}

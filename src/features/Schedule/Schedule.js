@@ -12,6 +12,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { scale, verticalScale, moderateScale } from '../../utils/Scaling';
 import Promo from '../../components/Promo';
 import {styles} from './styles';
+import {loadConvention} from '../../utils/DataRequest';
 
 const fullWidth = Dimensions.get('window').width;
 
@@ -20,9 +21,14 @@ export default class Schedule extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      refreshing: false
+    }
+
     this.displayEvent = this.displayEvent.bind(this);
     this.setFavorite = this.setFavorite.bind(this);
     this.displayEventById = this.displayEventById.bind(this);
+    this.onRefresh = this.onRefresh.bind(this);
   }
 
   setFavorite(event, shouldBeFavorite) {
@@ -64,6 +70,17 @@ export default class Schedule extends Component {
     );
   };
 
+  async onRefresh() {
+    this.setState({refreshing: true});
+    loadConvention(this.props.screenProps.apiData)
+    .then((results) => {
+      this.props.screenProps.onConventionDataLoaded(results);
+    })
+    .finally(() => {
+      this.setState({refreshing: false});
+    });
+  }
+
   render() {
 
     return(
@@ -83,6 +100,8 @@ export default class Schedule extends Component {
           ItemSeparatorComponent={this.renderSeparator}
           SectionSeparatorComponent={this.renderSeparator}
           stickySectionHeadersEnabled
+          refreshing={this.state.refreshing}
+          onRefresh={this.onRefresh}
         />
       </View>
     );

@@ -8,7 +8,8 @@ import {
   ScrollView,
   TouchableOpacity,
   AsyncStorage,
-  Alert
+  Alert,
+  RefreshControl
 } from 'react-native';
 import Schedule from './Schedule';
 import { homeButtonHeader } from '../../utils/Headers';
@@ -31,8 +32,6 @@ export default class ScheduleContainer extends Component {
         title: title,
       };
     }
-
-    tabScroll: ?ScrollView;
 
     constructor(props) {
       super(props);
@@ -366,6 +365,8 @@ export default class ScheduleContainer extends Component {
     handleContentSizeChange = (contentHeight, contentWidth) => {
       this.scrollContentWidth = contentWidth;
     };
+
+
   
     render() {
       let emptyText = "No Events Listed";
@@ -382,7 +383,14 @@ export default class ScheduleContainer extends Component {
             </View>
 
             <View style={{flex:4, backgroundColor:'#272727'}}>
-              <ScrollView ref={this.setTabScroll} onLayout={this.layoutScroll} onContentSizeChange={this.handleContentSizeChange} horizontal={true} contentContainerStyle={{backgroundColor: '#272727', alignItems: 'center'}} style={{backgroundColor: '#272727'}}>
+              <ScrollView 
+                ref={this.setTabScroll} 
+                onLayout={this.layoutScroll} 
+                onContentSizeChange={this.handleContentSizeChange} 
+                horizontal={true} 
+                contentContainerStyle={{backgroundColor: '#272727', alignItems: 'center'}} 
+                style={{backgroundColor: '#272727'}}
+              >
                 {this.tabs.map((tab) => (
                   <TouchableOpacity 
                   key={tab.name}
