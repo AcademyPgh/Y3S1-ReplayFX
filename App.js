@@ -65,7 +65,7 @@ class App extends React.Component {
         dataKey = 'data';
       }
     
-      const data = notification[dataKey];
+      let data = notification[dataKey];
 
       if (data) {
         if (Platform.OS === 'android') {

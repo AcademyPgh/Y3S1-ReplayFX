@@ -17,9 +17,12 @@ export default class PushController {
         let dataKey = 'tag';
 
         //add the start time to the start of the event date, then subtract 15 minutes for the notification
-        const date = moment(eventInfo.date).startOf('day').add(moment.duration(eventInfo.startTime)).subtract(15, 'minutes').toDate();
+        const startTime = eventInfo.startTime.substring(0, 5)
+        const date = moment(eventInfo.date).startOf('day').add(moment.duration(startTime)).subtract(15, 'minutes').toDate();
+        // const date = moment(Date.now() + (5 * 1000)).toDate(); // in 60 seconds, for testing
 
         if (date < Date.now()) {
+            console.log("not adding, it is in the past");
             return; //don't schedule anything if it's in the past
         }
 
@@ -38,6 +41,7 @@ export default class PushController {
 
         details[dataKey] = extraData;
 
+        console.log("added", details);
         PushNotification.localNotificationSchedule(details);
     }
 
