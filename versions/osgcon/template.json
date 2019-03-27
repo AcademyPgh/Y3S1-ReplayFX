@@ -1,0 +1,15 @@
+{
+    "name": "OSGCon",
+    "bundleid": "com.osgcon",
+    "appcenter": {
+        "android": {
+            "secretkey": "5d6b2043-27eb-40ca-b3d6-cf33799a6d54",
+            "codepush": "WgVofgdaQ1SfXt_eYmEjRoGhpDrUByygaFHbN"
+        },
+        "ios": {
+            "secretkey": "b0ac6fa8-d725-4112-a568-6cc1e813face",
+            "codepush": "MFRUPGKTkxvTaQedNQjKj7osPKaGBJAWptrZN"
+        }
+    },
+    "backgroundcolor": "#000000"
+}

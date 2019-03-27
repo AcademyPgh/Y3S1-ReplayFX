@@ -1,0 +1,15 @@
+{
+    "name": "Name of app",
+    "bundleid": "com.app",
+    "appcenter": {
+        "android": {
+            "secretkey": "really long value",
+            "codepush": "really long value"
+        },
+        "ios": {
+            "secretkey": "really long value",
+            "codepush": "really long value"
+        }
+    },
+    "backgroundcolor": "#000000"
+}

@@ -1,0 +1,15 @@
+{
+    "name": "MobileBeat",
+    "bundleid": "com.academypgh.mobilebeat",
+    "appcenter": {
+        "android": {
+            "secretkey": "29cdc6ba-6498-4235-aa72-2da4114c51d4",
+            "codepush": "ICiC-2l-SzFYV7FwVMO_FrGdn_PxBk3ICxqL4"
+        },
+        "ios": {
+            "secretkey": "0cbbf052-6786-427c-9076-e1cfd24262a8",
+            "codepush": "0il1W9RaHlRTQvdIiW3fibsgvdUxH1RXe-qLV"
+        }
+    },
+    "backgroundcolor": "#000000"
+}
