@@ -1085,6 +1085,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1860,7 +1861,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.academypgh.OSGCon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AcademyPGH.OSGCon;
 				PRODUCT_NAME = OSGCon;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1891,7 +1892,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.academypgh.OSGCon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AcademyPGH.OSGCon;
 				PRODUCT_NAME = OSGCon;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
