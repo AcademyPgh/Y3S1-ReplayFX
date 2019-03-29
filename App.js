@@ -36,8 +36,8 @@ class App extends React.Component {
     this.state = {
       apiData: apiData,
       dataLoadedTimestamp: new Date(),
-      singleConvention: true,
-      selectedConvention: {id: 5}
+      singleConvention: false,
+      selectedConvention: {}  // ex: {id: 5}
     }
 
     //AsyncStorage.clear();
