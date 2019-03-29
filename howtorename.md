@@ -1,6 +1,7 @@
 How to rename this project
 
 use `react-native-rename` to update basic locations
+run `pod install` inside the `ios` directory (while on a mac)
 
 Places to update:
 

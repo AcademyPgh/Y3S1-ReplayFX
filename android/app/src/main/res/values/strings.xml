@@ -1,6 +1,6 @@
 <resources>
-    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">AVDTgqc0qwROnv2d4F-OnWZumOeWBJhLCgq8E</string>
-    <string name="app_name">MobileBeat</string>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">WgVofgdaQ1SfXt_eYmEjRoGhpDrUByygaFHbN</string>
+    <string name="app_name">OSGCon</string>
     <string name="appCenterAnalytics_whenToEnableAnalytics" moduleConfig="true">ALWAYS_SEND</string>
     <string name="appCenterCrashes_whenToSendCrashes" moduleConfig="true">ALWAYS_SEND</string>
 </resources>

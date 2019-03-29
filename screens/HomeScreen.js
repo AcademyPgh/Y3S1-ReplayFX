@@ -41,6 +41,10 @@ export default class HomeScreen extends Component {
       this.setState({refreshing: false});
     });
   }
+
+  subMenu() {
+    return this.props.screenProps.apiData.eventTypes.filter(item => item.isMenu)
+  }
    
   render() {
     // const menu = this.props.screenProps.apiData.menu;
@@ -50,10 +54,10 @@ export default class HomeScreen extends Component {
         {type: 'Schedule', title: 'My Schedule', options: {title: 'MY SCHEDULE', scheduleFilter: 'my-schedule'}},
         //{type: 'GamesMain', title: 'Games',},
         {type: 'SocialFeed', title: 'Social Wall'},
-        {type: 'VendorsList', title: 'Vendors'},
+        {type: 'VendorsList', title: 'Featured Sponsors'},
         //{type: 'StaticMap', title: 'Map'},
-        ...this.props.screenProps.apiData.eventTypes.map(item => {return {type: 'Schedule', title: item.name, options: {title: item.displayName, scheduleFilter: item.name}}}),
-        {type: 'Profile', title: 'Profile'},
+        ...this.subMenu().map(item => {return {type: 'Schedule', title: item.name, options: {title: item.displayName, scheduleFilter: item.name}}}),
+        //{type: 'Profile', title: 'Profile'},
         //{type: 'Sponsors', title: 'Sponsors'}
       ];
 
