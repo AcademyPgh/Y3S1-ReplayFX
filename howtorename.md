@@ -40,4 +40,4 @@ Update package identifier in xcode (or in `ios/NewName/Info.plist` but Apple and
 
 Update `CodePushDeploymentKey` in `/ios/NewName/Info.plist` to correct key in `appcenter.ms`
 
-Update `ios/NewName/APpCenter-Config.plist` to have new AppSecret string to match `appcenter.ms` project
+Update `ios/NewName/AppCenter-Config.plist` to have new AppSecret string to match `appcenter.ms` project
