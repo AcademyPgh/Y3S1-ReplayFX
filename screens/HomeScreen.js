@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { StatusBar, ScrollView, Dimensions, Text, View, StyleSheet, RefreshControl } from 'react-native'
+import { StatusBar, ScrollView, Dimensions, Text, View, StyleSheet, RefreshControl, AsyncStorage } from 'react-native'
 import ScalableImage from 'react-native-scalable-image';
 import { Fonts } from '../src/utils/Fonts';
 import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
 import { loadConvention } from '../src/utils/DataRequest';
+import EmailModal from '../src/components/EmailModal';
 
 export default class HomeScreen extends Component {
   constructor(props)
@@ -11,10 +12,57 @@ export default class HomeScreen extends Component {
     super(props);
 
     this.state = {
-      refreshing: false
+      refreshing: false,
+      emailVisisble: false,
     }
 
     this.onRefresh = this.onRefresh.bind(this);
+    this.hideModal = this.hideModal.bind(this);
+    this.checkEmail = this.checkEmail.bind(this);
+    this.submitModal = this.submitModal.bind(this);
+  }
+
+  componentDidMount()
+  {
+    this.checkEmail();
+  }
+
+  hideModal() {
+    this.setState({emailVisisble: !this.state.emailVisisble});
+  }
+
+  submitModal() {
+    const storeName = "hasEmailed";
+    const emailStatus = {
+      hasSubmitted: true,
+      totalRequests: 1
+    }
+    AsyncStorage.setItem(storeName, JSON.stringify(emailStatus));
+    this.hideModal();
+  }
+
+  checkEmail() {
+    const storeName = "hasEmailed";
+    AsyncStorage.getItem(storeName).then(hasEmailed => {
+      let emailStatus = JSON.parse(hasEmailed);
+      if(emailStatus === null || emailStatus === undefined)
+      {
+        emailStatus = {
+          hasSubmitted: false,
+          totalRequests: 0
+        }
+      }
+      if(!emailStatus.hasSubmitted)
+      {
+        emailStatus.totalRequests = emailStatus.totalRequests + 1;
+        if (emailStatus.totalRequests % 3 === 0 | emailStatus.totalRequests === 0)
+        {
+          this.setState({emailVisisble: true})
+        }
+      }
+      AsyncStorage.setItem(storeName, JSON.stringify(emailStatus));
+    });
+
   }
 
   getMenuItem(menu){
@@ -55,10 +103,10 @@ export default class HomeScreen extends Component {
         //{type: 'GamesMain', title: 'Games',},
         {type: 'SocialFeed', title: 'Social Wall'},
         {type: 'VendorsList', title: 'Featured Sponsors'},
-        //{type: 'StaticMap', title: 'Map'},
         ...this.subMenu().map(item => {return {type: 'Schedule', title: item.name, options: {title: item.displayName, scheduleFilter: item.name}}}),
         //{type: 'Profile', title: 'Profile'},
         //{type: 'Sponsors', title: 'Sponsors'}
+        {type: 'StaticMap', title: 'Map'},
       ];
 
     props = this.props;  
@@ -73,7 +121,11 @@ export default class HomeScreen extends Component {
       <StatusBar backgroundColor="black" barStyle="light-content"/>
 
         {/*<ImageBackground source={require('../Images/Background.jpg')} style={{flex:1}}>*/}
-
+        <EmailModal 
+          visible={this.state.emailVisisble}
+          onSubmit={this.submitModal} 
+          onRequestClose={this.hideModal}
+          />
         <ScrollView 
           refreshControl={
             <RefreshControl
