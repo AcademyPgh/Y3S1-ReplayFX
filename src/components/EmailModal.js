@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { Fonts } from '../utils/Fonts';
 import { scale, verticalScale, moderateScale } from '../utils/Scaling';
 import { goToConventionList } from '../utils/Navigation';
+import { GetConventionEmailURL } from '../utils/API';
 
 import SwitchConventionButton from './SwitchConventionButton';
 
@@ -19,7 +20,16 @@ export default class EmailModal extends Component {
     
     sendPost() {
         // do things then call the roll up
-        this.props.onSubmit()
+        fetch(GetConventionEmailURL(this.props.screenProps.apiData), { 
+            headers: { 
+                'Content-Type': 'application/json',
+            },
+            method: 'POST',
+            body: JSON.stringify({
+                    Text: this.state.userText
+            })
+        });
+        this.props.onSubmit();
     }
     
     render() {

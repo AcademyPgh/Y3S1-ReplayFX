@@ -55,7 +55,7 @@ export default class HomeScreen extends Component {
       if(!emailStatus.hasSubmitted)
       {
         emailStatus.totalRequests = emailStatus.totalRequests + 1;
-        if (emailStatus.totalRequests % 3 === 0 | emailStatus.totalRequests === 0)
+        if (emailStatus.totalRequests % 5 === 0 | emailStatus.totalRequests === 0)
         {
           this.setState({emailVisisble: true})
         }
@@ -125,6 +125,7 @@ export default class HomeScreen extends Component {
           visible={this.state.emailVisisble}
           onSubmit={this.submitModal} 
           onRequestClose={this.hideModal}
+          screenProps={this.props.screenProps}
           />
         <ScrollView 
           refreshControl={

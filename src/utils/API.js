@@ -13,3 +13,7 @@ export function getConventionFeedURL(convention) {
 export function getConventionFeedPostURL(convention) {
     return `${getConventionDataURL(convention)}/add`;
 }
+
+export function GetConventionEmailURL(convention) {
+    return `${getConventionDataURL(convention)}/email`;
+}
