@@ -45,7 +45,7 @@ export default class EmailModal extends Component {
                     <View style={styles.backdrop}>
                         <View style={styles.modalContainer}>
                             <View style={styles.modalBox}>
-                            <Text style={styles.modalText}>Old School Gamer Con Companion is a Free app, but to keep it going and its companion magazine, we need you to sign up to get the Free Old School Gamera Magazine! Please put your email address in below and you get it FREE in your email inbox every issue.</Text>
+                            <Text style={styles.modalText}>Old School Gamer Con Companion is a Free app, but to keep it going and its companion magazine, we need you to sign up to get the Free Old School Gamer Magazine! Please put your email address in below and you get it FREE in your email inbox every issue.</Text>
                             <TextInput placeholder="email@address.com" style={styles.textBox} onChangeText={(text) => this.setState({userText: text})} value={this.state.userText} />
 
                             <View style={styles.modalButton}>

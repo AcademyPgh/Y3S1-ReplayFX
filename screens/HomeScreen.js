@@ -55,7 +55,7 @@ export default class HomeScreen extends Component {
       if(!emailStatus.hasSubmitted)
       {
         emailStatus.totalRequests = emailStatus.totalRequests + 1;
-        if (emailStatus.totalRequests % 5 === 0 | emailStatus.totalRequests === 0)
+        if (emailStatus.totalRequests % 5 === 0 | emailStatus.totalRequests === 1)
         {
           this.setState({emailVisisble: true})
         }
