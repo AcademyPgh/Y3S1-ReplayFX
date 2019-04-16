@@ -7,92 +7,92 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		54C34BADF2D3F2D539B0CE49FF739F67 /* Pods-OSGCon-tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CED2EA2E4D5CAE73F0D7F83E2B8874FE /* Pods-OSGCon-tvOS-dummy.m */; };
-		932CA82688EF93E98E3116DB3058BDB6 /* Pods-OSGCon-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB9B8E269322B459BF5BFA314F89F73 /* Pods-OSGCon-dummy.m */; };
-		A55AF8C5D50BF77C1F8E86CF5719BBCA /* Pods-OSGConTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F87ED8B84E2DECEEF42888FD650219 /* Pods-OSGConTests-dummy.m */; };
-		B74DEEF6522D3804C131C484058378D4 /* Pods-OSGCon-tvOSTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8088FB6193EFA591F26ACBB3F4F2FE /* Pods-OSGCon-tvOSTests-dummy.m */; };
+		361FD64F994B40C75B9A3AB6AA95C9EF /* Pods-MillvaleMusicFestivalTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E75BE3A1BD921D59BC22D1C9C0B406 /* Pods-MillvaleMusicFestivalTests-dummy.m */; };
+		4B7F587FB4F7043714135A2E179490A7 /* Pods-MillvaleMusicFestival-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC9CC2C4CBDCD9713CCF5C7AA203C0C /* Pods-MillvaleMusicFestival-dummy.m */; };
+		DAED58DA38191A430778F7A2602C5CDF /* Pods-MillvaleMusicFestival-tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 796E8BD3E1D21B77113CC20774A67A3F /* Pods-MillvaleMusicFestival-tvOS-dummy.m */; };
+		FB4CC1E595E3F609B2EA2CEAF67AFA57 /* Pods-MillvaleMusicFestival-tvOSTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3707D58A443F8534DA41FD27E1A4F /* Pods-MillvaleMusicFestival-tvOSTests-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		680838062C493DAD1402A64DD2D50AE0 /* PBXContainerItemProxy */ = {
+		8D2991818369074B021FD2661A55E131 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 122F8BF1C8B4A5C971DD8F4201C870BB;
-			remoteInfo = "Pods-OSGCon";
+			remoteGlobalIDString = 3BD75EEC7EB53904747B7EF3A4E0C3D9;
+			remoteInfo = "Pods-MillvaleMusicFestival-tvOS";
 		};
-		795973EB1A0E27A4503F4766A6656F15 /* PBXContainerItemProxy */ = {
+		CDF3906F079D0EF5B23F00467DA5F0CD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C953B5FE3E7B83CD23D02BB9FD5823DE;
-			remoteInfo = "Pods-OSGCon-tvOS";
+			remoteGlobalIDString = 9F59971C4AC97A5B88C514141DF4E17E;
+			remoteInfo = "Pods-MillvaleMusicFestival";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09955DBEE6685176D27B8C6B134EDD4D /* Pods-OSGCon-tvOSTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OSGCon-tvOSTests-resources.sh"; sourceTree = "<group>"; };
-		0F4E0C97B56260CC8CEEB176DDDF69A2 /* Pods-OSGConTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OSGConTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		1D29020318269AEFDE9F9B4015E248A0 /* libPods-OSGCon-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-OSGCon-tvOSTests.a"; path = "libPods-OSGCon-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0037D6F4485ADFAB765AF16C1E729D2E /* Pods-MillvaleMusicFestival-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MillvaleMusicFestival-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		00C9E25FC672B09DF0FFF62392467B4E /* Pods-MillvaleMusicFestivalTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MillvaleMusicFestivalTests-frameworks.sh"; sourceTree = "<group>"; };
+		1E5868132075670540D15E50D5963C43 /* Pods-MillvaleMusicFestivalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MillvaleMusicFestivalTests.release.xcconfig"; sourceTree = "<group>"; };
+		1F22EBEA29D151365EF62B7ABA742907 /* Pods-MillvaleMusicFestival-tvOSTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MillvaleMusicFestival-tvOSTests-resources.sh"; sourceTree = "<group>"; };
 		1FF8CBE3D70C3B5EE02BF7F1402952A2 /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterCrashes.framework; path = "AppCenter-SDK-Apple/iOS/AppCenterCrashes.framework"; sourceTree = "<group>"; };
-		209236F33C847750865921D2EDB8113B /* Pods-OSGConTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OSGConTests-resources.sh"; sourceTree = "<group>"; };
-		2CA8AB7F3CB3C8F25E7FAACE2618304B /* libPods-OSGConTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-OSGConTests.a"; path = "libPods-OSGConTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E280B58529AEBA76B5F11C0705D0856 /* AppCenterReactNativeShared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterReactNativeShared.framework; path = AppCenterReactNativeShared/AppCenterReactNativeShared.framework; sourceTree = "<group>"; };
-		368E747BD1CAB3B951542E2654EBADB9 /* Pods-OSGCon-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OSGCon-acknowledgements.plist"; sourceTree = "<group>"; };
-		3DC0E4580E6E253CAE06D11107FC6DCE /* Pods-OSGCon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OSGCon.release.xcconfig"; sourceTree = "<group>"; };
-		4BF3FA7DAEA204D52CE57418145F8CF5 /* Pods-OSGCon-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OSGCon-acknowledgements.markdown"; sourceTree = "<group>"; };
-		58CB0732AB991C9158B9C0AAE49F79B9 /* Pods-OSGCon-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OSGCon-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		5E8088FB6193EFA591F26ACBB3F4F2FE /* Pods-OSGCon-tvOSTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OSGCon-tvOSTests-dummy.m"; sourceTree = "<group>"; };
-		638320D4E7E71DE258AA3199EE71C09C /* libPods-OSGCon-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-OSGCon-tvOS.a"; path = "libPods-OSGCon-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FB3707D58A443F8534DA41FD27E1A4F /* Pods-MillvaleMusicFestival-tvOSTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MillvaleMusicFestival-tvOSTests-dummy.m"; sourceTree = "<group>"; };
+		322D4B6E4A54A6A96714566406656BD7 /* libPods-MillvaleMusicFestivalTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-MillvaleMusicFestivalTests.a"; path = "libPods-MillvaleMusicFestivalTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3700C98371B386C417B724676DF22F7D /* Pods-MillvaleMusicFestival.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MillvaleMusicFestival.release.xcconfig"; sourceTree = "<group>"; };
+		3EA0F685D1BFFDDDA8B6B3E6ACCB0F14 /* libPods-MillvaleMusicFestival-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-MillvaleMusicFestival-tvOS.a"; path = "libPods-MillvaleMusicFestival-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		40A0FFCBCB96D58AA28BA6712B8571B9 /* Pods-MillvaleMusicFestival-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MillvaleMusicFestival-acknowledgements.markdown"; sourceTree = "<group>"; };
+		450D2B55DEE6CC121AD59A969CD6BE0B /* Pods-MillvaleMusicFestivalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MillvaleMusicFestivalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4F092E2510574B4286C20506763E5931 /* Pods-MillvaleMusicFestival-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MillvaleMusicFestival-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		5C572C7017E1614F5023FDC9AB1F0725 /* Pods-MillvaleMusicFestivalTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MillvaleMusicFestivalTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		697057EB6F6A315777E7EA941A2AAF3B /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = "AppCenter-SDK-Apple/iOS/AppCenterAnalytics.framework"; sourceTree = "<group>"; };
-		7BB29BAC968496E3C23FCDAA457E81F4 /* Pods-OSGCon-tvOSTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OSGCon-tvOSTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		7C103732361F21034E3797B56AB7A392 /* Pods-OSGConTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OSGConTests.release.xcconfig"; sourceTree = "<group>"; };
+		7492F2C57101F48F52CD63E7EA28CBB2 /* Pods-MillvaleMusicFestival-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MillvaleMusicFestival-resources.sh"; sourceTree = "<group>"; };
+		796E8BD3E1D21B77113CC20774A67A3F /* Pods-MillvaleMusicFestival-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MillvaleMusicFestival-tvOS-dummy.m"; sourceTree = "<group>"; };
+		8C38150F3E3C566EB983F826813EF067 /* Pods-MillvaleMusicFestival-tvOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MillvaleMusicFestival-tvOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		8C50F678E2CFD1590C4A7B6C538E12EF /* Pods-MillvaleMusicFestival-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MillvaleMusicFestival-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		8CB6BA975455E4225DA622065ADD080C /* Pods-MillvaleMusicFestivalTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MillvaleMusicFestivalTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9274232C9265614859AF9D3F3D6033E6 /* Pods-MillvaleMusicFestival-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MillvaleMusicFestival-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		93F87ED8B84E2DECEEF42888FD650219 /* Pods-OSGConTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OSGConTests-dummy.m"; sourceTree = "<group>"; };
-		949C42A3C8E01D1A291441F6B8138C00 /* Pods-OSGCon-tvOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OSGCon-tvOS-acknowledgements.plist"; sourceTree = "<group>"; };
-		A0C0699DC3DF04433DF9DD3A300A84CD /* Pods-OSGCon-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OSGCon-resources.sh"; sourceTree = "<group>"; };
-		A934B000F00E8AD9E90A403930537466 /* libPods-OSGCon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-OSGCon.a"; path = "libPods-OSGCon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA10BFD12E01AF348EC8DB0B0D09DDB9 /* Pods-OSGCon-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OSGCon-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		AFD857E61004315D2F898CE7E3C5BD50 /* Pods-OSGCon-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OSGCon-frameworks.sh"; sourceTree = "<group>"; };
-		C298FA100717F9C8DBE6BEE1F5F7D800 /* Pods-OSGCon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OSGCon.debug.xcconfig"; sourceTree = "<group>"; };
-		C7C54F8D5FADBA45B7AB0D0F2575A886 /* Pods-OSGCon-tvOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OSGCon-tvOS-acknowledgements.markdown"; sourceTree = "<group>"; };
-		CD3840CAA2422EF478D82E44CE6494F8 /* Pods-OSGCon-tvOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OSGCon-tvOS-frameworks.sh"; sourceTree = "<group>"; };
-		CED2EA2E4D5CAE73F0D7F83E2B8874FE /* Pods-OSGCon-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OSGCon-tvOS-dummy.m"; sourceTree = "<group>"; };
-		D5259B8685BC90D9EB91C72DD4A3734D /* Pods-OSGCon-tvOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OSGCon-tvOS-resources.sh"; sourceTree = "<group>"; };
-		D60F55DE17660B5B1A6DDD1A7D57595C /* Pods-OSGConTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OSGConTests-frameworks.sh"; sourceTree = "<group>"; };
-		DBB9B8E269322B459BF5BFA314F89F73 /* Pods-OSGCon-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OSGCon-dummy.m"; sourceTree = "<group>"; };
+		95E75BE3A1BD921D59BC22D1C9C0B406 /* Pods-MillvaleMusicFestivalTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MillvaleMusicFestivalTests-dummy.m"; sourceTree = "<group>"; };
+		A24C4699BEC2C9FE1EC0DC3B50E5C6A4 /* Pods-MillvaleMusicFestival-tvOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MillvaleMusicFestival-tvOS-frameworks.sh"; sourceTree = "<group>"; };
+		ABDC89BB3161EC270B00748C18BEC8DA /* libPods-MillvaleMusicFestival-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-MillvaleMusicFestival-tvOSTests.a"; path = "libPods-MillvaleMusicFestival-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF32753B7EE35FDC1B93F9F2CA466C18 /* libPods-MillvaleMusicFestival.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-MillvaleMusicFestival.a"; path = "libPods-MillvaleMusicFestival.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B171A0B4D22DAAB98E750268A27670CB /* Pods-MillvaleMusicFestival.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MillvaleMusicFestival.debug.xcconfig"; sourceTree = "<group>"; };
+		B9B260B9C8D7CDA040EB9E32B4A3694E /* Pods-MillvaleMusicFestival-tvOSTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MillvaleMusicFestival-tvOSTests-frameworks.sh"; sourceTree = "<group>"; };
+		C2AFEA227C07D12F6FB2BE7C04F2592A /* Pods-MillvaleMusicFestival-tvOSTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MillvaleMusicFestival-tvOSTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		CCC9CC2C4CBDCD9713CCF5C7AA203C0C /* Pods-MillvaleMusicFestival-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MillvaleMusicFestival-dummy.m"; sourceTree = "<group>"; };
+		D224D136B132DC51D0A3956EF6C59231 /* Pods-MillvaleMusicFestival-tvOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MillvaleMusicFestival-tvOS-resources.sh"; sourceTree = "<group>"; };
+		D5DE831491AA6F7ED6F9ADC34B86F4ED /* Pods-MillvaleMusicFestivalTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MillvaleMusicFestivalTests-resources.sh"; sourceTree = "<group>"; };
 		DC65AFFB7964130E42157D207BE3A6DE /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = "AppCenter-SDK-Apple/iOS/AppCenter.framework"; sourceTree = "<group>"; };
-		DC853650428BB0BA2548DD18F6CDF9C3 /* Pods-OSGCon-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OSGCon-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DD0943E3781B36CC4B4CCA6D64D1C291 /* Pods-OSGConTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OSGConTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DD0C230F39B166F465EC68F3049113D2 /* Pods-OSGCon-tvOSTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OSGCon-tvOSTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EB530F3B3915E44F2F75C9F559B7BCAC /* Pods-OSGConTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OSGConTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F7E42214D1718B3FE4549CF318BAE793 /* Pods-OSGCon-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OSGCon-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		F8E4DF80679AB85F72C6B4A10F049FA2 /* Pods-OSGCon-tvOSTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OSGCon-tvOSTests-frameworks.sh"; sourceTree = "<group>"; };
+		E03BFC96B68CC124AA1E7D08EA6A6E5B /* Pods-MillvaleMusicFestival-tvOSTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MillvaleMusicFestival-tvOSTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E78316F30878DD11B4FCF99F6FA2EC6E /* Pods-MillvaleMusicFestival-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MillvaleMusicFestival-acknowledgements.plist"; sourceTree = "<group>"; };
+		F30F2969A5D1FBEF99C4ADF7C6753339 /* Pods-MillvaleMusicFestival-tvOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MillvaleMusicFestival-tvOS-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FF9CDA538E568D21EBE8939942B2843D /* Pods-MillvaleMusicFestival-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MillvaleMusicFestival-frameworks.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0B3B5FEEABF1FEDD5F699794798B2E8E /* Frameworks */ = {
+		2AB865E18BA6FEB5F475D4BDD2E78440 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1A1C107B25F363A62423886CA6FD6E38 /* Frameworks */ = {
+		36E34E1CB33AFDE1248B415348180F1D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5C1350FF1661ABE712A98ABFD68F1BE0 /* Frameworks */ = {
+		49D9D1D4A1C6F8FDA98AAEF5B127C2AA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E6240C43BB7ED423B332265BDD8242A9 /* Frameworks */ = {
+		B9F05C5F06F423632A21DE693D69AA21 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -108,6 +108,21 @@
 				DC65AFFB7964130E42157D207BE3A6DE /* AppCenter.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0CB83A8BEBA2461CB4B4585D7B20E715 /* Pods-MillvaleMusicFestivalTests */ = {
+			isa = PBXGroup;
+			children = (
+				8CB6BA975455E4225DA622065ADD080C /* Pods-MillvaleMusicFestivalTests-acknowledgements.markdown */,
+				5C572C7017E1614F5023FDC9AB1F0725 /* Pods-MillvaleMusicFestivalTests-acknowledgements.plist */,
+				95E75BE3A1BD921D59BC22D1C9C0B406 /* Pods-MillvaleMusicFestivalTests-dummy.m */,
+				00C9E25FC672B09DF0FFF62392467B4E /* Pods-MillvaleMusicFestivalTests-frameworks.sh */,
+				D5DE831491AA6F7ED6F9ADC34B86F4ED /* Pods-MillvaleMusicFestivalTests-resources.sh */,
+				450D2B55DEE6CC121AD59A969CD6BE0B /* Pods-MillvaleMusicFestivalTests.debug.xcconfig */,
+				1E5868132075670540D15E50D5963C43 /* Pods-MillvaleMusicFestivalTests.release.xcconfig */,
+			);
+			name = "Pods-MillvaleMusicFestivalTests";
+			path = "Target Support Files/Pods-MillvaleMusicFestivalTests";
 			sourceTree = "<group>";
 		};
 		0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */ = {
@@ -141,6 +156,21 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
+		3EAF000E21018F349A8F93537E481814 /* Pods-MillvaleMusicFestival */ = {
+			isa = PBXGroup;
+			children = (
+				40A0FFCBCB96D58AA28BA6712B8571B9 /* Pods-MillvaleMusicFestival-acknowledgements.markdown */,
+				E78316F30878DD11B4FCF99F6FA2EC6E /* Pods-MillvaleMusicFestival-acknowledgements.plist */,
+				CCC9CC2C4CBDCD9713CCF5C7AA203C0C /* Pods-MillvaleMusicFestival-dummy.m */,
+				FF9CDA538E568D21EBE8939942B2843D /* Pods-MillvaleMusicFestival-frameworks.sh */,
+				7492F2C57101F48F52CD63E7EA28CBB2 /* Pods-MillvaleMusicFestival-resources.sh */,
+				B171A0B4D22DAAB98E750268A27670CB /* Pods-MillvaleMusicFestival.debug.xcconfig */,
+				3700C98371B386C417B724676DF22F7D /* Pods-MillvaleMusicFestival.release.xcconfig */,
+			);
+			name = "Pods-MillvaleMusicFestival";
+			path = "Target Support Files/Pods-MillvaleMusicFestival";
+			sourceTree = "<group>";
+		};
 		4789B2888C9F3A64D9BB98A64504484B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,56 +179,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		53190FBD7925E1580F6499B6B72E6293 /* Pods-OSGCon-tvOSTests */ = {
+		73C0820D2A90A44460A7378787972123 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				DD0C230F39B166F465EC68F3049113D2 /* Pods-OSGCon-tvOSTests-acknowledgements.markdown */,
-				7BB29BAC968496E3C23FCDAA457E81F4 /* Pods-OSGCon-tvOSTests-acknowledgements.plist */,
-				5E8088FB6193EFA591F26ACBB3F4F2FE /* Pods-OSGCon-tvOSTests-dummy.m */,
-				F8E4DF80679AB85F72C6B4A10F049FA2 /* Pods-OSGCon-tvOSTests-frameworks.sh */,
-				09955DBEE6685176D27B8C6B134EDD4D /* Pods-OSGCon-tvOSTests-resources.sh */,
-				DC853650428BB0BA2548DD18F6CDF9C3 /* Pods-OSGCon-tvOSTests.debug.xcconfig */,
-				58CB0732AB991C9158B9C0AAE49F79B9 /* Pods-OSGCon-tvOSTests.release.xcconfig */,
-			);
-			name = "Pods-OSGCon-tvOSTests";
-			path = "Target Support Files/Pods-OSGCon-tvOSTests";
-			sourceTree = "<group>";
-		};
-		5CAA5A2062EC0368A50860A485C00B98 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				652FB3EABBA96099D7B0A763DDFA8426 /* Pods-OSGCon */,
-				92DC966929F63CD100D037C71590AC8E /* Pods-OSGCon-tvOS */,
-				53190FBD7925E1580F6499B6B72E6293 /* Pods-OSGCon-tvOSTests */,
-				E18205C45421EEB86774C5976DA8C22C /* Pods-OSGConTests */,
+				3EAF000E21018F349A8F93537E481814 /* Pods-MillvaleMusicFestival */,
+				AABDBA4B6C25EB210E39D6BB543C91C4 /* Pods-MillvaleMusicFestival-tvOS */,
+				FAF8D650D05B01A5B593004EA66DCCDC /* Pods-MillvaleMusicFestival-tvOSTests */,
+				0CB83A8BEBA2461CB4B4585D7B20E715 /* Pods-MillvaleMusicFestivalTests */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		600717A8B55BF28CCD38CC2FDAD2B131 /* Products */ = {
+		753F932D9C9239EA75AFD50761412EF8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A934B000F00E8AD9E90A403930537466 /* libPods-OSGCon.a */,
-				638320D4E7E71DE258AA3199EE71C09C /* libPods-OSGCon-tvOS.a */,
-				1D29020318269AEFDE9F9B4015E248A0 /* libPods-OSGCon-tvOSTests.a */,
-				2CA8AB7F3CB3C8F25E7FAACE2618304B /* libPods-OSGConTests.a */,
+				AF32753B7EE35FDC1B93F9F2CA466C18 /* libPods-MillvaleMusicFestival.a */,
+				3EA0F685D1BFFDDDA8B6B3E6ACCB0F14 /* libPods-MillvaleMusicFestival-tvOS.a */,
+				ABDC89BB3161EC270B00748C18BEC8DA /* libPods-MillvaleMusicFestival-tvOSTests.a */,
+				322D4B6E4A54A6A96714566406656BD7 /* libPods-MillvaleMusicFestivalTests.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		652FB3EABBA96099D7B0A763DDFA8426 /* Pods-OSGCon */ = {
-			isa = PBXGroup;
-			children = (
-				4BF3FA7DAEA204D52CE57418145F8CF5 /* Pods-OSGCon-acknowledgements.markdown */,
-				368E747BD1CAB3B951542E2654EBADB9 /* Pods-OSGCon-acknowledgements.plist */,
-				DBB9B8E269322B459BF5BFA314F89F73 /* Pods-OSGCon-dummy.m */,
-				AFD857E61004315D2F898CE7E3C5BD50 /* Pods-OSGCon-frameworks.sh */,
-				A0C0699DC3DF04433DF9DD3A300A84CD /* Pods-OSGCon-resources.sh */,
-				C298FA100717F9C8DBE6BEE1F5F7D800 /* Pods-OSGCon.debug.xcconfig */,
-				3DC0E4580E6E253CAE06D11107FC6DCE /* Pods-OSGCon.release.xcconfig */,
-			);
-			name = "Pods-OSGCon";
-			path = "Target Support Files/Pods-OSGCon";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -207,8 +207,8 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */,
 				B1C0FD4C526B54B6F7B5EA76C32A7B4C /* Pods */,
-				600717A8B55BF28CCD38CC2FDAD2B131 /* Products */,
-				5CAA5A2062EC0368A50860A485C00B98 /* Targets Support Files */,
+				753F932D9C9239EA75AFD50761412EF8 /* Products */,
+				73C0820D2A90A44460A7378787972123 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -220,19 +220,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		92DC966929F63CD100D037C71590AC8E /* Pods-OSGCon-tvOS */ = {
+		AABDBA4B6C25EB210E39D6BB543C91C4 /* Pods-MillvaleMusicFestival-tvOS */ = {
 			isa = PBXGroup;
 			children = (
-				C7C54F8D5FADBA45B7AB0D0F2575A886 /* Pods-OSGCon-tvOS-acknowledgements.markdown */,
-				949C42A3C8E01D1A291441F6B8138C00 /* Pods-OSGCon-tvOS-acknowledgements.plist */,
-				CED2EA2E4D5CAE73F0D7F83E2B8874FE /* Pods-OSGCon-tvOS-dummy.m */,
-				CD3840CAA2422EF478D82E44CE6494F8 /* Pods-OSGCon-tvOS-frameworks.sh */,
-				D5259B8685BC90D9EB91C72DD4A3734D /* Pods-OSGCon-tvOS-resources.sh */,
-				F7E42214D1718B3FE4549CF318BAE793 /* Pods-OSGCon-tvOS.debug.xcconfig */,
-				AA10BFD12E01AF348EC8DB0B0D09DDB9 /* Pods-OSGCon-tvOS.release.xcconfig */,
+				F30F2969A5D1FBEF99C4ADF7C6753339 /* Pods-MillvaleMusicFestival-tvOS-acknowledgements.markdown */,
+				8C38150F3E3C566EB983F826813EF067 /* Pods-MillvaleMusicFestival-tvOS-acknowledgements.plist */,
+				796E8BD3E1D21B77113CC20774A67A3F /* Pods-MillvaleMusicFestival-tvOS-dummy.m */,
+				A24C4699BEC2C9FE1EC0DC3B50E5C6A4 /* Pods-MillvaleMusicFestival-tvOS-frameworks.sh */,
+				D224D136B132DC51D0A3956EF6C59231 /* Pods-MillvaleMusicFestival-tvOS-resources.sh */,
+				4F092E2510574B4286C20506763E5931 /* Pods-MillvaleMusicFestival-tvOS.debug.xcconfig */,
+				0037D6F4485ADFAB765AF16C1E729D2E /* Pods-MillvaleMusicFestival-tvOS.release.xcconfig */,
 			);
-			name = "Pods-OSGCon-tvOS";
-			path = "Target Support Files/Pods-OSGCon-tvOS";
+			name = "Pods-MillvaleMusicFestival-tvOS";
+			path = "Target Support Files/Pods-MillvaleMusicFestival-tvOS";
 			sourceTree = "<group>";
 		};
 		B1C0FD4C526B54B6F7B5EA76C32A7B4C /* Pods */ = {
@@ -255,27 +255,27 @@
 			path = AppCenter;
 			sourceTree = "<group>";
 		};
-		E18205C45421EEB86774C5976DA8C22C /* Pods-OSGConTests */ = {
-			isa = PBXGroup;
-			children = (
-				DD0943E3781B36CC4B4CCA6D64D1C291 /* Pods-OSGConTests-acknowledgements.markdown */,
-				0F4E0C97B56260CC8CEEB176DDDF69A2 /* Pods-OSGConTests-acknowledgements.plist */,
-				93F87ED8B84E2DECEEF42888FD650219 /* Pods-OSGConTests-dummy.m */,
-				D60F55DE17660B5B1A6DDD1A7D57595C /* Pods-OSGConTests-frameworks.sh */,
-				209236F33C847750865921D2EDB8113B /* Pods-OSGConTests-resources.sh */,
-				EB530F3B3915E44F2F75C9F559B7BCAC /* Pods-OSGConTests.debug.xcconfig */,
-				7C103732361F21034E3797B56AB7A392 /* Pods-OSGConTests.release.xcconfig */,
-			);
-			name = "Pods-OSGConTests";
-			path = "Target Support Files/Pods-OSGConTests";
-			sourceTree = "<group>";
-		};
 		F84ACEF4E4D3666C3A595115D01D3868 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				2E280B58529AEBA76B5F11C0705D0856 /* AppCenterReactNativeShared.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FAF8D650D05B01A5B593004EA66DCCDC /* Pods-MillvaleMusicFestival-tvOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				E03BFC96B68CC124AA1E7D08EA6A6E5B /* Pods-MillvaleMusicFestival-tvOSTests-acknowledgements.markdown */,
+				C2AFEA227C07D12F6FB2BE7C04F2592A /* Pods-MillvaleMusicFestival-tvOSTests-acknowledgements.plist */,
+				2FB3707D58A443F8534DA41FD27E1A4F /* Pods-MillvaleMusicFestival-tvOSTests-dummy.m */,
+				B9B260B9C8D7CDA040EB9E32B4A3694E /* Pods-MillvaleMusicFestival-tvOSTests-frameworks.sh */,
+				1F22EBEA29D151365EF62B7ABA742907 /* Pods-MillvaleMusicFestival-tvOSTests-resources.sh */,
+				9274232C9265614859AF9D3F3D6033E6 /* Pods-MillvaleMusicFestival-tvOSTests.debug.xcconfig */,
+				8C50F678E2CFD1590C4A7B6C538E12EF /* Pods-MillvaleMusicFestival-tvOSTests.release.xcconfig */,
+			);
+			name = "Pods-MillvaleMusicFestival-tvOSTests";
+			path = "Target Support Files/Pods-MillvaleMusicFestival-tvOSTests";
 			sourceTree = "<group>";
 		};
 		FDE42022E7C36FE2A980950DD051F732 /* AppCenterReactNativeShared */ = {
@@ -290,70 +290,70 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		122F8BF1C8B4A5C971DD8F4201C870BB /* Pods-OSGCon */ = {
+		16597AB53710BD6B7A2A24439DB95FEC /* Pods-MillvaleMusicFestivalTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7144B445979CBA851AD6DF7A15E824A5 /* Build configuration list for PBXNativeTarget "Pods-OSGCon" */;
+			buildConfigurationList = 0C4839F4E99FCE0E6BFC1933231E575E /* Build configuration list for PBXNativeTarget "Pods-MillvaleMusicFestivalTests" */;
 			buildPhases = (
-				C2E72ADE3857A885BFBF228F4B23BBC5 /* Sources */,
-				1A1C107B25F363A62423886CA6FD6E38 /* Frameworks */,
+				06EAFF818097054A5F2BBDCF5EEC1379 /* Sources */,
+				36E34E1CB33AFDE1248B415348180F1D /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DF98DE642A41F942DBBE0B9F01C64458 /* PBXTargetDependency */,
 			);
-			name = "Pods-OSGCon";
-			productName = "Pods-OSGCon";
-			productReference = A934B000F00E8AD9E90A403930537466 /* libPods-OSGCon.a */;
+			name = "Pods-MillvaleMusicFestivalTests";
+			productName = "Pods-MillvaleMusicFestivalTests";
+			productReference = 322D4B6E4A54A6A96714566406656BD7 /* libPods-MillvaleMusicFestivalTests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		3EE2B0D3EBD0601A836F8601A2AD09FD /* Pods-OSGCon-tvOSTests */ = {
+		23841653F5A810D9573AB8CBB902442B /* Pods-MillvaleMusicFestival-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1ED06E454B3B3BA041423232286730F1 /* Build configuration list for PBXNativeTarget "Pods-OSGCon-tvOSTests" */;
+			buildConfigurationList = D9F153DA8C468647A7F2E893AA9780C4 /* Build configuration list for PBXNativeTarget "Pods-MillvaleMusicFestival-tvOSTests" */;
 			buildPhases = (
-				015EA8674D2BF2DA7205A298CD9DB4A8 /* Sources */,
-				E6240C43BB7ED423B332265BDD8242A9 /* Frameworks */,
+				1CA443F5578821D7430ADDE646948B7B /* Sources */,
+				49D9D1D4A1C6F8FDA98AAEF5B127C2AA /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9602DE1E2E2EEAEFA40C741F45D9B5C2 /* PBXTargetDependency */,
+				6BD71C3B43289121AC041E445ACD80E3 /* PBXTargetDependency */,
 			);
-			name = "Pods-OSGCon-tvOSTests";
-			productName = "Pods-OSGCon-tvOSTests";
-			productReference = 1D29020318269AEFDE9F9B4015E248A0 /* libPods-OSGCon-tvOSTests.a */;
+			name = "Pods-MillvaleMusicFestival-tvOSTests";
+			productName = "Pods-MillvaleMusicFestival-tvOSTests";
+			productReference = ABDC89BB3161EC270B00748C18BEC8DA /* libPods-MillvaleMusicFestival-tvOSTests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		868E1D038E9E65E92E247CB2E1A89DE5 /* Pods-OSGConTests */ = {
+		3BD75EEC7EB53904747B7EF3A4E0C3D9 /* Pods-MillvaleMusicFestival-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EE0E8A551AD4099EA4CFAC87D66A6DBB /* Build configuration list for PBXNativeTarget "Pods-OSGConTests" */;
+			buildConfigurationList = A9961A069BE31FBEACC3148D7D4D7F74 /* Build configuration list for PBXNativeTarget "Pods-MillvaleMusicFestival-tvOS" */;
 			buildPhases = (
-				34127549BB06079AF05B6C1E30E60F4A /* Sources */,
-				5C1350FF1661ABE712A98ABFD68F1BE0 /* Frameworks */,
+				366393CAB77DF7F9313603F05671293B /* Sources */,
+				B9F05C5F06F423632A21DE693D69AA21 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				90C4FBD905DAEECC8C7EC905FD845643 /* PBXTargetDependency */,
 			);
-			name = "Pods-OSGConTests";
-			productName = "Pods-OSGConTests";
-			productReference = 2CA8AB7F3CB3C8F25E7FAACE2618304B /* libPods-OSGConTests.a */;
+			name = "Pods-MillvaleMusicFestival-tvOS";
+			productName = "Pods-MillvaleMusicFestival-tvOS";
+			productReference = 3EA0F685D1BFFDDDA8B6B3E6ACCB0F14 /* libPods-MillvaleMusicFestival-tvOS.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		C953B5FE3E7B83CD23D02BB9FD5823DE /* Pods-OSGCon-tvOS */ = {
+		9F59971C4AC97A5B88C514141DF4E17E /* Pods-MillvaleMusicFestival */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0A6300BB7944AB1DF9F9A020E9CEB83F /* Build configuration list for PBXNativeTarget "Pods-OSGCon-tvOS" */;
+			buildConfigurationList = FE7BBAD54C2C2368223BFFA52C1BE149 /* Build configuration list for PBXNativeTarget "Pods-MillvaleMusicFestival" */;
 			buildPhases = (
-				6CBE1E8A8511E549A940A7A40FE1BC46 /* Sources */,
-				0B3B5FEEABF1FEDD5F699794798B2E8E /* Frameworks */,
+				DA8617743EC4E3AEDD06FB688D8BE72A /* Sources */,
+				2AB865E18BA6FEB5F475D4BDD2E78440 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-OSGCon-tvOS";
-			productName = "Pods-OSGCon-tvOS";
-			productReference = 638320D4E7E71DE258AA3199EE71C09C /* libPods-OSGCon-tvOS.a */;
+			name = "Pods-MillvaleMusicFestival";
+			productName = "Pods-MillvaleMusicFestival";
+			productReference = AF32753B7EE35FDC1B93F9F2CA466C18 /* libPods-MillvaleMusicFestival.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -373,89 +373,89 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 600717A8B55BF28CCD38CC2FDAD2B131 /* Products */;
+			productRefGroup = 753F932D9C9239EA75AFD50761412EF8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				122F8BF1C8B4A5C971DD8F4201C870BB /* Pods-OSGCon */,
-				C953B5FE3E7B83CD23D02BB9FD5823DE /* Pods-OSGCon-tvOS */,
-				3EE2B0D3EBD0601A836F8601A2AD09FD /* Pods-OSGCon-tvOSTests */,
-				868E1D038E9E65E92E247CB2E1A89DE5 /* Pods-OSGConTests */,
+				9F59971C4AC97A5B88C514141DF4E17E /* Pods-MillvaleMusicFestival */,
+				3BD75EEC7EB53904747B7EF3A4E0C3D9 /* Pods-MillvaleMusicFestival-tvOS */,
+				23841653F5A810D9573AB8CBB902442B /* Pods-MillvaleMusicFestival-tvOSTests */,
+				16597AB53710BD6B7A2A24439DB95FEC /* Pods-MillvaleMusicFestivalTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		015EA8674D2BF2DA7205A298CD9DB4A8 /* Sources */ = {
+		06EAFF818097054A5F2BBDCF5EEC1379 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B74DEEF6522D3804C131C484058378D4 /* Pods-OSGCon-tvOSTests-dummy.m in Sources */,
+				361FD64F994B40C75B9A3AB6AA95C9EF /* Pods-MillvaleMusicFestivalTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		34127549BB06079AF05B6C1E30E60F4A /* Sources */ = {
+		1CA443F5578821D7430ADDE646948B7B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A55AF8C5D50BF77C1F8E86CF5719BBCA /* Pods-OSGConTests-dummy.m in Sources */,
+				FB4CC1E595E3F609B2EA2CEAF67AFA57 /* Pods-MillvaleMusicFestival-tvOSTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6CBE1E8A8511E549A940A7A40FE1BC46 /* Sources */ = {
+		366393CAB77DF7F9313603F05671293B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54C34BADF2D3F2D539B0CE49FF739F67 /* Pods-OSGCon-tvOS-dummy.m in Sources */,
+				DAED58DA38191A430778F7A2602C5CDF /* Pods-MillvaleMusicFestival-tvOS-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C2E72ADE3857A885BFBF228F4B23BBC5 /* Sources */ = {
+		DA8617743EC4E3AEDD06FB688D8BE72A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				932CA82688EF93E98E3116DB3058BDB6 /* Pods-OSGCon-dummy.m in Sources */,
+				4B7F587FB4F7043714135A2E179490A7 /* Pods-MillvaleMusicFestival-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		90C4FBD905DAEECC8C7EC905FD845643 /* PBXTargetDependency */ = {
+		6BD71C3B43289121AC041E445ACD80E3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-OSGCon";
-			target = 122F8BF1C8B4A5C971DD8F4201C870BB /* Pods-OSGCon */;
-			targetProxy = 680838062C493DAD1402A64DD2D50AE0 /* PBXContainerItemProxy */;
+			name = "Pods-MillvaleMusicFestival-tvOS";
+			target = 3BD75EEC7EB53904747B7EF3A4E0C3D9 /* Pods-MillvaleMusicFestival-tvOS */;
+			targetProxy = 8D2991818369074B021FD2661A55E131 /* PBXContainerItemProxy */;
 		};
-		9602DE1E2E2EEAEFA40C741F45D9B5C2 /* PBXTargetDependency */ = {
+		DF98DE642A41F942DBBE0B9F01C64458 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-OSGCon-tvOS";
-			target = C953B5FE3E7B83CD23D02BB9FD5823DE /* Pods-OSGCon-tvOS */;
-			targetProxy = 795973EB1A0E27A4503F4766A6656F15 /* PBXContainerItemProxy */;
+			name = "Pods-MillvaleMusicFestival";
+			target = 9F59971C4AC97A5B88C514141DF4E17E /* Pods-MillvaleMusicFestival */;
+			targetProxy = CDF3906F079D0EF5B23F00467DA5F0CD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		18B6892F21F1A7BAEDBCC6417847E6FF /* Release */ = {
+		00B3DEA4BF5838C0492A69797962C25B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58CB0732AB991C9158B9C0AAE49F79B9 /* Pods-OSGCon-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 450D2B55DEE6CC121AD59A969CD6BE0B /* Pods-MillvaleMusicFestivalTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MACH_O_TYPE = staticlib;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = appletvos;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
-				VALIDATE_PRODUCT = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Release;
+			name = Debug;
 		};
 		1EA8CDCA49D5A280A3417B7878BFF5DD /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -521,9 +521,50 @@
 			};
 			name = Debug;
 		};
-		3480FD25F4CCBAD62662EA1976CE2D57 /* Release */ = {
+		3A8CBE7D11A66F4D528E7940250B9A52 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C103732361F21034E3797B56AB7A392 /* Pods-OSGConTests.release.xcconfig */;
+			baseConfigurationReference = 0037D6F4485ADFAB765AF16C1E729D2E /* Pods-MillvaleMusicFestival-tvOS.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3B70A84D80C4F05057B1D7C56AB3401A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F092E2510574B4286C20506763E5931 /* Pods-MillvaleMusicFestival-tvOS.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		4057E7A77F8446B887378AEE540138BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E5868132075670540D15E50D5963C43 /* Pods-MillvaleMusicFestivalTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -542,6 +583,47 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
+		};
+		4C2753966E9DA1181177906F4ACA2683 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B171A0B4D22DAAB98E750268A27670CB /* Pods-MillvaleMusicFestival.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		639A71FCBFFCDC74EDB8BCC0529FC0A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9274232C9265614859AF9D3F3D6033E6 /* Pods-MillvaleMusicFestival-tvOSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
 		};
 		78CCF2F8575642B0F9526268F670DF6D /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -602,92 +684,9 @@
 			};
 			name = Release;
 		};
-		9C8EFBA74A1A5BE455CDC01ED7B39001 /* Debug */ = {
+		E705925DBFB8BABEEA908F0AEC8E40DB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C298FA100717F9C8DBE6BEE1F5F7D800 /* Pods-OSGCon.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		A3412C10C4DB108B5B92923BF6BF43BC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F7E42214D1718B3FE4549CF318BAE793 /* Pods-OSGCon-tvOS.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
-			};
-			name = Debug;
-		};
-		AA80DDD4BBE0723C3B067A365123FD1B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB530F3B3915E44F2F75C9F559B7BCAC /* Pods-OSGConTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		CC3E3838A3576AD28A45A6FAC5C6B151 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA10BFD12E01AF348EC8DB0B0D09DDB9 /* Pods-OSGCon-tvOS.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		E85F95EC31824C30E44FC1F2BC4CB5C9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3DC0E4580E6E253CAE06D11107FC6DCE /* Pods-OSGCon.release.xcconfig */;
+			baseConfigurationReference = 3700C98371B386C417B724676DF22F7D /* Pods-MillvaleMusicFestival.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -707,9 +706,9 @@
 			};
 			name = Release;
 		};
-		F8B2CD9295331D6C9C5B08C7175B0267 /* Debug */ = {
+		F6721EF2B38531790ECC0FF8FAFF6A4C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC853650428BB0BA2548DD18F6CDF9C3 /* Pods-OSGCon-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 8C50F678E2CFD1590C4A7B6C538E12EF /* Pods-MillvaleMusicFestival-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -724,26 +723,18 @@
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				VALIDATE_PRODUCT = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0A6300BB7944AB1DF9F9A020E9CEB83F /* Build configuration list for PBXNativeTarget "Pods-OSGCon-tvOS" */ = {
+		0C4839F4E99FCE0E6BFC1933231E575E /* Build configuration list for PBXNativeTarget "Pods-MillvaleMusicFestivalTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A3412C10C4DB108B5B92923BF6BF43BC /* Debug */,
-				CC3E3838A3576AD28A45A6FAC5C6B151 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1ED06E454B3B3BA041423232286730F1 /* Build configuration list for PBXNativeTarget "Pods-OSGCon-tvOSTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F8B2CD9295331D6C9C5B08C7175B0267 /* Debug */,
-				18B6892F21F1A7BAEDBCC6417847E6FF /* Release */,
+				00B3DEA4BF5838C0492A69797962C25B /* Debug */,
+				4057E7A77F8446B887378AEE540138BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -757,20 +748,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7144B445979CBA851AD6DF7A15E824A5 /* Build configuration list for PBXNativeTarget "Pods-OSGCon" */ = {
+		A9961A069BE31FBEACC3148D7D4D7F74 /* Build configuration list for PBXNativeTarget "Pods-MillvaleMusicFestival-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9C8EFBA74A1A5BE455CDC01ED7B39001 /* Debug */,
-				E85F95EC31824C30E44FC1F2BC4CB5C9 /* Release */,
+				3B70A84D80C4F05057B1D7C56AB3401A /* Debug */,
+				3A8CBE7D11A66F4D528E7940250B9A52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EE0E8A551AD4099EA4CFAC87D66A6DBB /* Build configuration list for PBXNativeTarget "Pods-OSGConTests" */ = {
+		D9F153DA8C468647A7F2E893AA9780C4 /* Build configuration list for PBXNativeTarget "Pods-MillvaleMusicFestival-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AA80DDD4BBE0723C3B067A365123FD1B /* Debug */,
-				3480FD25F4CCBAD62662EA1976CE2D57 /* Release */,
+				639A71FCBFFCDC74EDB8BCC0529FC0A5 /* Debug */,
+				F6721EF2B38531790ECC0FF8FAFF6A4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE7BBAD54C2C2368223BFFA52C1BE149 /* Build configuration list for PBXNativeTarget "Pods-MillvaleMusicFestival" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C2753966E9DA1181177906F4ACA2683 /* Debug */,
+				E705925DBFB8BABEEA908F0AEC8E40DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
