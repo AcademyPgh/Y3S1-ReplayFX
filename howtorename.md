@@ -80,6 +80,7 @@ In the iOS version of the app in App Center, do this to build:
    1. Make a provisioning profile at https://developer.apple.com > Provisioning Profiles > All.
    1. Get the P12 file from John. (It's on the iMac at LFG in Documents)
 1. Press 'save' until it's happy. Then build.
+1. Go to Distribute > Stores > Connect to Store > App Store Connect. Select your app and 'Assign'. It will probably not have the right icon yet
 
 ## Check to make sure everything worked
 You'll have to run the project on something with an Android emulator and something with an iOS emulator. Here are the areas to check:
