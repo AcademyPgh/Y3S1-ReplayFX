@@ -11,6 +11,7 @@ import SponsorsNav from './src/features/Sponsors/navigation';
 import GamesNav from './src/features/Games/Games.navigation';
 import VendorsNav from './src/features/Vendors/navigation';
 import StaticMap from './src/features/StaticMap/navigation';
+import LinkedMap from './src/features/LinkedMap/navigation';
 import ScheduleNav from './src/features/Schedule/navigation';
 import ProfileNav from './src/features/Profile/navigation';
 import SocialFeedNav from './src/features/SocialFeed/navigation';
@@ -50,6 +51,7 @@ const RootStack = createStackNavigator(
       ...GamesNav,
       ...VendorsNav,
       ...StaticMap,
+      ...LinkedMap,
       ...ProfileNav,
       ...SocialFeedNav,
       

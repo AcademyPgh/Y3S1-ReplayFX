@@ -13,7 +13,8 @@ export default class HomeScreen extends Component {
 
     this.state = {
       refreshing: false,
-      emailVisisble: false,
+      emailVisible: false,
+      showEmailCTA: false
     }
 
     this.onRefresh = this.onRefresh.bind(this);
@@ -24,11 +25,13 @@ export default class HomeScreen extends Component {
 
   componentDidMount()
   {
-    this.checkEmail();
+    if(this.state.showEmailCTA) {
+      this.checkEmail();
+    }
   }
 
   hideModal() {
-    this.setState({emailVisisble: !this.state.emailVisisble});
+    this.setState({emailVisible: !this.state.emailVisible});
   }
 
   submitModal() {
@@ -57,7 +60,7 @@ export default class HomeScreen extends Component {
         emailStatus.totalRequests = emailStatus.totalRequests + 1;
         if (emailStatus.totalRequests % 5 === 0 | emailStatus.totalRequests === 1)
         {
-          this.setState({emailVisisble: true})
+          this.setState({emailVisible: true})
         }
       }
       AsyncStorage.setItem(storeName, JSON.stringify(emailStatus));
@@ -101,12 +104,13 @@ export default class HomeScreen extends Component {
         {type: 'Schedule', title: 'Schedule'},
         {type: 'Schedule', title: 'My Schedule', options: {title: 'MY SCHEDULE', scheduleFilter: 'my-schedule'}},
         //{type: 'GamesMain', title: 'Games',},
-        {type: 'SocialFeed', title: 'Social Wall'},
-        {type: 'VendorsList', title: 'Featured Sponsors'},
+        // {type: 'SocialFeed', title: 'Social Wall'},
+        {type: 'VendorsList', title: 'Vendors'},
         ...this.subMenu().map(item => {return {type: 'Schedule', title: item.name, options: {title: item.displayName, scheduleFilter: item.name}}}),
         //{type: 'Profile', title: 'Profile'},
         //{type: 'Sponsors', title: 'Sponsors'}
-        {type: 'StaticMap', title: 'Map'},
+        //{type: 'StaticMap', title: 'Map'},
+        {type: 'LinkedMap', title: 'Live Shuttle Tracking'},
       ];
 
     props = this.props;  
@@ -122,7 +126,7 @@ export default class HomeScreen extends Component {
 
         {/*<ImageBackground source={require('../Images/Background.jpg')} style={{flex:1}}>*/}
         <EmailModal 
-          visible={this.state.emailVisisble}
+          visible={this.state.emailVisible}
           onSubmit={this.submitModal} 
           onRequestClose={this.hideModal}
           screenProps={this.props.screenProps}
@@ -149,12 +153,7 @@ export default class HomeScreen extends Component {
   }
 }
 
-
- 
-
-
 const styles = StyleSheet.create ({
-
   text: {
    marginHorizontal: scale(20),
    flex: 1,
