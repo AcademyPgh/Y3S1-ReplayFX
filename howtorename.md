@@ -69,6 +69,9 @@ do it. For example: `git add . && git commit -m 'AppName version of app' && git 
 #### iOS
 Follow some tutorial online. You'll start at https://developer.apple.com > App Store Connect, then (using XCode) build, validate, and distribute.
 
+#### Android
+You'll start at https://play.google.com/apps/publish and create a new application.
+
 ### Build in App Center
 
 #### iOS
@@ -82,6 +85,19 @@ In the iOS version of the app in App Center, do this to build:
 1. Press 'save' until it's happy. Then build.
 1. Go to Distribute > Stores > Connect to Store > App Store Connect. Select your app and 'Assign'. It will probably not have the right icon yet
 
+#### Android
+In the Android version of the app in App Center, do this to build:
+1. go to 'build'
+1. choose `GitHub` as the source, select your repo and branch
+1. turn on `Automatically increment build number` (default build id is fine)
+1. turn on `Sign builds`.
+   1. upload a keystore file - get it from John. (It's `academypgh.jks` in the Downloads folder on the iMac at LFG)
+   1. You'll need to get passwords from John.
+1. Press 'save' until it's happy. Then build.
+1. Go to Distribute > Stores > Connect to Store > Google Play.
+   1. get the security token from John. It's named `api-[ridiculous numbers etc].json` (it's on the iMac at LFG in Downloads)
+   1. Select your app and 'Assign'. It will probably not have the right icon yet
+
 ## Check to make sure everything worked
 You'll have to run the project on something with an Android emulator and something with an iOS emulator. Here are the areas to check:
 - icons
@@ -89,3 +105,6 @@ You'll have to run the project on something with an Android emulator and somethi
 - test that notifications work
 - test that everything builds in App Center (this tests your secrets)
 - test that the app icon updates in App Center
+
+## fill in every option thing that has ever existed
+for both android and ios.
