@@ -13,7 +13,8 @@ export default class HomeScreen extends Component {
 
     this.state = {
       refreshing: false,
-      emailVisisble: false,
+      emailVisible: false,
+      showEmailCTA: false
     }
 
     this.onRefresh = this.onRefresh.bind(this);
@@ -24,11 +25,13 @@ export default class HomeScreen extends Component {
 
   componentDidMount()
   {
-    this.checkEmail();
+    if(this.state.showEmailCTA) {
+      this.checkEmail();
+    }
   }
 
   hideModal() {
-    this.setState({emailVisisble: !this.state.emailVisisble});
+    this.setState({emailVisible: !this.state.emailVisible});
   }
 
   submitModal() {
@@ -57,7 +60,7 @@ export default class HomeScreen extends Component {
         emailStatus.totalRequests = emailStatus.totalRequests + 1;
         if (emailStatus.totalRequests % 5 === 0 | emailStatus.totalRequests === 1)
         {
-          this.setState({emailVisisble: true})
+          this.setState({emailVisible: true})
         }
       }
       AsyncStorage.setItem(storeName, JSON.stringify(emailStatus));
@@ -123,7 +126,7 @@ export default class HomeScreen extends Component {
 
         {/*<ImageBackground source={require('../Images/Background.jpg')} style={{flex:1}}>*/}
         <EmailModal 
-          visible={this.state.emailVisisble}
+          visible={this.state.emailVisible}
           onSubmit={this.submitModal} 
           onRequestClose={this.hideModal}
           screenProps={this.props.screenProps}
@@ -150,12 +153,7 @@ export default class HomeScreen extends Component {
   }
 }
 
-
- 
-
-
 const styles = StyleSheet.create ({
-
   text: {
    marginHorizontal: scale(20),
    flex: 1,
