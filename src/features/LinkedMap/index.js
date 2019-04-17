@@ -9,10 +9,6 @@ export default class LinkedMap extends Component {
     return homeButtonHeader(navigation);
   }
 
-  componentDidMount() {
-    setTimeout(() => { this.props.navigation.navigate('Home', {}) }, 1000);
-  }
-
   constructor(props) {
     super(props);
   }
@@ -23,12 +19,6 @@ export default class LinkedMap extends Component {
       <WebView
         ref={(ref) => { this.webview = ref; }}
         source={{ uri }}
-        onNavigationStateChange={(event) => {
-          if (event.url !== uri) {
-            this.webview.stopLoading();
-            Linking.openURL(event.url);
-          }
-        }}
       />
     );
   }
