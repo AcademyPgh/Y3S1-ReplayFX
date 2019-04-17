@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { WebView, Linking, View} from 'react-native';
+import { WebView } from 'react-native';
 import { homeButtonHeader } from '../../utils/Headers';
 
 export default class LinkedMap extends Component {
-  static navigationOptions = ({ navigation, navigationOptions }) => {
+  static navigationOptions = ({ navigation }) => {
     const { params } = navigation.state;
 
     return homeButtonHeader(navigation);
