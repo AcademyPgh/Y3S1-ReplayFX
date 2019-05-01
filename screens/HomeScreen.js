@@ -108,8 +108,8 @@ export default class HomeScreen extends Component {
         {type: 'VendorsList', title: 'Vendors'},
         ...this.subMenu().map(item => {return {type: 'Schedule', title: item.name, options: {title: item.displayName, scheduleFilter: item.name}}}),
         //{type: 'Profile', title: 'Profile'},
-        //{type: 'Sponsors', title: 'Sponsors'}
-        //{type: 'StaticMap', title: 'Map'},
+        {type: 'Sponsors', title: 'Sponsors'},
+        {type: 'StaticMap', title: 'Map'},
         {type: 'LinkedMap', title: 'Live Shuttle Tracking'},
       ];
 
