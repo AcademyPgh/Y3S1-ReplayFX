@@ -12,7 +12,7 @@ export default class LinkedMap extends Component {
 
   constructor(props) {
     super(props);
-
+    this.urls = this.props.screenProps.apiData.trackingUrl.split(" ");
     this.openTracker = this.openTracker.bind(this);
   }
 
@@ -21,9 +21,9 @@ export default class LinkedMap extends Component {
     //this.openTracker();
   }
 
-  openTracker()
+  openTracker(i)
   {
-    url = this.props.screenProps.apiData.trackingUrl;
+    url = this.urls[i];
     Linking.canOpenURL(url)
     .then((supported) => {
       if (!supported) {
@@ -36,14 +36,15 @@ export default class LinkedMap extends Component {
   }
 
   render() {
-    const uri = this.props.screenProps.apiData.trackingUrl;
-    return (
+     return (
       <View style={styles.container}>
-      <TouchableOpacity onPress={this.openTracker}>
-        <View style={styles.buttonContainer}>
-          <Text style={styles.text}>Open Shuttle Tracker</Text>
-        </View>
-      </TouchableOpacity>
+      {this.urls.map((url, index) => {
+        return (<TouchableOpacity onPress={() => this.openTracker(index)} key={index}>
+          <View style={styles.buttonContainer}>
+            <Text style={styles.text}>Open Shuttle {index + 1} Tracker</Text>
+          </View>
+        </TouchableOpacity>)
+      })}
       <TouchableOpacity onPress={() => this.props.navigation.navigate("Home")}>
         <View style={styles.buttonContainer}>
           <Text style={styles.text}>Go Back</Text>
