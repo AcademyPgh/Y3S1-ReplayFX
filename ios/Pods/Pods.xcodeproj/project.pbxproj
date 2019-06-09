@@ -76,7 +76,6 @@
 /* Begin PBXFileReference section */
 		009448AB36EFE302406F95CCEA275409 /* Pods-ReplayFX-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReplayFX-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		05551A8A8C112081754549BE3C35CA60 /* Pods-ReplayFX-tvOSTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ReplayFX-tvOSTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		08F348717F28FF3502D390F4D129C1B7 /* libPods-ReplayFX-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ReplayFX-tvOSTests.a"; path = "libPods-ReplayFX-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C466A142B2FE284DD284BE790871C44 /* Pods-ReplayFX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReplayFX.release.xcconfig"; sourceTree = "<group>"; };
 		101086D48961A1F5D174F74008C809D8 /* AppCenterReactNativeShared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterReactNativeShared.framework; path = AppCenterReactNativeShared/AppCenterReactNativeShared.framework; sourceTree = "<group>"; };
 		1A4AEA4E54D2E09799B82EEAD35285E3 /* Pods-ReplayFX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReplayFX.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,16 +92,17 @@
 		6A8049CF11EB29284B81C521D6829461 /* Pods-ReplayFX-tvOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReplayFX-tvOS-acknowledgements.plist"; sourceTree = "<group>"; };
 		7421C8D6ECA852FA77304628DCC5AC4D /* Pods-ReplayFX-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReplayFX-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		84805758723C14D4891ECE373BA65D8D /* Pods-ReplayFX-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReplayFX-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8E5EE91500690B56FDF0B15EC983C7E4 /* libPods-ReplayFX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ReplayFX.a"; path = "libPods-ReplayFX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9679D779DF470CBE5926C7542993FAFB /* Pods-ReplayFX-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReplayFX-acknowledgements.plist"; sourceTree = "<group>"; };
 		97B6BE3A1A7A810FBDF0EA25F61A17A9 /* Pods-ReplayFXTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReplayFXTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A98BA76A030D181B2F3AE113A34A4197 /* Pods-ReplayFXTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ReplayFXTests-dummy.m"; sourceTree = "<group>"; };
 		B4649E091569EACE528984B51678ADB3 /* Pods-ReplayFXTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReplayFXTests.release.xcconfig"; sourceTree = "<group>"; };
 		B949CDF652086A792464DA9B3CE2C9FA /* AppCenterReactNativeShared.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AppCenterReactNativeShared.xcconfig; sourceTree = "<group>"; };
-		E0860FAF5571C8110A1AD36145D8360F /* libPods-ReplayFX-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ReplayFX-tvOS.a"; path = "libPods-ReplayFX-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4087010723A4CFD9E36B85830E75580 /* libPods-ReplayFXTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ReplayFXTests.a"; path = "libPods-ReplayFXTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E930E140BE211DF4D1C21B6F7FBDBC80 /* libPods-ReplayFX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ReplayFX.a"; path = "libPods-ReplayFX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F07865AE29E285A5301010890C67E60D /* libPods-ReplayFX-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ReplayFX-tvOSTests.a"; path = "libPods-ReplayFX-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1F411B1D4E8ABB52111F2FDAE79784E /* Pods-ReplayFX-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ReplayFX-tvOS-dummy.m"; sourceTree = "<group>"; };
+		F34481CBCB421324F2D9BA25A518B910 /* libPods-ReplayFX-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ReplayFX-tvOS.a"; path = "libPods-ReplayFX-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F44D9AEF44739AF9C2E4275142EFEF72 /* libPods-ReplayFXTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ReplayFXTests.a"; path = "libPods-ReplayFXTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4CE7345C6137AF49A54827B4AEA2E17 /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterCrashes.framework; path = "AppCenter-SDK-Apple/iOS/AppCenterCrashes.framework"; sourceTree = "<group>"; };
 		FBAC74BFC19A4BA1E8E39B0AEE9981FC /* Pods-ReplayFX-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ReplayFX-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,10 +193,10 @@
 		66D5DE86486D077E3DF025C94F69B55E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E930E140BE211DF4D1C21B6F7FBDBC80 /* libPods-ReplayFX.a */,
-				E0860FAF5571C8110A1AD36145D8360F /* libPods-ReplayFX-tvOS.a */,
-				08F348717F28FF3502D390F4D129C1B7 /* libPods-ReplayFX-tvOSTests.a */,
-				E4087010723A4CFD9E36B85830E75580 /* libPods-ReplayFXTests.a */,
+				8E5EE91500690B56FDF0B15EC983C7E4 /* libPods-ReplayFX.a */,
+				F34481CBCB421324F2D9BA25A518B910 /* libPods-ReplayFX-tvOS.a */,
+				F07865AE29E285A5301010890C67E60D /* libPods-ReplayFX-tvOSTests.a */,
+				F44D9AEF44739AF9C2E4275142EFEF72 /* libPods-ReplayFXTests.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -386,7 +386,7 @@
 			);
 			name = "Pods-ReplayFX";
 			productName = "Pods-ReplayFX";
-			productReference = E930E140BE211DF4D1C21B6F7FBDBC80 /* libPods-ReplayFX.a */;
+			productReference = 8E5EE91500690B56FDF0B15EC983C7E4 /* libPods-ReplayFX.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		BFFDCEBD647869BA2BBFF0BA643D59DD /* Pods-ReplayFX-tvOSTests */ = {
@@ -404,7 +404,7 @@
 			);
 			name = "Pods-ReplayFX-tvOSTests";
 			productName = "Pods-ReplayFX-tvOSTests";
-			productReference = 08F348717F28FF3502D390F4D129C1B7 /* libPods-ReplayFX-tvOSTests.a */;
+			productReference = F07865AE29E285A5301010890C67E60D /* libPods-ReplayFX-tvOSTests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		D064D9723FC951F39C860C831DC499F5 /* Pods-ReplayFXTests */ = {
@@ -422,7 +422,7 @@
 			);
 			name = "Pods-ReplayFXTests";
 			productName = "Pods-ReplayFXTests";
-			productReference = E4087010723A4CFD9E36B85830E75580 /* libPods-ReplayFXTests.a */;
+			productReference = F44D9AEF44739AF9C2E4275142EFEF72 /* libPods-ReplayFXTests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		FBEC731CECCAC1A3CF76F2CD0F61FB30 /* Pods-ReplayFX-tvOS */ = {
@@ -439,7 +439,7 @@
 			);
 			name = "Pods-ReplayFX-tvOS";
 			productName = "Pods-ReplayFX-tvOS";
-			productReference = E0860FAF5571C8110A1AD36145D8360F /* libPods-ReplayFX-tvOS.a */;
+			productReference = F34481CBCB421324F2D9BA25A518B910 /* libPods-ReplayFX-tvOS.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
