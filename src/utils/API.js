@@ -1,4 +1,4 @@
-export const baseURL = "https://osgconassist.azurewebsites.net";
+export const baseURL = "https://replayfxcalendar.azurewebsites.net";
 //export const baseURL = "http://192.168.1.90:8080"
 
 export const getConventionListURL = baseURL + '/api/v2/conventions';
