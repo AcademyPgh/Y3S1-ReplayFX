@@ -52,8 +52,10 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We do not use your location, so you should never see this message. If you do, press 'don't allow'.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>We do not use your location, so you should never see this message. If you do, press 'don't allow'.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Avenir-Black.ttf</string>
