@@ -402,6 +402,13 @@
 			remoteGlobalIDString = 3D05745F1DE6004600184BB4;
 			remoteInfo = "RCTPushNotification-tvOS";
 		};
+		521CBC2222AD7D1800C79DF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA105E0324B7492498CA805B /* RNGestureHandler.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B5C32A36220C603B000FFB8D;
+			remoteInfo = "RNGestureHandler-tvOS";
+		};
 		5E9157321DD0AC6500FF2AA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
@@ -820,6 +827,7 @@
 			isa = PBXGroup;
 			children = (
 				5216513B221DF1BC000E31B9 /* libRNGestureHandler.a */,
+				521CBC2322AD7D1800C79DF2 /* libRNGestureHandler-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1479,6 +1487,13 @@
 			remoteRef = 5216514C221DF285000E31B9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		521CBC2322AD7D1800C79DF2 /* libRNGestureHandler-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRNGestureHandler-tvOS.a";
+			remoteRef = 521CBC2222AD7D1800C79DF2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1861,7 +1876,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.AcademyPGH.ReplayFX;
+				PRODUCT_BUNDLE_IDENTIFIER = com.academypgh.ReplayFXApp;
 				PRODUCT_NAME = ReplayFX;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1892,7 +1907,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.AcademyPGH.ReplayFX;
+				PRODUCT_BUNDLE_IDENTIFIER = com.academypgh.ReplayFXApp;
 				PRODUCT_NAME = ReplayFX;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
