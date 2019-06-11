@@ -45,12 +45,12 @@ export default class EmailModal extends Component {
                     <View style={styles.backdrop}>
                         <View style={styles.modalContainer}>
                             <View style={styles.modalBox}>
-                            <Text style={styles.modalText}>Old School Gamer Con Companion is a Free app, but to keep it going and its companion magazine, we need you to sign up to get the Free Old School Gamer Magazine! Please put your email address in below and you get it FREE in your email inbox every issue.</Text>
+                            <Text style={styles.modalText}>Sign up for the ReplayFX mailing list to get information on the convention before everyone else, early bird ticket notifications, and specials.</Text>
                             <TextInput placeholder="email@address.com" style={styles.textBox} onChangeText={(text) => this.setState({userText: text})} value={this.state.userText} />
 
                             <View style={styles.modalButton}>
                                 <TouchableOpacity style={styles.touchBox} onPress={this.sendPost}>
-                                    <Text style={styles.modalText}>Free Magazine/Free App Submit</Text>
+                                    <Text style={styles.modalText}>Sign Up Now</Text>
                                 </TouchableOpacity>
                             </View>
                             </View>
