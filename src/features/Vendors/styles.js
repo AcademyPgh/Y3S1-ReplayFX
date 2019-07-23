@@ -120,6 +120,21 @@ export const styles = StyleSheet.create({
     color: '#000000',
   },
 
+  urlContainer: {
+    borderColor: 'black',
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    margin: verticalScale(10),
+    paddingVertical: verticalScale(5),
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  notTheBottom: {
+    marginBottom: verticalScale(-10),
+    borderBottomWidth: 0,
+  },
+
   locationContainer: {
     borderColor: 'black', 
     borderBottomWidth: 1, 

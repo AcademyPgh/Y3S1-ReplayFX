@@ -77,6 +77,10 @@ export default class VendorDetails extends Component {
 
     vendorDescription += (vendorInfo.extendedDescription || '');
 
+    let urlStyle = vendorLocation.length > 0 ?
+      {...styles.urlContainer, ...styles.notTheBottom} :
+      styles.urlContainer;
+
     return (
         <View style={{flex: 1}}>
           
@@ -113,10 +117,10 @@ export default class VendorDetails extends Component {
 
           </ScrollView>
 
-          {vendorInfo.url && 
+          {vendorInfo.url &&
           <View>
 
-            <View style={{borderTopColor: 'black', borderTopWidth: 1, margin: verticalScale(10), marginBottom: verticalScale(-10), paddingVertical: verticalScale(5), justifyContent: 'center', alignItems: 'center'}}>
+            <View style={urlStyle}>
               <TouchableOpacity 
                 onPress={() => this.openVendorWebsite(vendorInfo.url)}
               >
