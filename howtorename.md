@@ -67,7 +67,7 @@ do it. For example: `git add . && git commit -m 'AppName version of app' && git 
 ### Create store pages
 
 #### iOS
-Follow some tutorial online. You'll start at https://developer.apple.com > App Store Connect, then (using XCode) build, validate, and distribute.
+Follow some tutorial online. Last time, I used [this page](https://developer.apple.com/support/app-store-connect/) and then [this one](https://flutter.dev/docs/deployment/ios). You'll start at https://developer.apple.com > App Store Connect, then (using XCode) build, validate, and distribute.
 
 #### Android
 You'll start at https://play.google.com/apps/publish and create a new application.
