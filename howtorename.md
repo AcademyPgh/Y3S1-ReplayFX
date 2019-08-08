@@ -85,6 +85,9 @@ In the iOS version of the app in App Center, do this to build:
 1. Press 'save' until it's happy. Then build.
 1. Go to Distribute > Stores > Connect to Store > App Store Connect. Select your app and 'Assign'. It will probably not have the right icon yet
 
+When you try to sign your build, you may run into an error that says: `Error in fetching the Apple service connectiond details...`. To fix that:
+1. go to User (upper right icon) > `Account settings` > `Developer accounts` > ... > `Reconnect` and enter your 2-factor security code. Then `Update app-specific password`, then follow the instructions about generating a new one and update it.
+
 #### Android
 In the Android version of the app in App Center, do this to build:
 1. go to 'build'
