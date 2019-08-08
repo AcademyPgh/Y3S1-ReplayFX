@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.replayfx">
+    package="com.academypgh.musicforms">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
@@ -55,7 +55,7 @@
         android:permission="com.google.android.c2dm.permission.SEND" >
         <intent-filter>
             <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-            <category android:name="com.replayfx" />
+            <category android:name="com.academypgh.MusicForMS" />
         </intent-filter>
         </receiver>
 

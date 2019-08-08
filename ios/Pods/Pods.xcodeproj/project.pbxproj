@@ -29,42 +29,42 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		2EE49EA2F67168A66E94DC1FCCCF2185 /* Pods-ReplayFX-tvOSTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE84CB8D131BB59877F036C4C7E71F4 /* Pods-ReplayFX-tvOSTests-dummy.m */; };
-		60296B393B61DBC5423C3F799742F30F /* Pods-ReplayFX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 399247795C7ED235A7BD0AA1B9A6B03C /* Pods-ReplayFX-dummy.m */; };
-		8F1C1EE3DF5AE050EC8C25F12DD9B17F /* Pods-ReplayFXTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A98BA76A030D181B2F3AE113A34A4197 /* Pods-ReplayFXTests-dummy.m */; };
-		D63B18AC2756C5D1C221B57DAE0DBF13 /* Pods-ReplayFX-tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F411B1D4E8ABB52111F2FDAE79784E /* Pods-ReplayFX-tvOS-dummy.m */; };
+		1BE1954F668091030C4264BECACFFF7A /* Pods-MusicForMSTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B8D664DEE2F8B5B2D4ABAE28443C35 /* Pods-MusicForMSTests-dummy.m */; };
+		726888D2401E1EEC2E6C1ED47043AA99 /* Pods-MusicForMS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BFFCAC60364066DAA6286812E24F42 /* Pods-MusicForMS-dummy.m */; };
+		741BAE26B001D0D14E5CC2374B86CCD3 /* Pods-MusicForMS-tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B39C43C755825545EB41BBD6B0E5098 /* Pods-MusicForMS-tvOS-dummy.m */; };
+		7926076FAC8B02EDD3AA6E91BDAC7388 /* Pods-MusicForMS-tvOSTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0941B4E3023165A0FA26FDE7B2330F57 /* Pods-MusicForMS-tvOSTests-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		795C948EFF8C04D0711BE7D949D5E288 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 72E255A074BA2CB0FA79A1F6ACAE8BE4;
-			remoteInfo = "Pods-ReplayFX";
-		};
-		AFE5C6EAC4E084B95B38DC5670391F47 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FBEC731CECCAC1A3CF76F2CD0F61FB30;
-			remoteInfo = "Pods-ReplayFX-tvOS";
-		};
-		D96B09CB6F7CDF72F3099DD83AD5AB87 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A3282A5B2437E609EEB85861D7ECE717;
-			remoteInfo = AppCenter;
-		};
-		DA16A0F0169FE03117268EEB2C93EA5B /* PBXContainerItemProxy */ = {
+		3B8AD06A463E915044FC59EA29EBA85D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2CD32458A161AF8E4BA58B4310701AB3;
 			remoteInfo = AppCenterReactNativeShared;
 		};
-		F8F934EB646B8818B906CBF22E66DA39 /* PBXContainerItemProxy */ = {
+		B726D8E201559F7613C428C0545AE7C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5CE95B87DCAA572DE45A7E90D6221AE;
+			remoteInfo = "Pods-MusicForMS";
+		};
+		B8ACF7BECF43984DA0C0AB6665E6745E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C84FE81CCFCEA669CC62CE0A30A6F972;
+			remoteInfo = "Pods-MusicForMS-tvOS";
+		};
+		D3052AAAA618359152C8274B84CB3130 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A3282A5B2437E609EEB85861D7ECE717;
+			remoteInfo = AppCenter;
+		};
+		D96B09CB6F7CDF72F3099DD83AD5AB87 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -74,62 +74,62 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		009448AB36EFE302406F95CCEA275409 /* Pods-ReplayFX-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReplayFX-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		05551A8A8C112081754549BE3C35CA60 /* Pods-ReplayFX-tvOSTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ReplayFX-tvOSTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		0C466A142B2FE284DD284BE790871C44 /* Pods-ReplayFX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReplayFX.release.xcconfig"; sourceTree = "<group>"; };
+		0941B4E3023165A0FA26FDE7B2330F57 /* Pods-MusicForMS-tvOSTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MusicForMS-tvOSTests-dummy.m"; sourceTree = "<group>"; };
 		101086D48961A1F5D174F74008C809D8 /* AppCenterReactNativeShared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterReactNativeShared.framework; path = AppCenterReactNativeShared/AppCenterReactNativeShared.framework; sourceTree = "<group>"; };
-		1A4AEA4E54D2E09799B82EEAD35285E3 /* Pods-ReplayFX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReplayFX.debug.xcconfig"; sourceTree = "<group>"; };
-		1AD98474D12440CB9451B67C57810E2F /* Pods-ReplayFX-tvOSTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReplayFX-tvOSTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		22CF16B41389B34EE0120640FF71BAD6 /* Pods-ReplayFXTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReplayFXTests.debug.xcconfig"; sourceTree = "<group>"; };
+		14A7D86E6A87B977B596889A5BC1645A /* Pods-MusicForMS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicForMS.release.xcconfig"; sourceTree = "<group>"; };
+		18119DC878BCEAF8663DED186839127D /* Pods-MusicForMS-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicForMS-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1B39C43C755825545EB41BBD6B0E5098 /* Pods-MusicForMS-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MusicForMS-tvOS-dummy.m"; sourceTree = "<group>"; };
 		259A51087349695F5B93EE5070F4CE70 /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = "AppCenter-SDK-Apple/iOS/AppCenter.framework"; sourceTree = "<group>"; };
-		2622791DFE53163F7AA2D9DD96DBA408 /* Pods-ReplayFXTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ReplayFXTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		2BE84CB8D131BB59877F036C4C7E71F4 /* Pods-ReplayFX-tvOSTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ReplayFX-tvOSTests-dummy.m"; sourceTree = "<group>"; };
-		36C81E0075A4948480737B44EDC2234A /* Pods-ReplayFX-tvOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ReplayFX-tvOS-acknowledgements.markdown"; sourceTree = "<group>"; };
-		399247795C7ED235A7BD0AA1B9A6B03C /* Pods-ReplayFX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ReplayFX-dummy.m"; sourceTree = "<group>"; };
-		5378624C5E8F13DB8E36603C7A76FCF8 /* Pods-ReplayFX-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReplayFX-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		28D88840655FB3537CA899255C9A1C25 /* Pods-MusicForMSTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MusicForMSTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		2CCA3554F184BA0F12823057DAD10425 /* Pods-MusicForMS-tvOSTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MusicForMS-tvOSTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2F8A2D3632E403A7AA1F0271494392BD /* Pods-MusicForMS-tvOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MusicForMS-tvOS-acknowledgements.markdown"; sourceTree = "<group>"; };
+		305F20C0C87964654CB1B2DA4AC3C106 /* libPods-MusicForMS-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-MusicForMS-tvOS.a"; path = "libPods-MusicForMS-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3428E57B44C180338D90650168BF336B /* Pods-MusicForMS-tvOSTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MusicForMS-tvOSTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		358679D000B721BD95856CE13FE4C6DF /* Pods-MusicForMS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MusicForMS-acknowledgements.plist"; sourceTree = "<group>"; };
+		3F9A027B32576A0B576DDAE93EE68625 /* libPods-MusicForMS-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-MusicForMS-tvOSTests.a"; path = "libPods-MusicForMS-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49BFFCAC60364066DAA6286812E24F42 /* Pods-MusicForMS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MusicForMS-dummy.m"; sourceTree = "<group>"; };
+		4BC1212845F7248A554D62C80A416475 /* Pods-MusicForMS-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicForMS-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		4E17DFAD3DED837149A41E05C9AEEE72 /* Pods-MusicForMS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicForMS.debug.xcconfig"; sourceTree = "<group>"; };
 		57447041E60F2B2A34B159A833C2254C /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = "AppCenter-SDK-Apple/iOS/AppCenterAnalytics.framework"; sourceTree = "<group>"; };
 		59CE2BED226D8BACCDFB3EEC78580EC1 /* AppCenter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AppCenter.xcconfig; sourceTree = "<group>"; };
-		6A8049CF11EB29284B81C521D6829461 /* Pods-ReplayFX-tvOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReplayFX-tvOS-acknowledgements.plist"; sourceTree = "<group>"; };
-		7421C8D6ECA852FA77304628DCC5AC4D /* Pods-ReplayFX-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReplayFX-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		84805758723C14D4891ECE373BA65D8D /* Pods-ReplayFX-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReplayFX-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8E5EE91500690B56FDF0B15EC983C7E4 /* libPods-ReplayFX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ReplayFX.a"; path = "libPods-ReplayFX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9679D779DF470CBE5926C7542993FAFB /* Pods-ReplayFX-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReplayFX-acknowledgements.plist"; sourceTree = "<group>"; };
-		97B6BE3A1A7A810FBDF0EA25F61A17A9 /* Pods-ReplayFXTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReplayFXTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		627C854F215505AF7C871ED66AC7A600 /* Pods-MusicForMS-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicForMS-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		6EDAAE8D742B23044EE76EDA1D4DE6B2 /* libPods-MusicForMS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-MusicForMS.a"; path = "libPods-MusicForMS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F897C4443D73727099C756162720BAD /* Pods-MusicForMSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicForMSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		705C6BF49C65E4112F8C60A56587F6D4 /* Pods-MusicForMS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MusicForMS-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7F474D9E870A7BFFA624F109D2A5FB7D /* Pods-MusicForMS-tvOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MusicForMS-tvOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		995171FFD033F3FAC0C58ECAE6BDCE37 /* Pods-MusicForMSTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MusicForMSTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A98BA76A030D181B2F3AE113A34A4197 /* Pods-ReplayFXTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ReplayFXTests-dummy.m"; sourceTree = "<group>"; };
-		B4649E091569EACE528984B51678ADB3 /* Pods-ReplayFXTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReplayFXTests.release.xcconfig"; sourceTree = "<group>"; };
+		A48F8FE23D50C476745A3B372452E330 /* Pods-MusicForMS-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicForMS-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		B832CDCB476B39DC99C7327C3A52BC38 /* libPods-MusicForMSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-MusicForMSTests.a"; path = "libPods-MusicForMSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B949CDF652086A792464DA9B3CE2C9FA /* AppCenterReactNativeShared.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AppCenterReactNativeShared.xcconfig; sourceTree = "<group>"; };
-		F07865AE29E285A5301010890C67E60D /* libPods-ReplayFX-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ReplayFX-tvOSTests.a"; path = "libPods-ReplayFX-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1F411B1D4E8ABB52111F2FDAE79784E /* Pods-ReplayFX-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ReplayFX-tvOS-dummy.m"; sourceTree = "<group>"; };
-		F34481CBCB421324F2D9BA25A518B910 /* libPods-ReplayFX-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ReplayFX-tvOS.a"; path = "libPods-ReplayFX-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F44D9AEF44739AF9C2E4275142EFEF72 /* libPods-ReplayFXTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ReplayFXTests.a"; path = "libPods-ReplayFXTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2B8D664DEE2F8B5B2D4ABAE28443C35 /* Pods-MusicForMSTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MusicForMSTests-dummy.m"; sourceTree = "<group>"; };
+		D11AC194FE081C05F51CFA5BD7C759BD /* Pods-MusicForMSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicForMSTests.release.xcconfig"; sourceTree = "<group>"; };
 		F4CE7345C6137AF49A54827B4AEA2E17 /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterCrashes.framework; path = "AppCenter-SDK-Apple/iOS/AppCenterCrashes.framework"; sourceTree = "<group>"; };
-		FBAC74BFC19A4BA1E8E39B0AEE9981FC /* Pods-ReplayFX-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ReplayFX-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1E529E3B26C991C8735C65FFD104B587 /* Frameworks */ = {
+		608A47FACE9B83D4CCF0E524E24941E0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		27B8F90432ABAA366F16DBFF55E43D6C /* Frameworks */ = {
+		85C47E84F28A041758A981A5328AA215 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A7EE1F35121402D51525D153E4BBB69B /* Frameworks */ = {
+		9659049231962CD788B6D934073F285C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC59CEE143EEB70F13E4000632690EBD /* Frameworks */ = {
+		9FCF558F91BC4978A9ECBFC0912819B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -139,19 +139,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		135EBA11A767B0C6B37E2BD259F2FFC4 /* Pods-ReplayFX-tvOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				05551A8A8C112081754549BE3C35CA60 /* Pods-ReplayFX-tvOSTests-acknowledgements.markdown */,
-				1AD98474D12440CB9451B67C57810E2F /* Pods-ReplayFX-tvOSTests-acknowledgements.plist */,
-				2BE84CB8D131BB59877F036C4C7E71F4 /* Pods-ReplayFX-tvOSTests-dummy.m */,
-				84805758723C14D4891ECE373BA65D8D /* Pods-ReplayFX-tvOSTests.debug.xcconfig */,
-				7421C8D6ECA852FA77304628DCC5AC4D /* Pods-ReplayFX-tvOSTests.release.xcconfig */,
-			);
-			name = "Pods-ReplayFX-tvOSTests";
-			path = "Target Support Files/Pods-ReplayFX-tvOSTests";
-			sourceTree = "<group>";
-		};
 		1E40D94BB364328FBE96A84A9A48CC14 /* AppCenterReactNativeShared */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +155,19 @@
 				259A51087349695F5B93EE5070F4CE70 /* AppCenter.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2AB17775CBB975C171B3713702F842ED /* Pods-MusicForMSTests */ = {
+			isa = PBXGroup;
+			children = (
+				995171FFD033F3FAC0C58ECAE6BDCE37 /* Pods-MusicForMSTests-acknowledgements.markdown */,
+				28D88840655FB3537CA899255C9A1C25 /* Pods-MusicForMSTests-acknowledgements.plist */,
+				C2B8D664DEE2F8B5B2D4ABAE28443C35 /* Pods-MusicForMSTests-dummy.m */,
+				6F897C4443D73727099C756162720BAD /* Pods-MusicForMSTests.debug.xcconfig */,
+				D11AC194FE081C05F51CFA5BD7C759BD /* Pods-MusicForMSTests.release.xcconfig */,
+			);
+			name = "Pods-MusicForMSTests";
+			path = "Target Support Files/Pods-MusicForMSTests";
 			sourceTree = "<group>";
 		};
 		2D46366A65DDC0794CEBC0FE82BB8A8A /* Frameworks */ = {
@@ -190,13 +190,13 @@
 			path = AppCenter;
 			sourceTree = "<group>";
 		};
-		66D5DE86486D077E3DF025C94F69B55E /* Products */ = {
+		6C824B814C1BFB3B3BFFA915A26DC182 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8E5EE91500690B56FDF0B15EC983C7E4 /* libPods-ReplayFX.a */,
-				F34481CBCB421324F2D9BA25A518B910 /* libPods-ReplayFX-tvOS.a */,
-				F07865AE29E285A5301010890C67E60D /* libPods-ReplayFX-tvOSTests.a */,
-				F44D9AEF44739AF9C2E4275142EFEF72 /* libPods-ReplayFXTests.a */,
+				6EDAAE8D742B23044EE76EDA1D4DE6B2 /* libPods-MusicForMS.a */,
+				305F20C0C87964654CB1B2DA4AC3C106 /* libPods-MusicForMS-tvOS.a */,
+				3F9A027B32576A0B576DDAE93EE68625 /* libPods-MusicForMS-tvOSTests.a */,
+				B832CDCB476B39DC99C7327C3A52BC38 /* libPods-MusicForMSTests.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,15 +209,30 @@
 			name = Analytics;
 			sourceTree = "<group>";
 		};
-		91CE88B63A14C1FB546A95413CDF7800 /* Targets Support Files */ = {
+		76156DE67068AF5D477B9EBB2355AB88 /* Pods-MusicForMS */ = {
 			isa = PBXGroup;
 			children = (
-				99F3D4B825749E609DFE56821DB3198A /* Pods-ReplayFX */,
-				F57DED1E6193AC0A5D5A91F2077F1BCA /* Pods-ReplayFX-tvOS */,
-				135EBA11A767B0C6B37E2BD259F2FFC4 /* Pods-ReplayFX-tvOSTests */,
-				C5F238A9404F1837C3F4D0D7709A904C /* Pods-ReplayFXTests */,
+				705C6BF49C65E4112F8C60A56587F6D4 /* Pods-MusicForMS-acknowledgements.markdown */,
+				358679D000B721BD95856CE13FE4C6DF /* Pods-MusicForMS-acknowledgements.plist */,
+				49BFFCAC60364066DAA6286812E24F42 /* Pods-MusicForMS-dummy.m */,
+				4E17DFAD3DED837149A41E05C9AEEE72 /* Pods-MusicForMS.debug.xcconfig */,
+				14A7D86E6A87B977B596889A5BC1645A /* Pods-MusicForMS.release.xcconfig */,
 			);
-			name = "Targets Support Files";
+			name = "Pods-MusicForMS";
+			path = "Target Support Files/Pods-MusicForMS";
+			sourceTree = "<group>";
+		};
+		8EBFF4528F9D10A531799A80952A29B0 /* Pods-MusicForMS-tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				2F8A2D3632E403A7AA1F0271494392BD /* Pods-MusicForMS-tvOS-acknowledgements.markdown */,
+				7F474D9E870A7BFFA624F109D2A5FB7D /* Pods-MusicForMS-tvOS-acknowledgements.plist */,
+				1B39C43C755825545EB41BBD6B0E5098 /* Pods-MusicForMS-tvOS-dummy.m */,
+				A48F8FE23D50C476745A3B372452E330 /* Pods-MusicForMS-tvOS.debug.xcconfig */,
+				627C854F215505AF7C871ED66AC7A600 /* Pods-MusicForMS-tvOS.release.xcconfig */,
+			);
+			name = "Pods-MusicForMS-tvOS";
+			path = "Target Support Files/Pods-MusicForMS-tvOS";
 			sourceTree = "<group>";
 		};
 		94182EE150168D8F091F83224D20C0A4 /* Core */ = {
@@ -226,19 +241,6 @@
 				23977631E0E947775B0FF421D89FC310 /* Frameworks */,
 			);
 			name = Core;
-			sourceTree = "<group>";
-		};
-		99F3D4B825749E609DFE56821DB3198A /* Pods-ReplayFX */ = {
-			isa = PBXGroup;
-			children = (
-				FBAC74BFC19A4BA1E8E39B0AEE9981FC /* Pods-ReplayFX-acknowledgements.markdown */,
-				9679D779DF470CBE5926C7542993FAFB /* Pods-ReplayFX-acknowledgements.plist */,
-				399247795C7ED235A7BD0AA1B9A6B03C /* Pods-ReplayFX-dummy.m */,
-				1A4AEA4E54D2E09799B82EEAD35285E3 /* Pods-ReplayFX.debug.xcconfig */,
-				0C466A142B2FE284DD284BE790871C44 /* Pods-ReplayFX.release.xcconfig */,
-			);
-			name = "Pods-ReplayFX";
-			path = "Target Support Files/Pods-ReplayFX";
 			sourceTree = "<group>";
 		};
 		9B7151692B2AC286B115FA8800335CA1 /* Crashes */ = {
@@ -266,27 +268,14 @@
 			path = "../Target Support Files/AppCenterReactNativeShared";
 			sourceTree = "<group>";
 		};
-		C5F238A9404F1837C3F4D0D7709A904C /* Pods-ReplayFXTests */ = {
-			isa = PBXGroup;
-			children = (
-				2622791DFE53163F7AA2D9DD96DBA408 /* Pods-ReplayFXTests-acknowledgements.markdown */,
-				97B6BE3A1A7A810FBDF0EA25F61A17A9 /* Pods-ReplayFXTests-acknowledgements.plist */,
-				A98BA76A030D181B2F3AE113A34A4197 /* Pods-ReplayFXTests-dummy.m */,
-				22CF16B41389B34EE0120640FF71BAD6 /* Pods-ReplayFXTests.debug.xcconfig */,
-				B4649E091569EACE528984B51678ADB3 /* Pods-ReplayFXTests.release.xcconfig */,
-			);
-			name = "Pods-ReplayFXTests";
-			path = "Target Support Files/Pods-ReplayFXTests";
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
 				EE373CD21EE89767163B4F9D8A04C324 /* Pods */,
-				66D5DE86486D077E3DF025C94F69B55E /* Products */,
-				91CE88B63A14C1FB546A95413CDF7800 /* Targets Support Files */,
+				6C824B814C1BFB3B3BFFA915A26DC182 /* Products */,
+				E2092E4F8A87584C92A201D5EB99A7DC /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -306,6 +295,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E2092E4F8A87584C92A201D5EB99A7DC /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				76156DE67068AF5D477B9EBB2355AB88 /* Pods-MusicForMS */,
+				8EBFF4528F9D10A531799A80952A29B0 /* Pods-MusicForMS-tvOS */,
+				F97772DE0B18559251A2D0ED5258064D /* Pods-MusicForMS-tvOSTests */,
+				2AB17775CBB975C171B3713702F842ED /* Pods-MusicForMSTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		ED7F0E7602AAB87E8282D7EE77A128F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,44 +323,44 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		F57DED1E6193AC0A5D5A91F2077F1BCA /* Pods-ReplayFX-tvOS */ = {
+		F97772DE0B18559251A2D0ED5258064D /* Pods-MusicForMS-tvOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				36C81E0075A4948480737B44EDC2234A /* Pods-ReplayFX-tvOS-acknowledgements.markdown */,
-				6A8049CF11EB29284B81C521D6829461 /* Pods-ReplayFX-tvOS-acknowledgements.plist */,
-				F1F411B1D4E8ABB52111F2FDAE79784E /* Pods-ReplayFX-tvOS-dummy.m */,
-				009448AB36EFE302406F95CCEA275409 /* Pods-ReplayFX-tvOS.debug.xcconfig */,
-				5378624C5E8F13DB8E36603C7A76FCF8 /* Pods-ReplayFX-tvOS.release.xcconfig */,
+				2CCA3554F184BA0F12823057DAD10425 /* Pods-MusicForMS-tvOSTests-acknowledgements.markdown */,
+				3428E57B44C180338D90650168BF336B /* Pods-MusicForMS-tvOSTests-acknowledgements.plist */,
+				0941B4E3023165A0FA26FDE7B2330F57 /* Pods-MusicForMS-tvOSTests-dummy.m */,
+				18119DC878BCEAF8663DED186839127D /* Pods-MusicForMS-tvOSTests.debug.xcconfig */,
+				4BC1212845F7248A554D62C80A416475 /* Pods-MusicForMS-tvOSTests.release.xcconfig */,
 			);
-			name = "Pods-ReplayFX-tvOS";
-			path = "Target Support Files/Pods-ReplayFX-tvOS";
+			name = "Pods-MusicForMS-tvOSTests";
+			path = "Target Support Files/Pods-MusicForMS-tvOSTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0D20FBECCABBC45BBE1C35F83F49910F /* Headers */ = {
+		01146F0DF848EEBD84A04050ED27378C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		42FCF33037B5AB985EA238016E7B9CBA /* Headers */ = {
+		1872DAEED3063AE20FCD40DEA5D2BC90 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		87376EAEA1887DF0E133ADFBF8DB355F /* Headers */ = {
+		A4E88234B5E23F859FBF455D47D80BC0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A562C13B518C763AD16EA43DB3F0A971 /* Headers */ = {
+		C17D21F2A33326A58CAA0F45D9170350 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -370,76 +370,76 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		72E255A074BA2CB0FA79A1F6ACAE8BE4 /* Pods-ReplayFX */ = {
+		8E75E444A6EB4B9BB8F807944BF9BCEC /* Pods-MusicForMS-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 491822EF7E7D96BD78060A7B6DFE34A8 /* Build configuration list for PBXNativeTarget "Pods-ReplayFX" */;
+			buildConfigurationList = 7B28063692ACBE87A7AC7FDF757A9FC1 /* Build configuration list for PBXNativeTarget "Pods-MusicForMS-tvOSTests" */;
 			buildPhases = (
-				A562C13B518C763AD16EA43DB3F0A971 /* Headers */,
-				C1F43C16F1EF49A8353CC52971FD9483 /* Sources */,
-				AC59CEE143EEB70F13E4000632690EBD /* Frameworks */,
+				A4E88234B5E23F859FBF455D47D80BC0 /* Headers */,
+				382D368C9075579BCAB2AE38BFB3B33A /* Sources */,
+				608A47FACE9B83D4CCF0E524E24941E0 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1C4451DFB6AE5696FD71FDF51713883C /* PBXTargetDependency */,
-				B306C67E79C20B7F790D2D3762DEC25A /* PBXTargetDependency */,
+				1F61CA019F2C45E4FB332697DA1DC5A5 /* PBXTargetDependency */,
 			);
-			name = "Pods-ReplayFX";
-			productName = "Pods-ReplayFX";
-			productReference = 8E5EE91500690B56FDF0B15EC983C7E4 /* libPods-ReplayFX.a */;
+			name = "Pods-MusicForMS-tvOSTests";
+			productName = "Pods-MusicForMS-tvOSTests";
+			productReference = 3F9A027B32576A0B576DDAE93EE68625 /* libPods-MusicForMS-tvOSTests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		BFFDCEBD647869BA2BBFF0BA643D59DD /* Pods-ReplayFX-tvOSTests */ = {
+		B477DF49B336264A837E0121CDB34031 /* Pods-MusicForMSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6097AF24962C62BA77C3E17B84DDECF1 /* Build configuration list for PBXNativeTarget "Pods-ReplayFX-tvOSTests" */;
+			buildConfigurationList = 91E9FD0C5B9EC6A129D6F232F826C7EF /* Build configuration list for PBXNativeTarget "Pods-MusicForMSTests" */;
 			buildPhases = (
-				42FCF33037B5AB985EA238016E7B9CBA /* Headers */,
-				FC53577466C977AA8BDE1959B0E037D2 /* Sources */,
-				A7EE1F35121402D51525D153E4BBB69B /* Frameworks */,
+				01146F0DF848EEBD84A04050ED27378C /* Headers */,
+				57719EA7407D25902EF346B149A2F43F /* Sources */,
+				9FCF558F91BC4978A9ECBFC0912819B5 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				430EE80FB126961A44CEA2E3867E48E7 /* PBXTargetDependency */,
+				0CF8AA398B140E64A063E43672F86237 /* PBXTargetDependency */,
 			);
-			name = "Pods-ReplayFX-tvOSTests";
-			productName = "Pods-ReplayFX-tvOSTests";
-			productReference = F07865AE29E285A5301010890C67E60D /* libPods-ReplayFX-tvOSTests.a */;
+			name = "Pods-MusicForMSTests";
+			productName = "Pods-MusicForMSTests";
+			productReference = B832CDCB476B39DC99C7327C3A52BC38 /* libPods-MusicForMSTests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		D064D9723FC951F39C860C831DC499F5 /* Pods-ReplayFXTests */ = {
+		B5CE95B87DCAA572DE45A7E90D6221AE /* Pods-MusicForMS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 30B04C26CEE946E6596FC38615E77226 /* Build configuration list for PBXNativeTarget "Pods-ReplayFXTests" */;
+			buildConfigurationList = 5073CB17C84E0E6ED800C3E5EFEC7AB4 /* Build configuration list for PBXNativeTarget "Pods-MusicForMS" */;
 			buildPhases = (
-				0D20FBECCABBC45BBE1C35F83F49910F /* Headers */,
-				F5566FDCD996B79D31FA655C854E5796 /* Sources */,
-				27B8F90432ABAA366F16DBFF55E43D6C /* Frameworks */,
+				C17D21F2A33326A58CAA0F45D9170350 /* Headers */,
+				1DD8E4E4C0780E986A173AE77EF2836D /* Sources */,
+				9659049231962CD788B6D934073F285C /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7D65D10A54AF977A4B19CFE55FB112E7 /* PBXTargetDependency */,
+				97C36F09843E7257789BEBCE51D342DB /* PBXTargetDependency */,
+				B7E5C8E0BEF71B6D1B10BEDE389ADC2C /* PBXTargetDependency */,
 			);
-			name = "Pods-ReplayFXTests";
-			productName = "Pods-ReplayFXTests";
-			productReference = F44D9AEF44739AF9C2E4275142EFEF72 /* libPods-ReplayFXTests.a */;
+			name = "Pods-MusicForMS";
+			productName = "Pods-MusicForMS";
+			productReference = 6EDAAE8D742B23044EE76EDA1D4DE6B2 /* libPods-MusicForMS.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		FBEC731CECCAC1A3CF76F2CD0F61FB30 /* Pods-ReplayFX-tvOS */ = {
+		C84FE81CCFCEA669CC62CE0A30A6F972 /* Pods-MusicForMS-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E96B79EFC9B7BAE60BEAC279615B54E2 /* Build configuration list for PBXNativeTarget "Pods-ReplayFX-tvOS" */;
+			buildConfigurationList = AE8A7C2B5269D84D149F1EE51D0456F2 /* Build configuration list for PBXNativeTarget "Pods-MusicForMS-tvOS" */;
 			buildPhases = (
-				87376EAEA1887DF0E133ADFBF8DB355F /* Headers */,
-				95AECB6F5C1E5D48133009CDC17B83F4 /* Sources */,
-				1E529E3B26C991C8735C65FFD104B587 /* Frameworks */,
+				1872DAEED3063AE20FCD40DEA5D2BC90 /* Headers */,
+				A432F7D5E278AE2B5578C0741FB1427E /* Sources */,
+				85C47E84F28A041758A981A5328AA215 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-ReplayFX-tvOS";
-			productName = "Pods-ReplayFX-tvOS";
-			productReference = F34481CBCB421324F2D9BA25A518B910 /* libPods-ReplayFX-tvOS.a */;
+			name = "Pods-MusicForMS-tvOS";
+			productName = "Pods-MusicForMS-tvOS";
+			productReference = 305F20C0C87964654CB1B2DA4AC3C106 /* libPods-MusicForMS-tvOS.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -459,50 +459,50 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 66D5DE86486D077E3DF025C94F69B55E /* Products */;
+			productRefGroup = 6C824B814C1BFB3B3BFFA915A26DC182 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				A3282A5B2437E609EEB85861D7ECE717 /* AppCenter */,
 				2CD32458A161AF8E4BA58B4310701AB3 /* AppCenterReactNativeShared */,
-				72E255A074BA2CB0FA79A1F6ACAE8BE4 /* Pods-ReplayFX */,
-				FBEC731CECCAC1A3CF76F2CD0F61FB30 /* Pods-ReplayFX-tvOS */,
-				BFFDCEBD647869BA2BBFF0BA643D59DD /* Pods-ReplayFX-tvOSTests */,
-				D064D9723FC951F39C860C831DC499F5 /* Pods-ReplayFXTests */,
+				B5CE95B87DCAA572DE45A7E90D6221AE /* Pods-MusicForMS */,
+				C84FE81CCFCEA669CC62CE0A30A6F972 /* Pods-MusicForMS-tvOS */,
+				8E75E444A6EB4B9BB8F807944BF9BCEC /* Pods-MusicForMS-tvOSTests */,
+				B477DF49B336264A837E0121CDB34031 /* Pods-MusicForMSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		95AECB6F5C1E5D48133009CDC17B83F4 /* Sources */ = {
+		1DD8E4E4C0780E986A173AE77EF2836D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D63B18AC2756C5D1C221B57DAE0DBF13 /* Pods-ReplayFX-tvOS-dummy.m in Sources */,
+				726888D2401E1EEC2E6C1ED47043AA99 /* Pods-MusicForMS-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C1F43C16F1EF49A8353CC52971FD9483 /* Sources */ = {
+		382D368C9075579BCAB2AE38BFB3B33A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60296B393B61DBC5423C3F799742F30F /* Pods-ReplayFX-dummy.m in Sources */,
+				7926076FAC8B02EDD3AA6E91BDAC7388 /* Pods-MusicForMS-tvOSTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F5566FDCD996B79D31FA655C854E5796 /* Sources */ = {
+		57719EA7407D25902EF346B149A2F43F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F1C1EE3DF5AE050EC8C25F12DD9B17F /* Pods-ReplayFXTests-dummy.m in Sources */,
+				1BE1954F668091030C4264BECACFFF7A /* Pods-MusicForMSTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FC53577466C977AA8BDE1959B0E037D2 /* Sources */ = {
+		A432F7D5E278AE2B5578C0741FB1427E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EE49EA2F67168A66E94DC1FCCCF2185 /* Pods-ReplayFX-tvOSTests-dummy.m in Sources */,
+				741BAE26B001D0D14E5CC2374B86CCD3 /* Pods-MusicForMS-tvOS-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,36 +515,36 @@
 			target = A3282A5B2437E609EEB85861D7ECE717 /* AppCenter */;
 			targetProxy = D96B09CB6F7CDF72F3099DD83AD5AB87 /* PBXContainerItemProxy */;
 		};
-		1C4451DFB6AE5696FD71FDF51713883C /* PBXTargetDependency */ = {
+		0CF8AA398B140E64A063E43672F86237 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-MusicForMS";
+			target = B5CE95B87DCAA572DE45A7E90D6221AE /* Pods-MusicForMS */;
+			targetProxy = B726D8E201559F7613C428C0545AE7C6 /* PBXContainerItemProxy */;
+		};
+		1F61CA019F2C45E4FB332697DA1DC5A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-MusicForMS-tvOS";
+			target = C84FE81CCFCEA669CC62CE0A30A6F972 /* Pods-MusicForMS-tvOS */;
+			targetProxy = B8ACF7BECF43984DA0C0AB6665E6745E /* PBXContainerItemProxy */;
+		};
+		97C36F09843E7257789BEBCE51D342DB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AppCenter;
 			target = A3282A5B2437E609EEB85861D7ECE717 /* AppCenter */;
-			targetProxy = F8F934EB646B8818B906CBF22E66DA39 /* PBXContainerItemProxy */;
+			targetProxy = D3052AAAA618359152C8274B84CB3130 /* PBXContainerItemProxy */;
 		};
-		430EE80FB126961A44CEA2E3867E48E7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-ReplayFX-tvOS";
-			target = FBEC731CECCAC1A3CF76F2CD0F61FB30 /* Pods-ReplayFX-tvOS */;
-			targetProxy = AFE5C6EAC4E084B95B38DC5670391F47 /* PBXContainerItemProxy */;
-		};
-		7D65D10A54AF977A4B19CFE55FB112E7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-ReplayFX";
-			target = 72E255A074BA2CB0FA79A1F6ACAE8BE4 /* Pods-ReplayFX */;
-			targetProxy = 795C948EFF8C04D0711BE7D949D5E288 /* PBXContainerItemProxy */;
-		};
-		B306C67E79C20B7F790D2D3762DEC25A /* PBXTargetDependency */ = {
+		B7E5C8E0BEF71B6D1B10BEDE389ADC2C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AppCenterReactNativeShared;
 			target = 2CD32458A161AF8E4BA58B4310701AB3 /* AppCenterReactNativeShared */;
-			targetProxy = DA16A0F0169FE03117268EEB2C93EA5B /* PBXContainerItemProxy */;
+			targetProxy = 3B8AD06A463E915044FC59EA29EBA85D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		30E131C9E9360D3428490E5CEB56C386 /* Release */ = {
+		18DED9A8C9540A4690A81679F0122B71 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C466A142B2FE284DD284BE790871C44 /* Pods-ReplayFX.release.xcconfig */;
+			baseConfigurationReference = 14A7D86E6A87B977B596889A5BC1645A /* Pods-MusicForMS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -564,9 +564,9 @@
 			};
 			name = Release;
 		};
-		3E5409651A9FAA3F0837A26D13C84B95 /* Debug */ = {
+		1DE3CD702CB3861B003CF026A85AAB9E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A4AEA4E54D2E09799B82EEAD35285E3 /* Pods-ReplayFX.debug.xcconfig */;
+			baseConfigurationReference = 6F897C4443D73727099C756162720BAD /* Pods-MusicForMSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -585,9 +585,30 @@
 			};
 			name = Debug;
 		};
-		400E7987EC4DF43F8E10148F769BBFA4 /* Debug */ = {
+		2E728949E34406A3A8DD5FC43CEECF7C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84805758723C14D4891ECE373BA65D8D /* Pods-ReplayFX-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 4BC1212845F7248A554D62C80A416475 /* Pods-MusicForMS-tvOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		368294647EBEAE0CC52C1E5324F8981A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A48F8FE23D50C476745A3B372452E330 /* Pods-MusicForMS-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -605,9 +626,9 @@
 			};
 			name = Debug;
 		};
-		423778EB5C5C2941B95393D1B516DEBE /* Release */ = {
+		3CC3B78178268A3A708F2E556C6D0963 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4649E091569EACE528984B51678ADB3 /* Pods-ReplayFXTests.release.xcconfig */;
+			baseConfigurationReference = 4E17DFAD3DED837149A41E05C9AEEE72 /* Pods-MusicForMS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -623,9 +644,8 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
 		44DA8D30A185CF39FF38CACD51676CDD /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -641,24 +661,23 @@
 			};
 			name = Release;
 		};
-		59A6C2855D1FA4E8061565270BF5FE56 /* Debug */ = {
+		46E5B7C64888C2DA7F71F4AE59ABBB13 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22CF16B41389B34EE0120640FF71BAD6 /* Pods-ReplayFXTests.debug.xcconfig */;
+			baseConfigurationReference = 18119DC878BCEAF8663DED186839127D /* Pods-MusicForMS-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MACH_O_TYPE = staticlib;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
+				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
 			};
 			name = Debug;
 		};
@@ -750,9 +769,9 @@
 			};
 			name = Release;
 		};
-		904070F080BC00A84865A1C63E9D3063 /* Debug */ = {
+		9AA85F8DDF79E085987BC28A523BB53A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 009448AB36EFE302406F95CCEA275409 /* Pods-ReplayFX-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 627C854F215505AF7C871ED66AC7A600 /* Pods-MusicForMS-tvOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -767,26 +786,28 @@
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				VALIDATE_PRODUCT = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
-		94963E570C4D7D98E21C9857107F3008 /* Release */ = {
+		9FE312106416BF1B9637C0CE0281E7A0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7421C8D6ECA852FA77304628DCC5AC4D /* Pods-ReplayFX-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = D11AC194FE081C05F51CFA5BD7C759BD /* Pods-MusicForMSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MACH_O_TYPE = staticlib;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = appletvos;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -869,39 +890,9 @@
 			};
 			name = Debug;
 		};
-		FD8FEE219C2A1D779DD1174478D1B41F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5378624C5E8F13DB8E36603C7A76FCF8 /* Pods-ReplayFX-tvOS.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		30B04C26CEE946E6596FC38615E77226 /* Build configuration list for PBXNativeTarget "Pods-ReplayFXTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				59A6C2855D1FA4E8061565270BF5FE56 /* Debug */,
-				423778EB5C5C2941B95393D1B516DEBE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -911,20 +902,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		491822EF7E7D96BD78060A7B6DFE34A8 /* Build configuration list for PBXNativeTarget "Pods-ReplayFX" */ = {
+		5073CB17C84E0E6ED800C3E5EFEC7AB4 /* Build configuration list for PBXNativeTarget "Pods-MusicForMS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3E5409651A9FAA3F0837A26D13C84B95 /* Debug */,
-				30E131C9E9360D3428490E5CEB56C386 /* Release */,
+				3CC3B78178268A3A708F2E556C6D0963 /* Debug */,
+				18DED9A8C9540A4690A81679F0122B71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6097AF24962C62BA77C3E17B84DDECF1 /* Build configuration list for PBXNativeTarget "Pods-ReplayFX-tvOSTests" */ = {
+		7B28063692ACBE87A7AC7FDF757A9FC1 /* Build configuration list for PBXNativeTarget "Pods-MusicForMS-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				400E7987EC4DF43F8E10148F769BBFA4 /* Debug */,
-				94963E570C4D7D98E21C9857107F3008 /* Release */,
+				46E5B7C64888C2DA7F71F4AE59ABBB13 /* Debug */,
+				2E728949E34406A3A8DD5FC43CEECF7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91E9FD0C5B9EC6A129D6F232F826C7EF /* Build configuration list for PBXNativeTarget "Pods-MusicForMSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DE3CD702CB3861B003CF026A85AAB9E /* Debug */,
+				9FE312106416BF1B9637C0CE0281E7A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE8A7C2B5269D84D149F1EE51D0456F2 /* Build configuration list for PBXNativeTarget "Pods-MusicForMS-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				368294647EBEAE0CC52C1E5324F8981A /* Debug */,
+				9AA85F8DDF79E085987BC28A523BB53A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -943,15 +952,6 @@
 			buildConfigurations = (
 				6F4D25CB9F599D775DBC451590213731 /* Debug */,
 				8A791558A6CAD52F6A29BE7CDFC70C4B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E96B79EFC9B7BAE60BEAC279615B54E2 /* Build configuration list for PBXNativeTarget "Pods-ReplayFX-tvOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				904070F080BC00A84865A1C63E9D3063 /* Debug */,
-				FD8FEE219C2A1D779DD1174478D1B41F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
