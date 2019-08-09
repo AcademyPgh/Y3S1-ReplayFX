@@ -2,9 +2,9 @@ import {GetUserToken} from '../components/Auth';
 import axios from 'axios';
 import {getConventionDataURL} from './API';
 
-export async function loadConvention (convention, getUser) {
+export async function loadConvention (convention, requestUser) {
     let headers = null;
-    if(getUser) 
+    if(requestUser) 
     {
         let token = await GetUserToken({force: false});
         if(token)

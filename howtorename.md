@@ -67,7 +67,7 @@ do it. For example: `git add . && git commit -m 'AppName version of app' && git 
 ### Create store pages
 
 #### iOS
-Follow some tutorial online. You'll start at https://developer.apple.com > App Store Connect, then (using XCode) build, validate, and distribute.
+Follow some tutorial online. Last time, I used [this page](https://developer.apple.com/support/app-store-connect/) and then [this one](https://flutter.dev/docs/deployment/ios). You'll start at https://developer.apple.com > App Store Connect, then (using XCode) build, validate, and distribute.
 
 #### Android
 You'll start at https://play.google.com/apps/publish and create a new application.
@@ -84,6 +84,9 @@ In the iOS version of the app in App Center, do this to build:
    1. Get the P12 file from John. (It's on the iMac at LFG in Documents)
 1. Press 'save' until it's happy. Then build.
 1. Go to Distribute > Stores > Connect to Store > App Store Connect. Select your app and 'Assign'. It will probably not have the right icon yet
+
+When you try to sign your build, you may run into an error that says: `Error in fetching the Apple service connectiond details...`. To fix that:
+1. go to User (upper right icon) > `Account settings` > `Developer accounts` > ... > `Reconnect` and enter your 2-factor security code. Then `Update app-specific password`, then follow the instructions about generating a new one and update it.
 
 #### Android
 In the Android version of the app in App Center, do this to build:
