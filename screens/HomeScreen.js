@@ -102,10 +102,10 @@ export default class HomeScreen extends Component {
         {type: 'Schedule', title: 'My Schedule', options: {title: 'MY SCHEDULE', scheduleFilter: 'my-schedule'}},
         //{type: 'GamesMain', title: 'Games',},
         {type: 'SocialFeed', title: 'Social Wall'},
-        {type: 'VendorsList', title: 'Featured Sponsors'},
+        {type: 'VendorsList', title: 'Vendors'},
         ...this.subMenu().map(item => {return {type: 'Schedule', title: item.name, options: {title: item.displayName, scheduleFilter: item.name}}}),
         //{type: 'Profile', title: 'Profile'},
-        //{type: 'Sponsors', title: 'Sponsors'}
+        {type: 'Sponsors', title: 'Sponsors'},
         {type: 'StaticMap', title: 'Map'},
       ];
 
