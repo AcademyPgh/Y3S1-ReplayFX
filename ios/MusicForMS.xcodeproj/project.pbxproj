@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -52,7 +51,6 @@
 		391D6276C3C04164A2C10ECA /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60B7A6025101419181396D11 /* Nunito-Black.ttf */; };
 		4ACADF8F812E45FCAA13E021 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC69CC7E3B82451C97B93CBA /* Nunito-Light.ttf */; };
 		4B14C3F637EF4044BD10C1E3 /* Nunito-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B9B785D67BF40DBBF47AEB4 /* Nunito-SemiBoldItalic.ttf */; };
-		4B2169A515BA440EA733F0F8 /* libA0Auth0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AAE002B8C7C4C8AA7CB89C6 /* libA0Auth0.a */; };
 		52A635AB23025F8A0042DC6C /* libRNCPushNotificationIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A635AA23025F820042DC6C /* libRNCPushNotificationIOS.a */; };
 		59CE9BECAEFC44679DA57216 /* Avenir-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3122CE1DAC1A46BAA2DB7E79 /* Avenir-Medium.ttf */; };
 		5A34E5BB35944C468944D8D1 /* Nunito-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2395200C0214356964843C2 /* Nunito-ExtraLight.ttf */; };
@@ -356,13 +354,6 @@
 			remoteGlobalIDString = C35AEC211EF91F9300931F0C;
 			remoteInfo = AppCenterReactNative;
 		};
-		52165128221DF1BC000E31B9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CB40360DDD1B4C1EBD2CD99D /* A0Auth0.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 134814201AA4EA6300B7C361;
-			remoteInfo = A0Auth0;
-		};
 		5216512E221DF1BC000E31B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B29C2E995B744311B1E14CE4 /* CodePush.xcodeproj */;
@@ -512,7 +503,6 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		832F242B793240A08FFAA5A0 /* Avenir-Book.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Avenir-Book.ttf"; path = "../assets/fonts/Avenir-Book.ttf"; sourceTree = "<group>"; };
 		89696B4F0C9C491BA562A543 /* Nunito-ExtraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-ExtraLightItalic.ttf"; path = "../assets/fonts/Nunito-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
-		8AAE002B8C7C4C8AA7CB89C6 /* libA0Auth0.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libA0Auth0.a; sourceTree = "<group>"; };
 		902822B4D7C16D3818E0C942 /* Pods-MusicForMSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicForMSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicForMSTests/Pods-MusicForMSTests.release.xcconfig"; sourceTree = "<group>"; };
 		91CA1787ADE82DA7CDB04915 /* Pods-MusicForMSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicForMSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicForMSTests/Pods-MusicForMSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9543053BD2EE470891D08F95 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = "<group>"; };
@@ -531,7 +521,6 @@
 		C2395200C0214356964843C2 /* Nunito-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-ExtraLight.ttf"; path = "../assets/fonts/Nunito-ExtraLight.ttf"; sourceTree = "<group>"; };
 		C3E6D08F843C01EBAA56A6FA /* Pods-MusicForMS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicForMS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicForMS/Pods-MusicForMS.release.xcconfig"; sourceTree = "<group>"; };
 		C6745FBFFA8444E091055A34 /* libAppCenterReactNative.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAppCenterReactNative.a; sourceTree = "<group>"; };
-		CB40360DDD1B4C1EBD2CD99D /* A0Auth0.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = A0Auth0.xcodeproj; path = "../node_modules/react-native-auth0/ios/A0Auth0.xcodeproj"; sourceTree = "<group>"; };
 		D0DE4E9A484943E287D6D8FB /* AppCenterReactNativeCrashes.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNativeCrashes.xcodeproj; path = "../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes.xcodeproj"; sourceTree = "<group>"; };
 		D4F6079630E74ED686111ECA /* Nunito-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Regular.ttf"; path = "../assets/fonts/Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		D63BACF3516E41A5BB8AF1E9 /* Nunito-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Italic.ttf"; path = "../assets/fonts/Nunito-Italic.ttf"; sourceTree = "<group>"; };
@@ -582,7 +571,6 @@
 				D5F6DC3AD212F7A2FC42FE85 /* libPods-MusicForMS.a in Frameworks */,
 				A5342507166E4DC58911E6D6 /* libAppCenterReactNativeAnalytics.a in Frameworks */,
 				E80E4ECDEA6A45598CD8C991 /* libAppCenterReactNativeCrashes.a in Frameworks */,
-				4B2169A515BA440EA733F0F8 /* libA0Auth0.a in Frameworks */,
 				FE93E4DB91A747C2AABDFDDB /* libCodePush.a in Frameworks */,
 				145C4557BA914B5690A45EA6 /* libz.tbd in Frameworks */,
 				5D9C1F9E4C53423D9A8432EB /* libRNGestureHandler.a in Frameworks */,
@@ -802,14 +790,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		52165125221DF1BC000E31B9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				52165129221DF1BC000E31B9 /* libA0Auth0.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		5216512A221DF1BC000E31B9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -883,7 +863,6 @@
 				64851E011A2E486585D29760 /* AppCenterReactNative.xcodeproj */,
 				A67500EC90714331A82E9484 /* AppCenterReactNativeAnalytics.xcodeproj */,
 				D0DE4E9A484943E287D6D8FB /* AppCenterReactNativeCrashes.xcodeproj */,
-				CB40360DDD1B4C1EBD2CD99D /* A0Auth0.xcodeproj */,
 				B29C2E995B744311B1E14CE4 /* CodePush.xcodeproj */,
 				EA105E0324B7492498CA805B /* RNGestureHandler.xcodeproj */,
 			);
@@ -1109,10 +1088,6 @@
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
-				{
-					ProductGroup = 52165125221DF1BC000E31B9 /* Products */;
-					ProjectRef = CB40360DDD1B4C1EBD2CD99D /* A0Auth0.xcodeproj */;
-				},
 				{
 					ProductGroup = 52165120221DF1BC000E31B9 /* Products */;
 					ProjectRef = 64851E011A2E486585D29760 /* AppCenterReactNative.xcodeproj */;
@@ -1444,13 +1419,6 @@
 			fileType = archive.ar;
 			path = libAppCenterReactNative.a;
 			remoteRef = 52165123221DF1BC000E31B9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		52165129221DF1BC000E31B9 /* libA0Auth0.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libA0Auth0.a;
-			remoteRef = 52165128221DF1BC000E31B9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		5216512F221DF1BC000E31B9 /* libCodePush.a */ = {

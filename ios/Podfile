@@ -17,6 +17,8 @@ target 'MusicForMS' do
 
   pod 'RNCPushNotificationIOS', :path => '../node_modules/@react-native-community/push-notification-ios'
 
+  pod 'A0Auth0', :path => '../node_modules/react-native-auth0'
+
   target 'MusicForMSTests' do
     inherit! :search_paths
     # Pods for testing
