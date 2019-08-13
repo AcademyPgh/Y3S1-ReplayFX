@@ -12,7 +12,7 @@ target 'MusicForMS' do
 
   
 
-  platform :ios, '9.0'
+  platform :ios, '12.1'
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
   pod 'RNCPushNotificationIOS', :path => '../node_modules/@react-native-community/push-notification-ios'
