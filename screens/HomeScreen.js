@@ -103,6 +103,7 @@ export default class HomeScreen extends Component {
       [
         {type: 'Schedule', title: 'Schedule'},
         {type: 'Schedule', title: 'My Schedule', options: {title: 'MY SCHEDULE', scheduleFilter: 'my-schedule'}},
+<<<<<<< HEAD
         // {type: 'GamesMain', title: 'Games',},
         //{type: 'SocialFeed', title: 'Social Wall'},
         ...this.subMenu().map(item => {return {type: 'Schedule', title: item.displayName, options: {title: item.displayName, scheduleFilter: item.name}}}),
@@ -111,6 +112,15 @@ export default class HomeScreen extends Component {
         {type: 'Sponsors', title: 'Sponsors'},
         // {type: 'StaticMap', title: 'Map'},
         {type: 'LinkedMap', title: 'Map'},
+=======
+        //{type: 'GamesMain', title: 'Games',},
+        {type: 'SocialFeed', title: 'Social Wall'},
+        {type: 'VendorsList', title: 'Vendors'},
+        ...this.subMenu().map(item => {return {type: 'Schedule', title: item.name, options: {title: item.displayName, scheduleFilter: item.name}}}),
+        //{type: 'Profile', title: 'Profile'},
+        {type: 'Sponsors', title: 'Sponsors'},
+        {type: 'StaticMap', title: 'Map'},
+>>>>>>> origin/master
       ];
 
     props = this.props;  
