@@ -827,7 +827,7 @@
 				DEVELOPMENT_TEAM = 852Q762CE6;
 				INFOPLIST_FILE = OSGCon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.6;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -848,7 +848,7 @@
 				DEVELOPMENT_TEAM = 852Q762CE6;
 				INFOPLIST_FILE = OSGCon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.6;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
