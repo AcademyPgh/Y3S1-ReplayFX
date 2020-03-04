@@ -1,4 +1,4 @@
-package com.scheduleapp;
+package com.academypgh.osgcon;
 
 import android.app.Application;
 import android.content.Context;

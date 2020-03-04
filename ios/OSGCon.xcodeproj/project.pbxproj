@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* ScheduleAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ScheduleAppTests.m */; };
-		0DF85EA249C8C00A0CE001B6 /* libPods-ScheduleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54FDBAB9EA0E44075DC9AECA /* libPods-ScheduleApp.a */; };
+		00E356F31AD99517003FC87E /* OSGConTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* OSGConTests.m */; };
+		0DF85EA249C8C00A0CE001B6 /* libPods-OSGCon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54FDBAB9EA0E44075DC9AECA /* libPods-OSGCon.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -19,13 +19,13 @@
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* ScheduleAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ScheduleAppTests.m */; };
-		32EAD4AF3F272F786DF7B62D /* libPods-ScheduleAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B69AF955D7D12255C924948 /* libPods-ScheduleAppTests.a */; };
+		2DCD954D1E0B4F2C00145EB5 /* OSGConTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* OSGConTests.m */; };
+		32EAD4AF3F272F786DF7B62D /* libPods-OSGConTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B69AF955D7D12255C924948 /* libPods-OSGConTests.a */; };
 		3EDEC27F885E443AB71C6092 /* Avenir-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3C39571C2E94F53A4F60200 /* Avenir-Medium.ttf */; };
 		3F86DB47B5E545F2ABCED9EF /* Avenir-BookOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01D31775EC0F466392A1A2AA /* Avenir-BookOblique.ttf */; };
 		5B673390CBD74CFCA650ADBA /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9275AEDBFE724777BB4F4336 /* Nunito-Black.ttf */; };
 		5C7F6D10211A42DA81EB183D /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F5B670D57CB42A78969A1EC /* Nunito-ExtraBold.ttf */; };
-		5E2E72D799D407EAB5B25249 /* libPods-ScheduleApp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAFE03D1B3984CEE27C9AF0 /* libPods-ScheduleApp-tvOS.a */; };
+		5E2E72D799D407EAB5B25249 /* libPods-OSGCon-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAFE03D1B3984CEE27C9AF0 /* libPods-OSGCon-tvOS.a */; };
 		5F11A1FA3C8E4B4AACCAD136 /* Nunito-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE7AED2345A54EDDA7DEA150 /* Nunito-SemiBoldItalic.ttf */; };
 		65D09D2C6FD940E4BC83D1C5 /* Nunito-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B033E5B520EE4C748C26E44D /* Nunito-BlackItalic.ttf */; };
 		67E9A44388EB4F8A9F1BC7C4 /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24670477006A4651BC921C17 /* Nunito-ExtraBoldItalic.ttf */; };
@@ -44,7 +44,7 @@
 		D30FE512BBD3466DBEB4E4A4 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 281F69979F1D47638A55E716 /* Nunito-Regular.ttf */; };
 		D549DC3567504D7B876B5240 /* Avenir-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F68428DE8F6E43E8B5C03EFC /* Avenir-Book.ttf */; };
 		D5BA6DBB200246039D3E2177 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F61C1B0BA8DA4F4EAB97D8F2 /* Nunito-Bold.ttf */; };
-		DD4A640CD1A7C8F66EF2E234 /* libPods-ScheduleApp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 260D7E08D4C36940FA3042CA /* libPods-ScheduleApp-tvOSTests.a */; };
+		DD4A640CD1A7C8F66EF2E234 /* libPods-OSGCon-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 260D7E08D4C36940FA3042CA /* libPods-OSGCon-tvOSTests.a */; };
 		E0738821C08E41CA93802581 /* Avenir-Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BAB0DA31145B42BA9D448E7B /* Avenir-Oblique.ttf */; };
 /* End PBXBuildFile section */
 
@@ -54,59 +54,59 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = ScheduleApp;
+			remoteInfo = OSGCon;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "ScheduleApp-tvOS";
+			remoteInfo = "OSGCon-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* ScheduleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScheduleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* OSGConTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSGConTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* ScheduleAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScheduleAppTests.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* OSGConTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSGConTests.m; sourceTree = "<group>"; };
 		01D31775EC0F466392A1A2AA /* Avenir-BookOblique.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Avenir-BookOblique.ttf"; path = "../assets/fonts/Avenir-BookOblique.ttf"; sourceTree = "<group>"; };
-		0418AD0740CC8DD597590B6D /* Pods-ScheduleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleApp.release.xcconfig"; path = "Target Support Files/Pods-ScheduleApp/Pods-ScheduleApp.release.xcconfig"; sourceTree = "<group>"; };
+		0418AD0740CC8DD597590B6D /* Pods-OSGCon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSGCon.release.xcconfig"; path = "Target Support Files/Pods-OSGCon/Pods-OSGCon.release.xcconfig"; sourceTree = "<group>"; };
 		05D25EDE32234FEB8B95F13F /* Nunito-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-BoldItalic.ttf"; path = "../assets/fonts/Nunito-BoldItalic.ttf"; sourceTree = "<group>"; };
 		09E90F622FB54B24ACA83D58 /* Avenir-Roman.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Avenir-Roman.ttf"; path = "../assets/fonts/Avenir-Roman.ttf"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* ScheduleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ScheduleApp/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ScheduleApp/AppDelegate.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* OSGCon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSGCon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = OSGCon/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = OSGCon/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ScheduleApp/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ScheduleApp/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ScheduleApp/main.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = OSGCon/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = OSGCon/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = OSGCon/main.m; sourceTree = "<group>"; };
 		16F9E37EF7E14DBFA613EB2A /* Nunito-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-LightItalic.ttf"; path = "../assets/fonts/Nunito-LightItalic.ttf"; sourceTree = "<group>"; };
 		182AFDC3234146329401C2DF /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		1F5B670D57CB42A78969A1EC /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-ExtraBold.ttf"; path = "../assets/fonts/Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
 		22F3141CE38C4206856CC81E /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		24670477006A4651BC921C17 /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-ExtraBoldItalic.ttf"; path = "../assets/fonts/Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
-		260D7E08D4C36940FA3042CA /* libPods-ScheduleApp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScheduleApp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		260D7E08D4C36940FA3042CA /* libPods-OSGCon-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OSGCon-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		281F69979F1D47638A55E716 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Regular.ttf"; path = "../assets/fonts/Nunito-Regular.ttf"; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* ScheduleApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ScheduleApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* ScheduleApp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ScheduleApp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2EAFE03D1B3984CEE27C9AF0 /* libPods-ScheduleApp-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScheduleApp-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		34EB22855ED7027F231E8DEC /* Pods-ScheduleApp-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleApp-tvOS.release.xcconfig"; path = "Target Support Files/Pods-ScheduleApp-tvOS/Pods-ScheduleApp-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		2D02E47B1E0B4A5D006451C7 /* OSGCon-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSGCon-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* OSGCon-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OSGCon-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EAFE03D1B3984CEE27C9AF0 /* libPods-OSGCon-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OSGCon-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34EB22855ED7027F231E8DEC /* Pods-OSGCon-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSGCon-tvOS.release.xcconfig"; path = "Target Support Files/Pods-OSGCon-tvOS/Pods-OSGCon-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		35FA805F849D43999FBD0EF3 /* Avenir-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Avenir-Black.ttf"; path = "../assets/fonts/Avenir-Black.ttf"; sourceTree = "<group>"; };
-		38E388A8702C81822C7D5470 /* Pods-ScheduleApp-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleApp-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-ScheduleApp-tvOS/Pods-ScheduleApp-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		38E388A8702C81822C7D5470 /* Pods-OSGCon-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSGCon-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-OSGCon-tvOS/Pods-OSGCon-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		449F110E183F4EA8AC4F9EF9 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		4B957BD9297B49FCADAAE3A8 /* Avenir-BlackOblique.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Avenir-BlackOblique.ttf"; path = "../assets/fonts/Avenir-BlackOblique.ttf"; sourceTree = "<group>"; };
-		4C5FC426970D75A3581B61FA /* Pods-ScheduleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleApp.debug.xcconfig"; path = "Target Support Files/Pods-ScheduleApp/Pods-ScheduleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4C5FC426970D75A3581B61FA /* Pods-OSGCon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSGCon.debug.xcconfig"; path = "Target Support Files/Pods-OSGCon/Pods-OSGCon.debug.xcconfig"; sourceTree = "<group>"; };
 		5110F0DC59D049DE8B9ADD0C /* Avenir-LightOblique.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Avenir-LightOblique.ttf"; path = "../assets/fonts/Avenir-LightOblique.ttf"; sourceTree = "<group>"; };
-		54FDBAB9EA0E44075DC9AECA /* libPods-ScheduleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScheduleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		54FDBAB9EA0E44075DC9AECA /* libPods-OSGCon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OSGCon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B65FACE4FA14BDBB9F8F46A /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		5BD05C4E85AD49C6966B0032 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		6B47CE6EBE9641F480C5C642 /* Nunito-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Light.ttf"; path = "../assets/fonts/Nunito-Light.ttf"; sourceTree = "<group>"; };
-		6B69AF955D7D12255C924948 /* libPods-ScheduleAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScheduleAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		78A602207C1A3DEE0FFF06F8 /* Pods-ScheduleAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleAppTests.release.xcconfig"; path = "Target Support Files/Pods-ScheduleAppTests/Pods-ScheduleAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		6B69AF955D7D12255C924948 /* libPods-OSGConTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OSGConTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78A602207C1A3DEE0FFF06F8 /* Pods-OSGConTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSGConTests.release.xcconfig"; path = "Target Support Files/Pods-OSGConTests/Pods-OSGConTests.release.xcconfig"; sourceTree = "<group>"; };
 		7DA360D5BC004892BA00AE07 /* Avenir-HeavyOblique.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Avenir-HeavyOblique.ttf"; path = "../assets/fonts/Avenir-HeavyOblique.ttf"; sourceTree = "<group>"; };
 		7DD69717C38E4512B452E4A9 /* Nunito-ExtraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-ExtraLightItalic.ttf"; path = "../assets/fonts/Nunito-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
-		87B877FAF3538C7A87B9B0C5 /* Pods-ScheduleAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ScheduleAppTests/Pods-ScheduleAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		87B877FAF3538C7A87B9B0C5 /* Pods-OSGConTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSGConTests.debug.xcconfig"; path = "Target Support Files/Pods-OSGConTests/Pods-OSGConTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8825F1E75FCD4176AF4B5E60 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		9141022788114172B20D431C /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		9275AEDBFE724777BB4F4336 /* Nunito-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Black.ttf"; path = "../assets/fonts/Nunito-Black.ttf"; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 		B3D10BA0E0D84D2AA5B39C14 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		B813010FB15242278354AA22 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		BAB0DA31145B42BA9D448E7B /* Avenir-Oblique.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Avenir-Oblique.ttf"; path = "../assets/fonts/Avenir-Oblique.ttf"; sourceTree = "<group>"; };
-		BC27D2136056C49FC05B59A5 /* Pods-ScheduleApp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleApp-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-ScheduleApp-tvOSTests/Pods-ScheduleApp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BC27D2136056C49FC05B59A5 /* Pods-OSGCon-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSGCon-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-OSGCon-tvOSTests/Pods-OSGCon-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC819FAF17E64AD6BF20E4EE /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-SemiBold.ttf"; path = "../assets/fonts/Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		C84E2224C9124BC8887053AF /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		D7F637D4F52A4B08AE643EAF /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		EEA1F7A91CB04980972A0CF8 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
-		EF4DD1EC22A0B60D5BBE93CD /* Pods-ScheduleApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-ScheduleApp-tvOSTests/Pods-ScheduleApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		EF4DD1EC22A0B60D5BBE93CD /* Pods-OSGCon-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSGCon-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-OSGCon-tvOSTests/Pods-OSGCon-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		F61C1B0BA8DA4F4EAB97D8F2 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Bold.ttf"; path = "../assets/fonts/Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		F68428DE8F6E43E8B5C03EFC /* Avenir-Book.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Avenir-Book.ttf"; path = "../assets/fonts/Avenir-Book.ttf"; sourceTree = "<group>"; };
 		FE7AED2345A54EDDA7DEA150 /* Nunito-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-SemiBoldItalic.ttf"; path = "../assets/fonts/Nunito-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32EAD4AF3F272F786DF7B62D /* libPods-ScheduleAppTests.a in Frameworks */,
+				32EAD4AF3F272F786DF7B62D /* libPods-OSGConTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DF85EA249C8C00A0CE001B6 /* libPods-ScheduleApp.a in Frameworks */,
+				0DF85EA249C8C00A0CE001B6 /* libPods-OSGCon.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,7 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E2E72D799D407EAB5B25249 /* libPods-ScheduleApp-tvOS.a in Frameworks */,
+				5E2E72D799D407EAB5B25249 /* libPods-OSGCon-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,20 +166,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD4A640CD1A7C8F66EF2E234 /* libPods-ScheduleApp-tvOSTests.a in Frameworks */,
+				DD4A640CD1A7C8F66EF2E234 /* libPods-OSGCon-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* ScheduleAppTests */ = {
+		00E356EF1AD99517003FC87E /* OSGConTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* ScheduleAppTests.m */,
+				00E356F21AD99517003FC87E /* OSGConTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = ScheduleAppTests;
+			path = OSGConTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -239,7 +239,7 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* ScheduleApp */ = {
+		13B07FAE1A68108700A75B9A /* OSGCon */ = {
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -250,7 +250,7 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = ScheduleApp;
+			name = OSGCon;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -258,10 +258,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				54FDBAB9EA0E44075DC9AECA /* libPods-ScheduleApp.a */,
-				2EAFE03D1B3984CEE27C9AF0 /* libPods-ScheduleApp-tvOS.a */,
-				260D7E08D4C36940FA3042CA /* libPods-ScheduleApp-tvOSTests.a */,
-				6B69AF955D7D12255C924948 /* libPods-ScheduleAppTests.a */,
+				54FDBAB9EA0E44075DC9AECA /* libPods-OSGCon.a */,
+				2EAFE03D1B3984CEE27C9AF0 /* libPods-OSGCon-tvOS.a */,
+				260D7E08D4C36940FA3042CA /* libPods-OSGCon-tvOSTests.a */,
+				6B69AF955D7D12255C924948 /* libPods-OSGConTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -276,9 +276,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* ScheduleApp */,
+				13B07FAE1A68108700A75B9A /* OSGCon */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* ScheduleAppTests */,
+				00E356EF1AD99517003FC87E /* OSGConTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				AC4E14BFBFD032727F9D18EF /* Pods */,
@@ -292,10 +292,10 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* ScheduleApp.app */,
-				00E356EE1AD99517003FC87E /* ScheduleAppTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* ScheduleApp-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* ScheduleApp-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* OSGCon.app */,
+				00E356EE1AD99517003FC87E /* OSGConTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* OSGCon-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* OSGCon-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -303,14 +303,14 @@
 		AC4E14BFBFD032727F9D18EF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4C5FC426970D75A3581B61FA /* Pods-ScheduleApp.debug.xcconfig */,
-				0418AD0740CC8DD597590B6D /* Pods-ScheduleApp.release.xcconfig */,
-				38E388A8702C81822C7D5470 /* Pods-ScheduleApp-tvOS.debug.xcconfig */,
-				34EB22855ED7027F231E8DEC /* Pods-ScheduleApp-tvOS.release.xcconfig */,
-				BC27D2136056C49FC05B59A5 /* Pods-ScheduleApp-tvOSTests.debug.xcconfig */,
-				EF4DD1EC22A0B60D5BBE93CD /* Pods-ScheduleApp-tvOSTests.release.xcconfig */,
-				87B877FAF3538C7A87B9B0C5 /* Pods-ScheduleAppTests.debug.xcconfig */,
-				78A602207C1A3DEE0FFF06F8 /* Pods-ScheduleAppTests.release.xcconfig */,
+				4C5FC426970D75A3581B61FA /* Pods-OSGCon.debug.xcconfig */,
+				0418AD0740CC8DD597590B6D /* Pods-OSGCon.release.xcconfig */,
+				38E388A8702C81822C7D5470 /* Pods-OSGCon-tvOS.debug.xcconfig */,
+				34EB22855ED7027F231E8DEC /* Pods-OSGCon-tvOS.release.xcconfig */,
+				BC27D2136056C49FC05B59A5 /* Pods-OSGCon-tvOSTests.debug.xcconfig */,
+				EF4DD1EC22A0B60D5BBE93CD /* Pods-OSGCon-tvOSTests.release.xcconfig */,
+				87B877FAF3538C7A87B9B0C5 /* Pods-OSGConTests.debug.xcconfig */,
+				78A602207C1A3DEE0FFF06F8 /* Pods-OSGConTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -318,9 +318,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* ScheduleAppTests */ = {
+		00E356ED1AD99517003FC87E /* OSGConTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ScheduleAppTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "OSGConTests" */;
 			buildPhases = (
 				E7ACE20B655F9970AEEADF37 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -332,14 +332,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = ScheduleAppTests;
-			productName = ScheduleAppTests;
-			productReference = 00E356EE1AD99517003FC87E /* ScheduleAppTests.xctest */;
+			name = OSGConTests;
+			productName = OSGConTests;
+			productReference = 00E356EE1AD99517003FC87E /* OSGConTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* ScheduleApp */ = {
+		13B07F861A680F5B00A75B9A /* OSGCon */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ScheduleApp" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "OSGCon" */;
 			buildPhases = (
 				D47CBFD0424C0E13A7700892 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -353,14 +353,14 @@
 			);
 			dependencies = (
 			);
-			name = ScheduleApp;
-			productName = ScheduleApp;
-			productReference = 13B07F961A680F5B00A75B9A /* ScheduleApp.app */;
+			name = OSGCon;
+			productName = OSGCon;
+			productReference = 13B07F961A680F5B00A75B9A /* OSGCon.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* ScheduleApp-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* OSGCon-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ScheduleApp-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "OSGCon-tvOS" */;
 			buildPhases = (
 				4192D4E8517BA4465900C55B /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
@@ -373,14 +373,14 @@
 			);
 			dependencies = (
 			);
-			name = "ScheduleApp-tvOS";
-			productName = "ScheduleApp-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* ScheduleApp-tvOS.app */;
+			name = "OSGCon-tvOS";
+			productName = "OSGCon-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* OSGCon-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* ScheduleApp-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* OSGCon-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ScheduleApp-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "OSGCon-tvOSTests" */;
 			buildPhases = (
 				12CE07DDE046D47C10650EB9 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
@@ -392,9 +392,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "ScheduleApp-tvOSTests";
-			productName = "ScheduleApp-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* ScheduleApp-tvOSTests.xctest */;
+			name = "OSGCon-tvOSTests";
+			productName = "OSGCon-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* OSGCon-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -424,7 +424,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ScheduleApp" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "OSGCon" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -438,10 +438,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* ScheduleApp */,
-				00E356ED1AD99517003FC87E /* ScheduleAppTests */,
-				2D02E47A1E0B4A5D006451C7 /* ScheduleApp-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* ScheduleApp-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* OSGCon */,
+				00E356ED1AD99517003FC87E /* OSGConTests */,
+				2D02E47A1E0B4A5D006451C7 /* OSGCon-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* OSGCon-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -536,7 +536,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ScheduleApp-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-OSGCon-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -572,7 +572,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ScheduleApp-tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-OSGCon-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -585,7 +585,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ScheduleApp/Pods-ScheduleApp-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-OSGCon/Pods-OSGCon-resources.sh",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -624,7 +624,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScheduleApp/Pods-ScheduleApp-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OSGCon/Pods-OSGCon-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D47CBFD0424C0E13A7700892 /* [CP] Check Pods Manifest.lock */ = {
@@ -642,7 +642,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ScheduleApp-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-OSGCon-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -664,7 +664,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ScheduleAppTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-OSGConTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -716,7 +716,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* ScheduleAppTests.m in Sources */,
+				00E356F31AD99517003FC87E /* OSGConTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,7 +742,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* ScheduleAppTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* OSGConTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -751,12 +751,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* ScheduleApp */;
+			target = 13B07F861A680F5B00A75B9A /* OSGCon */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* ScheduleApp-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* OSGCon-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -768,7 +768,7 @@
 				13B07FB21A68108700A75B9A /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = ScheduleApp;
+			path = OSGCon;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -776,14 +776,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87B877FAF3538C7A87B9B0C5 /* Pods-ScheduleAppTests.debug.xcconfig */;
+			baseConfigurationReference = 87B877FAF3538C7A87B9B0C5 /* Pods-OSGConTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = ScheduleAppTests/Info.plist;
+				INFOPLIST_FILE = OSGConTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -793,17 +793,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScheduleApp.app/ScheduleApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OSGCon.app/OSGCon";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78A602207C1A3DEE0FFF06F8 /* Pods-ScheduleAppTests.release.xcconfig */;
+			baseConfigurationReference = 78A602207C1A3DEE0FFF06F8 /* Pods-OSGConTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = ScheduleAppTests/Info.plist;
+				INFOPLIST_FILE = OSGConTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -813,19 +813,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScheduleApp.app/ScheduleApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OSGCon.app/OSGCon";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C5FC426970D75A3581B61FA /* Pods-ScheduleApp.debug.xcconfig */;
+			baseConfigurationReference = 4C5FC426970D75A3581B61FA /* Pods-OSGCon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 852Q762CE6;
-				INFOPLIST_FILE = ScheduleApp/Info.plist;
+				INFOPLIST_FILE = OSGCon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.5;
 				OTHER_LDFLAGS = (
@@ -833,20 +833,20 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = ScheduleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AcademyPGH.OSGCon;
+				PRODUCT_NAME = OSGCon;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0418AD0740CC8DD597590B6D /* Pods-ScheduleApp.release.xcconfig */;
+			baseConfigurationReference = 0418AD0740CC8DD597590B6D /* Pods-OSGCon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 852Q762CE6;
-				INFOPLIST_FILE = ScheduleApp/Info.plist;
+				INFOPLIST_FILE = OSGCon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.5;
 				OTHER_LDFLAGS = (
@@ -854,15 +854,15 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = ScheduleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AcademyPGH.OSGCon;
+				PRODUCT_NAME = OSGCon;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38E388A8702C81822C7D5470 /* Pods-ScheduleApp-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 38E388A8702C81822C7D5470 /* Pods-OSGCon-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -873,14 +873,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "ScheduleApp-tvOS/Info.plist";
+				INFOPLIST_FILE = "OSGCon-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.ScheduleApp-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.OSGCon-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -890,7 +890,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34EB22855ED7027F231E8DEC /* Pods-ScheduleApp-tvOS.release.xcconfig */;
+			baseConfigurationReference = 34EB22855ED7027F231E8DEC /* Pods-OSGCon-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -901,14 +901,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "ScheduleApp-tvOS/Info.plist";
+				INFOPLIST_FILE = "OSGCon-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.ScheduleApp-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.OSGCon-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -918,7 +918,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC27D2136056C49FC05B59A5 /* Pods-ScheduleApp-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = BC27D2136056C49FC05B59A5 /* Pods-OSGCon-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -928,24 +928,24 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "ScheduleApp-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "OSGCon-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.ScheduleApp-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.OSGCon-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScheduleApp-tvOS.app/ScheduleApp-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OSGCon-tvOS.app/OSGCon-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF4DD1EC22A0B60D5BBE93CD /* Pods-ScheduleApp-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = EF4DD1EC22A0B60D5BBE93CD /* Pods-OSGCon-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -955,17 +955,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "ScheduleApp-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "OSGCon-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.ScheduleApp-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.OSGCon-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScheduleApp-tvOS.app/ScheduleApp-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OSGCon-tvOS.app/OSGCon-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -1072,7 +1072,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ScheduleAppTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "OSGConTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -1081,7 +1081,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ScheduleApp" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "OSGCon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -1090,7 +1090,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ScheduleApp-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "OSGCon-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -1099,7 +1099,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ScheduleApp-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "OSGCon-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -1108,7 +1108,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ScheduleApp" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "OSGCon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
