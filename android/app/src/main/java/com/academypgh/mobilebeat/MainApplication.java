@@ -1,4 +1,4 @@
-package com.academypgh.osgcon;
+package com.academypgh.mobilebeat;
 
 import android.app.Application;
 import android.content.Context;

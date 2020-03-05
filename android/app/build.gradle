@@ -130,7 +130,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.academypgh.osgcon"
+        applicationId "com.academypgh.mobilebeat"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
