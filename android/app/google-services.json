@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1089594032538",
+    "firebase_url": "https://eventapp-44dd2.firebaseio.com",
+    "project_id": "eventapp-44dd2",
+    "storage_bucket": "eventapp-44dd2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1089594032538:android:c83c4da85f5d4c16637a23",
+        "android_client_info": {
+          "package_name": "com.academypgh.osgcon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1089594032538-cketclnmq25tgkvpq7o47ra6ehr3jdje.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSvQIRFtkjU6KaXpeNCIz6dkq0ZUsfAgo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1089594032538-cketclnmq25tgkvpq7o47ra6ehr3jdje.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
