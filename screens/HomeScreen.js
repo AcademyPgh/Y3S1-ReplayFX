@@ -5,6 +5,7 @@ import { Fonts } from '../src/utils/Fonts';
 import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
 import { loadConvention } from '../src/utils/DataRequest';
 import EmailModal from '../src/components/EmailModal';
+import messaging from '@react-native-firebase/messaging';
 
 export default class HomeScreen extends Component {
   constructor(props)
@@ -27,6 +28,20 @@ export default class HomeScreen extends Component {
   {
     if(this.state.showEmailCTA) {
       this.checkEmail();
+    }
+
+    this.requestUserPermission();
+  }
+
+  
+  async requestUserPermission() {
+    const authStatus = await messaging().requestPermission();
+    const enabled =
+      authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
+      authStatus === messaging.AuthorizationStatus.PROVISIONAL;
+
+    if (enabled) {
+      console.log('Authorization status:', authStatus);
     }
   }
 
