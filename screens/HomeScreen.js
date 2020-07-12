@@ -112,12 +112,20 @@ export default class HomeScreen extends Component {
     return this.props.screenProps.apiData.eventTypes.filter(item => item.isMenu)
   }
 
+  subVendorMenu() {
+    return this.props.screenProps.apiData.vendorTypes.filter(item => item.isMenu)
+  }
+
   buildMenu(menu) {
     let finalMenu = [];
     menu.forEach((menuItem) => {
       if(menuItem.type == 'EventMenu')
       {
         finalMenu = [...finalMenu, ...this.subMenu().map(item => {return {type: 'Schedule', title: item.displayName, options: {title: item.displayName, scheduleFilter: item.name}}})];
+      }
+      else if(menuItem.type == 'VendorMenu')
+      {
+        finalMenu = [...finalMenu, ...this.subVendorMenu().map(item => {return {type: 'VendorsList', title: item.displayName, options: {title: item.displayName, vendorFilter: item.id}}})];
       }
       else
       {
@@ -138,6 +146,7 @@ export default class HomeScreen extends Component {
     //     {type: 'EventMenu'},
     //     //{type: 'Profile', title: 'Profile'},
     //     {type: 'Sponsors', title: 'Sponsors'},
+    //     {type: 'VendorMenu'},
     //     {type: 'StaticMap', title: 'Map'},
     //   ];
 

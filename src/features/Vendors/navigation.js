@@ -5,15 +5,9 @@ export default {
     VendorsList: {
         screen: Vendors,
         initialRouteParams: { },
-        navigationOptions: {
-          title: 'VENDORS',
-        }
       },
       VendorDetails: {
         screen: VendorDetails,
         initialRouteParams: { },
-        navigationOptions: {
-          title: 'VENDORS',
-        }
       },
 };

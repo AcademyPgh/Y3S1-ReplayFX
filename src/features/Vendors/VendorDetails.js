@@ -10,7 +10,12 @@ export default class VendorDetails extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
-    return homeButtonHeader(navigation);
+    const title = navigation.getParam('title', 'VENDORS');
+
+    return {
+      ...homeButtonHeader(navigation),
+      title: title,
+    };
   }
 
   openVendorWebsite = (url) => {

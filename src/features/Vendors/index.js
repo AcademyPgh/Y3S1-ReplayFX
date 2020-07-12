@@ -11,7 +11,12 @@ export default class Vendors extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
-    return homeButtonHeader(navigation);
+    const title = navigation.getParam('title', 'VENDORS');
+
+    return {
+      ...homeButtonHeader(navigation),
+      title: title,
+    };
   }
 
   constructor(props) {
@@ -22,7 +27,7 @@ export default class Vendors extends Component {
   }
 
   displayVendor(vendor) {
-    this.props.navigation.navigate('VendorDetails', {vendorInfo: vendor});
+    this.props.navigation.navigate('VendorDetails', {vendorInfo: vendor, title: vendor.title});
   }
 
   keyExtractor = (item, index) => item.id.toString();
@@ -58,7 +63,17 @@ export default class Vendors extends Component {
     if (!vendorList) {
       vendorList = [];
     }
-    return [{title: 'Vendors', data: vendorList}];
+    const filter = this.props.navigation.getParam('vendorFilter', null);
+    const title = this.props.navigation.getParam('title', '');
+    if(filter)
+    {
+      return[{title: title, data: vendorList.filter(item => 
+        item.vendorTypes.some(x => x.id === filter))}]
+    }
+    else
+    {
+      return [{title: 'Vendors', data: vendorList}];
+    }
   }
 
   render() {
