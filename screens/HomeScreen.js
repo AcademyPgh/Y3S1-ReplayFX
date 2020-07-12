@@ -5,6 +5,7 @@ import { Fonts } from '../src/utils/Fonts';
 import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
 import { loadConvention } from '../src/utils/DataRequest';
 import EmailModal from '../src/components/EmailModal';
+import messaging from '@react-native-firebase/messaging';
 
 export default class HomeScreen extends Component {
   constructor(props)
@@ -27,6 +28,20 @@ export default class HomeScreen extends Component {
   {
     if(this.state.showEmailCTA) {
       this.checkEmail();
+    }
+
+    this.requestUserPermission();
+  }
+
+  
+  async requestUserPermission() {
+    const authStatus = await messaging().requestPermission();
+    const enabled =
+      authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
+      authStatus === messaging.AuthorizationStatus.PROVISIONAL;
+
+    if (enabled) {
+      console.log('Authorization status:', authStatus);
     }
   }
 
@@ -97,12 +112,20 @@ export default class HomeScreen extends Component {
     return this.props.screenProps.apiData.eventTypes.filter(item => item.isMenu)
   }
 
+  subVendorMenu() {
+    return this.props.screenProps.apiData.vendorTypes.filter(item => item.isMenu)
+  }
+
   buildMenu(menu) {
     let finalMenu = [];
     menu.forEach((menuItem) => {
       if(menuItem.type == 'EventMenu')
       {
         finalMenu = [...finalMenu, ...this.subMenu().map(item => {return {type: 'Schedule', title: item.displayName, options: {title: item.displayName, scheduleFilter: item.name}}})];
+      }
+      else if(menuItem.type == 'VendorMenu')
+      {
+        finalMenu = [...finalMenu, ...this.subVendorMenu().map(item => {return {type: 'VendorsList', title: item.displayName, options: {title: item.displayName, vendorFilter: item.id}}})];
       }
       else
       {
@@ -123,6 +146,7 @@ export default class HomeScreen extends Component {
     //     {type: 'EventMenu'},
     //     //{type: 'Profile', title: 'Profile'},
     //     {type: 'Sponsors', title: 'Sponsors'},
+    //     {type: 'VendorMenu'},
     //     {type: 'StaticMap', title: 'Map'},
     //   ];
 

@@ -23,6 +23,7 @@ import { Fonts } from './src/utils/Fonts';
 import NavigationService from './src/utils/NavigationService';
 import { scale, verticalScale, moderateScale } from './src/utils/Scaling';
 import SettingsButton from './src/components/SettingsButton';
+import messaging from '@react-native-firebase/messaging';
 
 import RootStack from './Routing';
 
@@ -36,8 +37,8 @@ class App extends React.Component {
     this.state = {
       apiData: apiData,
       dataLoadedTimestamp: new Date(),
-      singleConvention: false,
-      selectedConvention: {}  // ex: {id: 5}
+      singleConvention: true,
+      selectedConvention: {id: 15}  // ex: {id: 5}
     }
 
     //AsyncStorage.clear();
@@ -46,6 +47,26 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    messaging().onNotificationOpenedApp(remoteMessage => {
+      console.log(
+        'Notification caused app to open from background state:',
+        remoteMessage.notification,
+      );
+      //navigation.navigate(remoteMessage.data.type);
+    });
+
+    messaging()
+      .getInitialNotification()
+      .then(remoteMessage => {
+        if (remoteMessage) {
+          console.log(
+            'Notification caused app to open from quit state:',
+            remoteMessage.notification,
+          );
+          //setInitialRoute(remoteMessage.data.type); // e.g. "Settings"
+        }
+      });
+
     PushNotification.configure({
 
         // (required) Called when a remote or local notification is opened or received
