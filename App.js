@@ -46,7 +46,26 @@ class App extends React.Component {
     //this.handleNotification = this.handleNotification.bind(this);
   }
 
-  componentDidMount() {
+  async requestUserPermission() {
+    const authStatus = await messaging().requestPermission();
+    const enabled =
+      authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
+      authStatus === messaging.AuthorizationStatus.PROVISIONAL;
+
+    if (enabled) {
+      console.log('Authorization status:', authStatus);
+    }
+
+    messaging()
+    .getToken()
+    .then(token => {
+      console.log('FCM Token', token);
+    })
+    .catch(err => {
+      console.log('FCM Token Failure', err);
+    });
+
+
     messaging().onNotificationOpenedApp(remoteMessage => {
       console.log(
         'Notification caused app to open from background state:',
@@ -66,6 +85,10 @@ class App extends React.Component {
           //setInitialRoute(remoteMessage.data.type); // e.g. "Settings"
         }
       });
+  }
+  
+  componentDidMount() {
+    this.requestUserPermission();
 
     PushNotification.configure({
 
