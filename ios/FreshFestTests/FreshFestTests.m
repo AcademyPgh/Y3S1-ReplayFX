@@ -14,11 +14,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface OSGConTests : XCTestCase
+@interface FreshFestTests : XCTestCase
 
 @end
 
-@implementation OSGConTests
+@implementation FreshFestTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL(^)(UIView *view))test
 {

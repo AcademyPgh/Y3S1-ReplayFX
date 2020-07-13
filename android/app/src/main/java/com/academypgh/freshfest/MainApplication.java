@@ -1,4 +1,4 @@
-package com.academypgh.osgcon;
+package com.academypgh.freshfest;
 
 import android.app.Application;
 import android.content.Context;
