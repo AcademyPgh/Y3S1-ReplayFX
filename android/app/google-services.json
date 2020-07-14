@@ -1,35 +1,42 @@
 {
   "project_info": {
-    "project_number": "1089594032538",
-    "firebase_url": "https://eventapp-44dd2.firebaseio.com",
-    "project_id": "eventapp-44dd2",
-    "storage_bucket": "eventapp-44dd2.appspot.com"
+    "project_number": "375198735724",
+    "firebase_url": "https://freshfest-693cb.firebaseio.com",
+    "project_id": "freshfest-693cb",
+    "storage_bucket": "freshfest-693cb.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1089594032538:android:c83c4da85f5d4c16637a23",
+        "mobilesdk_app_id": "1:375198735724:android:fe7fcc260749cd2dc0a749",
         "android_client_info": {
-          "package_name": "com.academypgh.osgcon"
+          "package_name": "com.academypgh.freshfest"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1089594032538-cketclnmq25tgkvpq7o47ra6ehr3jdje.apps.googleusercontent.com",
+          "client_id": "375198735724-iocq5k46kkvn1a4e5rfto4v0mu6v5cue.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBSvQIRFtkjU6KaXpeNCIz6dkq0ZUsfAgo"
+          "current_key": "AIzaSyDrxBOBVFcwoENrBoprGcamU2xl-ZgZDmg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1089594032538-cketclnmq25tgkvpq7o47ra6ehr3jdje.apps.googleusercontent.com",
+              "client_id": "375198735724-iocq5k46kkvn1a4e5rfto4v0mu6v5cue.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "375198735724-o10spt0c617rhbmc5a41s6689f6ji14m.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.AcademyPGH.FreshFest"
+              }
             }
           ]
         }
