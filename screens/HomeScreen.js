@@ -182,7 +182,7 @@ const styles = StyleSheet.create ({
   text: {
    marginHorizontal: scale(20),
    flex: 1,
-   fontSize: scale(30),
+   fontSize: scale(24),
    fontFamily: Fonts.NunitoLight,
    color: 'black',
    borderBottomWidth: StyleSheet.hairlineWidth * 2,
