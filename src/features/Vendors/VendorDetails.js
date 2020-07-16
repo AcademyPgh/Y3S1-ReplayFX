@@ -86,6 +86,8 @@ export default class VendorDetails extends Component {
       {...styles.urlContainer, ...styles.notTheBottom} :
       styles.urlContainer;
 
+    const vendorUrls = vendorInfo.url.split(",");
+
     return (
         <View style={{flex: 1}}>
           
@@ -123,16 +125,19 @@ export default class VendorDetails extends Component {
           </ScrollView>
 
           {vendorInfo.url &&
-          <View>
-
             <View style={urlStyle}>
-              <TouchableOpacity 
-                onPress={() => this.openVendorWebsite(vendorInfo.url)}
-              >
-                <Text style={styles.website}>{vendorInfo.url}</Text>
-              </TouchableOpacity>
+              {vendorUrls.map((url) => {
+              return (
+                <View>
+                  <TouchableOpacity 
+                    onPress={() => this.openVendorWebsite(url)}
+                  >
+                    <Text style={styles.website}>{url}</Text>
+                  </TouchableOpacity>
+                </View>
+              );
+            })}
             </View>
-          </View>
           }
 
           {vendorLocation.length > 0 &&
