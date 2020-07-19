@@ -86,6 +86,7 @@ export default class VendorDetails extends Component {
       {...styles.urlContainer, ...styles.notTheBottom} :
       styles.urlContainer;
 
+    vendorInfo.url = vendorInfo.url || "";
     const vendorUrls = vendorInfo.url.split(",");
 
     return (
@@ -110,7 +111,7 @@ export default class VendorDetails extends Component {
 
             {vendorInfo.imageUrl && 
               <View style={{alignItems: 'center', margin: scale(10), marginTop: 0,}}>
-                <TouchableOpacity onPress={() => this.openVendorWebsite(vendorInfo.url)} >
+                <TouchableOpacity onPress={() => this.openVendorWebsite(vendorUrls[0])} >
                   <ScalableImage width={Dimensions.get('window').width - scale(40)}
                     source={{uri: vendorInfo.imageUrl}} />
                 </TouchableOpacity>
