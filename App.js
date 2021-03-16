@@ -1,7 +1,8 @@
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
- * @flow
+ * @format
+ * @flow strict-local
  */
 
 import codePush, {InstallMode} from 'react-native-code-push';
