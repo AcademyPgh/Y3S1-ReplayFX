@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>375198735724-o10spt0c617rhbmc5a41s6689f6ji14m.apps.googleusercontent.com</string>
+	<string>1024880692968-pq26hese2870830d9j77q822ovgp3d7g.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.375198735724-o10spt0c617rhbmc5a41s6689f6ji14m</string>
+	<string>com.googleusercontent.apps.1024880692968-pq26hese2870830d9j77q822ovgp3d7g</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAezLAYH97wGP9L1LXPn5L37a9m-qE8dYk</string>
+	<string>AIzaSyC5S8eF3bO6HdjRXGL4ROcaaBIFqBpKBak</string>
 	<key>GCM_SENDER_ID</key>
-	<string>375198735724</string>
+	<string>1024880692968</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.AcademyPGH.FreshFest</string>
+	<string>com.AcademyPGH.Juneteenth</string>
 	<key>PROJECT_ID</key>
-	<string>freshfest-693cb</string>
+	<string>juneteenth-49cb5</string>
 	<key>STORAGE_BUCKET</key>
-	<string>freshfest-693cb.appspot.com</string>
+	<string>juneteenth-49cb5.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:375198735724:ios:ef28eae7c5f94a39c0a749</string>
-	<key>DATABASE_URL</key>
-	<string>https://freshfest-693cb.firebaseio.com</string>
+	<string>1:1024880692968:ios:db2f701e10099f0487035d</string>
 </dict>
 </plist>

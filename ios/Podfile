@@ -3,13 +3,13 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
-target 'FreshFest' do
+target 'Juneteenth' do
   config = use_native_modules!
   use_react_native!(:path => config["reactNativePath"])
 
-  # Pods for FreshFest
+  # Pods for Juneteenth
   
-  target 'FreshFestTests' do
+  target 'JuneteenthTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -24,10 +24,10 @@ target 'FreshFest' do
   #end
 end
 
-target 'FreshFest-tvOS' do
-  # Pods for FreshFest-tvOS
+target 'Juneteenth-tvOS' do
+  # Pods for Juneteenth-tvOS
 
-  target 'FreshFest-tvOSTests' do
+  target 'Juneteenth-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
