@@ -1,4 +1,4 @@
-package com.juneteenth;
+package com.academypgh.juneteenth;
 
 import com.facebook.react.ReactActivity;
 
