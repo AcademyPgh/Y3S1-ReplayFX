@@ -122,22 +122,6 @@ export default class HomeScreen extends Component {
   }
    
   render() {
-<<<<<<< HEAD
-    // const menu = this.props.screenProps.apiData.menu;
-    const menu = 
-      [
-        {type: 'Schedule', title: 'Schedule'},
-        {type: 'Schedule', title: 'My Schedule', options: {title: 'MY SCHEDULE', scheduleFilter: 'my-schedule'}},
-        //{type: 'GamesMain', title: 'Games',},
-        // {type: 'SocialFeed', title: 'Social Wall'},
-        {type: 'VendorsList', title: 'Artists'},
-        ...this.subMenu().map(item => {return {type: 'Schedule', title: item.name, options: {title: item.displayName, scheduleFilter: item.name}}}),
-        //{type: 'Profile', title: 'Profile'},
-        {type: 'Sponsors', title: 'Sponsors'},
-        {type: 'StaticMap', title: 'Map'},
-        {type: 'LinkedMap', title: 'Live Shuttle Tracking'},
-      ];
-=======
     // const exampleMenu = 
     //   [
     //     {type: 'Schedule', title: 'Schedule'},
@@ -153,7 +137,6 @@ export default class HomeScreen extends Component {
     //   ];
 
     const menu = this.buildMenu(this.props.screenProps.apiData.menu);
->>>>>>> master
 
     props = this.props;  
 

@@ -1,9 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "MillvaleMusicFestival",
-  "displayName": "OSG Con Companion"
-=======
-  "name": "Juneteenth",
-  "displayName": "Juneteenth"
->>>>>>> master
+  "name": "ScheduleApp",
+  "displayName": "ScheduleApp"
 }

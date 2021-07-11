@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "776557469938",
+    "project_id": "millvalemusicfest-e9db6",
+    "storage_bucket": "millvalemusicfest-e9db6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776557469938:android:69f058df886de2ea44306b",
+        "android_client_info": {
+          "package_name": "com.academypgh.millvalemusicfestival"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "776557469938-8vp346j22qipfkbbfl4aqijucq4qh35q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEd_MTqm0ayTRAz0u7IM91FxOc8K8JATA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "776557469938-8vp346j22qipfkbbfl4aqijucq4qh35q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

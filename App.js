@@ -39,11 +39,7 @@ class App extends React.Component {
       apiData: apiData,
       dataLoadedTimestamp: new Date(),
       singleConvention: true,
-<<<<<<< HEAD
-      selectedConvention: { id: 11 }  // ex: {id: 5}
-=======
-      selectedConvention: {id: 16}  // ex: {id: 5}
->>>>>>> master
+      selectedConvention: {id: 11}  // ex: {id: 5}
     }
 
     //AsyncStorage.clear();
