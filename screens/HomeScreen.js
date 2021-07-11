@@ -5,6 +5,7 @@ import { Fonts } from '../src/utils/Fonts';
 import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
 import { loadConvention } from '../src/utils/DataRequest';
 import EmailModal from '../src/components/EmailModal';
+import messaging from '@react-native-firebase/messaging';
 
 export default class HomeScreen extends Component {
   constructor(props)
@@ -96,8 +97,32 @@ export default class HomeScreen extends Component {
   subMenu() {
     return this.props.screenProps.apiData.eventTypes.filter(item => item.isMenu)
   }
+
+  subVendorMenu() {
+    return this.props.screenProps.apiData.vendorTypes.filter(item => item.isMenu)
+  }
+
+  buildMenu(menu) {
+    let finalMenu = [];
+    menu.forEach((menuItem) => {
+      if(menuItem.type == 'EventMenu')
+      {
+        finalMenu = [...finalMenu, ...this.subMenu().map(item => {return {type: 'Schedule', title: item.displayName, options: {title: item.displayName, scheduleFilter: item.name}}})];
+      }
+      else if(menuItem.type == 'VendorMenu')
+      {
+        finalMenu = [...finalMenu, ...this.subVendorMenu().map(item => {return {type: 'VendorsList', title: item.displayName, options: {title: item.displayName, vendorFilter: item.id}}})];
+      }
+      else
+      {
+        finalMenu.push(menuItem);
+      }
+    });
+    return finalMenu;
+  }
    
   render() {
+<<<<<<< HEAD
     // const menu = this.props.screenProps.apiData.menu;
     const menu = 
       [
@@ -112,6 +137,23 @@ export default class HomeScreen extends Component {
         {type: 'StaticMap', title: 'Map'},
         {type: 'LinkedMap', title: 'Live Shuttle Tracking'},
       ];
+=======
+    // const exampleMenu = 
+    //   [
+    //     {type: 'Schedule', title: 'Schedule'},
+    //     {type: 'Schedule', title: 'My Schedule', options: {title: 'MY SCHEDULE', scheduleFilter: 'my-schedule'}},
+    //     //{type: 'GamesMain', title: 'Games',},
+    //     // {type: 'SocialFeed', title: 'Social Wall'},
+    //     {type: 'VendorsList', title: 'Vendors'},
+    //     {type: 'EventMenu'},
+    //     //{type: 'Profile', title: 'Profile'},
+    //     {type: 'Sponsors', title: 'Sponsors'},
+    //     {type: 'VendorMenu'},
+    //     {type: 'StaticMap', title: 'Map'},
+    //   ];
+
+    const menu = this.buildMenu(this.props.screenProps.apiData.menu);
+>>>>>>> master
 
     props = this.props;  
 
@@ -157,7 +199,7 @@ const styles = StyleSheet.create ({
   text: {
    marginHorizontal: scale(20),
    flex: 1,
-   fontSize: scale(30),
+   fontSize: scale(24),
    fontFamily: Fonts.NunitoLight,
    color: 'black',
    borderBottomWidth: StyleSheet.hairlineWidth * 2,

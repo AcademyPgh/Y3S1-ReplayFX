@@ -1,7 +1,8 @@
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
- * @flow
+ * @format
+ * @flow strict-local
  */
 
 import codePush, {InstallMode} from 'react-native-code-push';
@@ -23,6 +24,7 @@ import { Fonts } from './src/utils/Fonts';
 import NavigationService from './src/utils/NavigationService';
 import { scale, verticalScale, moderateScale } from './src/utils/Scaling';
 import SettingsButton from './src/components/SettingsButton';
+import messaging from '@react-native-firebase/messaging';
 
 import RootStack from './Routing';
 
@@ -37,7 +39,11 @@ class App extends React.Component {
       apiData: apiData,
       dataLoadedTimestamp: new Date(),
       singleConvention: true,
+<<<<<<< HEAD
       selectedConvention: { id: 11 }  // ex: {id: 5}
+=======
+      selectedConvention: {id: 16}  // ex: {id: 5}
+>>>>>>> master
     }
 
     //AsyncStorage.clear();
@@ -45,7 +51,50 @@ class App extends React.Component {
     //this.handleNotification = this.handleNotification.bind(this);
   }
 
+  async requestUserPermission() {
+    const authStatus = await messaging().requestPermission();
+    const enabled =
+      authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
+      authStatus === messaging.AuthorizationStatus.PROVISIONAL;
+
+    if (enabled) {
+      console.log('Authorization status:', authStatus);
+    }
+
+    messaging()
+    .getToken()
+    .then(token => {
+      console.log('FCM Token', token);
+    })
+    .catch(err => {
+      console.log('FCM Token Failure', err);
+    });
+
+
+    messaging().onNotificationOpenedApp(remoteMessage => {
+      console.log(
+        'Notification caused app to open from background state:',
+        remoteMessage.notification,
+      );
+      //navigation.navigate(remoteMessage.data.type);
+    });
+
+    messaging()
+      .getInitialNotification()
+      .then(remoteMessage => {
+        if (remoteMessage) {
+          console.log(
+            'Notification caused app to open from quit state:',
+            remoteMessage.notification,
+          );
+          //setInitialRoute(remoteMessage.data.type); // e.g. "Settings"
+        }
+      });
+  }
+  
   componentDidMount() {
+    this.requestUserPermission();
+
     PushNotification.configure({
 
         // (required) Called when a remote or local notification is opened or received

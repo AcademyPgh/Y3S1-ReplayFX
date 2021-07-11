@@ -10,7 +10,12 @@ export default class VendorDetails extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
-    return homeButtonHeader(navigation);
+    const title = navigation.getParam('title', 'VENDORS');
+
+    return {
+      ...homeButtonHeader(navigation),
+      title: title,
+    };
   }
 
   openVendorWebsite = (url) => {
@@ -77,6 +82,13 @@ export default class VendorDetails extends Component {
 
     vendorDescription += (vendorInfo.extendedDescription || '');
 
+    let urlStyle = vendorLocation.length > 0 ?
+      {...styles.urlContainer, ...styles.notTheBottom} :
+      styles.urlContainer;
+
+    vendorInfo.url = vendorInfo.url || "";
+    const vendorUrls = vendorInfo.url.split(",");
+
     return (
         <View style={{flex: 1}}>
           
@@ -99,7 +111,7 @@ export default class VendorDetails extends Component {
 
             {vendorInfo.imageUrl && 
               <View style={{alignItems: 'center', margin: scale(10), marginTop: 0,}}>
-                <TouchableOpacity onPress={() => this.openVendorWebsite(vendorInfo.url)} >
+                <TouchableOpacity onPress={() => this.openVendorWebsite(vendorUrls[0])} >
                   <ScalableImage width={Dimensions.get('window').width - scale(40)}
                     source={{uri: vendorInfo.imageUrl}} />
                 </TouchableOpacity>
@@ -113,17 +125,20 @@ export default class VendorDetails extends Component {
 
           </ScrollView>
 
-          {vendorInfo.url && 
-          <View>
-
-            <View style={{borderTopColor: 'black', borderTopWidth: 1, margin: verticalScale(10), marginBottom: verticalScale(-10), paddingVertical: verticalScale(5), justifyContent: 'center', alignItems: 'center'}}>
-              <TouchableOpacity 
-                onPress={() => this.openVendorWebsite(vendorInfo.url)}
-              >
-                <Text style={styles.website}>{vendorInfo.url}</Text>
-              </TouchableOpacity>
+          {vendorInfo.url &&
+            <View style={urlStyle}>
+              {vendorUrls.map((url) => {
+              return (
+                <View>
+                  <TouchableOpacity 
+                    onPress={() => this.openVendorWebsite(url)}
+                  >
+                    <Text style={styles.website}>{url}</Text>
+                  </TouchableOpacity>
+                </View>
+              );
+            })}
             </View>
-          </View>
           }
 
           {vendorLocation.length > 0 &&

@@ -1,4 +1,5 @@
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import { createAppContainer } from 'react-navigation';
 
 import { Fonts } from './src/utils/Fonts';
 import { scale } from './src/utils/Scaling';
@@ -69,7 +70,7 @@ const RootStack = createStackNavigator(
       defaultNavigationOptions: {
         //title: 'Home',
         headerStyle: {
-          backgroundColor: '#000000',
+          backgroundColor: '#000000'
         },
         headerTintColor: '#ffffff',
         headerTitleStyle: {
@@ -79,8 +80,9 @@ const RootStack = createStackNavigator(
           textAlign: 'center',
           flex: 1,
           padding: 0,
-          margin: 0,
+          margin: 0
         },
+        headerStatusBarHeight: 20,
       },
       headerMode: 'screen',
     }

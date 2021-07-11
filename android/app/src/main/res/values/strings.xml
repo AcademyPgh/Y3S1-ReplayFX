@@ -1,6 +1,0 @@
-<resources>
-    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">qdHpQz406qQ-51kOT9YqhW-MUETcHyU5giX54</string>
-    <string name="app_name">MillvaleMusicFestival</string>
-    <string name="appCenterAnalytics_whenToEnableAnalytics" moduleConfig="true">ALWAYS_SEND</string>
-    <string name="appCenterCrashes_whenToSendCrashes" moduleConfig="true">ALWAYS_SEND</string>
-</resources>

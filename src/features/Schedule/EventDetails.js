@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Platform, Text, View, Dimensions, ScrollView, Alert,} from 'react-native';
-import ScalableImage from 'react-native-scalable-image';
+import { ImageBackground, Platform, Text, View, Dimensions, ScrollView, Alert,} from 'react-native';
+import Image from 'react-native-scalable-image';
 import moment from 'moment';
 
 import { Fonts } from '../../utils/Fonts';
@@ -84,7 +84,7 @@ export default class EventDetails extends Component {
     return (
         <View style={{flex: 1}}>
           
-            <ScalableImage width={Dimensions.get('window').width}
+            <Image width={Dimensions.get('window').width}
                 background
                 style={styles.headerImage}
                 source={require('../../../Images/PinballGamePageImage.jpg')}>   
@@ -96,7 +96,7 @@ export default class EventDetails extends Component {
                   style={[styles.headerText2, {fontSize: scale(titleFontSize), letterSpacing: titleLetterSpacing}]}>{eventInfo.title.toUpperCase()}
                 </Text>
               </View>
-            </ScalableImage>
+            </Image>
 
           <ScrollView style={styles.detailsContainer}>
 
@@ -111,12 +111,11 @@ export default class EventDetails extends Component {
               </Text>
             }
             {eventInfo.imageUrl &&
-              <ScalableImage width={Dimensions.get('window').width/2}
+              <Image width={Dimensions.get('window').width/2}
                 style={styles.eventImage}
                 source={{uri: eventInfo.imageUrl}}
               />
             }
-
             {eventDescription.length > 0 && 
               <Text style={{marginTop: verticalScale(5.5), marginBottom: verticalScale(18)}}>
                 <Text style={styles.gameBio}>Description: </Text>
