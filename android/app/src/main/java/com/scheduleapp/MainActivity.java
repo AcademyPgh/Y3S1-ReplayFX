@@ -1,4 +1,4 @@
-package com.academypgh.millvalemusicfestival;
+package com.academypgh.freshfest;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "ScheduleApp";
+    return "Barrel and Flow";
   }
 }
