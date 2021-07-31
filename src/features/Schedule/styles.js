@@ -79,7 +79,14 @@ export   const styles = StyleSheet.create({
         lineHeight: scale(18),
         color: '#000000',
       },
-  
+      
+      website: {
+        textAlign: 'center',
+        fontFamily: Fonts.Heavy,
+        fontSize: scale(18),
+        color: '#6c588d',
+      },
+
       locationDetails: {
         marginLeft: scale(12), 
         marginRight: scale(12), 
