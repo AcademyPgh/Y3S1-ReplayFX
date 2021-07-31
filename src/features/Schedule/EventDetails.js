@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ImageBackground, Platform, Text, View, Dimensions, ScrollView, Alert,} from 'react-native';
+import { ImageBackground, Platform, Text, View, Dimensions, ScrollView, Alert, TouchableOpacity, Linking} from 'react-native';
 import Image from 'react-native-scalable-image';
 import moment from 'moment';
 
@@ -25,6 +25,18 @@ export default class EventDetails extends Component {
     const start = event.startTime12 === null ? "" : event.startTime12;
     const end = event.endTime12 === null ? "" : event.endTime12
     return `${start}${splitter}${end}`;
+  }
+
+  openWebsite = (url) => {
+    if (url) {
+      Linking.canOpenURL(url).then(supported => {
+        if (!supported) {
+          console.log('Can\'t handle url: ' + url);
+        } else {
+          return Linking.openURL(url);
+        }
+      }).catch(err => console.error('An error occurred', err));
+    }
   }
 
   render() {
@@ -120,6 +132,13 @@ export default class EventDetails extends Component {
               <Text style={{marginTop: verticalScale(5.5), marginBottom: verticalScale(18)}}>
                 <Text style={styles.gameBio}>Description: </Text>
                 <Text style={styles.gameBioText}>{eventDescription + "\n"}</Text>
+              </Text>
+            }
+            {eventInfo.url && 
+              <Text>
+                <TouchableOpacity onPress={() => this.openWebsite(eventInfo.url)} >
+                  <Text style={styles.website}>{eventInfo.url + "\n"}</Text>
+                </TouchableOpacity>
               </Text>
             }
           </ScrollView>
