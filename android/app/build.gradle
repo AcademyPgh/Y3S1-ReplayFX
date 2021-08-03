@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.academypgh.millvalemusicfestival"
+        applicationId "com.academypgh.pgx"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

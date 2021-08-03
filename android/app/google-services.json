@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "776557469938",
-    "project_id": "millvalemusicfest-e9db6",
-    "storage_bucket": "millvalemusicfest-e9db6.appspot.com"
+    "project_number": "753385409481",
+    "project_id": "pittsburghgamingexpo",
+    "storage_bucket": "pittsburghgamingexpo.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:776557469938:android:69f058df886de2ea44306b",
+        "mobilesdk_app_id": "1:753385409481:android:499020a7ce6921e8d7b618",
         "android_client_info": {
-          "package_name": "com.academypgh.millvalemusicfestival"
+          "package_name": "com.academypgh.pgx"
         }
       },
       "oauth_client": [
         {
-          "client_id": "776557469938-8vp346j22qipfkbbfl4aqijucq4qh35q.apps.googleusercontent.com",
+          "client_id": "753385409481-rqm67d5mi8r4sdfe4s7iaqee6f6158gq.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAEd_MTqm0ayTRAz0u7IM91FxOc8K8JATA"
+          "current_key": "AIzaSyD0k5WQKT-kghGncjwGV21RvFIY9Ct_hvk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "776557469938-8vp346j22qipfkbbfl4aqijucq4qh35q.apps.googleusercontent.com",
+              "client_id": "753385409481-rqm67d5mi8r4sdfe4s7iaqee6f6158gq.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
