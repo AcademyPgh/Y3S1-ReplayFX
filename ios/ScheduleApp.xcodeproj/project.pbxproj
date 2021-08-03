@@ -685,7 +685,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.AcademyPGH.MillvaleMusicFestival;
+				PRODUCT_BUNDLE_IDENTIFIER = com.academypgh.pgx;
 				PRODUCT_NAME = ScheduleApp;
 				SWIFT_OBJC_BRIDGING_HEADER = "ScheduleApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -714,7 +714,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.AcademyPGH.MillvaleMusicFestival;
+				PRODUCT_BUNDLE_IDENTIFIER = com.academypgh.pgx;
 				PRODUCT_NAME = ScheduleApp;
 				SWIFT_OBJC_BRIDGING_HEADER = "ScheduleApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
