@@ -39,7 +39,7 @@ class App extends React.Component {
       apiData: apiData,
       dataLoadedTimestamp: new Date(),
       singleConvention: true,
-      selectedConvention: {id: 11}  // ex: {id: 5}
+      selectedConvention: {id: 12}  // ex: {id: 5}
     }
 
     //AsyncStorage.clear();
