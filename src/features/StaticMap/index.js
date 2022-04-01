@@ -20,11 +20,13 @@ export default class StaticMap extends Component {
   render() {
     return (  
       <View style={{flex: 1}}>
+        {/* New Image Zoom Component with better Android Resolution */}
         <PhotoView
           style={{ flex: 1, width: '100%', height: '100%' }}
           source={{uri: this.props.screenProps.apiData.mapImageUrl}}
           minimumZoomScale={1}
           maximumZoomScale={9} />
+        {/* Old Image Zoom components for previous versions */}
         {/* <ImageZoom cropWidth={Dimensions.get("window").width}
               cropHeight={Dimensions.get("window").height}
               imageWidth={Dimensions.get("window").width}
