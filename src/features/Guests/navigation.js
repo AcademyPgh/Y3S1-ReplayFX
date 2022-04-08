@@ -1,13 +1,13 @@
-import Vendors from './index';
-import VendorDetails from './VendorDetails';
+import Guests from './index';
+import GuestDetails from './GuestDetails';
 
 export default {
-    VendorsList: {
-        screen: Vendors,
+    GuestsList: {
+        screen: Guests,
         initialRouteParams: { },
       },
-      VendorDetails: {
-        screen: VendorDetails,
+      GuestDetails: {
+        screen: GuestDetails,
         initialRouteParams: { },
       },
 };
