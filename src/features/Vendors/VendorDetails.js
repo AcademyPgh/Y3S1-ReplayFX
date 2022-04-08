@@ -80,7 +80,15 @@ export default class VendorDetails extends Component {
       vendorDescription += "\n\n";
     }
 
-    vendorDescription += (vendorInfo.extendedDescription || '');
+    // Create new variable for ExtendedDescription from the api
+    let vendorExtendedDescription = vendorInfo.extendedDescription || '';
+
+    if (vendorExtendedDescription.length > 0) {
+      vendorExtendedDescription += "\n\n";
+    }
+
+    // Old combination of vendorDescription with extendedDescription
+    // vendorDescription += (vendorInfo.extendedDescription || '');
 
     let urlStyle = vendorLocation.length > 0 ?
       {...styles.urlContainer, ...styles.notTheBottom} :
@@ -90,38 +98,25 @@ export default class VendorDetails extends Component {
     const vendorUrls = vendorInfo.url.split(",");
 
     return (
-        <View style={{flex: 1}}>
-          
-            <ScalableImage width={Dimensions.get('window').width}
+        <View style={{flex: 1,}}>
+          <ScrollView>
+            <ScalableImage 
+            width={Dimensions.get('window').width}
                 background
                 style={styles.headerImage}
-                // TODO Update this to a custom image per convention
-                source={require('../../../Images/ArcadeGamePageImage.jpg')}>   
-              <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>      
-                {/*<Text style={styles.headerText1}>LEARN</Text>*/}
-                <Text 
-                  numberOfLines={titleNumLines} 
-                  adjustsFontSizeToFit 
-                  style={[styles.headerText2, {fontSize: scale(titleFontSize), letterSpacing: titleLetterSpacing}]}>{vendorInfo.title.toUpperCase()}
-                </Text>
-              </View>
+                source={{uri: vendorInfo.imageUrl}}>   
             </ScalableImage>
 
-          <ScrollView style={styles.detailsContainer}>
-
-            {vendorInfo.imageUrl && 
-              <View style={{alignItems: 'center', margin: scale(10), marginTop: 0,}}>
-                <TouchableOpacity onPress={() => this.openVendorWebsite(vendorUrls[0])} >
-                  <ScalableImage width={Dimensions.get('window').width - scale(40)}
-                    source={{uri: vendorInfo.imageUrl}} />
-                </TouchableOpacity>
-              </View>
-            }
+          <View style={styles.detailsContainer}>
 
             {vendorDescription.length > 0 && 
-              <Text style={styles.vendorBioText}>{vendorDescription}{"\n"}</Text>
+              <Text style={styles.vendorBio}>{vendorDescription}{"\n"}</Text>
             }
 
+            {vendorExtendedDescription.length > 0 &&
+              <Text style={styles.vendoBioText}>{vendorExtendedDescription}</Text>
+            }
+          </View>
 
           </ScrollView>
 
