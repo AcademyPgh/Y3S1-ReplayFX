@@ -17,6 +17,9 @@ import ScheduleNav from './src/features/Schedule/navigation';
 import ProfileNav from './src/features/Profile/navigation';
 import SocialFeedNav from './src/features/SocialFeed/navigation';
 
+// newly added Guests screen
+import GuestsNav from './src/features/Guests/navigation';
+
 var showLandingPage = false;
 
 const RootStack = createStackNavigator(
@@ -51,6 +54,7 @@ const RootStack = createStackNavigator(
       ...SponsorsNav,
       ...GamesNav,
       ...VendorsNav,
+      ...GuestsNav, // newly added Guests screen
       ...StaticMap,
       ...LinkedMap,
       ...ProfileNav,

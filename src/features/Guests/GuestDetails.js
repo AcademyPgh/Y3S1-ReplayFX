@@ -6,11 +6,11 @@ import { homeButtonHeader } from '../../utils/Headers';
 import { scale, verticalScale, moderateScale } from '../../utils/Scaling';
 import { styles } from './styles';
 
-export default class VendorDetails extends Component {
+export default class GuestDetails extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
-    const title = navigation.getParam('title', 'VENDORS');
+    const title = navigation.getParam('title', 'GUESTS');
 
     return {
       ...homeButtonHeader(navigation),
@@ -32,17 +32,17 @@ export default class VendorDetails extends Component {
 
   render() {
     const width = Dimensions.get('window').width;
-    let vendorInfo = this.props.navigation.getParam("vendorInfo");
+    let guestInfo = this.props.navigation.getParam("guestInfo");
 
-    if (!vendorInfo) {
-      const vendorId = this.props.navigation.getParam("vendorId");
-      if (vendorId) {
-        vendorInfo = this.props.screenProps.apiData.vendors.find(vendor => vendor.id == vendorId);
+    if (!guestInfo) {
+      const guestId = this.props.navigation.getParam("guestId");
+      if (guestId) {
+        guestInfo = this.props.screenProps.apiData.guests.find(guest => guest.id == guestId);
       }
     }
 
-    if (!vendorInfo) {
-      Alert.alert("Vendor not found!");
+    if (!guestInfo) {
+      Alert.alert("Guest not found!");
       this.props.navigation.goBack();
       return null;
     }
@@ -51,7 +51,7 @@ export default class VendorDetails extends Component {
     let titleFontSize = 25;
     let titleLetterSpacing = 2;
 
-    const titleLength = vendorInfo.title.length;
+    const titleLength = guestInfo.title.length;
     
     if (titleLength > 32) {
       titleNumLines = 2;
@@ -59,8 +59,8 @@ export default class VendorDetails extends Component {
       titleLetterSpacing = 0;
     }
 
-    const vendorLocation = vendorInfo.location || '';
-    const locationLength = vendorLocation.length;
+    const guestLocation = guestInfo.location || '';
+    const locationLength = guestLocation.length;
 
     let locationFontSize = 38;
     let locationNumLines = 1;
@@ -74,28 +74,28 @@ export default class VendorDetails extends Component {
       locationNumLines = 3;
     }
 
-    let vendorDescription = vendorInfo.description || '';
+    let guestDescription = guestInfo.description || '';
 
-    if (vendorDescription.length > 0) {
-      vendorDescription += "\n\n";
+    if (guestDescription.length > 0) {
+      guestDescription += "\n\n";
     }
 
     // Create new variable for ExtendedDescription from the api
-    let vendorExtendedDescription = vendorInfo.extendedDescription || '';
+    let guestExtendedDescription = guestInfo.extendedDescription || '';
 
-    if (vendorExtendedDescription.length > 0) {
-      vendorExtendedDescription += "\n\n";
+    if (guestExtendedDescription.length > 0) {
+      guestExtendedDescription += "\n\n";
     }
 
-    // Old combination of vendorDescription with extendedDescription
-    // vendorDescription += (vendorInfo.extendedDescription || '');
+    // Old combination of guestDescription with extendedDescription
+    // guestDescription += (guestInfo.extendedDescription || '');
 
-    let urlStyle = vendorLocation.length > 0 ?
+    let urlStyle = guestLocation.length > 0 ?
       {...styles.urlContainer, ...styles.notTheBottom} :
       styles.urlContainer;
 
-    vendorInfo.url = vendorInfo.url || "";
-    const vendorUrls = vendorInfo.url.split(",");
+      guestInfo.url = guestInfo.url || "";
+    const guestUrls = guestInfo.url.split(",");
 
     return (
         <View style={{flex: 1,}}>
@@ -104,29 +104,29 @@ export default class VendorDetails extends Component {
             width={Dimensions.get('window').width}
                 background
                 style={styles.headerImage}
-                source={{uri: vendorInfo.imageUrl}}>   
+                source={{uri: guestInfo.imageUrl}}>   
             </ScalableImage>
 
           <View style={styles.detailsContainer}>
 
-            {vendorDescription.length > 0 && 
-              <Text style={styles.vendorBio}>{vendorDescription}{"\n"}</Text>
+            {guestDescription.length > 0 && 
+              <Text style={styles.vendorBio}>{guestDescription}{"\n"}</Text>
             }
 
-            {vendorExtendedDescription.length > 0 &&
-              <Text style={styles.vendoBioText}>{vendorExtendedDescription}</Text>
+            {guestExtendedDescription.length > 0 &&
+              <Text style={styles.vendoBioText}>{guestExtendedDescription}</Text>
             }
           </View>
 
           </ScrollView>
 
-          {vendorInfo.url &&
+          {guestInfo.url &&
             <View style={urlStyle}>
-              {vendorUrls.map((url) => {
+              {guestUrls.map((url) => {
               return (
                 <View>
                   <TouchableOpacity 
-                    onPress={() => this.openVendorWebsite(url)}
+                    onPress={() => this.openGuestWebsite(url)}
                   >
                     <Text style={styles.website}>{url}</Text>
                   </TouchableOpacity>
@@ -136,10 +136,10 @@ export default class VendorDetails extends Component {
             </View>
           }
 
-          {vendorLocation.length > 0 &&
+          {guestLocation.length > 0 &&
           <View style={styles.locationContainer}>
             <Text style={styles.locationText}>Location</Text>
-            <Text numberOfLines={locationNumLines} adjustsFontSizeToFit style={[styles.locationDetails, {fontSize: scale(locationFontSize)}]}>{vendorLocation}</Text>
+            <Text numberOfLines={locationNumLines} adjustsFontSizeToFit style={[styles.locationDetails, {fontSize: scale(locationFontSize)}]}>{guestLocation}</Text>
           </View>
           }
 
