@@ -91,6 +91,8 @@ export const styles = StyleSheet.create({
     letterSpacing: 1, 
     lineHeight: scale(18),
     color: '#000000',
+
+    textAlign: 'center',
   },
 
   vendorBioText: {
