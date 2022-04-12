@@ -142,6 +142,5 @@ export default class VendorDetails extends Component {
             <Text numberOfLines={locationNumLines} adjustsFontSizeToFit style={[styles.locationDetails, {fontSize: scale(locationFontSize)}]}>{vendorLocation}</Text>
           </View>
           }
-
         </View>
   );}}
