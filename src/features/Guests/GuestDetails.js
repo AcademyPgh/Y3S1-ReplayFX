@@ -6,6 +6,7 @@ import { homeButtonHeader } from '../../utils/Headers';
 import { scale, verticalScale, moderateScale } from '../../utils/Scaling';
 import { styles } from './styles';
 
+
 export default class GuestDetails extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
@@ -18,8 +19,14 @@ export default class GuestDetails extends Component {
     };
   }
 
-  openVendorWebsite = (url) => {
+  openGuestWebsite = (url) => {
     if (url) {
+
+      // check for http in url
+      if (!url.includes('http://') || !url.includes('https://')){
+        url = 'https://' + url
+      }
+
       Linking.canOpenURL(url).then(supported => {
         if (!supported) {
           console.log('Can\'t handle url: ' + url);
@@ -51,7 +58,7 @@ export default class GuestDetails extends Component {
     let titleFontSize = 25;
     let titleLetterSpacing = 2;
 
-    const titleLength = guestInfo.title.length;
+    const titleLength = guestInfo.name.length;
     
     if (titleLength > 32) {
       titleNumLines = 2;
@@ -95,7 +102,7 @@ export default class GuestDetails extends Component {
       styles.urlContainer;
 
       guestInfo.url = guestInfo.url || "";
-    const guestUrls = guestInfo.url.split(",");
+    const guestUrls = guestInfo.url.split(", ");
 
     return (
         <View style={{flex: 1,}}>
@@ -119,7 +126,6 @@ export default class GuestDetails extends Component {
           </View>
 
           </ScrollView>
-
           {guestInfo.url &&
             <View style={urlStyle}>
               {guestUrls.map((url) => {
@@ -128,6 +134,10 @@ export default class GuestDetails extends Component {
                   <TouchableOpacity 
                     onPress={() => this.openGuestWebsite(url)}
                   >
+                    {/* Add
+                        if (url.includes("facebook")
+                          <FontAwesomeIcon icon="fa-brands fa-facebook" />
+                        else ...)*/}
                     <Text style={styles.website}>{url}</Text>
                   </TouchableOpacity>
                 </View>

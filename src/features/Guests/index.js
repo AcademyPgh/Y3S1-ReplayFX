@@ -82,7 +82,7 @@ export default class Guests extends Component {
       
       <View style={styles.vendorContainer}>
         <SectionList 
-          sections={this.processVendorSections(this.props.screenProps.apiData.guests)} 
+          sections={this.processGuestSections(this.props.screenProps.apiData.guests)} 
           renderItem={this.renderListItem} 
           renderSectionHeader={this.renderSectionHeader}
           keyExtractor={this.keyExtractor}
