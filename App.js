@@ -140,7 +140,7 @@ class App extends React.Component {
 
   render() {
     let content = (
-        <RootStack 
+        <RootStack
           ref={navigatorRef => NavigationService.setTopLevelNavigator(navigatorRef)}
           screenProps={{apiData: this.state.apiData, 
             dataLoadedTimestamp: this.state.dataLoadedTimestamp,
@@ -163,7 +163,7 @@ class App extends React.Component {
     }
 
     return (
-      <View style={{flex: 1, backgroundColor: 'white'}}>
+      <View style={{flex: 1, backgroundColor: '#F5FCFF'}}>
         <StatusBar backgroundColor="black" barStyle="light-content"/>
         {content}
         <View style={[styles.footer,]}>
@@ -185,6 +185,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+    color: 'red'
   },
   footerText: {
     fontSize: scale(25),

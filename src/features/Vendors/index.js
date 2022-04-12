@@ -115,7 +115,7 @@ class GuestItem extends React.PureComponent {
     const guest = this.props.guest;
 
     return (
-      <View style={[styles.container, {backgroundColor: 'white', }]}>
+      <View style={styles.container}>
         <TouchableOpacity style={styles.vendorTextContainer} onPress={this.pressText}>
           <Text style={styles.vendorTitle}>{guest.name}</Text>
           {guest.description && 
