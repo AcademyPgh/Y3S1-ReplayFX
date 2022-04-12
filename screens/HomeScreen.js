@@ -194,8 +194,8 @@ const styles = StyleSheet.create ({
   container: {
    flex: 1,
    paddingVertical: verticalScale(12), 
-
-   backgroundColor: '#F5FCFF' 
+    
+   backgroundColor: '#F2F2F2' 
  },
 
   headerImage: {

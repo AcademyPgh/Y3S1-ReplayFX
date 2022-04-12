@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     flex: 1, 
     flexDirection: 'column', 
     justifyContent: 'flex-start', 
-    backgroundColor: '#F5FCFF'
+    backgroundColor: '#F2F2F2'
   },
   vendorTitle: {
     paddingVertical: 2,
@@ -42,6 +42,12 @@ export const styles = StyleSheet.create({
   },
 
   // details
+
+  mainContainer: {
+    flex: 1,
+    backgroundColor: '#F2F2F2',
+  },
+
   headerImage: {
     width: undefined,
     height: undefined,
@@ -68,7 +74,6 @@ export const styles = StyleSheet.create({
 
   detailsContainer: {
     padding: scale(20),
-    backgroundColor: '#F5FCFF',
   },  
         
   bolded: {
