@@ -184,7 +184,7 @@ const styles = StyleSheet.create ({
    flex: 1,
    fontSize: scale(24),
    fontFamily: Fonts.NunitoLight,
-   color: 'black',
+   color: '#121212',
    borderBottomWidth: StyleSheet.hairlineWidth * 2,
    borderColor: 'black',
    borderStyle: 'solid',
@@ -193,7 +193,9 @@ const styles = StyleSheet.create ({
 
   container: {
    flex: 1,
-   paddingVertical: verticalScale(12),   
+   paddingVertical: verticalScale(12), 
+
+   backgroundColor: '#F5FCFF' 
  },
 
   headerImage: {

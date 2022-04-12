@@ -67,32 +67,32 @@ export default class GuestDetails extends Component {
     }
 
     const guestLocation = guestInfo.location || '';
-    const locationLength = guestLocation.length;
+    // const locationLength = guestLocation.length;
 
-    let locationFontSize = 38;
-    let locationNumLines = 1;
+    // let locationFontSize = 38;
+    // let locationNumLines = 1;
 
       //need to adjust font size ourselves - adjustsFontSizeToFit is iOS only
-    if (locationLength > 30) {
-      locationFontSize = 24;
-      locationNumLines = 5;
-    } else if (locationLength > 4) {
-      locationFontSize = 32;
-      locationNumLines = 3;
-    }
+    // if (locationLength > 30) {
+    //   locationFontSize = 24;
+    //   locationNumLines = 5;
+    // } else if (locationLength > 4) {
+    //   locationFontSize = 32;
+    //   locationNumLines = 3;
+    // }
 
     let guestDescription = guestInfo.description || '';
 
-    if (guestDescription.length > 0) {
-      guestDescription += "\n\n";
-    }
+    // if (guestDescription.length > 0) {
+    //   guestDescription += "\n\n";
+    // }
 
     // Create new variable for ExtendedDescription from the api
     let guestExtendedDescription = guestInfo.extendedDescription || '';
 
-    if (guestExtendedDescription.length > 0) {
-      guestExtendedDescription += "\n\n";
-    }
+    // if (guestExtendedDescription.length > 0) {
+    //   guestExtendedDescription += "\n\n";
+    // }
 
     // Old combination of guestDescription with extendedDescription
     // guestDescription += (guestInfo.extendedDescription || '');
@@ -105,7 +105,7 @@ export default class GuestDetails extends Component {
     const guestUrls = guestInfo.url.split(", ");
 
     return (
-        <View style={{flex: 1,}}>
+        <View style={{flex: 1, backgroundColor: '#F5FCFF'}}>
           <ScrollView>
             <ScalableImage 
             width={Dimensions.get('window').width}
@@ -146,12 +146,13 @@ export default class GuestDetails extends Component {
             </View>
           }
 
-          {guestLocation.length > 0 &&
+          {/* Old location data from vendor component */}
+          {/* {guestLocation.length > 0 &&
           <View style={styles.locationContainer}>
             <Text style={styles.locationText}>Location</Text>
             <Text numberOfLines={locationNumLines} adjustsFontSizeToFit style={[styles.locationDetails, {fontSize: scale(locationFontSize)}]}>{guestLocation}</Text>
           </View>
-          }
+          } */}
 
         </View>
   );}}

@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     flex: 1, 
     flexDirection: 'column', 
     justifyContent: 'flex-start', 
-    backgroundColor: 'white'
+    backgroundColor: '#F5FCFF'
   },
   vendorTitle: {
     paddingVertical: 2,
@@ -68,6 +68,7 @@ export const styles = StyleSheet.create({
 
   detailsContainer: {
     padding: scale(20),
+    backgroundColor: '#F5FCFF',
   },  
         
   bolded: {
@@ -82,7 +83,7 @@ export const styles = StyleSheet.create({
     fontFamily: Fonts.Medium,
     fontSize: scale(16),
     lineHeight: scale(28),
-    color: '#000000',
+    color: '#F5FCFF',
   }, 
 
   vendorBio: {
@@ -91,7 +92,6 @@ export const styles = StyleSheet.create({
     letterSpacing: 1, 
     lineHeight: scale(18),
     color: '#000000',
-
     textAlign: 'center',
   },
 
@@ -105,22 +105,15 @@ export const styles = StyleSheet.create({
     marginBottom: verticalScale(18),
   },
 
-  website: {
-    textAlign: 'center',
-    fontFamily: Fonts.Heavy,
-    fontSize: scale(18),
-    color: '#6c588d',
-  },
-
-  locationDetails: {
-    marginLeft: scale(12), 
-    marginRight: scale(12), 
-    fontSize: scale(38), 
-    fontFamily: Fonts.Heavy, 
-    textAlign: 'center', 
-    textAlignVertical: "center",
-    color: '#000000',
-  },
+  // locationDetails: {
+  //   marginLeft: scale(12), 
+  //   marginRight: scale(12), 
+  //   fontSize: scale(38), 
+  //   fontFamily: Fonts.Heavy, 
+  //   textAlign: 'center', 
+  //   textAlignVertical: "center",
+  //   color: '#000000',
+  // },
 
   urlContainer: {
     borderColor: 'black',
@@ -132,23 +125,30 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
+  website: {
+    textAlign: 'center',
+    fontFamily: Fonts.Heavy,
+    fontSize: scale(18),
+    color: '#6c588d',
+  },
+
   notTheBottom: {
     marginBottom: verticalScale(-10),
     borderBottomWidth: 0,
   },
 
-  locationContainer: {
-    borderColor: 'black', 
-    borderBottomWidth: 1, 
-    borderTopWidth: 1, 
-    margin: verticalScale(10), 
-    paddingVertical: 0,
-  },
+  // locationContainer: {
+  //   borderColor: 'black', 
+  //   borderBottomWidth: 1, 
+  //   borderTopWidth: 1, 
+  //   margin: verticalScale(10), 
+  //   paddingVertical: 0,
+  // },
 
-  locationText: {
-    fontSize: scale(28), 
-    fontFamily: Fonts.Heavy, 
-    textAlign: 'center', 
-    color: 'black',
-  }
+  // locationText: {
+  //   fontSize: scale(28), 
+  //   fontFamily: Fonts.Heavy, 
+  //   textAlign: 'center', 
+  //   color: 'black',
+  // }
 });

@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     flex: 1, 
     flexDirection: 'column', 
     justifyContent: 'flex-start', 
-    backgroundColor: 'white'
+    backgroundColor: '#F5FCFF'
   },
   vendorTitle: {
     paddingVertical: 2,
