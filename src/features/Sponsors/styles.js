@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     },
     sponsorBackground:{
       flex: 1,
-      backgroundColor: '#F5FCFF',
+      backgroundColor: '#ffffff',
       borderColor: '#9ca4ab',
     },
   });

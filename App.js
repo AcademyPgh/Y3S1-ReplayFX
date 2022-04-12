@@ -39,7 +39,7 @@ class App extends React.Component {
       apiData: apiData,
       dataLoadedTimestamp: new Date(),
       singleConvention: true,
-      selectedConvention: {id: 12}  // ex: {id: 5}
+      selectedConvention: {id: 18}  // ex: {id: 5}
     }
 
     //AsyncStorage.clear();
@@ -166,7 +166,7 @@ class App extends React.Component {
       <View style={{flex: 1, backgroundColor: '#F5FCFF'}}>
         <StatusBar backgroundColor="black" barStyle="light-content"/>
         {content}
-        <View style={[styles.footer,]}>
+        <View style={styles.footer}>
           <View style={{flex: 1}} />
           <View style={{flex: 4}}>
             <Text style={styles.footerText}>{hashTag}</Text>

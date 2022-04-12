@@ -85,7 +85,7 @@ export default class Schedule extends Component {
 
     return(
       
-      <View style={{flex: 1, flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: '#F5FCFF'}}>
+      <View style={{flex: 1, flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: '#F2F2F2'}}>
         <SectionList 
           sections={this.props.eventList} 
           renderItem={this.renderListItem} 

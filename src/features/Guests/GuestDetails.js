@@ -105,7 +105,7 @@ export default class GuestDetails extends Component {
     const guestUrls = guestInfo.url.split(", ");
 
     return (
-        <View style={{flex: 1, backgroundColor: '#F5FCFF'}}>
+        <View style={styles.mainContainer}>
           <ScrollView>
             <ScalableImage 
             width={Dimensions.get('window').width}
