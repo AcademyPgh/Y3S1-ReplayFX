@@ -32,7 +32,7 @@
     "react-native-photo-view-ex": "^1.1.0",
     "react-native-push-notification": "^7.4.0",
     "react-native-safe-area-context": "^3.2.0",
-    "react-native-scalable-image": "uugengiven/react-native-scalable-image",
+    "react-native-scalable-image": "https://git@github.com/uugengiven/react-native-scalable-image",
     "react-native-screens": "^3.4.0",
     "react-native-section-list-get-item-layout": "^2.2.3",
     "react-native-tab-view": "^3.0.1",
