@@ -164,5 +164,16 @@ export   const styles = StyleSheet.create({
       sectionHeader: {
         backgroundColor: 'whitesmoke',
         flex: 1,
+      },
+      urlContainer: {
+        borderColor: 'black',
+        borderTopWidth: 1,
+        borderBottomWidth: 1,
+        margin: verticalScale(10),
+        paddingVertical: verticalScale(5),
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        flexDirection: 'row',
+        flexWrap: 'wrap'
       }
   });

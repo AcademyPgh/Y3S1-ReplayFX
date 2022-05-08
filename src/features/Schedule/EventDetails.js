@@ -6,7 +6,8 @@ import moment from 'moment';
 import { Fonts } from '../../utils/Fonts';
 import { homeButtonHeader } from '../../utils/Headers';
 import { scale, verticalScale, moderateScale } from '../../utils/Scaling';
-import { styles } from './styles';
+import { styles } from './styles'; 
+import URLButtons from '../../components/URLButtons';
 
 
 export default class EventDetails extends Component {
@@ -135,11 +136,7 @@ export default class EventDetails extends Component {
               </Text>
             }
             {eventInfo.url && 
-              <Text>
-                <TouchableOpacity onPress={() => this.openWebsite(eventInfo.url)} >
-                  <Text style={styles.website}>{eventInfo.url + "\n"}</Text>
-                </TouchableOpacity>
-              </Text>
+              <URLButtons url={eventInfo.url} urlStyle={styles.urlContainer}/>
             }
           </ScrollView>
 
