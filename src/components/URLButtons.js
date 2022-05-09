@@ -34,7 +34,10 @@ export default class URLButtons extends Component {
     }
     if(url.includes("twitter"))
     {
-        return this.createButton(url, "#5ba9c8", "twitter", "Twitter");
+      // Original Color
+        // return this.createButton(url, "#5ba9c8", "twitter", "Twitter");
+      // Accessible Color
+        return this.createButton(url, "#267B9C", "twitter", "Twitter");
         //backgroundColor="#00acee"
     }
     if(url.includes("instagram"))

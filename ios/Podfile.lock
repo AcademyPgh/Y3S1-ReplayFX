@@ -617,7 +617,7 @@ SPEC CHECKSUMS:
   CodePush: 9bb93f52a44ee80b72739d89dead9c7e86c3bd3a
   DoubleConversion: cf9b38bf0b2d048436d9a82ad2abe1404f11e7de
   FBLazyVector: e686045572151edef46010a6f819ade377dfeb4b
-  FBReactNativeSpec: be3f6e5c871eb5d95b6a8230ed14ebee40400b4b
+  FBReactNativeSpec: a355efe88be2bbbefce4d323e38a7e1b98ae1287
   Firebase: 54cdc8bc9c9b3de54f43dab86e62f5a76b47034f
   FirebaseCore: 31f389c37ac1ea52454a53d3081f2d7019485a4a
   FirebaseCoreDiagnostics: 92e07a649aeb66352b319d43bdd2ee3942af84cb
@@ -676,4 +676,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: a0bedf737d5d5bd154bcba9952680f8bde1f266e
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2

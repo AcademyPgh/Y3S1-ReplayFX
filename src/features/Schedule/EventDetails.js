@@ -96,7 +96,7 @@ export default class EventDetails extends Component {
 
     return (
         <View style={{flex: 1}}>
-          
+          <ScrollView>
             <Image width={Dimensions.get('window').width}
                 background
                 style={styles.headerImage}
@@ -111,7 +111,8 @@ export default class EventDetails extends Component {
               </View>
             </Image>
 
-          <ScrollView style={styles.detailsContainer}>
+          {/* <ScrollView style={styles.detailsContainer}> */}
+          <View style={styles.detailsContainer}>
 
             <Text>
                 <Text style={styles.bolded}>Date: </Text>
@@ -132,12 +133,13 @@ export default class EventDetails extends Component {
             {eventDescription.length > 0 && 
               <Text style={{marginTop: verticalScale(5.5), marginBottom: verticalScale(18)}}>
                 <Text style={styles.gameBio}>Description: </Text>
-                <Text style={styles.gameBioText}>{eventDescription + "\n"}</Text>
+                <Text style={styles.gameBioText}>{eventDescription}</Text>
               </Text>
             }
             {eventInfo.url && 
               <URLButtons url={eventInfo.url} urlStyle={styles.urlContainer}/>
             }
+            </View>
           </ScrollView>
 
           {eventLocation.length > 0 &&
