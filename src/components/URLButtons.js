@@ -29,57 +29,57 @@ export default class URLButtons extends Component {
     url = url.toLowerCase();
     if(url.includes("facebook") || url.includes("fb.me"))
     {
-        return (<Icon.Button
-        name="facebook"
-        backgroundColor="#3b5998"
-        onPress={() => this.openGuestWebsite(url)}
-        style={styles.icon}
-      >Facebook</Icon.Button>)
+        return this.createButton(url, "#526080", "facebook", "Facebook");
+        // backgroundColor="#3b5998"
     }
     if(url.includes("twitter"))
     {
-        return (<Icon.Button
-        name="twitter"
-        backgroundColor="#00acee"
-        onPress={() => this.openGuestWebsite(url)}
-        style={styles.icon}
-      >Twitter</Icon.Button>)
+        return this.createButton(url, "#5ba9c8", "twitter", "Twitter");
+        //backgroundColor="#00acee"
     }
     if(url.includes("instagram"))
     {
-        return (<Icon.Button
-        name="instagram"
-        backgroundColor="#8a3ab9"
-        onPress={() => this.openGuestWebsite(url)}
-        style={styles.icon}
-      >Instagram</Icon.Button>)
+        return this.createButton(url, "#835b9a", "instagram", "Instagram");
+        // backgroundColor="#8a3ab9"
     }
     if(url.includes("bandcamp"))
     {
-        return (<Icon.Button
-        name="bandcamp"
-        backgroundColor="#629aa9"
-        onPress={() => this.openGuestWebsite(url)}
-        style={styles.icon}
-      >Bandcamp</Icon.Button>)
+        return this.createButton(url, "738e96", "bandcamp", "Bandcamp");
+        // backgroundColor="#629aa9"
     }
     if(url.includes("spotify"))
     {
-        return (<Icon.Button
-        name="spotify"
-        backgroundColor="#1db954"
-        onPress={() => this.openGuestWebsite(url)}
-        style={styles.icon}
-      >Spotify</Icon.Button>)
+        return this.createButton(url, "#469160", "spotify", "Spotify");
+        // backgroundColor="#1db954"
     }
 
-    return (<Icon.Button
-        name="opera"
-        backgroundColor="#ff1b2d"
-        onPress={() => this.openGuestWebsite(url)}
-        style={styles.icon}
-      >Homepage</Icon.Button>) 
+    return this.createButton(url, "#c6535c", "globe", "Homepage");
+        // backgroundColor="#ff1b2d"
+  }
 
+//   createButton(url, color, name, text)
+//   {
+//       return (<Icon.Button
+//         name={name}
+//         // backgroundColor="#ff1b2d"
+//         backgroundColor={color}
+//         onPress={() => this.openGuestWebsite(url)}
+//         iconStyle={styles.icon}
+//       >{text}</Icon.Button>) 
+//   }
+
+  createButton(url, color, name, text)
+  {
+      return (<TouchableOpacity
+        onPress={() => this.openGuestWebsite(url)}
+      >
+          <Icon
+            name={name}
+            color={color}
+            style={styles.icon}
+            size={30}
+          ></Icon>
+      </TouchableOpacity>)
   }
 
   render() {

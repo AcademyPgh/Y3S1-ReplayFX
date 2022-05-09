@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
     borderBottomWidth: 0,
   },
   icon: {
+      minWidth: scale(20)
   },
   iconContainer: {
       padding: verticalScale(5)
