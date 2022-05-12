@@ -54,7 +54,11 @@ export default class ScheduleContainer extends Component {
       this.favoritesKey = getConventionPersistKey(conventionID) + ":favoriteEvents";
 
       this.getEventDays(this.props.screenProps.apiData.events);
-      this.setupTabs(this.eventDays, this.props.screenProps.apiData.eventTypes, this.props.navigation.getParam('tabs', 'all'));
+      this.setupTabs(this.eventDays, this.props.screenProps.apiData.eventTypes, {
+        tabs: this.props.navigation.getParam('tabs', 'all'),
+        loadDays: this.props.navigation.getParam('days', true),
+        loadFavorites: this.props.navigation.getParam('favorites', true)
+      } );
       this.setupEventFilters(this.props.screenProps.apiData.events);
       
       let filter = this.props.navigation.getParam('scheduleFilter', '');
@@ -175,21 +179,26 @@ export default class ScheduleContainer extends Component {
       });
     }
 
-    setupTabs(eventDays, eventCategories, eventMenus) {
+    setupTabs(eventDays, eventCategories, options) {
       this.tabs = [];
 
-      eventDays.forEach((day) => { 
-        const tab = {
-          name: day.key,
-          text: day.dayOfWeek.toUpperCase() + "\n" + day.dayOfMonth
-        };
-        this.tabs.push(tab);
-      });
-
-      this.tabs.push({ name: 'my-schedule', text: `MY\nSCHEDULE` });
+      if(options.loadDays)
+      {
+        eventDays.forEach((day) => { 
+          const tab = {
+            name: day.key,
+            text: day.dayOfWeek.toUpperCase() + "\n" + day.dayOfMonth
+          };
+          this.tabs.push(tab);
+        });
+      }
+      if(options.loadFavorites)
+      {
+        this.tabs.push({ name: 'my-schedule', text: `MY\nSCHEDULE` });
+      }
 
       eventCategories.forEach((category) => {
-        if(eventMenus == 'all' || eventMenus == category.eventMenu?.id)
+        if(options.tabs == 'all' || options.tabs == category.eventMenu?.id)
         {
           const tab = {
             name: category.name,
@@ -280,7 +289,10 @@ export default class ScheduleContainer extends Component {
 
         //put event in correct day filter
         const key = this.eventDays.find((day) => {return this.getDateString(day.date) == this.getDateString(event.date);}).key;
-        this.filters[key][key].data.push(event);
+        if(this.filters[key])
+        {
+          this.filters[key][key].data.push(event);
+        }
 
         //put event in each category it belongs to
         event.eventTypes.forEach((eventType) => {

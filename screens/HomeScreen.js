@@ -120,7 +120,7 @@ export default class HomeScreen extends Component {
       }
       else if(menuItem.type == 'TabSchedule')
       {
-        finalMenu = [...finalMenu, ...this.subScheduleMenu().map(item => {return {type: 'Schedule', title: item.displayName, options: {title: item.displayName, tabs: item.id}}})];
+        finalMenu = [...finalMenu, ...this.subScheduleMenu().map(item => {return {type: 'Schedule', title: item.displayName, options: {title: item.displayName, tabs: item.id, days: false, favorites: false}}})];
       }
       else
       {
