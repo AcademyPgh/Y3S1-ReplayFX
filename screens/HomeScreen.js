@@ -102,6 +102,10 @@ export default class HomeScreen extends Component {
     return this.props.screenProps.apiData.vendorTypes.filter(item => item.isMenu)
   }
 
+  subScheduleMenu() {
+    return this.props.screenProps.apiData.eventMenus.filter(item => item.isMenu);
+  }
+
   buildMenu(menu) {
     let finalMenu = [];
     menu.forEach((menuItem) => {
@@ -112,6 +116,10 @@ export default class HomeScreen extends Component {
       else if(menuItem.type == 'VendorMenu')
       {
         finalMenu = [...finalMenu, ...this.subVendorMenu().map(item => {return {type: 'VendorsList', title: item.displayName, options: {title: item.displayName, vendorFilter: item.id}}})];
+      }
+      else if(menuItem.type == 'TabSchedule')
+      {
+        finalMenu = [...finalMenu, ...this.subScheduleMenu().map(item => {return {type: 'Schedule', title: item.displayName, options: {title: item.displayName, tabs: item.id}}})];
       }
       else
       {

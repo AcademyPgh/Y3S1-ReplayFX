@@ -54,7 +54,7 @@ export default class ScheduleContainer extends Component {
       this.favoritesKey = getConventionPersistKey(conventionID) + ":favoriteEvents";
 
       this.getEventDays(this.props.screenProps.apiData.events);
-      this.setupTabs(this.eventDays, this.props.screenProps.apiData.eventTypes);
+      this.setupTabs(this.eventDays, this.props.screenProps.apiData.eventTypes, this.props.navigation.getParam('tabs', 'all'));
       this.setupEventFilters(this.props.screenProps.apiData.events);
       
       let filter = this.props.navigation.getParam('scheduleFilter', '');
@@ -175,7 +175,7 @@ export default class ScheduleContainer extends Component {
       });
     }
 
-    setupTabs(eventDays, eventCategories) {
+    setupTabs(eventDays, eventCategories, eventMenus) {
       this.tabs = [];
 
       eventDays.forEach((day) => { 
@@ -189,11 +189,14 @@ export default class ScheduleContainer extends Component {
       this.tabs.push({ name: 'my-schedule', text: `MY\nSCHEDULE` });
 
       eventCategories.forEach((category) => {
-        const tab = {
-          name: category.name,
-          text: category.displayName.toUpperCase().replace(" ", "\n")
-        };
-        this.tabs.push(tab);
+        if(eventMenus == 'all' || eventMenus == category.eventMenu?.id)
+        {
+          const tab = {
+            name: category.name,
+            text: category.displayName.toUpperCase().replace(" ", "\n")
+          };
+          this.tabs.push(tab);
+        }
       });
 
       if(eventDays.length > 0)
@@ -281,7 +284,10 @@ export default class ScheduleContainer extends Component {
 
         //put event in each category it belongs to
         event.eventTypes.forEach((eventType) => {
-          this.filters[eventType.name][key].data.push(event);
+          if(this.filters[eventType.name])
+          {
+            this.filters[eventType.name][key].data.push(event);
+          }
         });
       });
 
