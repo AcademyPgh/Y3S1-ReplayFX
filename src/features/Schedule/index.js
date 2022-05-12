@@ -134,7 +134,7 @@ export default class ScheduleContainer extends Component {
 
     addFavorite(event) {
       const eventId = event.id;
-      favorites = this.state.favorites;
+      let favorites = this.state.favorites;
 
       if (!favorites.includes(eventId)) {
         favorites.push(eventId);
@@ -146,10 +146,10 @@ export default class ScheduleContainer extends Component {
 
     removeFavorite(event) {
       const eventId = event.id;
-      favorites = this.state.favorites;
+      let favorites = this.state.favorites;
 
       if (favorites.includes(eventId)) {
-        eventIndex = favorites.indexOf(eventId);
+        let eventIndex = favorites.indexOf(eventId);
         favorites.splice(eventIndex, 1);
         PushController.removeNotification(eventId);
         this.persistFavorites(favorites);
