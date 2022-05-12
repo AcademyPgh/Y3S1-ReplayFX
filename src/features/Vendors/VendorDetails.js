@@ -100,12 +100,14 @@ export default class VendorDetails extends Component {
     return (
         <View style={{flex: 1,}}>
           <ScrollView>
+            {vendorInfo.imageUrl && 
             <ScalableImage 
             width={Dimensions.get('window').width}
                 background
                 style={styles.headerImage}
                 source={{uri: vendorInfo.imageUrl}}>   
             </ScalableImage>
+            }
 
           <View style={styles.detailsContainer}>
 
