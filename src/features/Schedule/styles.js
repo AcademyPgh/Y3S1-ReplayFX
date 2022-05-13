@@ -175,5 +175,15 @@ export   const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         flexWrap: 'wrap'
+      },
+      tags: {
+        backgroundColor: '#444444',
+        borderRadius: 4,
+        paddingLeft: 4,
+        paddingRight: 4,
+        marginLeft: verticalScale(10)
+      },
+      tagText: {
+        color: '#FFFFFF'
       }
   });

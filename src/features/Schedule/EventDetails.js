@@ -101,13 +101,18 @@ export default class EventDetails extends Component {
                 background
                 style={styles.headerImage}
                 source={require('../../../Images/PinballGamePageImage.jpg')}>   
-              <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>      
+              <View style={{flex: 1, flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center'}}>      
                 {/*<Text style={styles.headerText1}>LEARN</Text>*/}
                 <Text 
                   numberOfLines={titleNumLines} 
                   adjustsFontSizeToFit 
                   style={[styles.headerText2, {fontSize: scale(titleFontSize), letterSpacing: titleLetterSpacing}]}>{eventInfo.title.toUpperCase()}
                 </Text>
+                <View style={{flex: 1, flexDirection: 'row', flexWrap: 'wrap', alignContent: 'center', justifyContent: 'space-evenly'}}>
+                  {eventInfo.eventTypes.map((tag) => {
+                    return (<View style={styles.tags}><Text style={styles.tagText}>{tag.displayName}</Text></View>)
+                  })}
+                </View>
               </View>
             </Image>
 
