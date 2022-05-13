@@ -6,6 +6,7 @@ import { homeButtonHeader } from '../../utils/Headers';
 import { scale, verticalScale, moderateScale } from '../../utils/Scaling';
 import { styles } from './styles';
 import URLButtons from '../../components/URLButtons';
+import moment from 'moment';
 
 
 export default class GuestDetails extends Component {
@@ -18,6 +19,71 @@ export default class GuestDetails extends Component {
       ...homeButtonHeader(navigation),
       title: title,
     };
+  }
+
+  constructor(props)
+  {
+    super(props);
+
+    this.getConnections = this.getConnections.bind(this);
+    this.getEvent = this.getEvent.bind(this);
+    this.getVendor = this.getVendor.bind(this);
+  }
+
+  getConnections(guest)
+  {
+    let connections = []; 
+    guest.connections.forEach(conn => {
+      if(conn.type == "event")
+      {
+        const event = this.getEvent(conn.id);
+        connections.push(<TouchableOpacity
+          onPress={() => this.goToEvent(event)}
+        >
+          <View style={styles.event}>
+            <Text style={styles.linkTitle}>{event.title}</Text>
+            <Text style={styles.linkDate}>{moment(event.date).format('ddd, MMM DD')} {event.startTime12}</Text>
+            <Text style={styles.linkLocation}>{event.location}</Text>
+          </View>
+        </TouchableOpacity>)
+      }
+      if(conn.type == "vendor")
+      {
+        const vendor = this.getVendor(conn.id);
+        connections.push(<TouchableOpacity
+          onPress={() => this.goToVendor(vendor)}
+        >
+          <View style={styles.vendor}>
+            <Text style={styles.linkTitle}>{vendor.title}</Text>
+            <Text style={styles.linkLocation}>{vendor.location}</Text>
+          </View>
+        </TouchableOpacity>)
+      }
+      return null;
+    });
+    return <View>
+      {connections}
+      </View>
+  }
+
+  goToEvent(event)
+  {
+    this.props.navigation.navigate('EventDetails', {eventInfo: event});
+  }
+
+  goToVendor(vendor)
+  {
+    this.props.navigation.navigate('VendorDetails', {vendorInfo: vendor,  title: vendor.title});
+  }
+
+  getEvent(id)
+  {
+    return this.props.screenProps.apiData.events.find(e => e.id == id);
+  }
+
+  getVendor(id)
+  {
+    return this.props.screenProps.apiData.vendors.find(v => v.id == id);
   }
 
   render() {
@@ -94,9 +160,12 @@ export default class GuestDetails extends Component {
             }
           </View>
 
+          {this.getConnections(guestInfo)}
+
           {guestInfo.url && 
               <URLButtons url={guestInfo.url} urlStyle={styles.urlContainer}/>
           }
+
 
           </ScrollView>
           

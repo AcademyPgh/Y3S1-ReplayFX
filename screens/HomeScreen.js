@@ -108,7 +108,6 @@ export default class HomeScreen extends Component {
 
   buildMenu(menu) {
     let finalMenu = [];
-    finalMenu.push({type: 'GuestsList', title: 'Guests'})
     menu.forEach((menuItem) => {
       if(menuItem.type == 'EventMenu')
       {

@@ -39,6 +39,8 @@ export const styles = StyleSheet.create({
   sectionHeader: {
     backgroundColor: 'whitesmoke',
     flex: 1,
+    alignContent: 'center', 
+    justifyContent: 'center'
   },
 
   // details
@@ -142,18 +144,35 @@ export const styles = StyleSheet.create({
     borderBottomWidth: 0,
   },
 
-  // locationContainer: {
-  //   borderColor: 'black', 
-  //   borderBottomWidth: 1, 
-  //   borderTopWidth: 1, 
-  //   margin: verticalScale(10), 
-  //   paddingVertical: 0,
-  // },
+  vendor: {
+    margin: verticalScale(10),
+    padding: verticalScale(10),
+    backgroundColor: '#cccccc'
+  },
+  event: {
+    margin:verticalScale(10),
+    padding: verticalScale(10)
+  },
 
-  // locationText: {
-  //   fontSize: scale(28), 
-  //   fontFamily: Fonts.Heavy, 
-  //   textAlign: 'center', 
-  //   color: 'black',
-  // }
+  linkTitle: {
+    fontFamily: Fonts.Heavy, 
+    fontSize: scale(16), 
+    letterSpacing: 1, 
+    lineHeight: scale(18),
+    color: '#000000',
+  },
+  linkLocation: {
+    fontFamily: Fonts.Medium, 
+    fontSize: scale(14), 
+    letterSpacing: 1, 
+    lineHeight: scale(16),
+    color: '#000000',
+  },
+  linkDate: {
+    fontFamily: Fonts.Medium, 
+    fontSize: scale(14), 
+    letterSpacing: 1, 
+    lineHeight: scale(16),
+    color: '#333333',
+  }
 });
