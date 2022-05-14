@@ -34,6 +34,7 @@ export default class GuestDetails extends Component {
   {
     let connections = []; 
     guest.connections.forEach(conn => {
+      console.log(conn);
       if(conn.type == "event")
       {
         const event = this.getEvent(conn.id);
@@ -59,7 +60,6 @@ export default class GuestDetails extends Component {
           </View>
         </TouchableOpacity>)
       }
-      return null;
     });
     return <View>
       {connections}
@@ -134,8 +134,8 @@ export default class GuestDetails extends Component {
 
     let urlStyle = {...styles.urlContainer, ...styles.notTheBottom};
 
-      guestInfo.url = guestInfo.url || "";
-    const guestUrls = guestInfo.url.split(", ");
+    //   guestInfo.url = guestInfo.url || "";
+    // const guestUrls = guestInfo.url.split(", ");
 
     return (
         <View style={styles.mainContainer}>
@@ -150,14 +150,8 @@ export default class GuestDetails extends Component {
             }
 
           <View style={styles.detailsContainer}>
-
-            {guestInfo.description && 
               <Text style={styles.vendorBio}>{guestInfo.description}{"\n"}</Text>
-            }
-
-            {guestInfo.extendedDescription &&
-              <Text style={styles.vendoBioText}>{guestInfo.extendedDescription}</Text>
-            }
+              <Text style={styles.vendorBioText}>{guestInfo.extendedDescription}</Text>
           </View>
 
           {this.getConnections(guestInfo)}

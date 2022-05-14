@@ -128,8 +128,10 @@ export const styles = StyleSheet.create({
     borderBottomWidth: 1,
     margin: verticalScale(10),
     paddingVertical: verticalScale(5),
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
+    flexDirection: 'row',
+    flexWrap: 'wrap'
   },
 
   website: {
