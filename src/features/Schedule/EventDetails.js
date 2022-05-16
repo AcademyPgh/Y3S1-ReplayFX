@@ -108,17 +108,21 @@ export default class EventDetails extends Component {
                   adjustsFontSizeToFit 
                   style={[styles.headerText2, {fontSize: scale(titleFontSize), letterSpacing: titleLetterSpacing}]}>{eventInfo.title.toUpperCase()}
                 </Text>
-                <View style={{flex: 1, flexDirection: 'row', flexWrap: 'wrap', alignContent: 'center', justifyContent: 'space-evenly'}}>
+                {/* <View style={{flex: 1, flexDirection: 'row', flexWrap: 'wrap', alignContent: 'center', justifyContent: 'space-evenly'}}>
                   {eventInfo.eventTypes.map((tag) => {
                     return (<View style={styles.tags}><Text style={styles.tagText}>{tag.displayName}</Text></View>)
                   })}
-                </View>
+                </View> */}
               </View>
             </Image>
 
           {/* <ScrollView style={styles.detailsContainer}> */}
           <View style={styles.detailsContainer}>
-
+            <View style={{flex: 1, flexDirection: 'row', flexWrap: 'wrap', alignContent: 'center', justifyContent: 'space-evenly'}}>
+              {eventInfo.eventTypes.map((tag) => {
+                return (<View style={styles.tags}><Text style={styles.tagText}>{tag.displayName}</Text></View>)
+              })}
+            </View>
             <Text>
                 <Text style={styles.bolded}>Date: </Text>
                 <Text style={styles.descriptions}>{moment(eventInfo.date).format('ddd, MMM DD')}</Text>
@@ -136,7 +140,7 @@ export default class EventDetails extends Component {
               />
             }
             {eventDescription.length > 0 && 
-              <Text style={{marginTop: verticalScale(5.5), marginBottom: verticalScale(18)}}>
+              <Text style={{marginTop: verticalScale(5.5), marginBottom: verticalScale(1)}}>
                 <Text style={styles.gameBio}>Description: </Text>
                 <Text style={styles.gameBioText}>{eventDescription}</Text>
               </Text>

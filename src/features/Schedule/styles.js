@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { verticalScale, scale } from '../../utils/Scaling';
 import { Fonts, Colors } from '../../utils/common.styles';
+import { NavigationEvents } from 'react-navigation';
 
 export   const styles = StyleSheet.create({
     tab: {
@@ -47,6 +48,8 @@ export   const styles = StyleSheet.create({
   
       detailsContainer: {
           padding: scale(20),
+          paddingTop: scale(5),
+          paddingBottom: scale(5),
       },  
             
       bolded: {
@@ -168,8 +171,9 @@ export   const styles = StyleSheet.create({
       urlContainer: {
         borderColor: 'black',
         borderTopWidth: 1,
-        borderBottomWidth: 1,
+        // borderBottomWidth: 1,
         margin: verticalScale(10),
+        marginTop: verticalScale(1),
         paddingVertical: verticalScale(5),
         justifyContent: 'space-evenly',
         alignItems: 'center',
@@ -181,9 +185,10 @@ export   const styles = StyleSheet.create({
         borderRadius: 4,
         paddingLeft: 4,
         paddingRight: 4,
-        marginLeft: verticalScale(10)
+        marginLeft: verticalScale(10),
+        marginBottom: verticalScale(4),
       },
       tagText: {
         color: '#FFFFFF'
-      }
+      },
   });
