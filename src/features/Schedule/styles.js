@@ -182,6 +182,7 @@ export   const styles = StyleSheet.create({
       },
       tags: {
         backgroundColor: '#444444',
+        backgroundColor: '#502673',
         borderRadius: 4,
         paddingLeft: 4,
         paddingRight: 4,
