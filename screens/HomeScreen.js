@@ -175,7 +175,7 @@ export default class HomeScreen extends Component {
             />}
         > 
 
-          <Spacer></Spacer>
+          <Spacer />
 
           <View style={styles.headerImageContainer}>
             <ScalableImage style={styles.headerImage} width={Dimensions.get('window').width}
@@ -206,7 +206,7 @@ const styles = StyleSheet.create ({
 
   container: {
    flex: 1,
-   paddingVertical: verticalScale(12), 
+   paddingVertical: verticalScale(8), 
     
    backgroundColor: '#F2F2F2' 
  },
