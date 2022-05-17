@@ -6,6 +6,7 @@ import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
 import { loadConvention } from '../src/utils/DataRequest';
 import EmailModal from '../src/components/EmailModal';
 import messaging from '@react-native-firebase/messaging';
+import Spacer from '../src/components/Spacer.ios';
 
 export default class HomeScreen extends Component {
   constructor(props)
@@ -173,6 +174,8 @@ export default class HomeScreen extends Component {
               onRefresh={this.onRefresh}
             />}
         > 
+
+          <Spacer></Spacer>
 
           <View style={styles.headerImageContainer}>
             <ScalableImage style={styles.headerImage} width={Dimensions.get('window').width}

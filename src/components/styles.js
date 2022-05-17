@@ -19,5 +19,9 @@ export const styles = StyleSheet.create({
   },
   iconContainer: {
       padding: verticalScale(5)
+  },
+  spacer: {
+    height: 34,
+    backgroundColor: 'lightblue'
   }
 });
