@@ -22,6 +22,6 @@ export const styles = StyleSheet.create({
   },
   spacer: {
     height: 34,
-    backgroundColor: 'lightblue'
+    backgroundColor: '#000000'
   }
 });

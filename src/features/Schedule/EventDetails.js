@@ -72,7 +72,8 @@ export default class EventDetails extends Component {
     const eventLocation = eventInfo.location || '';
     const locationLength = eventLocation.length;
 
-    let locationFontSize = 38;
+    // let locationFontSize = 38;
+    let locationFontSize = 24;
     let locationNumLines = 1;
 
     if (Platform.OS == 'android') {
