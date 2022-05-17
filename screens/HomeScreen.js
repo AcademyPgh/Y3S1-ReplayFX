@@ -167,6 +167,7 @@ export default class HomeScreen extends Component {
           onRequestClose={this.hideModal}
           screenProps={this.props.screenProps}
           />
+        <Spacer />
         <ScrollView 
           refreshControl={
             <RefreshControl
@@ -174,9 +175,6 @@ export default class HomeScreen extends Component {
               onRefresh={this.onRefresh}
             />}
         > 
-
-          <Spacer />
-
           <View style={styles.headerImageContainer}>
             <ScalableImage style={styles.headerImage} width={Dimensions.get('window').width}
                 source={{uri: props.screenProps.apiData.headerImageUrl}} />
