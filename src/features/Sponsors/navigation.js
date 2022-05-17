@@ -6,6 +6,7 @@ export default {
         initialRouteParams: { },
         navigationOptions: {
           title: 'SPONSORS',
+          headerStatusBarHeight: (Platform.OS === 'ios') ? 30 : 0,
         }
       }
 };

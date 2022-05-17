@@ -6,6 +6,7 @@ export default {
         initialRouteParams: { },
         navigationOptions: {
           title: 'MAP',
+          headerStatusBarHeight: (Platform.OS === 'ios') ? 30 : 0,
         }
       }
 };

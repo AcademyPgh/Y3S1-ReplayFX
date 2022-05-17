@@ -5,7 +5,8 @@ export default {
   Schedule: {
     screen: ScheduleContainer,
     navigationOptions: {
-      title: 'SCHEDULE'
+      title: 'SCHEDULE',
+      headerStatusBarHeight: (Platform.OS === 'ios') ? 30 : 0,
     }
   },
   EventDetails: {
@@ -13,6 +14,7 @@ export default {
     initialRouteParams: { },
     navigationOptions: {
       title: 'SCHEDULE',
+      headerStatusBarHeight: (Platform.OS === 'ios') ? 30 : 0,
     }
   }
 };
