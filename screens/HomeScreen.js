@@ -168,6 +168,10 @@ export default class HomeScreen extends Component {
           screenProps={this.props.screenProps}
           />
         <Spacer />
+        <View style={styles.headerImageContainer}>
+            <ScalableImage style={styles.headerImage} width={Dimensions.get('window').width}
+                source={{uri: props.screenProps.apiData.headerImageUrl}} />
+          </View>
         <ScrollView 
           refreshControl={
             <RefreshControl
@@ -175,10 +179,7 @@ export default class HomeScreen extends Component {
               onRefresh={this.onRefresh}
             />}
         > 
-          <View style={styles.headerImageContainer}>
-            <ScalableImage style={styles.headerImage} width={Dimensions.get('window').width}
-                source={{uri: props.screenProps.apiData.headerImageUrl}} />
-          </View>
+          
           
           {this.getMenuItem(menu)}
         </ScrollView> 
