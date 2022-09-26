@@ -205,11 +205,7 @@ const styles = StyleSheet.create ({
 
   container: {
    flex: 1,
-<<<<<<< HEAD
-   paddingVertical: verticalScale(12), 
-=======
    paddingVertical: verticalScale(8), 
->>>>>>> millvale-music-festival
     
    backgroundColor: '#F2F2F2' 
  },

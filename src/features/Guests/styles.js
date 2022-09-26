@@ -39,11 +39,8 @@ export const styles = StyleSheet.create({
   sectionHeader: {
     backgroundColor: 'whitesmoke',
     flex: 1,
-<<<<<<< HEAD
-=======
     alignContent: 'center', 
     justifyContent: 'center'
->>>>>>> millvale-music-festival
   },
 
   // details
@@ -131,15 +128,10 @@ export const styles = StyleSheet.create({
     borderBottomWidth: 1,
     margin: verticalScale(10),
     paddingVertical: verticalScale(5),
-<<<<<<< HEAD
-    justifyContent: 'center',
-    alignItems: 'center',
-=======
     justifyContent: 'space-evenly',
     alignItems: 'center',
     flexDirection: 'row',
     flexWrap: 'wrap'
->>>>>>> millvale-music-festival
   },
 
   website: {
@@ -154,22 +146,6 @@ export const styles = StyleSheet.create({
     borderBottomWidth: 0,
   },
 
-<<<<<<< HEAD
-  // locationContainer: {
-  //   borderColor: 'black', 
-  //   borderBottomWidth: 1, 
-  //   borderTopWidth: 1, 
-  //   margin: verticalScale(10), 
-  //   paddingVertical: 0,
-  // },
-
-  // locationText: {
-  //   fontSize: scale(28), 
-  //   fontFamily: Fonts.Heavy, 
-  //   textAlign: 'center', 
-  //   color: 'black',
-  // }
-=======
   vendor: {
     margin: verticalScale(10),
     padding: verticalScale(10),
@@ -201,5 +177,4 @@ export const styles = StyleSheet.create({
     lineHeight: scale(16),
     color: '#333333',
   }
->>>>>>> millvale-music-festival
 });

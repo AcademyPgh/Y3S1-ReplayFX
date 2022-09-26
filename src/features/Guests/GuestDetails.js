@@ -5,11 +5,8 @@ import ScalableImage from 'react-native-scalable-image';
 import { homeButtonHeader } from '../../utils/Headers';
 import { scale, verticalScale, moderateScale } from '../../utils/Scaling';
 import { styles } from './styles';
-<<<<<<< HEAD
-=======
 import URLButtons from '../../components/URLButtons';
 import moment from 'moment';
->>>>>>> millvale-music-festival
 
 
 export default class GuestDetails extends Component {
@@ -24,24 +21,6 @@ export default class GuestDetails extends Component {
     };
   }
 
-<<<<<<< HEAD
-  openGuestWebsite = (url) => {
-    if (url) {
-
-      // check for http in url
-      if (!url.includes('http://') || !url.includes('https://')){
-        url = 'https://' + url
-      }
-
-      Linking.canOpenURL(url).then(supported => {
-        if (!supported) {
-          console.log('Can\'t handle url: ' + url);
-        } else {
-          return Linking.openURL(url);
-        }
-      }).catch(err => console.error('An error occurred', err));
-    }
-=======
   constructor(props)
   {
     super(props);
@@ -105,7 +84,6 @@ export default class GuestDetails extends Component {
   getVendor(id)
   {
     return this.props.screenProps.apiData.vendors.find(v => v.id == id);
->>>>>>> millvale-music-festival
   }
 
   render() {
@@ -137,25 +115,7 @@ export default class GuestDetails extends Component {
       titleLetterSpacing = 0;
     }
 
-<<<<<<< HEAD
-    const guestLocation = guestInfo.location || '';
-    // const locationLength = guestLocation.length;
-
-    // let locationFontSize = 38;
-    // let locationNumLines = 1;
-
-      //need to adjust font size ourselves - adjustsFontSizeToFit is iOS only
-    // if (locationLength > 30) {
-    //   locationFontSize = 24;
-    //   locationNumLines = 5;
-    // } else if (locationLength > 4) {
-    //   locationFontSize = 32;
-    //   locationNumLines = 3;
-    // }
-
-=======
     
->>>>>>> millvale-music-festival
     let guestDescription = guestInfo.description || '';
 
     // if (guestDescription.length > 0) {
@@ -172,75 +132,21 @@ export default class GuestDetails extends Component {
     // Old combination of guestDescription with extendedDescription
     // guestDescription += (guestInfo.extendedDescription || '');
 
-<<<<<<< HEAD
-    let urlStyle = guestLocation.length > 0 ?
-      {...styles.urlContainer, ...styles.notTheBottom} :
-      styles.urlContainer;
-
-      guestInfo.url = guestInfo.url || "";
-    const guestUrls = guestInfo.url.split(", ");
-=======
     let urlStyle = {...styles.urlContainer, ...styles.notTheBottom};
 
     //   guestInfo.url = guestInfo.url || "";
     // const guestUrls = guestInfo.url.split(", ");
->>>>>>> millvale-music-festival
 
     return (
         <View style={styles.mainContainer}>
           <ScrollView>
-<<<<<<< HEAD
-=======
             {guestInfo.imageUrl && 
->>>>>>> millvale-music-festival
             <ScalableImage 
             width={Dimensions.get('window').width}
                 background
                 style={styles.headerImage}
                 source={{uri: guestInfo.imageUrl}}>   
             </ScalableImage>
-<<<<<<< HEAD
-
-          <View style={styles.detailsContainer}>
-
-            {guestDescription.length > 0 && 
-              <Text style={styles.vendorBio}>{guestDescription}{"\n"}</Text>
-            }
-
-            {guestExtendedDescription.length > 0 &&
-              <Text style={styles.vendoBioText}>{guestExtendedDescription}</Text>
-            }
-          </View>
-
-          </ScrollView>
-          {guestInfo.url &&
-            <View style={urlStyle}>
-              {guestUrls.map((url) => {
-              return (
-                <View>
-                  <TouchableOpacity 
-                    onPress={() => this.openGuestWebsite(url)}
-                  >
-                    {/* Add
-                        if (url.includes("facebook")
-                          <FontAwesomeIcon icon="fa-brands fa-facebook" />
-                        else ...)*/}
-                    <Text style={styles.website}>{url}</Text>
-                  </TouchableOpacity>
-                </View>
-              );
-            })}
-            </View>
-          }
-
-          {/* Old location data from vendor component */}
-          {/* {guestLocation.length > 0 &&
-          <View style={styles.locationContainer}>
-            <Text style={styles.locationText}>Location</Text>
-            <Text numberOfLines={locationNumLines} adjustsFontSizeToFit style={[styles.locationDetails, {fontSize: scale(locationFontSize)}]}>{guestLocation}</Text>
-          </View>
-          } */}
-=======
             }
 
           <View style={styles.detailsContainer}>
@@ -257,7 +163,6 @@ export default class GuestDetails extends Component {
 
           </ScrollView>
           
->>>>>>> millvale-music-festival
 
         </View>
   );}}

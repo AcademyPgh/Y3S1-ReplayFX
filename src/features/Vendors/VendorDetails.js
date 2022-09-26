@@ -89,22 +89,14 @@ export default class VendorDetails extends Component {
     return (
         <View style={{flex: 1,}}>
           <ScrollView>
-<<<<<<< HEAD
-=======
             {vendorInfo.imageUrl && 
->>>>>>> millvale-music-festival
             <ScalableImage 
             width={Dimensions.get('window').width}
                 background
                 style={styles.headerImage}
                 source={{uri: vendorInfo.imageUrl}}>   
             </ScalableImage>
-<<<<<<< HEAD
-
-          <View style={styles.detailsContainer}>
-=======
             }
->>>>>>> millvale-music-festival
 
           <View style={styles.detailsContainer}>
 
