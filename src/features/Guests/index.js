@@ -22,6 +22,13 @@ export default class Guests extends Component {
   constructor(props) {
     super(props);
 
+<<<<<<< HEAD
+=======
+    alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    this.alphaSections = alphabet.split('');
+    this.alphaSections.unshift('0-9');
+
+>>>>>>> millvale-music-festival
     this.displayGuest = this.displayGuest.bind(this);
     this.displayEventById = this.displayEventById.bind(this);
   }
@@ -39,9 +46,15 @@ export default class Guests extends Component {
     />
   );
 
+<<<<<<< HEAD
   renderSectionHeader = ({section: {title}}) => (
     this.props.showSectionHeaders && <View style={styles.sectionHeader}><Text style={{fontWeight: 'bold', paddingLeft: scale(8)}}>{title}</Text></View>
   );
+=======
+  renderSectionHeader = ({section}) => {
+    return (<View style={styles.sectionHeader}><Text style={{fontWeight: 'bold', paddingLeft: scale(8)}}>{section.title}</Text></View>);
+};
+>>>>>>> millvale-music-festival
 
   renderSeparator = () => {
     return (
@@ -65,6 +78,7 @@ export default class Guests extends Component {
     }
     const filter = this.props.navigation.getParam('guestFilter', null);
     const title = this.props.navigation.getParam('name', '');
+<<<<<<< HEAD
     if(filter)
     {
       return[{name: title, data: guestList.filter(item => 
@@ -74,6 +88,43 @@ export default class Guests extends Component {
     {
       return [{title: 'Guests', data: guestList}];
     }
+=======
+
+    let sections = {};
+    this.alphaSections.forEach(alpha => {
+      sections[alpha] = [];
+    });
+
+    guestList.forEach(guest => {
+      const name = guest.name;
+      const firstchar = name[0];
+      const targetSection = sections[firstchar.toUpperCase()];
+
+      if (targetSection) {
+        targetSection.push(guest);
+      } else {
+        sections[this.alphaSections[0]].push(guest);
+      }
+    })
+
+    let sectionStartIndex = 0;
+
+    const endResult = Object.keys(sections).map(key => {
+      const result = {title: key, startIndex: sectionStartIndex, data: sections[key]};
+      sectionStartIndex += sections[key].length;
+      return result;
+    });
+    // {
+    //   return[{name: title, data: guestList.filter(item => 
+    //     item.guestTypes.some(x => x.id === filter))}]
+    // }
+    // else
+    // {
+    //   return [{title: 'Guests', data: guestList}];
+    // }
+
+    return endResult;
+>>>>>>> millvale-music-festival
   }
 
   render() {
@@ -114,10 +165,15 @@ class GuestItem extends React.PureComponent {
     return (
       <View style={[styles.container, {backgroundColor: 'white', }]}>
         <TouchableOpacity style={styles.vendorTextContainer} onPress={this.pressText}>
+<<<<<<< HEAD
           <Text style={styles.vendorTitle}>{guest.title}</Text>
           {guest.description && 
           <Text numberOfLines={3} style={styles.vendorDescription}>{guest.description}</Text>
           }
+=======
+          <Text style={styles.vendorTitle}>{guest.name}</Text>
+          <Text numberOfLines={3} style={styles.vendorDescription}>{guest.description}</Text>
+>>>>>>> millvale-music-festival
         </TouchableOpacity>
       </View>
     );

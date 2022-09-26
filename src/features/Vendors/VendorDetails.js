@@ -5,6 +5,7 @@ import ScalableImage from 'react-native-scalable-image';
 import { homeButtonHeader } from '../../utils/Headers';
 import { scale, verticalScale, moderateScale } from '../../utils/Scaling';
 import { styles } from './styles';
+import URLButtons from '../../components/URLButtons';
 
 export default class VendorDetails extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -16,18 +17,6 @@ export default class VendorDetails extends Component {
       ...homeButtonHeader(navigation),
       title: title,
     };
-  }
-
-  openVendorWebsite = (url) => {
-    if (url) {
-      Linking.canOpenURL(url).then(supported => {
-        if (!supported) {
-          console.log('Can\'t handle url: ' + url);
-        } else {
-          return Linking.openURL(url);
-        }
-      }).catch(err => console.error('An error occurred', err));
-    }
   }
 
   render() {
@@ -100,12 +89,22 @@ export default class VendorDetails extends Component {
     return (
         <View style={{flex: 1,}}>
           <ScrollView>
+<<<<<<< HEAD
+=======
+            {vendorInfo.imageUrl && 
+>>>>>>> millvale-music-festival
             <ScalableImage 
             width={Dimensions.get('window').width}
                 background
                 style={styles.headerImage}
                 source={{uri: vendorInfo.imageUrl}}>   
             </ScalableImage>
+<<<<<<< HEAD
+
+          <View style={styles.detailsContainer}>
+=======
+            }
+>>>>>>> millvale-music-festival
 
           <View style={styles.detailsContainer}>
 
@@ -120,21 +119,10 @@ export default class VendorDetails extends Component {
 
           </ScrollView>
 
-          {vendorInfo.url &&
-            <View style={urlStyle}>
-              {vendorUrls.map((url) => {
-              return (
-                <View>
-                  <TouchableOpacity 
-                    onPress={() => this.openVendorWebsite(url)}
-                  >
-                    <Text style={styles.website}>{url}</Text>
-                  </TouchableOpacity>
-                </View>
-              );
-            })}
-            </View>
+          {vendorInfo.url && 
+              <URLButtons url={vendorInfo.url} urlStyle={styles.urlContainer}/>
           }
+          
 
           {vendorLocation.length > 0 &&
           <View style={styles.locationContainer}>

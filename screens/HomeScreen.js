@@ -6,6 +6,7 @@ import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
 import { loadConvention } from '../src/utils/DataRequest';
 import EmailModal from '../src/components/EmailModal';
 import messaging from '@react-native-firebase/messaging';
+import Spacer from '../src/components/Spacer.ios';
 
 export default class HomeScreen extends Component {
   constructor(props)
@@ -102,6 +103,10 @@ export default class HomeScreen extends Component {
     return this.props.screenProps.apiData.vendorTypes.filter(item => item.isMenu)
   }
 
+  subScheduleMenu() {
+    return this.props.screenProps.apiData.eventMenus.filter(item => item.isMenu);
+  }
+
   buildMenu(menu) {
     let finalMenu = [];
     menu.forEach((menuItem) => {
@@ -113,11 +118,17 @@ export default class HomeScreen extends Component {
       {
         finalMenu = [...finalMenu, ...this.subVendorMenu().map(item => {return {type: 'VendorsList', title: item.displayName, options: {title: item.displayName, vendorFilter: item.id}}})];
       }
+      else if(menuItem.type == 'TabSchedule')
+      {
+        finalMenu = [...finalMenu, ...this.subScheduleMenu().map(item => {return {type: 'Schedule', title: item.displayName, options: {title: item.displayName, tabs: item.id, days: false, favorites: true}}})];
+      }
       else
       {
         finalMenu.push(menuItem);
       }
     });
+    
+    finalMenu.push({type: 'GuestsList', title: 'Acts'})
     return finalMenu;
   }
    
@@ -156,6 +167,11 @@ export default class HomeScreen extends Component {
           onRequestClose={this.hideModal}
           screenProps={this.props.screenProps}
           />
+        <Spacer />
+        <View style={styles.headerImageContainer}>
+            <ScalableImage style={styles.headerImage} width={Dimensions.get('window').width}
+                source={{uri: props.screenProps.apiData.headerImageUrl}} />
+          </View>
         <ScrollView 
           refreshControl={
             <RefreshControl
@@ -163,11 +179,7 @@ export default class HomeScreen extends Component {
               onRefresh={this.onRefresh}
             />}
         > 
-
-          <View style={styles.headerImageContainer}>
-            <ScalableImage style={styles.headerImage} width={Dimensions.get('window').width}
-                source={{uri: props.screenProps.apiData.headerImageUrl}} />
-          </View>
+          
           
           {this.getMenuItem(menu)}
         </ScrollView> 
@@ -193,7 +205,11 @@ const styles = StyleSheet.create ({
 
   container: {
    flex: 1,
+<<<<<<< HEAD
    paddingVertical: verticalScale(12), 
+=======
+   paddingVertical: verticalScale(8), 
+>>>>>>> millvale-music-festival
     
    backgroundColor: '#F2F2F2' 
  },

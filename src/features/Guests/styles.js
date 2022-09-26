@@ -39,6 +39,11 @@ export const styles = StyleSheet.create({
   sectionHeader: {
     backgroundColor: 'whitesmoke',
     flex: 1,
+<<<<<<< HEAD
+=======
+    alignContent: 'center', 
+    justifyContent: 'center'
+>>>>>>> millvale-music-festival
   },
 
   // details
@@ -126,8 +131,15 @@ export const styles = StyleSheet.create({
     borderBottomWidth: 1,
     margin: verticalScale(10),
     paddingVertical: verticalScale(5),
+<<<<<<< HEAD
     justifyContent: 'center',
     alignItems: 'center',
+=======
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    flexDirection: 'row',
+    flexWrap: 'wrap'
+>>>>>>> millvale-music-festival
   },
 
   website: {
@@ -142,6 +154,7 @@ export const styles = StyleSheet.create({
     borderBottomWidth: 0,
   },
 
+<<<<<<< HEAD
   // locationContainer: {
   //   borderColor: 'black', 
   //   borderBottomWidth: 1, 
@@ -156,4 +169,37 @@ export const styles = StyleSheet.create({
   //   textAlign: 'center', 
   //   color: 'black',
   // }
+=======
+  vendor: {
+    margin: verticalScale(10),
+    padding: verticalScale(10),
+    backgroundColor: '#cccccc'
+  },
+  event: {
+    margin:verticalScale(10),
+    padding: verticalScale(10)
+  },
+
+  linkTitle: {
+    fontFamily: Fonts.Heavy, 
+    fontSize: scale(16), 
+    letterSpacing: 1, 
+    lineHeight: scale(18),
+    color: '#000000',
+  },
+  linkLocation: {
+    fontFamily: Fonts.Medium, 
+    fontSize: scale(14), 
+    letterSpacing: 1, 
+    lineHeight: scale(16),
+    color: '#000000',
+  },
+  linkDate: {
+    fontFamily: Fonts.Medium, 
+    fontSize: scale(14), 
+    letterSpacing: 1, 
+    lineHeight: scale(16),
+    color: '#333333',
+  }
+>>>>>>> millvale-music-festival
 });

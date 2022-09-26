@@ -54,7 +54,11 @@ export default class ScheduleContainer extends Component {
       this.favoritesKey = getConventionPersistKey(conventionID) + ":favoriteEvents";
 
       this.getEventDays(this.props.screenProps.apiData.events);
-      this.setupTabs(this.eventDays, this.props.screenProps.apiData.eventTypes);
+      this.setupTabs(this.eventDays, this.props.screenProps.apiData.eventTypes, {
+        tabs: this.props.navigation.getParam('tabs', 'all'),
+        loadDays: this.props.navigation.getParam('days', true),
+        loadFavorites: this.props.navigation.getParam('favorites', true)
+      } );
       this.setupEventFilters(this.props.screenProps.apiData.events);
       
       let filter = this.props.navigation.getParam('scheduleFilter', '');
@@ -130,7 +134,7 @@ export default class ScheduleContainer extends Component {
 
     addFavorite(event) {
       const eventId = event.id;
-      favorites = this.state.favorites;
+      let favorites = this.state.favorites;
 
       if (!favorites.includes(eventId)) {
         favorites.push(eventId);
@@ -142,10 +146,10 @@ export default class ScheduleContainer extends Component {
 
     removeFavorite(event) {
       const eventId = event.id;
-      favorites = this.state.favorites;
+      let favorites = this.state.favorites;
 
       if (favorites.includes(eventId)) {
-        eventIndex = favorites.indexOf(eventId);
+        let eventIndex = favorites.indexOf(eventId);
         favorites.splice(eventIndex, 1);
         PushController.removeNotification(eventId);
         this.persistFavorites(favorites);
@@ -175,25 +179,33 @@ export default class ScheduleContainer extends Component {
       });
     }
 
-    setupTabs(eventDays, eventCategories) {
+    setupTabs(eventDays, eventCategories, options) {
       this.tabs = [];
 
-      eventDays.forEach((day) => { 
-        const tab = {
-          name: day.key,
-          text: day.dayOfWeek.toUpperCase() + "\n" + day.dayOfMonth
-        };
-        this.tabs.push(tab);
-      });
-
-      this.tabs.push({ name: 'my-schedule', text: `MY\nSCHEDULE` });
+      if(options.loadDays)
+      {
+        eventDays.forEach((day) => { 
+          const tab = {
+            name: day.key,
+            text: day.dayOfWeek.toUpperCase() + "\n" + day.dayOfMonth
+          };
+          this.tabs.push(tab);
+        });
+      }
+      if(options.loadFavorites)
+      {
+        this.tabs.push({ name: 'my-schedule', text: `MY\nSCHEDULE` });
+      }
 
       eventCategories.forEach((category) => {
-        const tab = {
-          name: category.name,
-          text: category.displayName.toUpperCase().replace(" ", "\n")
-        };
-        this.tabs.push(tab);
+        if(options.tabs == 'all' || options.tabs == category.eventMenu?.id)
+        {
+          const tab = {
+            name: category.name,
+            text: category.displayName.toUpperCase().replace(" ", "\n")
+          };
+          this.tabs.push(tab);
+        }
       });
 
       if(eventDays.length > 0)
@@ -277,11 +289,17 @@ export default class ScheduleContainer extends Component {
 
         //put event in correct day filter
         const key = this.eventDays.find((day) => {return this.getDateString(day.date) == this.getDateString(event.date);}).key;
-        this.filters[key][key].data.push(event);
+        if(this.filters[key])
+        {
+          this.filters[key][key].data.push(event);
+        }
 
         //put event in each category it belongs to
         event.eventTypes.forEach((eventType) => {
-          this.filters[eventType.name][key].data.push(event);
+          if(this.filters[eventType.name])
+          {
+            this.filters[eventType.name][key].data.push(event);
+          }
         });
       });
 

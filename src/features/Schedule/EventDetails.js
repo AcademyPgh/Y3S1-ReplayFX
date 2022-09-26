@@ -6,7 +6,8 @@ import moment from 'moment';
 import { Fonts } from '../../utils/Fonts';
 import { homeButtonHeader } from '../../utils/Headers';
 import { scale, verticalScale, moderateScale } from '../../utils/Scaling';
-import { styles } from './styles';
+import { styles } from './styles'; 
+import URLButtons from '../../components/URLButtons';
 
 
 export default class EventDetails extends Component {
@@ -71,7 +72,8 @@ export default class EventDetails extends Component {
     const eventLocation = eventInfo.location || '';
     const locationLength = eventLocation.length;
 
-    let locationFontSize = 38;
+    // let locationFontSize = 38;
+    let locationFontSize = 24;
     let locationNumLines = 1;
 
     if (Platform.OS == 'android') {
@@ -95,23 +97,33 @@ export default class EventDetails extends Component {
 
     return (
         <View style={{flex: 1}}>
-          
+          <ScrollView>
             <Image width={Dimensions.get('window').width}
                 background
                 style={styles.headerImage}
                 source={require('../../../Images/PinballGamePageImage.jpg')}>   
-              <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>      
+              <View style={{flex: 1, flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center'}}>      
                 {/*<Text style={styles.headerText1}>LEARN</Text>*/}
                 <Text 
                   numberOfLines={titleNumLines} 
                   adjustsFontSizeToFit 
                   style={[styles.headerText2, {fontSize: scale(titleFontSize), letterSpacing: titleLetterSpacing}]}>{eventInfo.title.toUpperCase()}
                 </Text>
+                {/* <View style={{flex: 1, flexDirection: 'row', flexWrap: 'wrap', alignContent: 'center', justifyContent: 'space-evenly'}}>
+                  {eventInfo.eventTypes.map((tag) => {
+                    return (<View style={styles.tags}><Text style={styles.tagText}>{tag.displayName}</Text></View>)
+                  })}
+                </View> */}
               </View>
             </Image>
 
-          <ScrollView style={styles.detailsContainer}>
-
+          {/* <ScrollView style={styles.detailsContainer}> */}
+          <View style={styles.detailsContainer}>
+            <View style={{flex: 1, flexDirection: 'row', flexWrap: 'wrap', alignContent: 'center', justifyContent: 'space-evenly'}}>
+              {eventInfo.eventTypes.map((tag) => {
+                return (<View style={styles.tags}><Text style={styles.tagText}>{tag.displayName}</Text></View>)
+              })}
+            </View>
             <Text>
                 <Text style={styles.bolded}>Date: </Text>
                 <Text style={styles.descriptions}>{moment(eventInfo.date).format('ddd, MMM DD')}</Text>
@@ -129,18 +141,15 @@ export default class EventDetails extends Component {
               />
             }
             {eventDescription.length > 0 && 
-              <Text style={{marginTop: verticalScale(5.5), marginBottom: verticalScale(18)}}>
+              <Text style={{marginTop: verticalScale(5.5), marginBottom: verticalScale(1)}}>
                 <Text style={styles.gameBio}>Description: </Text>
-                <Text style={styles.gameBioText}>{eventDescription + "\n"}</Text>
+                <Text style={styles.gameBioText}>{eventDescription}</Text>
               </Text>
             }
             {eventInfo.url && 
-              <Text>
-                <TouchableOpacity onPress={() => this.openWebsite(eventInfo.url)} >
-                  <Text style={styles.website}>{eventInfo.url + "\n"}</Text>
-                </TouchableOpacity>
-              </Text>
+              <URLButtons url={eventInfo.url} urlStyle={styles.urlContainer}/>
             }
+            </View>
           </ScrollView>
 
           {eventLocation.length > 0 &&
