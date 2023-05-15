@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import {
-  AsyncStorage,
-} from 'react-native';
 import axios from 'axios';
 
 import Loading from './Loading';

@@ -15,8 +15,7 @@ import {
   Image,
   View,
   Alert,
-  StatusBar,
-  AsyncStorage,
+  StatusBar
 } from 'react-native';
 import PushNotification from 'react-native-push-notification';
 
@@ -39,7 +38,7 @@ class App extends React.Component {
       apiData: apiData,
       dataLoadedTimestamp: new Date(),
       singleConvention: true,
-      selectedConvention: {id: 18}  // ex: {id: 5}
+      selectedConvention: {id: 11}  // ex: {id: 5}
     }
 
     //AsyncStorage.clear();

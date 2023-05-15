@@ -132,6 +132,14 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+    
+    configurations.all {
+        resolutionStrategy {
+            // workaround : android build error 'Could not find me.relex:photodraweeview:1.1.3.' for 'react-native-photo-view'
+            // see also https://github.com/alwx/react-native-photo-view/pull/210/files
+            force 'me.relex:photodraweeview:2.1.0'
+        }
+    }
 
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->

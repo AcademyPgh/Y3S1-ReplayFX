@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import {
-  AsyncStorage,
-} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getConventionDataURL } from '../utils/API';
 import { getConventionPersistKey, persistData } from '../utils/Persist';
 import Loader from './Loader';
