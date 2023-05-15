@@ -128,8 +128,6 @@ export default class HomeScreen extends Component {
         finalMenu.push(menuItem);
       }
     });
-    
-    finalMenu.push({type: 'GuestsList', title: 'Acts'})
     return finalMenu;
   }
    
