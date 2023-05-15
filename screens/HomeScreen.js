@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { StatusBar, ScrollView, Dimensions, Text, View, StyleSheet, RefreshControl, AsyncStorage } from 'react-native'
+import { StatusBar, ScrollView, Dimensions, Text, View, StyleSheet, RefreshControl } from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import ScalableImage from 'react-native-scalable-image';
 import { Fonts } from '../src/utils/Fonts';
 import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';

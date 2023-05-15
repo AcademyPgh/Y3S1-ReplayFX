@@ -7,10 +7,10 @@ import {
   View,
   ScrollView,
   TouchableOpacity,
-  AsyncStorage,
   Alert,
   RefreshControl
 } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import Schedule from './Schedule';
 import { homeButtonHeader } from '../../utils/Headers';
 import moment from 'moment';
