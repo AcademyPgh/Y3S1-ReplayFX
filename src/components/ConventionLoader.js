@@ -49,7 +49,7 @@ export default class ConventionLoader extends React.Component {
     }
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.mounted = true;
   }
 

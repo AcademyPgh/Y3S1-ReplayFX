@@ -16,7 +16,7 @@ export class SelectConventionScreen extends React.Component {
     };
     
     if (navigation.getParam('hideHeader', false)) {
-      return { header: null };
+      return { headerShown: false };
     } else {
       return navigationOptions;
     }
@@ -34,7 +34,7 @@ export class SelectConventionScreen extends React.Component {
     };
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.willFocusSubscription = this.props.navigation.addListener('willFocus', this.handleWillFocus);
     this.didBlurSubscription = this.props.navigation.addListener('didBlur', this.handleDidBlur);
   }

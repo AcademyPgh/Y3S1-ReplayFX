@@ -29,7 +29,7 @@
     "react-native-elements": "^3.4.2",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-image-pan-zoom": "^2.1.12",
-    "react-native-photo-view-ex": "^1.1.0",
+    "react-native-photo-view-ex": "https://git@github.com/uugengiven/react-native-photo-view-ex",
     "react-native-push-notification": "^7.4.0",
     "react-native-safe-area-context": "^3.2.0",
     "react-native-scalable-image": "https://git@github.com/uugengiven/react-native-scalable-image",

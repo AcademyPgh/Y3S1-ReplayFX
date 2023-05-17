@@ -34,7 +34,7 @@ const RootStack = createStackNavigator(
         screen: LoadConventionsScreen,
         navigationOptions: {
           title: 'Load Conventions',
-          header: null
+          headerShown: false
         }
       },
       SelectConvention: {
@@ -47,7 +47,7 @@ const RootStack = createStackNavigator(
         screen: HomeScreen,
         navigationOptions: {
           title: 'HOME',
-          header: null
+          headerShown: false
         }
       },
       ...ScheduleNav,

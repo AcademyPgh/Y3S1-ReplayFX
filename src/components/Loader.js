@@ -47,7 +47,7 @@ export default class ConventionListLoader extends React.Component {
     }
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.mounted = true;
   }
 

@@ -21,7 +21,7 @@ export class LoadConventionsScreen extends React.Component {
     this.handleConventionLoaded = this.handleConventionLoaded.bind(this);
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.willFocusSubscription = this.props.navigation.addListener('willFocus', this.handleWillFocus);
   }
 
