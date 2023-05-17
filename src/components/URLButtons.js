@@ -47,7 +47,7 @@ export default class URLButtons extends Component {
     }
     if(url.includes("bandcamp"))
     {
-        return this.createButton(url, "738e96", "bandcamp", "Bandcamp");
+        return this.createButton(url, "#738e96", "bandcamp", "Bandcamp");
         // backgroundColor="#629aa9"
     }
     if(url.includes("spotify"))
