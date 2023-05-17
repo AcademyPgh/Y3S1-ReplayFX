@@ -73,6 +73,7 @@ export default class ScheduleContainer extends Component {
       this.loadFavorites();
 
       this.tabLayout = {};
+      Analytics.setEnabled(true);
     }
 
     // this function doesn't need to be called because react navigation appears to reload the component entirely when re-navigating to it

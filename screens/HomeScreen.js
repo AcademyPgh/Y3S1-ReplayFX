@@ -6,8 +6,8 @@ import { Fonts } from '../src/utils/Fonts';
 import { scale, verticalScale, moderateScale } from '../src/utils/Scaling';
 import { loadConvention } from '../src/utils/DataRequest';
 import EmailModal from '../src/components/EmailModal';
-import messaging from '@react-native-firebase/messaging';
 import Spacer from '../src/components/Spacer.ios';
+import Analytics from 'appcenter-analytics';
 
 export default class HomeScreen extends Component {
   constructor(props)
@@ -31,6 +31,7 @@ export default class HomeScreen extends Component {
     if(this.state.showEmailCTA) {
       this.checkEmail();
     }
+    Analytics.trackEvent('Home Screen', { conventionId: this.props.screenProps.apiData.id, convention: this.props.screenProps.apiData.name });
   }
 
   hideModal() {
@@ -87,6 +88,7 @@ export default class HomeScreen extends Component {
 
   async onRefresh() {
     this.setState({refreshing: true});
+    Analytics.trackEvent('Refresh Data Request');
     loadConvention(this.props.screenProps.apiData)
     .then((results) => {
       this.props.screenProps.onConventionDataLoaded(results);
