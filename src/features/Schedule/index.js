@@ -18,6 +18,7 @@ import PushController from '../../utils/PushController';
 import { scale, verticalScale, moderateScale } from '../../utils/Scaling';
 import { getConventionPersistKey, persistData } from '../../utils/Persist';
 import { styles } from './styles';
+import Analytics from 'appcenter-analytics';
 
 const debug = [];
 
@@ -73,7 +74,6 @@ export default class ScheduleContainer extends Component {
       this.loadFavorites();
 
       this.tabLayout = {};
-      Analytics.setEnabled(true);
     }
 
     // this function doesn't need to be called because react navigation appears to reload the component entirely when re-navigating to it
@@ -128,8 +128,10 @@ export default class ScheduleContainer extends Component {
     setFavorite(event, shouldBeFavorite) {
       if (shouldBeFavorite) {
         this.addFavorite(event);
+        Analytics.trackEvent('Add Favorite', { conventionId: this.props.screenProps.apiData.id, convention: this.props.screenProps.apiData.name, eventId: event.id, event: event.title });
       } else {
         this.removeFavorite(event);
+        Analytics.trackEvent('Remove Favorite', { conventionId: this.props.screenProps.apiData.id, convention: this.props.screenProps.apiData.name, eventId: event.id, event: event.title });
       }
     }
 
