@@ -95,7 +95,7 @@ export default class ScheduleContainer extends Component {
     //   }
     // }
 
-    componentWillUpdate(nextProps, nextState) {
+    UNSAFE_componentWillUpdate(nextProps, nextState) {
       if (nextState.filter == 'my-schedule' && this.state.filter != 'my-schedule') {
         this.setupFavoriteFilter(nextState.favorites, nextProps.screenProps.apiData.events);
       }

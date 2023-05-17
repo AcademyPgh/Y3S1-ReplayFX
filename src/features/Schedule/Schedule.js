@@ -36,6 +36,7 @@ export default class Schedule extends Component {
   }
 
   displayEvent(event) {
+    Analytics.trackEvent('Event Detail', { eventId: event.id, event: event.name });
     this.props.navigation.navigate('EventDetails', {eventInfo: event});
   }
 

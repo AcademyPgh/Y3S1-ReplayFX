@@ -101,7 +101,7 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "1.5"
+        versionName "1.6"
         manifestPlaceholders = [auth0Domain: "event-services.auth0.com", auth0Scheme: "${applicationId}"]
     }
 
