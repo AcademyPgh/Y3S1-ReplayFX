@@ -242,13 +242,20 @@ export default class ScheduleContainer extends Component {
 
       //sort favorites by start time, then later by date
       favorites.sort((a, b) => { 
-        if (a.startTime < b.startTime) {
+        if (a.date < b.date) {
           return -1;
         } 
-        else if (a.startTime > b.startTime) {
+        else if (a.date > b.date) {
           return 1;
         } else {
-          return 0;
+          if (a.startTime < b.startTime) {
+            return -1;
+          } 
+          else if (a.startTime > b.startTime) {
+            return 1;
+          } else {
+            return 0;
+          }
         }
       });
 
@@ -257,7 +264,7 @@ export default class ScheduleContainer extends Component {
         //TODO: We should probably clear out old favorites that aren't valid anymore at some point
         if (event) {
           //figure out date key for event
-          const key = this.eventDays.find((day) => {return this.getDateString(day.date) == this.getDateString(event.date);}).key;
+          const key = this.eventDays.find((day) => {return this.getDateString(day.date) == this.getDateString(event.displayDate);}).key;
 
           //put event into correct date section
           favoriteEvents[key].data.push(event);
@@ -291,7 +298,7 @@ export default class ScheduleContainer extends Component {
       events.forEach((event) => {
 
         //put event in correct day filter
-        const key = this.eventDays.find((day) => {return this.getDateString(day.date) == this.getDateString(event.date);}).key;
+        const key = this.eventDays.find((day) => {return this.getDateString(day.date) == this.getDateString(event.displayDate);}).key;
         if(this.filters[key])
         {
           this.filters[key][key].data.push(event);

@@ -78,6 +78,7 @@ export default class HomeScreen extends Component {
         (<View key={index} style={[styles.container,]}>
           <Text style={styles.text}
             onPress={() => {
+              console.log(menuItem);
             this.props.navigation.navigate(menuItem.type, menuItem.options);
             }}>
             {menuItem.title.toUpperCase()}
@@ -115,11 +116,29 @@ export default class HomeScreen extends Component {
     menu.forEach((menuItem) => {
       if(menuItem.type == 'EventMenu')
       {
-        finalMenu = [...finalMenu, ...this.subMenu().map(item => {return {type: 'Schedule', title: item.displayName, options: {title: item.displayName, scheduleFilter: item.name}}})];
+        finalMenu = [...finalMenu, ...this.subMenu().map(item => {
+          return {
+            type: 'Schedule', 
+            title: item.displayName, 
+            options: {
+              title: item.displayName, 
+              scheduleFilter: item.name
+            }
+          }
+        })];
       }
       else if(menuItem.type == 'VendorMenu')
       {
-        finalMenu = [...finalMenu, ...this.subVendorMenu().map(item => {return {type: 'VendorsList', title: item.displayName, options: {title: item.displayName, vendorFilter: item.id}}})];
+        finalMenu = [...finalMenu, ...this.subVendorMenu().map(item => {
+          return {
+            type: 'VendorsList', 
+            title: item.displayName, 
+            options: {
+              title: item.displayName, 
+              vendorFilter: item.id
+            }
+          }
+        })];
       }
       else if(menuItem.type == 'TabSchedule')
       {

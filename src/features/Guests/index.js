@@ -11,7 +11,10 @@ export default class Guests extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
+    let testing = navigation.getParam('title', 'hello');
+    console.log(testing);
     const title = navigation.getParam('title', 'GUESTS');
+    console.log(title);
 
     return {
       ...homeButtonHeader(navigation),
@@ -31,6 +34,7 @@ export default class Guests extends Component {
   }
 
   displayGuest(guest) {
+    Analytics.trackEvent('Guest Detail', { eventId: guest.id, event: guest.name });
     this.props.navigation.navigate('GuestDetails', {guestInfo: guest, title: guest.name});
   }
 
