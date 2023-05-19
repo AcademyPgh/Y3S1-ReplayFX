@@ -13,6 +13,7 @@ import { scale, verticalScale, moderateScale } from '../../utils/Scaling';
 import Promo from '../../components/Promo';
 import {styles} from './styles';
 import {loadConvention} from '../../utils/DataRequest';
+import Analytics from 'appcenter-analytics';
 
 const fullWidth = Dimensions.get('window').width;
 
