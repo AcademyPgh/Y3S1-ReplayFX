@@ -1,34 +1,41 @@
 {
   "project_info": {
-    "project_number": "776557469938",
-    "project_id": "millvalemusicfest-e9db6",
-    "storage_bucket": "millvalemusicfest-e9db6.appspot.com"
+    "project_number": "1024880692968",
+    "project_id": "juneteenth-49cb5",
+    "storage_bucket": "juneteenth-49cb5.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:776557469938:android:69f058df886de2ea44306b",
+        "mobilesdk_app_id": "1:1024880692968:android:5a468caf174cc5e587035d",
         "android_client_info": {
-          "package_name": "com.academypgh.millvalemusicfestival"
+          "package_name": "com.academypgh.juneteenth"
         }
       },
       "oauth_client": [
         {
-          "client_id": "776557469938-8vp346j22qipfkbbfl4aqijucq4qh35q.apps.googleusercontent.com",
+          "client_id": "1024880692968-q3k7560oan4oh67mnmjkao3gibltmbev.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAEd_MTqm0ayTRAz0u7IM91FxOc8K8JATA"
+          "current_key": "AIzaSyAURBq8ksAB1i9lWtGeTp8mddN9AoAjO8E"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "776557469938-8vp346j22qipfkbbfl4aqijucq4qh35q.apps.googleusercontent.com",
+              "client_id": "1024880692968-q3k7560oan4oh67mnmjkao3gibltmbev.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1024880692968-pq26hese2870830d9j77q822ovgp3d7g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.AcademyPGH.Juneteenth"
+              }
             }
           ]
         }

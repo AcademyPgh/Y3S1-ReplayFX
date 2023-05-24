@@ -95,9 +95,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.academypgh.millvalemusicfestival"
+    namespace "com.academypgh.juneteenth"
     defaultConfig {
-        applicationId "com.academypgh.millvalemusicfestival"
+        applicationId "com.academypgh.juneteenth"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
