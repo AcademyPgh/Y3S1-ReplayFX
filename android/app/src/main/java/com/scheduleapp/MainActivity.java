@@ -1,4 +1,4 @@
-package com.academypgh.millvalemusicfestival;
+package com.academypgh.pgx;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
