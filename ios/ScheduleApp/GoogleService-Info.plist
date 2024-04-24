@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>753385409481-gn7rt8jla25o6h9fgr7s4e9abb4jf043.apps.googleusercontent.com</string>
+	<string>776557469938-lna8j6bjbr47triloo3g3f0i3t43fus7.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.753385409481-gn7rt8jla25o6h9fgr7s4e9abb4jf043</string>
+	<string>com.googleusercontent.apps.776557469938-lna8j6bjbr47triloo3g3f0i3t43fus7</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDpia0cYLy-5Xt4ulwXJix7EnJwELyj0BI</string>
+	<string>AIzaSyDCgbEr1SY9BdlOTQiC7yY6Y7EA1BKN95o</string>
 	<key>GCM_SENDER_ID</key>
-	<string>753385409481</string>
+	<string>776557469938</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.academypgh.pgx</string>
+	<string>com.AcademyPGH.MillvaleMusicFestival</string>
 	<key>PROJECT_ID</key>
-	<string>pittsburghgamingexpo</string>
+	<string>millvalemusicfest-e9db6</string>
 	<key>STORAGE_BUCKET</key>
-	<string>pittsburghgamingexpo.appspot.com</string>
+	<string>millvalemusicfest-e9db6.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:753385409481:ios:144be2d32118911ed7b618</string>
+	<string>1:776557469938:ios:efb6c2932fae08cf44306b</string>
 </dict>
 </plist>
