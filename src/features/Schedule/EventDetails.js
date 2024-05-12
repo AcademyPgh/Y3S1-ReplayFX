@@ -6,7 +6,7 @@ import moment from 'moment';
 import { Fonts } from '../../utils/Fonts';
 import { homeButtonHeader } from '../../utils/Headers';
 import { scale, verticalScale, moderateScale } from '../../utils/Scaling';
-import { styles } from './styles'; 
+import { styles } from './styles';
 import URLButtons from '../../components/URLButtons';
 
 
@@ -26,18 +26,6 @@ export default class EventDetails extends Component {
     const start = event.startTime12 === null ? "" : event.startTime12;
     const end = event.endTime12 === null ? "" : event.endTime12
     return `${start}${splitter}${end}`;
-  }
-
-  openWebsite = (url) => {
-    if (url) {
-      Linking.canOpenURL(url).then(supported => {
-        if (!supported) {
-          console.log('Can\'t handle url: ' + url);
-        } else {
-          return Linking.openURL(url);
-        }
-      }).catch(err => console.error('An error occurred', err));
-    }
   }
 
   render() {
@@ -120,8 +108,8 @@ export default class EventDetails extends Component {
           {/* <ScrollView style={styles.detailsContainer}> */}
           <View style={styles.detailsContainer}>
             <View style={{flex: 1, flexDirection: 'row', flexWrap: 'wrap', alignContent: 'center', justifyContent: 'space-evenly'}}>
-              {eventInfo.eventTypes.map((tag) => {
-                return (<View style={styles.tags}><Text style={styles.tagText}>{tag.displayName}</Text></View>)
+              {eventInfo.eventTypes.map((tag, index) => {
+                return (<View key={index} style={styles.tags}><Text style={styles.tagText}>{tag.displayName}</Text></View>)
               })}
             </View>
             <Text>

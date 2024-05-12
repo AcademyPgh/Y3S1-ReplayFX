@@ -25,11 +25,15 @@ export default class URLButtons extends Component {
     }
   }
 
-  getCorrectIcon(url) {
+  getCorrectIcon(url, index) {
     url = url.toLowerCase();
+    if(url.includes("drive.google"))
+    {
+      return null;
+    }
     if(url.includes("facebook") || url.includes("fb.me"))
     {
-        return this.createButton(url, "#526080", "facebook", "Facebook");
+        return this.createButton(url, "#526080", "facebook", "Facebook", index);
         // backgroundColor="#3b5998"
     }
     if(url.includes("twitter"))
@@ -37,26 +41,26 @@ export default class URLButtons extends Component {
       // Original Color
         // return this.createButton(url, "#5ba9c8", "twitter", "Twitter");
       // Accessible Color
-        return this.createButton(url, "#267B9C", "twitter", "Twitter");
+        return this.createButton(url, "#267B9C", "twitter", "Twitter", index);
         //backgroundColor="#00acee"
     }
     if(url.includes("instagram"))
     {
-        return this.createButton(url, "#835b9a", "instagram", "Instagram");
+        return this.createButton(url, "#835b9a", "instagram", "Instagram", index);
         // backgroundColor="#8a3ab9"
     }
     if(url.includes("bandcamp"))
     {
-        return this.createButton(url, "#738e96", "bandcamp", "Bandcamp");
+        return this.createButton(url, "#738e96", "bandcamp", "Bandcamp", index);
         // backgroundColor="#629aa9"
     }
     if(url.includes("spotify"))
     {
-        return this.createButton(url, "#469160", "spotify", "Spotify");
+        return this.createButton(url, "#469160", "spotify", "Spotify", index);
         // backgroundColor="#1db954"
     }
 
-    return this.createButton(url, "#c6535c", "globe", "Homepage");
+    return this.createButton(url, "#c6535c", "globe", "Homepage", index);
         // backgroundColor="#ff1b2d"
   }
 
@@ -71,9 +75,10 @@ export default class URLButtons extends Component {
 //       >{text}</Icon.Button>) 
 //   }
 
-  createButton(url, color, name, text)
+  createButton(url, color, name, text, index)
   {
-      return (<TouchableOpacity
+      return (<View key={index} style={styles.iconContainer}>
+      <TouchableOpacity
         onPress={() => this.openGuestWebsite(url)}
       >
           <Icon
@@ -82,7 +87,8 @@ export default class URLButtons extends Component {
             style={styles.icon}
             size={30}
           ></Icon>
-      </TouchableOpacity>)
+      </TouchableOpacity>
+      </View>)
   }
 
   render() {
@@ -99,13 +105,7 @@ export default class URLButtons extends Component {
 
     return (
         <View style={urlStyle}>
-            {guestUrls.map((url) => {
-            return (
-                <View style={styles.iconContainer}>
-                    {this.getCorrectIcon(url)}
-                </View>
-            );
-        })}
+            {guestUrls.map((url, index) => this.getCorrectIcon(url, index))}
         </View>
     );
     }
