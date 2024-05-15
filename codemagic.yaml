@@ -53,11 +53,11 @@ workflows:
     environment:
       ios-signing:
         distribution_type: app_store
-        bundle_identifier: com.academypgh.MillvaleMusicFestival
+        bundle_identifier: com.AcademyPGH.MillvaleMusicFestival
       vars:
-        BUNDLE_ID: "com.academypgh.MillvaleMusicFestival"
-        XCODE_WORKSPACE: "MillvaleMusicFestival.xcworkspace"
-        XCODE_SCHEME: "MillvaleMusicFestival"
+        BUNDLE_ID: "com.AcademyPGH.MillvaleMusicFestival"
+        XCODE_WORKSPACE: "ScheduleApp.xcworkspace"
+        XCODE_SCHEME: "ScheduleApp"
         APP_STORE_APPLE_ID: 1460037803
     scripts:
       - name: Install dependencies
