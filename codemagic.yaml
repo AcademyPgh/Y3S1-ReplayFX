@@ -43,3 +43,53 @@ workflows:
         credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
         track: beta
         submit_as_draft: true
+
+  react-native-ios:
+    name: React Native iOS
+    max_build_duration: 60
+    instance_type: mac_mini_m1
+    integrations:
+      app_store_connect: academypittsburgh
+    environment:
+      ios-signing:
+        distribution_type: app_store
+        bundle_identifier: com.academypgh.MillvaleMusicFestival
+      vars:
+        BUNDLE_ID: "com.academypgh.MillvaleMusicFestival"
+        APP_NAME: "Millvale Music Festival"
+        XCODE_WORKSPACE: "MillvaleMusicFestival.xcworkspace"
+        XCODE_SCHEME: "MillvaleMusicFestival"
+        APP_STORE_APPLE_ID: 1460037803
+    scripts:
+      - name: Install dependencies
+        script: |
+          yarn install
+      - name: Set Info.plist values
+        script: | 
+          PLIST=$CM_BUILD_DIR/$XCODE_SCHEME/Info.plist
+          PLIST_BUDDY=/usr/libexec/PlistBuddy
+          $PLIST_BUDDY -c "Add :ITSAppUsesNonExemptEncryption bool false" $PLIST
+      - name: Install CocoaPods dependencies
+        script: |
+          cd ios
+          pod install
+      - name: Set up provisioning profiles
+        script: xcode-project use-profiles
+      - name: Increment Build Number
+        script: |
+          #!/bin/sh
+          cd $CM_BUILD_DIR
+          LATEST_BUILD_NUMBER=$(app-store-connect get-latest-build-number --app-id "$APP_STORE_APPLE_ID")
+          avgtool new-version -all $(($LATEST_BUILD_NUMBER + 1))
+      - name: Build iOS ipa
+        script: |
+          xcode-project build-ipa \
+            --workspace "$CM_BUILD_DIR/ios/$XCODE_WORKSPACE" \
+            --scheme "$XCODE_SCHEME"
+          
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+
