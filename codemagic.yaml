@@ -40,6 +40,6 @@ workflows:
       - android/app/build/outputs/**/*.aab
     publishing:
       google_play:
-        credentials: $GOOGLE_SERVICE_ACCOUNT_CREDENTIALS
+        credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
         track: beta
         submit_as_draft: true
