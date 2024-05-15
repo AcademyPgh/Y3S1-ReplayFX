@@ -6,7 +6,7 @@ workflows:
     environment:
       java: 17.0.9
       android_signing:
-        - keystore_reference
+        - AcademyPittsburgh
       groups:
         - google_play
       vars:
