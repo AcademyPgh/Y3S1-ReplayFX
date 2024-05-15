@@ -38,3 +38,8 @@ workflows:
             -PversionName=1.0.$UPDATED_BUILD_NUMBER
     artifacts:
       - android/app/build/outputs/**/*.aab
+    publishing:
+      google_play:
+        credentials: $GOOGLE_SERVICE_ACCOUNT_CREDENTIALS
+        track: beta
+        submit_as_draft: true
