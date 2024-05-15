@@ -56,7 +56,6 @@ workflows:
         bundle_identifier: com.academypgh.MillvaleMusicFestival
       vars:
         BUNDLE_ID: "com.academypgh.MillvaleMusicFestival"
-        APP_NAME: "Millvale Music Festival"
         XCODE_WORKSPACE: "MillvaleMusicFestival.xcworkspace"
         XCODE_SCHEME: "MillvaleMusicFestival"
         APP_STORE_APPLE_ID: 1460037803
