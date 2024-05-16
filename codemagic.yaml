@@ -76,16 +76,14 @@ workflows:
         script: xcode-project use-profiles
       - name: Increment Build Number
         script: |
-          #!/bin/sh
-          cd $CM_BUILD_DIR
-          LATEST_BUILD_NUMBER=$(app-store-connect get-latest-build-number --app-id "$APP_STORE_APPLE_ID")
-          avgtool new-version -all $(($LATEST_BUILD_NUMBER + 1))
+          cd $CM_BUILD_DIR/ios
+          LATEST_BUILD_NUMBER=$(app-store-connect get-latest-app-store-build-number "$APP_STORE_APPLE_ID")
+          agvtool new-version -all $(($LATEST_BUILD_NUMBER + 1))
       - name: Build iOS ipa
         script: |
           xcode-project build-ipa \
             --workspace "$CM_BUILD_DIR/ios/$XCODE_WORKSPACE" \
             --scheme "$XCODE_SCHEME"
-          
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
