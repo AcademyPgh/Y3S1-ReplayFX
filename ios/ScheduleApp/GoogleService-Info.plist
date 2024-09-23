@@ -2,22 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CLIENT_ID</key>
-	<string>776557469938-lna8j6bjbr47triloo3g3f0i3t43fus7.apps.googleusercontent.com</string>
-	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.776557469938-lna8j6bjbr47triloo3g3f0i3t43fus7</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDCgbEr1SY9BdlOTQiC7yY6Y7EA1BKN95o</string>
+	<string>AIzaSyDEuVLG7yQzuT0bqcQa7rGtuEf7JFOQ-qE</string>
 	<key>GCM_SENDER_ID</key>
-	<string>776557469938</string>
+	<string>248025572096</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.AcademyPGH.MillvaleMusicFestival</string>
+	<string>com.academypgh.pprd</string>
 	<key>PROJECT_ID</key>
-	<string>millvalemusicfest-e9db6</string>
+	<string>prn-discovery-day</string>
 	<key>STORAGE_BUCKET</key>
-	<string>millvalemusicfest-e9db6.appspot.com</string>
+	<string>prn-discovery-day.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:776557469938:ios:efb6c2932fae08cf44306b</string>
+	<string>1:248025572096:ios:dd1fe381b72f1b6f9349e5</string>
 </dict>
 </plist>

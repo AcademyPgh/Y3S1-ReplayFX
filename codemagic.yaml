@@ -10,8 +10,8 @@ workflows:
       groups:
         - google_play
       vars:
-        PACKAGE_NAME: "com.academypgh.millvalemusicfestival"
-        APP_NAME: "Millvale Music Festival"
+        PACKAGE_NAME: "com.academypgh.pprd"
+        APP_NAME: "Pittsburgh Robotics Discovery Day 2024"
     scripts:
       - name: Set Android SDK location
         script: |
@@ -53,9 +53,9 @@ workflows:
     environment:
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.AcademyPGH.MillvaleMusicFestival
+        bundle_identifier: com.academypgh.pprd
       vars:
-        BUNDLE_ID: "com.AcademyPGH.MillvaleMusicFestival"
+        BUNDLE_ID: "com.academypgh.pprd"
         XCODE_WORKSPACE: "ScheduleApp.xcworkspace"
         XCODE_SCHEME: "ScheduleApp"
         APP_STORE_APPLE_ID: 1460037803

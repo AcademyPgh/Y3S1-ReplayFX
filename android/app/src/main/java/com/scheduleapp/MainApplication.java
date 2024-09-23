@@ -1,4 +1,4 @@
-package com.academypgh.millvalemusicfestival;
+package com.academypgh.pprd;
 
 import android.app.Application;
 import com.facebook.react.PackageList;
