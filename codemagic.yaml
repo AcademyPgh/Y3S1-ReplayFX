@@ -2,9 +2,9 @@ workflows:
   react-native-android:
     name: React Native Android
     max_build_duration: 60
-    instance_type: mac_mini_m1
+    instance_type: mac_mini_m2
     environment:
-      java: 17.0.9
+      java: 17.0.11
       android_signing:
         - AcademyPittsburgh
       groups:
@@ -47,7 +47,7 @@ workflows:
   react-native-ios:
     name: React Native iOS
     max_build_duration: 60
-    instance_type: mac_mini_m1
+    instance_type: mac_mini_m2
     integrations:
       app_store_connect: academypittsburgh
     environment:
